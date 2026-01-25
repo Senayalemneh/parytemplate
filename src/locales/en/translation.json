@@ -1,0 +1,4736 @@
+{
+  "Hello": "Hello",
+  "Video Conference": "Video Conference",
+  "All Results": "All Results",
+  "user": {
+    "title": "User Management",
+    "addButton": "Add New User",
+    "submit": "Submit",
+    "update": "Update",
+    "confirmDelete": "Are you sure you want to delete this user?",
+    "notifications": {
+      "createSuccess": "User created successfully",
+      "createError": "Error creating user",
+      "updateSuccess": "User updated successfully",
+      "updateError": "Error updating user",
+      "deleteSuccess": "User deleted successfully",
+      "deleteError": "Error deleting user"
+    },
+    "modal": {
+      "addTitle": "Add New User",
+      "editTitle": "Edit User"
+    },
+    "table": {
+      "photo": "Photo",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "position": "Position",
+      "experience": "Experience",
+      "years": "years",
+      "actions": "Actions"
+    },
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "Email": "Email",
+    "PhoneNumber": "Phone Number",
+    "Photo": "Profile Photo",
+    "Position": "Work Position",
+    "Experience": "Experience (years)",
+    "HiredSince": "Hired Since",
+    "WorkPlace": "Place of Work"
+  },
+
+  "user": {
+    "title": "User Management",
+    "addButton": "Add New User",
+    "passwordDescription": "Leave blank to keep current password",
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "subcity": "Subcity",
+      "woreda": "Woreda",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "modal": {
+      "addTitle": "Add New User",
+      "editTitle": "Edit User"
+    },
+    "notifications": {
+      "createSuccess": "User created successfully",
+      "createError": "Error creating user",
+      "updateSuccess": "User updated successfully",
+      "updateError": "Error updating user",
+      "deleteSuccess": "User deleted successfully",
+      "deleteError": "Error deleting user"
+    },
+    "confirmDelete": "Are you sure you want to delete this user?",
+    "submit": "Submit",
+    "update": "Update",
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailValid": "Must be a valid email",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordConfirmRequired": "Password confirmation is required",
+      "passwordMatch": "Passwords must match",
+      "roleRequired": "Role is required",
+      "woredaRequired": "Woreda is required",
+      "subcityRequired": "Subcity is required"
+    },
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "password_confirmation": "Confirm Password",
+    "role": "Role",
+    "subcity": "Subcity",
+    "woreda": "Woreda"
+  },
+
+  "aboutuspage": {
+    "hero": {
+      "badge": "About Us",
+      "title": "Building a Prosperous Ethiopia Together",
+      "subtitle": "Committed to national unity, economic growth, and the democratic rights of all Ethiopians."
+    },
+    "mission": {
+      "badge": "Our Mission",
+      "title": "Our Guiding Purpose",
+      "description": "We are dedicated to fostering national unity, promoting economic development, and ensuring the democratic rights of all Ethiopians through transparent governance and inclusive policies.",
+      "unityText": "Unity in Diversity",
+      "list": {
+        "item1": "Promote peace and national reconciliation",
+        "item2": "Advance economic policies that benefit all citizens",
+        "item3": "Ensure transparent and accountable governance",
+        "item4": "Protect the constitutional rights of all Ethiopians"
+      }
+    },
+    "vision": {
+      "badge": "Our Vision",
+      "title": "The Ethiopia We Strive For",
+      "description": "We envision an Ethiopia that is united, prosperous, and democratic - where every citizen enjoys equal opportunities, justice prevails, and our rich cultural heritage is celebrated.",
+      "imageAlt": "Vision for Ethiopia's future",
+      "quote": "Together we can build an Ethiopia where no one is left behind."
+    },
+    "coreValuesSection": {
+      "badge": "Core Values",
+      "title": "Our Fundamental Principles",
+      "subtitle": "These values guide every decision we make and every action we take."
+    },
+    "coreValues": {
+      "dignity": {
+        "title": "Human Dignity",
+        "description": "We uphold the inherent worth and rights of every individual."
+      },
+      "sovereignty": {
+        "title": "National Sovereignty",
+        "description": "We protect Ethiopia's independence and territorial integrity."
+      },
+      "justice": {
+        "title": "Social Justice",
+        "description": "We advocate for fair distribution of resources and opportunities."
+      },
+      "unity": {
+        "title": "National Unity",
+        "description": "We celebrate diversity while strengthening our common bonds."
+      },
+      "respect": {
+        "title": "Mutual Respect",
+        "description": "We value all cultures, religions, and ethnic identities."
+      },
+      "economy": {
+        "title": "Economic Equity",
+        "description": "We promote policies that reduce inequality and create shared prosperity."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "We maintain the highest ethical standards in all our actions."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "We conduct our work openly and accountably."
+      }
+    },
+    "policyPillars": {
+      "political": {
+        "title": "Political Pillars",
+        "item1": "Constitutional democracy and rule of law",
+        "item2": "Decentralized federal system",
+        "item3": "Inclusive political participation"
+      },
+      "economic": {
+        "title": "Economic Pillars",
+        "item1": "Agricultural transformation",
+        "item2": "Industrial development",
+        "item3": "Equitable wealth distribution"
+      }
+    },
+    "principlesSection": {
+      "badge": "Guiding Principles",
+      "title": "Our Operational Framework",
+      "subtitle": "The principles that shape our approach to governance and development."
+    },
+    "principles": {
+      "accountability": {
+        "title": "Accountability",
+        "description": "We take responsibility for our actions and decisions at all levels."
+      },
+      "governance": {
+        "title": "Good Governance",
+        "description": "We practice effective, efficient, and participatory administration."
+      },
+      "ruleOfLaw": {
+        "title": "Rule of Law",
+        "description": "We ensure equal application of laws to all citizens."
+      },
+      "development": {
+        "title": "Sustainable Development",
+        "description": "We balance economic growth with environmental protection."
+      },
+      "evidence": {
+        "title": "Evidence-Based",
+        "description": "We make decisions based on research and data."
+      },
+      "cohesion": {
+        "title": "Social Cohesion",
+        "description": "We build bridges between communities."
+      }
+    },
+    "achievements": {
+      "title": "Our National Achievements",
+      "jobs": "Jobs created in the past decade",
+      "electricity": "Of population with electricity access",
+      "universities": "New universities established",
+      "gdp": "Average annual GDP growth"
+    },
+    "commissionPurpose": {
+      "badge": "Our Mandate",
+      "title": "Purpose of the Commission",
+      "description": "The commission was established to oversee the implementation of national policies, ensure compliance with constitutional provisions, and mediate between different levels of government to maintain national unity and equitable development."
+    },
+    "dutiesSection": {
+      "badge": "Responsibilities",
+      "title": "Duties and Responsibilities",
+      "subtitle": "The specific functions assigned to the commission by the constitution and national legislation."
+    },
+    "duties": {
+      "bylaw": {
+        "title": "Draft Bylaws",
+        "description": "Prepare and submit draft laws and regulations necessary for the implementation of constitutional provisions."
+      },
+      "quality": {
+        "title": "Ensure Quality",
+        "description": "Monitor and evaluate the quality of public services delivered to citizens."
+      },
+      "assets": {
+        "title": "Protect Assets",
+        "description": "Safeguard national assets and resources from mismanagement."
+      },
+      "memberRights": {
+        "title": "Member Rights",
+        "description": "Protect the rights and benefits of members and staff."
+      },
+      "complaints": {
+        "title": "Handle Complaints",
+        "description": "Receive and investigate complaints regarding constitutional violations."
+      },
+      "guidelines": {
+        "title": "Issue Guidelines",
+        "description": "Prepare and distribute operational guidelines to government institutions."
+      },
+      "antiCorruption": {
+        "title": "Anti-Corruption",
+        "description": "Implement measures to prevent corruption and maladministration."
+      },
+      "investigations": {
+        "title": "Conduct Investigations",
+        "description": "Investigate allegations of misconduct in public offices."
+      }
+    },
+    "cta": {
+      "title": "Join Us in Building Ethiopia's Future",
+      "subtitle": "Your participation and support are crucial to achieving our shared vision for Ethiopia.",
+      "button1": "Become a Member",
+      "button2": "Contact Us"
+    }
+  },
+
+  "login": {
+    "welcome": {
+      "title": "Welcome!",
+      "subtitle": "Welcome to Bole Subcity Prosperity Party System!",
+      "tagline": "Prosperity Party"
+    },
+    "form": {
+      "title": "Sign in to your account",
+      "subtitle": "Enter your credentials to access the dashboard",
+      "email": {
+        "label": "Email",
+        "placeholder": "your.email@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Your password"
+      },
+      "submit": "Sign in",
+      "noAccount": "Don't have an account?",
+      "contactAdmin": "Contact administrator",
+      "errors": {
+        "email": {
+          "invalid": "Invalid email",
+          "required": "Email is required"
+        },
+        "password": {
+          "required": "Password is required"
+        }
+      }
+    },
+    "errors": {
+      "title": "Error",
+      "generic": "Failed to login. Please try again.",
+      "invalidCredentials": "Invalid credentials",
+      "processing": "Error processing your login. Please try again.",
+      "invalidResponse": "Invalid server response",
+      "missingUserId": "User data is incomplete - missing id",
+      "missingRoleId": "Role data is incomplete - missing id",
+      "invalidPermissions": "Permissions should be an array"
+    },
+    "notifications": {
+      "success": {
+        "title": "Login Successful",
+        "message": "Welcome back!"
+      },
+      "error": {
+        "title": "Login Failed"
+      }
+    },
+    "defaults": {
+      "unknown": "Unknown",
+      "unknownRole": "Unknown Role"
+    }
+  },
+
+  "nav": {
+    "home": "Home",
+    "headsofgovernment": "Heads Of Government",
+    "about": "Prosperity programs",
+    "video": "Videos",
+    "services": "Services",
+    "checkCompliant": "checkCompliant",
+    "news": "News",
+    "management": "Leadership",
+    "managementTeam": "Leadership Teams",
+    "organizationalStructure": "Organizational Structure",
+    "woredas": "Woredas",
+    "announcement": "Announcement",
+    "announcements": "Announcements",
+    "tenders": "Tenders",
+    "events": "Events",
+    "contact": "Contact",
+    "gallery": "Gallery",
+    "bookStore": "Book Store",
+    "compliant": "Compliant"
+  },
+  "topBar": {
+    "address": "Address 22 Next to Awuraris Hotel"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram"
+  },
+  "logo": {
+    "alt": "Bole Subcity Logo",
+    "title": "Bole Prosperity"
+  },
+  "auth": {
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "logOut": "Log out",
+    "dashboard": "Dashboard"
+  },
+  "mobileMenu": {
+    "title": "Menu",
+    "close": "Close menu"
+  },
+  "language": {
+    "english": "English",
+    "amharic": "Amharic",
+    "oromo": "Afan Oromo"
+  },
+
+  "news": {
+    "latestUpdates": "LATEST UPDATES",
+    "pageTitle": "Prosperity Party News",
+    "pageSubtitle": "Stay informed about our initiatives, achievements, and national progress",
+    "readMore": "Read More",
+    "noTitle": "No Title",
+    "generalCategory": "General",
+    "noNewsTitle": "No News Available",
+    "noNewsSubtitle": "Check back later for updates",
+    "newsDetails": "News Details",
+    "noContent": "No content available",
+    "close": "Close"
+  },
+
+  "dashboard": {
+    "title": "Admin Dashboard",
+    "subtitle": "Comprehensive overview of your application's data and metrics",
+    "tabs": {
+      "summary": "Summary",
+      "analytics": "Analytics",
+      "comparison": "Comparison",
+      "advanced": "Advanced"
+    },
+    "cards": {
+      "dataDistribution": "Data Distribution",
+      "topCategories": "Top Categories",
+      "trendsOverTime": "Trends Over Time",
+      "areaDistribution": "Area Distribution",
+      "radialDistribution": "Radial Distribution",
+      "dataFunnel": "Data Funnel",
+      "categoryComparison": "Category Comparison",
+      "dataCorrelation": "Data Correlation",
+      "comprehensiveOverview": "Comprehensive Overview",
+      "dataHierarchy": "Data Hierarchy",
+      "hierarchicalData": "Hierarchical Data"
+    },
+    "stats": {
+      "active": "Active",
+      "empty": "Empty",
+      "count": "Count",
+      "categories": "Categories",
+      "dataPoints": "Data Points",
+      "trend": "Trend"
+    },
+    "categories": {
+      "userManagement": "User Management",
+      "content": "Content",
+      "media": "Media",
+      "community": "Community",
+      "administrative": "Administrative"
+    },
+    "dataTypes": {
+      "users": "Users",
+      "roles": "Roles",
+      "woredas": "Woredas",
+      "permissions": "Permissions",
+      "teamMembers": "Team Members",
+      "books": "Books",
+      "officials": "Officials",
+      "galleries": "Galleries",
+      "contacts": "Contacts",
+      "complaints": "Complaints",
+      "partners": "Partners",
+      "news": "News",
+      "announcements": "Announcements",
+      "events": "Events"
+    }
+  },
+
+  "Dashboard": "Dashboard",
+  "Registrations": "Registrations",
+  "Register Subcity": "Register Subcity",
+  "Register Woreda": "Register Woreda",
+  "Register Users": "Register Users",
+  "Role Management": "Role Management",
+  "Create Role": "Create Role",
+  "Assign Role": "Assign Role",
+  "Smart Chat": "Smart Chat",
+  "Document Management": "Document Management",
+  "Staff Management": "Staff Management",
+  "Content Management": "Content Management",
+  "Add News": "Add News",
+  "Add News Category": "Add News Category",
+  "Add Carousel Images": "Add Carousel Images",
+  "Add Head Of Government": "Add Head Of Government",
+  "Add Head Of Subcity": "Add Head Of Subcity",
+  "Add Our Partners": "Add Our Partners",
+  "Add Our Success": "Add Our Success",
+  "Add Woredas": "Add Woredas",
+  "Add Management Team": "Add Leadership Team",
+  "Add Organizational Structure": "Add Organizational Structure",
+  "Add Announcements": "Add Announcements",
+  "Add Tenders": "Add Tenders",
+  "Add Events": "Add Events",
+  "Add Books": "Add Books",
+  "View Contacts": "View Contacts",
+  "View Complaints": "View Complaints",
+  "Add Gallery": "Add Gallery",
+  "Profile": "Profile",
+  "Navigation": "Navigation",
+  "Opens in new window": "Opens in new window",
+
+  "subcity": {
+    "title": "Subcity Management",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "nameAm": "Name (Amharic)",
+        "nameEn": "Name (English)",
+        "description": "Description",
+        "createdAt": "Created At",
+        "updatedAt": "Updated At",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "nameEnLabel": "Name (English)",
+      "nameAmLabel": "Name (Amharic)",
+      "descriptionLabel": "Description"
+    },
+    "buttons": {
+      "addSubcity": "Add Subcity",
+      "saveChanges": "Save Changes",
+      "createSubcity": "Create Subcity",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "modal": {
+      "editTitle": "Edit Subcity",
+      "createTitle": "Create Subcity",
+      "deleteTitle": "Confirm Deletion",
+      "deleteConfirmation": "Are you sure you want to delete this subcity?"
+    },
+    "messages": {
+      "dataLoaded": "Data loaded successfully",
+      "updateSuccess": "Subcity updated successfully",
+      "createSuccess": "Subcity created successfully",
+      "deleteSuccess": "Subcity deleted successfully"
+    },
+    "errors": {
+      "nameEnRequired": "English name is required",
+      "nameAmRequired": "Amharic name is required",
+      "descriptionRequired": "Description is required",
+      "failedLoad": "Failed to load subcity data",
+      "notFound": "Subcity not found",
+      "loadForEditFailed": "Failed to load subcity for editing",
+      "updateFailed": "Failed to update subcity: {{error}}",
+      "createFailed": "Failed to create subcity: {{error}}",
+      "deleteFailed": "Failed to delete subcity"
+    }
+  },
+  "common": {
+    "success": "Success!",
+    "error": "Error!"
+  },
+
+  "registeruser": {
+    "user": {
+      "title": "User Management",
+      "table": {
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "email": "Email",
+          "role": "Role",
+          "woreda": "Woreda",
+          "subcity": "Subcity",
+          "createdAt": "Created At",
+          "actions": "Actions"
+        }
+      },
+      "form": {
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Enter full name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Enter email address",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "Enter password (min 8 characters)",
+        "confirmPasswordLabel": "Confirm Password",
+        "confirmPasswordPlaceholder": "Re-enter password",
+        "roleLabel": "Role",
+        "rolePlaceholder": "Select role",
+        "woredaLabel": "Woreda",
+        "woredaPlaceholder": "Select woreda",
+        "subcityLabel": "Subcity",
+        "subcityPlaceholder": "Select subcity"
+      },
+      "buttons": {
+        "addUser": "Add User",
+        "updateUser": "Update User",
+        "createUser": "Create User",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      },
+      "modal": {
+        "createTitle": "Create New User",
+        "editTitle": "Edit User",
+        "deleteTitle": "Confirm Deletion",
+        "deleteConfirmation": "Are you sure you want to delete this user? This action cannot be undone."
+      },
+      "messages": {
+        "dataLoaded": "Users loaded successfully",
+        "createSuccess": "User created successfully",
+        "updateSuccess": "User updated successfully",
+        "deleteSuccess": "User deleted successfully"
+      },
+      "errors": {
+        "nameRequired": "Name is required",
+        "invalidEmail": "Invalid email address",
+        "passwordRequired": "Password is required",
+        "passwordLength": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords do not match",
+        "roleRequired": "Role is required",
+        "invalidId": "Invalid user ID",
+        "notFound": "User not found",
+        "failedLoad": "Failed to load users",
+        "createFailed": "Failed to create user: {error}",
+        "updateFailed": "Failed to update user: {error}",
+        "deleteFailed": "Failed to delete user: {error}",
+        "loadForEditFailed": "Failed to load user for editing"
+      },
+      "roles": {
+        "woredaAdmin": "Woreda Admin",
+        "superAdmin": "Super Admin",
+        "subcityAdmin": "Subcity Admin",
+        "officialAdmin": "Official Admin",
+        "employee": "Employee"
+      },
+      "woredas": {
+        "bole": "Bole",
+        "woreda1": "Woreda 1",
+        "woreda2": "Woreda 2",
+        "woreda3": "Woreda 3"
+      },
+      "subcities": {
+        "addisAbaba": "Addis Ababa",
+        "boleSubcity": "Bole Subcity"
+      }
+    },
+    "common": {
+      "success": "Success",
+      "error": "Error",
+      "notAvailable": "N/A"
+    }
+  },
+
+  "woredaregistration": {
+    "woreda": {
+      "title": "Woreda Management",
+      "table": {
+        "headers": {
+          "id": "ID",
+          "nameEn": "Name (English)",
+          "nameAm": "Name (Amharic)",
+          "subcityId": "Subcity ID",
+          "description": "Description",
+          "createdAt": "Created At",
+          "updatedAt": "Updated At",
+          "actions": "Actions"
+        }
+      },
+      "form": {
+        "nameEnLabel": "Name (English)",
+        "nameEnPlaceholder": "Enter name in English",
+        "nameAmLabel": "Name (Amharic)",
+        "nameAmPlaceholder": "Enter name in Amharic",
+        "subcityLabel": "Subcity",
+        "subcityPlaceholder": "Select subcity",
+        "descriptionLabel": "Description",
+        "descriptionPlaceholder": "Enter description"
+      },
+      "buttons": {
+        "addWoreda": "Add Woreda",
+        "updateWoreda": "Update Woreda",
+        "createWoreda": "Create Woreda",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      },
+      "modal": {
+        "createTitle": "Create New Woreda",
+        "editTitle": "Edit Woreda",
+        "deleteTitle": "Confirm Deletion",
+        "deleteConfirmation": "Are you sure you want to delete this woreda?"
+      },
+      "messages": {
+        "dataLoaded": "Woredas loaded successfully",
+        "createSuccess": "Woreda created successfully",
+        "updateSuccess": "Woreda updated successfully",
+        "deleteSuccess": "Woreda deleted successfully"
+      },
+      "errors": {
+        "nameEnRequired": "English name is required",
+        "nameAmRequired": "Amharic name is required",
+        "subcityRequired": "Subcity is required",
+        "descriptionRequired": "Description is required",
+        "invalidId": "Invalid woreda ID",
+        "notFound": "Woreda not found",
+        "failedLoad": "Failed to load woredas",
+        "createFailed": "Failed to create woreda: {error}",
+        "updateFailed": "Failed to update woreda: {error}",
+        "deleteFailed": "Failed to delete woreda: {error}",
+        "loadForEditFailed": "Failed to load woreda for editing"
+      },
+      "subcities": {
+        "subcity1": "Bole",
+        "subcity2": "Kirkos",
+        "subcity3": "Yeka",
+        "subcity4": "Arada",
+        "subcity5": "Akaki",
+        "subcity6": "Lemi Kura"
+      }
+    },
+    "common": {
+      "success": "Success",
+      "error": "Error",
+      "notAvailable": "N/A"
+    }
+  },
+
+  "newsdetail": {
+    "error": {
+      "missingId": "News ID is missing",
+      "invalidFormat": "Invalid news data format",
+      "notFound": "News article not found",
+      "failedToLoad": "Failed to load news article"
+    },
+    "moreImages": "More Images",
+    "time": {
+      "justNow": "Just now",
+      "minutesAgo": "minutes ago",
+      "hoursAgo": "hours ago",
+      "daysAgo": "days ago"
+    },
+    "actions": {
+      "back": "Back to News",
+      "backToNews": "Back to News"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "news": "News",
+      "details": "News Details"
+    },
+    "imageAlt": "News image",
+    "imageCredit": "Photo",
+    "category": {
+      "default": "General"
+    },
+    "title": {
+      "default": "No title available"
+    },
+    "author": {
+      "anonymous": "Anonymous",
+      "about": "About the Author",
+      "bio": "Experienced journalist with a passion for delivering accurate and timely news."
+    },
+    "views": "views",
+    "content": {
+      "unavailable": "No content available"
+    },
+    "share": {
+      "facebook": "Share on Facebook",
+      "twitter": "Share on Twitter"
+    },
+    "comments": {
+      "loginPrompt": "Login is reqired to post comments",
+      "placeholder": "Post your comment",
+      "post": "post",
+      "edited": "edited",
+      "title": "Comments",
+      "empty": "No comments yet. Be the first to comment!"
+    },
+    "relatedNews": "Related News",
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get the latest news delivered to your inbox",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "privacy": "We respect your privacy. Unsubscribe at any time."
+    }
+  },
+
+  "leadershippage": {
+    "language": {
+      "english": "English",
+      "amharic": "Amharic"
+    },
+    "hero": {
+      "governmentLeadership": "Government Leadership",
+      "headsOfGovernment": "Heads of Government",
+      "leadersDescription": "Meet Ethiopia's distinguished leaders guiding the nation's progress"
+    },
+    "leaders": {
+      "noLeadersData": "No government leaders data available at the moment."
+    },
+    "leader": {
+      "viewProfile": "View Profile",
+      "keyAchievements": "Key Achievements",
+      "biography": "Biography",
+      "noBiographyAvailable": "No biography available"
+    },
+    "modal": {
+      "closeLeaderProfile": "Close leader profile",
+      "closeModal": "Close modal"
+    },
+    "governance": {
+      "structure": "Ethiopia's Governance Structure",
+      "description": "Ethiopia operates under a federal parliamentary republic system. The Prime Minister holds executive power while the President serves as the ceremonial head of state. Addis Ababa, as the capital city, has special administrative status with its own mayoral leadership.",
+      "governmentType": "Government Type",
+      "federalParliamentaryRepublic": "Federal Parliamentary Republic",
+      "constitution": "Constitution",
+      "ethiopiaConstitution": "1995 Constitution of Ethiopia",
+      "capitalCity": "Capital City",
+      "addisAbaba": "Addis Ababa"
+    }
+  },
+
+  "subcityofficial": {
+    "officials": {
+      "hero": {
+        "badge": "Local Leadership",
+        "title": "Bole Subcity Prosperity Party",
+        "subtitle": "Meet the dedicated leaders serving our community in Bole Subcity"
+      },
+      "error": {
+        "title": "Error Loading Data",
+        "loading": "Failed to load officials data. Please try again.",
+        "details": "Failed to load official details"
+      },
+      "retry": "Retry",
+      "viewProfile": "View Profile",
+      "achievements": "Key Achievements",
+      "biography": "Biography",
+      "closeModal": "Close official profile"
+    },
+    "notification": {
+      "success": "Success!",
+      "error": "Error!"
+    }
+  },
+
+  "locationpage": {
+    "hero": {
+      "badge": "Our Location",
+      "title": "Visit Us in Addis Ababa",
+      "subtitle": "Conveniently located in the heart of Bole Sub-City with excellent transport links",
+      "mapButton": "Open in Google Maps"
+    },
+    "map": {
+      "title": "Our Headquarters Location",
+      "gpsLabel": "GPS Coordinates",
+      "copy": "Copy coordinates",
+      "copied": "Copied!",
+      "iframeTitle": "Bole Sub-City Prosperity Party Location"
+    },
+    "address": {
+      "title": "Address Details",
+      "line1": "Bole Sub-City, Woreda 03",
+      "line2": "Addis Ababa, Ethiopia",
+      "poBox": "P.O. Box 12345"
+    },
+    "hours": {
+      "title": "Operating Hours",
+      "weekdays": "Monday - Friday",
+      "weekdaysTime": "8:30 AM - 5:30 PM",
+      "saturday": "Saturday",
+      "saturdayTime": "9:00 AM - 2:00 PM",
+      "sunday": "Sunday",
+      "closed": "Closed"
+    },
+    "contact": {
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Website"
+    },
+    "transport": {
+      "title": "Getting Here",
+      "description": "We're conveniently accessible by all major transportation methods in Addis Ababa.",
+      "car": "Car",
+      "carDesc": "Ample parking available",
+      "bus": "Bus",
+      "busDesc": "Routes 12, 45, 78 stop nearby",
+      "train": "Light Rail",
+      "trainDesc": "Bole Station (10 min walk)",
+      "accessible": "Accessible",
+      "accessibleDesc": "Wheelchair ramps available"
+    },
+    "parking": {
+      "title": "Parking Information",
+      "description": "Free parking available on premises. Additional secure parking available at the adjacent lot (50 ETB per hour)."
+    },
+    "landmarks": {
+      "title": "Nearby Points of Interest",
+      "description": "Our location is surrounded by convenient amenities and landmarks",
+      "airport": "Bole International Airport (5km)",
+      "mall": "Edna Mall (1.2km)",
+      "church": "Bole Medhanialem Church (800m)",
+      "supermarket": "Bambis Supermarket (500m)"
+    }
+  },
+
+  "ourpartner": {
+    "strategic_partnerships": "Strategic Partnerships",
+    "title": "Our Valued Partners",
+    "subtitle": "Collaborating with leading organizations to drive progress and innovation",
+    "premier_partners": "Premier Partners",
+    "trusted_network": "Trusted Partners Network",
+    "featured": "Featured",
+    "no_category": "No category",
+    "partner": "Partner",
+    "no_description": "No description available",
+    "more": "more",
+    "visit_partner": "Visit Partner",
+    "learn_more": "Learn More",
+    "become_partner": "Become a Partner",
+    "cta_text": "Join our network of strategic partners and grow together. Let's create something amazing.",
+    "partnership_inquiry": "Partnership Inquiry",
+    "error": "Failed to load partners. Please try again later.",
+    "retry": "Retry",
+    "no_partners": "No partners found",
+    "description_title": "Partner Description"
+  },
+
+  "counter": {
+    "title": "Website Analytics",
+    "subtitle": "Real-time visitor statistics",
+    "today": "Today",
+    "this_month": "This Month",
+    "all_time": "All Time",
+    "visits": "visits",
+    "error_title": "Error",
+    "error": "Failed to load visitor data. Please try again later."
+  },
+  "managementteam": {
+    "title": "Meet Our Management Team",
+    "subtitle": "The experienced professionals guiding our organization to success",
+    "leadership": "Our Leadership",
+    "all_departments": "All Departments",
+    "not_specified": "Not specified",
+    "general": "General",
+    "user": "User",
+    "since": "Since",
+    "view_profile": "View Profile",
+    "email": "Email",
+    "phone": "Phone",
+    "responsibilities": "Responsibilities",
+    "achievements": "Key Achievements",
+    "close": "Close",
+    "view_image": "View Full Image",
+    "full_image_of": "Full image of",
+    "api_error": "No response received from API",
+    "array_error": "Expected array of team members",
+    "load_error": "Failed to load team members",
+    "retry": "Retry",
+    "no_members": "No team members found"
+  },
+
+  "compliant": {
+    "compliant": {
+      "successModal": {
+        "title": "Complaint Submitted Successfully",
+        "message": "Thank you for submitting your complaint. Please keep your complaint ID for future reference.",
+        "yourId": "Your Complaint ID",
+        "note": "Please save this ID as you'll need it to check the status of your complaint.",
+        "close": "Close"
+      }
+    },
+    "title": {
+      "badge": "Complaint Form",
+      "main": "Customer Complaint Form",
+      "subtitle": "According to Rule 143/2015, Section 3, Article 9"
+    },
+    "form": {
+      "title": "Complaint Information",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "subCity": "Sub-City",
+      "subCityPlaceholder": "Enter sub-city",
+      "woreda": "Woreda",
+      "woredaPlaceholder": "Enter woreda",
+      "houseNumber": "House Number",
+      "houseNumberPlaceholder": "Enter house number",
+      "institution": "Institution Name",
+      "institutionPlaceholder": "Enter institution name",
+      "complaintPlace": "Complaint Place",
+      "complaintPlacePlaceholder": "Where did the incident occur?",
+      "complaintDetails": "Complaint Details",
+      "complaintDetailsPlaceholder": "Describe your complaint in detail",
+      "complaintWant": "Requested Solution",
+      "complaintWantPlaceholder": "What resolution are you seeking?",
+      "evidence": "Supporting Evidence",
+      "evidencePlaceholder": "Upload files",
+      "selectedFiles": "Selected files"
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "text": "The petition that I submitted today, according to the accountability regulation 143/2015, I confirm that the information I provided is accurate to the best of my knowledge and I understand that false information may lead to legal consequences.",
+      "accept": "I accept the terms and conditions"
+    },
+    "validation": {
+      "nameTooShort": "Name is too short",
+      "invalidPhone": "Invalid phone number",
+      "disclaimer": "Please accept the disclaimer"
+    },
+    "notification": {
+      "successTitle": "Success",
+      "success": "Your complaint has been submitted successfully",
+      "errorTitle": "Error",
+      "error": "Failed to submit complaint. Please try again."
+    },
+    "submit": "Submit Complaint"
+  },
+
+  "bookpage": {
+    "hero": {
+      "badge": "Library",
+      "title": "Explore Our Book Collection",
+      "subtitle": "Discover and read our curated selection of books and resources"
+    },
+    "tabs": {
+      "all": "All Books"
+    },
+    "batchBooksModal": {
+      "book": "File",
+      "description": "You can read all the files below."
+    },
+    "search": {
+      "placeholder": "Search books by title..."
+    },
+    "filter": {
+      "placeholder": "Filter by category"
+    },
+    "buttons": {
+      "showAll": "Show All",
+      "details": "Details",
+      "read": "Read",
+      "resetFilters": "Reset Filters",
+      "close": "Close"
+    },
+    "noBooks": {
+      "title": "No Books Found",
+      "description": "We couldn't find any books matching your criteria. Try adjusting your search or filters."
+    },
+    "modal": {
+      "detailsTitle": "Book Details",
+      "author": "Author",
+      "publishedYear": "Published Year",
+      "readingTime": "Reading Time",
+      "language": "Language",
+      "descriptionTitle": "Description",
+      "pages": "pages"
+    },
+    "notifications": {
+      "success": "Books loaded successfully",
+      "error": "Failed to load books",
+      "successTitle": "Success!",
+      "errorTitle": "Error!"
+    }
+  },
+
+  "galleryimage": {
+    "hero": {
+      "badge": "Our Gallery",
+      "title": "Photo Gallery",
+      "subtitle": "Explore our collection of memorable moments and events"
+    },
+    "buttons": {
+      "viewAlbum": "View Album",
+      "closeGallery": "Close Gallery"
+    },
+    "photos": "photos",
+    "of": "of",
+    "image": "Image",
+    "thumbnail": "Thumbnail",
+    "defaultCategory": "Gallery",
+    "emptyState": {
+      "title": "No Gallery Items Available",
+      "message": "Check back later for updates"
+    },
+    "errors": {
+      "title": "Error",
+      "loadError": "Failed to load gallery data. Please try again later."
+    }
+  },
+
+  "contactus": {
+    "hero": {
+      "title": "Contact Prosperity Party",
+      "subtitle": "Your voice matters to us. Reach out with questions, suggestions, or feedback."
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Message subject",
+      "message": "Your Message",
+      "messagePlaceholder": "Type your message here...",
+      "submit": "Send Message"
+    },
+    "contactInfo": {
+      "title": "Our Contact Information",
+      "address": {
+        "title": "Headquarters",
+        "line1": "Bole Subcity",
+        "line2": "Addis Ababa, Ethiopia"
+      },
+      "phone": {
+        "title": "Phone",
+        "number1": "+251 123 456 789",
+        "number2": "+251 987 654 321"
+      },
+      "email": {
+        "title": "Email",
+        "address1": "bsubcity@gmail.com",
+        "address2": "support@prosperityparty.org"
+      },
+      "hours": {
+        "title": "Working Hours",
+        "weekdays": "Monday - Friday: 8:00 AM - 6:00 PM",
+        "saturday": "Saturday: 9:00 AM - 1:00 PM"
+      }
+    },
+    "map": {
+      "title": "Our Location",
+      "description": "Visit our headquarters in Addis Ababa"
+    },
+    "notifications": {
+      "missingTitle": "Missing Information",
+      "missingMessage": "Please fill all required fields",
+      "successTitle": "Success!",
+      "successMessage": "Your message has been sent successfully",
+      "errorTitle": "Error",
+      "errorMessage": "Failed to send message",
+      "unexpectedError": "An unexpected error occurred"
+    }
+  },
+
+  "announcementsui": {
+    "badge": "Announcements",
+    "title": "Official Announcements",
+    "subtitle": "Stay updated with the latest news and important notices from our community",
+    "tabs": {
+      "all": "All Announcements"
+    },
+    "search": {
+      "placeholder": "Search announcements by title..."
+    },
+    "filter": {
+      "placeholder": "Filter by category"
+    },
+    "pinned": "Pinned",
+    "readButton": "Read Full Announcement",
+    "noResults": {
+      "title": "No Announcements Found",
+      "description": "We couldn't find any announcements matching your criteria. Try adjusting your search or filters."
+    },
+    "resetFilters": "Reset Filters",
+    "details": {
+      "title": "Announcement Details",
+      "date": "Date",
+      "author": "Author",
+      "published": "Published"
+    },
+    "attachments": {
+      "title": "Attachments"
+    },
+    "content": {
+      "title": "Content"
+    },
+    "closeButton": "Close"
+  },
+  "notifications": {
+    "success": "Success!",
+    "error": "Error!"
+  },
+  "announcements": {
+    "success": "Announcements loaded successfully",
+    "error": "Failed to load announcements"
+  },
+
+  "tenderui": {
+    "badge": "Tenders",
+    "title": "Current Tenders",
+    "subtitle": "Explore open tender opportunities and procurement notices",
+    "tabs": {
+      "all": "All Tenders",
+      "open": "Open",
+      "closed": "Closed",
+      "awarded": "Awarded"
+    },
+    "status": {
+      "open": "OPEN",
+      "closed": "CLOSED",
+      "awarded": "AWARDED"
+    },
+    "search": {
+      "placeholder": "Search tenders by title..."
+    },
+    "filter": {
+      "placeholder": "Filter by category"
+    },
+    "table": {
+      "published": "Published",
+      "closing": "Closing",
+      "opening": "Opening",
+      "budget": "Budget",
+      "tenderNumber": "Tender Number"
+    },
+    "viewButton": "View Tender Details",
+    "noResults": {
+      "title": "No Tenders Found",
+      "description": "We couldn't find any tenders matching your criteria. Try adjusting your search or filters."
+    },
+    "resetFilters": "Reset Filters",
+    "description": {
+      "title": "Tender Description"
+    },
+    "requirements": {
+      "title": "Requirements"
+    },
+    "documents": {
+      "title": "Tender Documents"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "person": "Contact Person",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "actions": {
+      "save": "Save Tender",
+      "share": "Share"
+    },
+    "notifications": {
+      "success": "Tenders loaded successfully",
+      "error": "Failed to load tenders"
+    }
+  },
+  "notifications": {
+    "success": "Success!",
+    "error": "Error!"
+  },
+
+  "eventui": {
+    "badge": "Community Events",
+    "title": "Upcoming Events & Gatherings",
+    "subtitle": "Discover our community events, cultural celebrations, and special gatherings",
+    "tabs": {
+      "all": "All Events",
+      "upcoming": "Upcoming",
+      "past": "Past Events",
+      "featured": "Featured"
+    },
+    "search": {
+      "placeholder": "Search events by name..."
+    },
+    "filter": {
+      "placeholder": "Filter by category"
+    },
+    "featured": "Featured",
+    "featuredEvent": "Featured Event",
+    "viewButton": "View Event Details",
+    "noResults": {
+      "title": "No Events Found",
+      "description": "We couldn't find any events matching your criteria. Try adjusting your search or filters."
+    },
+    "resetFilters": "Reset Filters",
+    "details": {
+      "title": "Event Details",
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "attendees": "Attendees",
+      "expected": "expected"
+    },
+    "organizer": {
+      "title": "Organizer"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "description": {
+      "title": "Description"
+    },
+    "closeButton": "Close",
+    "notifications": {
+      "success": "Events loaded successfully",
+      "error": "Failed to load events"
+    }
+  },
+  "notifications": {
+    "success": "Success!",
+    "error": "Error!"
+  },
+
+  "rolemanagementadmin": {
+    "title": "Role Management",
+    "addRoleButton": "Add Role",
+    "formLabels": {
+      "roleKey": "Role Key",
+      "nameEn": "Name (English)",
+      "nameAm": "Name (Amharic)",
+      "description": "Description"
+    },
+    "formPlaceholders": {
+      "roleKey": "Enter role key (e.g., woreda_admin)",
+      "nameEn": "Enter name in English",
+      "nameAm": "Enter name in Amharic",
+      "description": "Enter role description"
+    },
+    "formErrors": {
+      "roleKey": "Role key is required",
+      "nameEn": "English name is required",
+      "nameAm": "Amharic name is required",
+      "description": "Description is required"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "roleKey": "Role Key",
+        "nameEn": "Name (English)",
+        "nameAm": "Name (Amharic)",
+        "description": "Description",
+        "createdAt": "Created At",
+        "updatedAt": "Updated At",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "notAvailable": "N/A"
+    },
+    "modal": {
+      "editTitle": "Edit Role",
+      "createTitle": "Create Role"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this role?"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "create": "Create Role",
+      "update": "Update Role",
+      "delete": "Delete"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Data loaded successfully",
+      "loadError": "Failed to load role data",
+      "invalidId": "Invalid role ID",
+      "roleNotFound": "Role not found",
+      "updateSuccess": "Role updated successfully",
+      "createSuccess": "Role created successfully",
+      "deleteSuccess": "Role deleted successfully",
+      "loadEditError": "Failed to load role for editing",
+      "updateError": "Failed to update role: {{error}}",
+      "createError": "Failed to create role: {{error}}",
+      "deleteError": "Failed to delete role"
+    }
+  },
+
+  "rolepermissionassignment": {
+    "title": "Role Permission Assignment",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "roleName": "Role Name",
+        "roleKey": "Role Key",
+        "actions": "Actions",
+        "select": "Select",
+        "permission": "Permission",
+        "key": "Key",
+        "description": "Description",
+        "status": "Status"
+      }
+    },
+    "buttons": {
+      "managePermissions": "Manage Permissions",
+      "deselectAll": "Deselect All",
+      "selectAllFiltered": "Select All Filtered",
+      "cancel": "Cancel",
+      "savePermissions": "Save Permissions"
+    },
+    "modal": {
+      "title": "Manage Role Permissions",
+      "titleWithRole": "Manage Permissions for {roleName}",
+      "roleLabel": "Role",
+      "keyLabel": "Key",
+      "idLabel": "ID"
+    },
+    "tabs": {
+      "allPermissions": "All Permissions",
+      "assigned": "Assigned",
+      "selected": "Selected"
+    },
+    "search": {
+      "placeholder": "Search permissions..."
+    },
+    "showing": "Showing",
+    "of": "of",
+    "permissions": "permissions",
+    "messages": {
+      "noAssignedPermissions": "No permissions assigned to this role",
+      "noSelectedPermissions": "No permissions selected"
+    },
+    "status": {
+      "assigned": "Assigned",
+      "notAssigned": "Not Assigned"
+    },
+    "notifications": {
+      "success": "Success",
+      "error": "Error",
+      "permissionsUpdated": "Permissions updated successfully",
+      "failedUpdatePermissions": "Failed to update permissions",
+      "failedLoadRoles": "Failed to load roles",
+      "failedLoadPermissions": "Failed to load permissions",
+      "failedLoadAssignedPermissions": "Failed to load assigned permissions"
+    },
+    "errors": {
+      "fetchRoles": "Failed to fetch roles",
+      "fetchPermissions": "Failed to fetch permissions",
+      "fetchAssignedPermissions": "Failed to fetch assigned permissions",
+      "assignPermissions": "Failed to assign permissions"
+    }
+  },
+
+  "permissionsview": {
+    "title": "System Permissions",
+    "search": {
+      "placeholder": "Search permissions..."
+    },
+    "notification": {
+      "success": "Permissions loaded successfully",
+      "error": "Failed to load permissions",
+      "successTitle": "Success!",
+      "errorTitle": "Error!",
+      "updateSuccess": "Permission updated successfully",
+      "updateError": "Failed to update permission"
+    },
+    "table": {
+      "columns": {
+        "id": "ID",
+        "name": "Permission Name",
+        "key": "Key",
+        "description": "Description",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      }
+    },
+    "editModal": {
+      "title": "Edit Permission: {name}",
+      "fields": {
+        "name": "Permission Name",
+        "key": "Key",
+        "description": "Description"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "save": "Save Changes"
+      }
+    }
+  },
+
+  "permissionviewadmin": {
+    "title": "System Permissions",
+    "search": {
+      "placeholder": "Search permissions..."
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "name": "Permission Name",
+        "key": "Key",
+        "description": "Description",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      }
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "saveChanges": "Save Changes"
+    },
+    "form": {
+      "name": {
+        "label": "Permission Name"
+      },
+      "key": {
+        "label": "Key"
+      },
+      "description": {
+        "label": "Description"
+      }
+    },
+    "modal": {
+      "editTitle": "Edit Permission:"
+    },
+    "notifications": {
+      "successTitle": "Success!",
+      "errorTitle": "Error!",
+      "loadSuccess": "Permissions loaded successfully",
+      "loadFailed": "Failed to load permissions",
+      "updateSuccess": "Permission updated successfully",
+      "updateFailed": "Failed to update permission"
+    },
+    "errors": {
+      "fetchFailed": "Failed to fetch permissions",
+      "fetchError": "Failed to fetch permissions:",
+      "updateError": "Error updating permission:"
+    }
+  },
+
+  "newsmanagementadmin": {
+    "title": "News Management",
+    "buttons": {
+      "addNews": "Add News",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "createNews": "Create News",
+      "updateNews": "Update News"
+    },
+    "table": {
+      "headers": {
+        "multipleImages": "Additional Images",
+        "id": "ID",
+        "titleAm": "Title (Amharic)",
+        "titleEn": "Title (English)",
+        "excerpt": "Excerpt",
+        "category": "Category",
+        "author": "Author",
+        "status": "Status",
+        "image": "Image",
+        "views": "Views",
+        "publishedAt": "Published At",
+        "actions": "Actions"
+      },
+      "notAvailable": "N/A"
+    },
+    "status": {
+      "published": "Published",
+      "draft": "Draft"
+    },
+    "form": {
+      "multipleImages": {
+        "label": "Aditional Images"
+      },
+      "titleAm": {
+        "label": "Title (Amharic)",
+        "placeholder": "Enter title in Amharic",
+        "error": "Amharic title is required"
+      },
+      "titleEn": {
+        "label": "Title (English)",
+        "placeholder": "Enter title in English",
+        "error": "English title is required"
+      },
+      "contentAm": {
+        "label": "Content (Amharic)",
+        "placeholder": "Enter content in Amharic",
+        "error": "Amharic content is required"
+      },
+      "contentEn": {
+        "label": "Content (English)",
+        "placeholder": "Enter content in English",
+        "error": "English content is required"
+      },
+      "excerpt": {
+        "label": "Excerpt",
+        "placeholder": "Enter short excerpt",
+        "error": "Excerpt is required"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Select category",
+        "error": "Category is required"
+      },
+      "author": {
+        "label": "Author",
+        "placeholder": "Select author",
+        "error": "Author is required"
+      },
+      "image": {
+        "label": "News Image",
+        "placeholder": "Select an image",
+        "description": "Upload a high-quality image (max 5MB)",
+        "error": "Image is required"
+      },
+      "published": {
+        "label": "Published"
+      }
+    },
+    "modal": {
+      "createTitle": "Create News",
+      "editTitle": "Edit News",
+      "deleteTitle": "Confirm Deletion",
+      "deleteConfirmation": "Are you sure you want to delete this news item?"
+    },
+    "notifications": {
+      "successTitle": "Success!",
+      "errorTitle": "Error!",
+      "loadSuccess": "News loaded successfully",
+      "loadFailed": "Failed to load news",
+      "createSuccess": "News created successfully",
+      "createFailed": "Failed to create news",
+      "updateSuccess": "News updated successfully",
+      "updateFailed": "Failed to update news",
+      "deleteSuccess": "News deleted successfully",
+      "deleteFailed": "Failed to delete news",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadFailed": "Failed to upload image"
+    },
+    "errors": {
+      "invalidId": "Invalid news ID",
+      "notFound": "News item not found",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageTooLarge": "Image size must be less than 5MB"
+    }
+  },
+  "newscategorymanagement": {
+    "title": "News Categories Management",
+    "addButton": "Add Category",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "nameAm": "Name (Amharic)",
+        "nameEn": "Name (English)",
+        "slug": "Slug",
+        "createdAt": "Created At",
+        "updatedAt": "Updated At",
+        "actions": "Actions"
+      },
+      "notAvailable": "N/A",
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
+    "form": {
+      "labels": {
+        "nameAm": "Name (Amharic)",
+        "nameEn": "Name (English)"
+      },
+      "placeholders": {
+        "nameAm": "Enter name in Amharic",
+        "nameEn": "Enter name in English"
+      },
+      "errors": {
+        "amRequired": "Amharic name is required",
+        "enRequired": "English name is required"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "create": "Create Category",
+        "update": "Update Category"
+      }
+    },
+    "modal": {
+      "createTitle": "Create News Category",
+      "editTitle": "Edit News Category"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this category? This action cannot be undone.",
+      "buttons": {
+        "cancel": "Cancel",
+        "delete": "Delete"
+      }
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Categories loaded successfully",
+      "loadError": "Failed to load categories",
+      "createSuccess": "Category created successfully",
+      "createError": "Failed to create category: {error}",
+      "updateSuccess": "Category updated successfully",
+      "updateError": "Failed to update category: {error}",
+      "deleteSuccess": "Category deleted successfully",
+      "deleteError": "Failed to delete category",
+      "invalidId": "Invalid category ID",
+      "notFound": "Category not found",
+      "editError": "Failed to load category for editing"
+    }
+  },
+
+  "carouselmanagement": {
+    "title": "Carousel Management",
+    "addButton": "Add Carousel",
+    "table": {
+      "columns": {
+        "id": "ID",
+        "titleAm": "Title (Amharic)",
+        "titleEn": "Title (English)",
+        "description": "Description",
+        "image": "Image",
+        "status": "Status",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "na": "N/A"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "form": {
+      "titleAm": "Title (Amharic)",
+      "titleAmPlaceholder": "Enter title in Amharic",
+      "titleEn": "Title (English)",
+      "titleEnPlaceholder": "Enter title in English",
+      "descAm": "Description (Amharic)",
+      "descAmPlaceholder": "Enter description in Amharic",
+      "descEn": "Description (English)",
+      "descEnPlaceholder": "Enter description in English",
+      "imageLabel": "Carousel Image",
+      "imagePlaceholder": "Select an image",
+      "imageDescription": "Upload a high-quality image (max 5MB)",
+      "imagePreviewAlt": "Preview",
+      "activeLabel": "Active",
+      "cancelButton": "Cancel",
+      "updateButton": "Update Carousel",
+      "createButton": "Create Carousel"
+    },
+    "modal": {
+      "editTitle": "Edit Carousel",
+      "createTitle": "Create Carousel"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this carousel item?",
+      "cancelButton": "Cancel",
+      "deleteButton": "Delete"
+    },
+    "validation": {
+      "titleAmRequired": "Amharic title is required",
+      "titleEnRequired": "English title is required",
+      "descAmRequired": "Amharic description is required",
+      "descEnRequired": "English description is required",
+      "imageRequired": "Image is required"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Data loaded successfully",
+      "loadError": "Failed to load carousel data",
+      "invalidId": "Invalid carousel ID",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadError": "Failed to upload image",
+      "imageRequired": "Please upload an image",
+      "updateSuccess": "Carousel updated successfully",
+      "createSuccess": "Carousel created successfully",
+      "updateError": "Failed to update carousel",
+      "createError": "Failed to create carousel",
+      "itemNotFound": "Carousel item not found",
+      "loadEditError": "Failed to load carousel for editing",
+      "deleteSuccess": "Carousel deleted successfully",
+      "deleteError": "Failed to delete carousel",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageSizeLimit": "Image size must be less than 5MB"
+    }
+  },
+
+  "governmentofficalsadmin": {
+    "title": "Government Officials",
+    "addButton": "Add Official",
+    "table": {
+      "columns": {
+        "id": "ID",
+        "name_en": "Name (EN)",
+        "name_am": "Name (AM)",
+        "title_en": "Title (EN)",
+        "tenure": "Tenure",
+        "achievements": "Achievements",
+        "image": "Image",
+        "status": "Status",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "achievements": "achievements",
+      "active": "Active",
+      "inactive": "Inactive",
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
+    "form": {
+      "labels": {
+        "name_en": "Name (English)",
+        "name_am": "Name (Amharic)",
+        "title_en": "Title (English)",
+        "title_am": "Title (Amharic)",
+        "tenure": "Tenure",
+        "bio_en": "Bio (English)",
+        "bio_am": "Bio (Amharic)",
+        "fullBio_en": "Full Bio (English)",
+        "fullBio_am": "Full Bio (Amharic)",
+        "image": "Official Image",
+        "is_active": "Active",
+        "achievements": "Achievements",
+        "achievement_en": "Achievement (English)",
+        "achievement_am": "Achievement (Amharic)"
+      },
+      "placeholders": {
+        "name_en": "Enter name in English",
+        "name_am": "Enter name in Amharic",
+        "title_en": "Enter title in English",
+        "title_am": "Enter title in Amharic",
+        "tenure": "e.g., 2020-2025",
+        "bio_en": "Enter short bio in English",
+        "bio_am": "Enter short bio in Amharic",
+        "fullBio_en": "Enter detailed bio in English",
+        "fullBio_am": "Enter detailed bio in Amharic",
+        "image": "Select an image",
+        "achievement_en": "Enter achievement in English",
+        "achievement_am": "Enter achievement in Amharic"
+      },
+      "descriptions": {
+        "image": "Upload a high-quality image (max 5MB)"
+      },
+      "altText": {
+        "imagePreview": "Preview"
+      },
+      "achievement": {
+        "en": "English",
+        "am": "Amharic"
+      },
+      "actions": {
+        "addAchievement": "Add",
+        "removeAchievement": "Remove",
+        "cancel": "Cancel",
+        "create": "Create Official",
+        "update": "Update Official"
+      },
+      "errors": {
+        "name_en": "English name is required",
+        "name_am": "Amharic name is required",
+        "title_en": "English title is required",
+        "title_am": "Amharic title is required",
+        "tenure": "Tenure is required",
+        "bio_en": "English bio is required",
+        "bio_am": "Amharic bio is required",
+        "fullBio_en": "English full bio is required",
+        "fullBio_am": "Amharic full bio is required",
+        "image": "Image is required"
+      }
+    },
+    "modal": {
+      "editTitle": "Edit Government Official",
+      "createTitle": "Create Government Official"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this official?",
+      "cancel": "Cancel",
+      "confirm": "Delete"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Data loaded successfully",
+      "loadError": "Failed to load officials data",
+      "invalidId": "Invalid official ID",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadError": "Failed to upload image",
+      "imageRequired": "Please upload an image",
+      "updateSuccess": "Official updated successfully",
+      "createSuccess": "Official created successfully",
+      "updateError": "Failed to update official",
+      "createError": "Failed to create official",
+      "notFound": "Official not found",
+      "loadEditError": "Failed to load official for editing",
+      "deleteSuccess": "Official deleted successfully",
+      "deleteError": "Failed to delete official",
+      "invalidFileType": "Please upload an image file (JPEG, PNG, etc.)",
+      "fileSizeError": "Image size must be less than 5MB",
+      "achievementAdded": "Achievement added",
+      "achievementRemoved": "Achievement removed",
+      "achievementRequired": "Please fill both English and Amharic achievement fields"
+    }
+  },
+
+  "subcityofficialadmin": {
+    "title": "Subcity Officials Management",
+    "addButton": "Add Official",
+    "editTitle": "Edit Official",
+    "createTitle": "Create Official",
+    "deleteTitle": "Confirm Deletion",
+    "deleteConfirmation": "Are you sure you want to delete this official?",
+    "cancelButton": "Cancel",
+    "updateButton": "Update Official",
+    "createButton": "Create Official",
+    "deleteButton": "Delete",
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Data loaded successfully",
+      "loadError": "Failed to load officials data",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadError": "Failed to upload image",
+      "updateSuccess": "Official updated successfully",
+      "updateError": "Failed to update official",
+      "createSuccess": "Official created successfully",
+      "createError": "Failed to create official",
+      "deleteSuccess": "Official deleted successfully",
+      "deleteError": "Failed to delete official"
+    },
+    "errors": {
+      "invalidId": "Invalid official ID",
+      "notFound": "Official not found",
+      "loadError": "Failed to load official for editing",
+      "name_en": "English name is required",
+      "name_am": "Amharic name is required",
+      "title_en": "English title is required",
+      "title_am": "Amharic title is required",
+      "bio_en": "English bio is required",
+      "bio_am": "Amharic bio is required",
+      "tenure": "Tenure is required",
+      "fullBio_en": "English full bio is required",
+      "fullBio_am": "Amharic full bio is required",
+      "image": "Image is required",
+      "imageRequired": "Please upload an image",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageSize": "Image size must be less than 5MB"
+    },
+    "table": {
+      "id": "ID",
+      "nameAm": "Name (Amharic)",
+      "nameEn": "Name (English)",
+      "title": "Title",
+      "tenure": "Tenure",
+      "achievements": "Achievements",
+      "achievementsCount": "achievements",
+      "image": "Image",
+      "createdAt": "Created At",
+      "actions": "Actions",
+      "na": "N/A"
+    },
+    "form": {
+      "nameAm": "Name (Amharic)",
+      "nameAmPlaceholder": "Enter name in Amharic",
+      "nameEn": "Name (English)",
+      "nameEnPlaceholder": "Enter name in English",
+      "titleAm": "Title (Amharic)",
+      "titleAmPlaceholder": "Enter title in Amharic",
+      "titleEn": "Title (English)",
+      "titleEnPlaceholder": "Enter title in English",
+      "bioAm": "Bio (Amharic)",
+      "bioAmPlaceholder": "Enter bio in Amharic",
+      "bioEn": "Bio (English)",
+      "bioEnPlaceholder": "Enter bio in English",
+      "tenure": "Tenure",
+      "tenurePlaceholder": "e.g. 2020-2024",
+      "fullBioAm": "Full Bio (Amharic)",
+      "fullBioAmPlaceholder": "Enter full bio in Amharic",
+      "fullBioEn": "Full Bio (English)",
+      "fullBioEnPlaceholder": "Enter full bio in English",
+      "image": "Official Image",
+      "imagePlaceholder": "Select an image",
+      "imageDescription": "Upload a high-quality image (max 5MB)",
+      "imagePreview": "Preview",
+      "achievements": "Achievements",
+      "achievementPlaceholder": "Enter achievement",
+      "addAchievement": "Add"
+    }
+  },
+
+  "partnermanagementadmin": {
+    "title": "Partner Management",
+    "addButton": "Add Partner",
+    "editTitle": "Edit Partner",
+    "createTitle": "Create Partner",
+    "deleteTitle": "Confirm Deletion",
+    "deleteConfirmation": "Are you sure you want to delete this partner?",
+    "cancelButton": "Cancel",
+    "updateButton": "Update Partner",
+    "createButton": "Create Partner",
+    "deleteButton": "Delete",
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Partners loaded successfully",
+      "loadError": "Failed to load partners data",
+      "uploadSuccess": "Logo uploaded successfully",
+      "uploadError": "Failed to upload logo",
+      "updateSuccess": "Partner updated successfully",
+      "updateError": "Failed to update partner",
+      "createSuccess": "Partner created successfully",
+      "createError": "Failed to create partner",
+      "deleteSuccess": "Partner deleted successfully",
+      "deleteError": "Failed to delete partner"
+    },
+    "errors": {
+      "invalidId": "Invalid partner ID",
+      "notFound": "Partner not found",
+      "loadError": "Failed to load partner for editing",
+      "name_en": "English name is required",
+      "name_am": "Amharic name is required",
+      "category": "Category is required",
+      "invalidUrl": "Invalid URL",
+      "logoRequired": "Please upload a logo",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageSize": "Image size must be less than 5MB"
+    },
+    "table": {
+      "id": "ID",
+      "logo": "Logo",
+      "nameAm": "Name (Amharic)",
+      "nameEn": "Name (English)",
+      "category": "Category",
+      "website": "Website",
+      "status": "Status",
+      "createdAt": "Created At",
+      "actions": "Actions",
+      "na": "N/A",
+      "featured": "Featured",
+      "regular": "Regular"
+    },
+    "form": {
+      "nameAm": "Name (Amharic)",
+      "nameAmPlaceholder": "Enter name in Amharic",
+      "nameEn": "Name (English)",
+      "nameEnPlaceholder": "Enter name in English",
+      "categoryEn": "Category (English)",
+      "categoryAm": "Category (Amharic)",
+      "categoryPlaceholder": "Select category",
+      "categoryAmPlaceholder": "Enter category in Amharic",
+      "descriptionAm": "Description (Amharic)",
+      "descriptionAmPlaceholder": "Enter description in Amharic",
+      "descriptionEn": "Description (English)",
+      "descriptionEnPlaceholder": "Enter description in English",
+      "website": "Website Link",
+      "websitePlaceholder": "https://example.com",
+      "logo": "Partner Logo",
+      "logoPlaceholder": "Select an image",
+      "logoDescription": "Upload a high-quality logo (max 5MB)",
+      "preview": "Preview",
+      "featured": "Featured Partner"
+    },
+    "categories": {
+      "governmental": "Governmental",
+      "technology": "Technology",
+      "finance": "Finance",
+      "education": "Education",
+      "healthcare": "Healthcare",
+      "other": "Other"
+    }
+  },
+
+  "woredamanagementadmin": {
+    "title": "Woredas Management",
+    "addButton": "Add Woreda",
+    "editTitle": "Edit Woreda",
+    "createTitle": "Create Woreda",
+    "deleteTitle": "Confirm Deletion",
+    "deleteConfirmation": "Are you sure you want to delete this woreda?",
+    "cancelButton": "Cancel",
+    "updateButton": "Update Woreda",
+    "createButton": "Create Woreda",
+    "deleteButton": "Delete",
+    "add": "Add",
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Data loaded successfully",
+      "loadError": "Failed to load woredas data",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadError": "Failed to upload image",
+      "updateSuccess": "Woreda updated successfully",
+      "updateError": "Failed to update woreda",
+      "createSuccess": "Woreda created successfully",
+      "createError": "Failed to create woreda",
+      "deleteSuccess": "Woreda deleted successfully",
+      "deleteError": "Failed to delete woreda"
+    },
+    "errors": {
+      "invalidId": "Invalid woreda ID",
+      "notFound": "Woreda not found",
+      "loadError": "Failed to load woreda for editing",
+      "name_en": "English name is required",
+      "name_am": "Amharic name is required",
+      "woreda_en": "English woreda is required",
+      "woreda_am": "Amharic woreda is required",
+      "subCity_en": "English sub-city is required",
+      "subCity_am": "Amharic sub-city is required",
+      "invalidPhone": "Invalid phone number",
+      "invalidEmail": "Invalid email address",
+      "ratingRange": "Rating must be between 0 and 5",
+      "imageRequired": "Image is required",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageSize": "Image size must be less than 5MB"
+    },
+    "table": {
+      "id": "ID",
+      "nameAm": "Name (Amharic)",
+      "nameEn": "Name (English)",
+      "woreda": "Woreda",
+      "subCity": "Sub-City",
+      "contactPhone": "Contact Phone",
+      "rating": "Rating",
+      "image": "Image",
+      "createdAt": "Created At",
+      "actions": "Actions",
+      "na": "N/A"
+    },
+    "form": {
+      "addItems": "Add Items",
+      "arrayFieldDescription": "Amenities Description",
+      "nameEn": "Name (English)",
+      "nameEnPlaceholder": "Enter name in English",
+      "nameAm": "Name (Amharic)",
+      "nameAmPlaceholder": "Enter name in Amharic",
+      "woredaEn": "Woreda (English)",
+      "woredaEnPlaceholder": "Enter woreda in English",
+      "woredaAm": "Woreda (Amharic)",
+      "woredaAmPlaceholder": "Enter woreda in Amharic",
+      "subCityEn": "Sub-City (English)",
+      "subCityEnPlaceholder": "Enter sub-city in English",
+      "subCityAm": "Sub-City (Amharic)",
+      "subCityAmPlaceholder": "Enter sub-city in Amharic",
+      "locationEn": "Location (English)",
+      "locationEnPlaceholder": "Enter location in English",
+      "locationAm": "Location (Amharic)",
+      "locationAmPlaceholder": "Enter location in Amharic",
+      "image": "Woreda Image",
+      "imagePlaceholder": "Select an image",
+      "imageDescription": "Upload a high-quality image (max 5MB)",
+      "preview": "Preview",
+      "descriptionEn": "Description (English)",
+      "descriptionEnPlaceholder": "Enter description in English",
+      "descriptionAm": "Description (Amharic)",
+      "descriptionAmPlaceholder": "Enter description in Amharic",
+      "operatingHoursEn": "Operating Hours (English)",
+      "operatingHoursEnPlaceholder": "Enter operating hours in English",
+      "operatingHoursAm": "Operating Hours (Amharic)",
+      "operatingHoursAmPlaceholder": "Enter operating hours in Amharic",
+      "capacity": "Capacity",
+      "capacityPlaceholder": "Enter capacity",
+      "rating": "Rating (0-5)",
+      "ratingPlaceholder": "Enter rating (0-5)",
+      "amenities": "Amenities",
+      "amenitiesPlaceholder": "Select amenities",
+      "accessTypeEn": "Access Type (English)",
+      "accessTypeEnPlaceholder": "Enter access type in English",
+      "accessTypeAm": "Access Type (Amharic)",
+      "accessTypeAmPlaceholder": "Enter access type in Amharic",
+      "maintenanceScheduleEn": "Maintenance Schedule (English)",
+      "maintenanceScheduleEnPlaceholder": "Enter maintenance schedule in English",
+      "maintenanceScheduleAm": "Maintenance Schedule (Amharic)",
+      "maintenanceScheduleAmPlaceholder": "Enter maintenance schedule in Amharic",
+      "contactPersonEn": "Contact Person (English)",
+      "contactPersonEnPlaceholder": "Enter contact person in English",
+      "contactPersonAm": "Contact Person (Amharic)",
+      "contactPersonAmPlaceholder": "Enter contact person in Amharic",
+      "contactPhone": "Contact Phone",
+      "contactPhonePlaceholder": "Enter contact phone",
+      "missionEn": "Mission (English)",
+      "missionEnPlaceholder": "Enter mission in English",
+      "missionAm": "Mission (Amharic)",
+      "missionAmPlaceholder": "Enter mission in Amharic",
+      "visionEn": "Vision (English)",
+      "visionEnPlaceholder": "Enter vision in English",
+      "visionAm": "Vision (Amharic)",
+      "visionAmPlaceholder": "Enter vision in Amharic",
+      "values": "Values",
+      "valuesPlaceholder": "Select values",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "socialMedia": "Social Media Links",
+      "socialMediaPlaceholder": "Enter social media links",
+      "additionalContacts": "Additional Contacts",
+      "additionalContactsPlaceholder": "Enter additional contacts",
+      "serviceAreas": "Service Areas",
+      "serviceAreasPlaceholder": "Select service areas"
+    },
+    "amenities": {
+      "hotWater": "Hot Water",
+      "changingRoom": "Changing Room",
+      "lockers": "Lockers",
+      "towels": "Towels",
+      "shampoo": "Shampoo",
+      "soap": "Soap"
+    },
+    "values": {
+      "cleanliness": "Cleanliness",
+      "affordability": "Affordability",
+      "community": "Community",
+      "hygiene": "Hygiene",
+      "accessibility": "Accessibility"
+    },
+    "serviceAreas": {
+      "bole": "Bole",
+      "kirkos": "Kirkos",
+      "arada": "Arada",
+      "yeka": "Yeka",
+      "gulele": "Gulele"
+    }
+  },
+
+  "teammembersadmin": {
+    "title": "Team Members Management",
+    "addMember": "Add Team Member",
+    "editMember": "Edit Team Member",
+    "createMember": "Create Team Member",
+    "updateMember": "Update Team Member",
+    "cancel": "Cancel",
+    "add": "Add",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "avatar": "Avatar",
+        "nameEn": "Name (EN)",
+        "nameAm": "Name (AM)",
+        "position": "Position",
+        "department": "Department",
+        "email": "Email",
+        "joinDate": "Join Date",
+        "responsibilities": "Responsibilities",
+        "status": "Status",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "na": "N/A",
+      "active": "Active",
+      "inactive": "Inactive",
+      "more": "more"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "form": {
+      "responsibilityPlaceholder": "responsibilityPlaceholder",
+      "nameEn": "Name (English)",
+      "nameEnPlaceholder": "Enter name in English",
+      "nameAm": "Name (Amharic)",
+      "nameAmPlaceholder": "Enter name in Amharic",
+      "positionEn": "Position (English)",
+      "positionEnPlaceholder": "Enter position in English",
+      "positionAm": "Position (Amharic)",
+      "positionAmPlaceholder": "Enter position in Amharic",
+      "departmentEn": "Department (English)",
+      "departmentEnPlaceholder": "Enter department in English",
+      "departmentAm": "Department (Amharic)",
+      "departmentAmPlaceholder": "Enter department in Amharic",
+      "bioEn": "Bio (English)",
+      "bioEnPlaceholder": "Enter bio in English",
+      "bioAm": "Bio (Amharic)",
+      "bioAmPlaceholder": "Enter bio in Amharic",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "phone": "Phone",
+      "phonePlaceholder": "Enter phone number",
+      "joinDate": "Join Date",
+      "responsibilities": "Responsibilities",
+      "responsibilitiesPlaceholder": "Select responsibilities",
+      "achievements": "Achievements",
+      "achievementsPlaceholder": "Select achievements",
+      "avatar": "Avatar Image",
+      "avatarPlaceholder": "Select an image",
+      "avatarDescription": "Upload a high-quality image (max 5MB)",
+      "avatarPreview": "Preview",
+      "active": "Active"
+    },
+    "validation": {
+      "nameEnRequired": "English name is required",
+      "nameAmRequired": "Amharic name is required",
+      "positionEnRequired": "English position is required",
+      "positionAmRequired": "Amharic position is required",
+      "invalidEmail": "Invalid email address",
+      "invalidPhone": "Invalid phone number",
+      "joinDateRequired": "Join date is required",
+      "avatarRequired": "Avatar image is required"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "dataLoaded": "Data loaded successfully",
+      "loadFailed": "Failed to load team members data",
+      "invalidId": "Invalid team member ID",
+      "avatarUploaded": "Avatar uploaded successfully",
+      "avatarUploadFailed": "Failed to upload avatar",
+      "avatarRequired": "Please upload an avatar image",
+      "updateSuccess": "Team member updated successfully",
+      "createSuccess": "Team member created successfully",
+      "updateFailed": "Failed to update team member",
+      "createFailed": "Failed to create team member",
+      "memberNotFound": "Team member not found",
+      "loadEditFailed": "Failed to load team member for editing",
+      "deleteSuccess": "Team member deleted successfully",
+      "deleteFailed": "Failed to delete team member",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageSizeLimit": "Image size must be less than 5MB"
+    },
+    "deleteConfirm": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this team member?",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "responsibilities": {
+      "projectManagement": "Project Management",
+      "backendDevelopment": "Backend Development",
+      "frontendDevelopment": "Frontend Development",
+      "uiUxDesign": "UI/UX Design",
+      "qualityAssurance": "Quality Assurance",
+      "devOps": "DevOps"
+    },
+    "achievements": {
+      "employeeOfTheYear": "Employee of the Year",
+      "bestInnovationAward": "Best Innovation Award",
+      "customerSatisfactionAward": "Customer Satisfaction Award",
+      "teamPlayerAward": "Team Player Award",
+      "leadershipExcellence": "Leadership Excellence"
+    }
+  },
+
+  "orgstructureadmin": {
+    "title": "Organizational Structure",
+    "buttons": {
+      "addMember": "Add Member",
+      "updateMember": "Update Member",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "confirm": "Confirm",
+      "upload": "Upload"
+    },
+    "columns": {
+      "id": "ID",
+      "name": "Name",
+      "title": "Title",
+      "parent_id": "Reports To",
+      "image": "Image",
+      "created_at": "Created At",
+      "actions": "Actions"
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "title": "Title",
+        "parent": "Reports To",
+        "image": "Profile Image"
+      },
+      "placeholders": {
+        "name": "Enter member name",
+        "title": "Enter member title/position",
+        "parent": "Select supervisor (leave empty for top level)",
+        "image": "Select an image"
+      },
+      "descriptions": {
+        "image": "Upload a square profile image (max 5MB)"
+      },
+      "errors": {
+        "required": "This field is required",
+        "imageRequired": "Please upload an image",
+        "invalidImage": "Please upload an image file (JPEG, PNG, etc.)",
+        "imageSize": "Image size must be less than 5MB"
+      }
+    },
+    "modals": {
+      "addTitle": "Add Organization Member",
+      "editTitle": "Edit Organization Member",
+      "deleteTitle": "Confirm Deletion",
+      "deleteMessage": "Are you sure you want to delete this organization member?"
+    },
+    "notifications": {
+      "success": {
+        "load": "Data loaded successfully",
+        "create": "Member created successfully",
+        "update": "Member updated successfully",
+        "delete": "Member deleted successfully",
+        "upload": "Image uploaded successfully"
+      },
+      "error": {
+        "load": "Failed to load organizational data",
+        "create": "Failed to create member",
+        "update": "Failed to update member",
+        "delete": "Failed to delete member",
+        "upload": "Failed to upload image",
+        "notFound": "Member not found"
+      }
+    },
+    "misc": {
+      "topLevel": "Top Level",
+      "noImage": "N/A",
+      "currentImage": "Current Image:"
+    }
+  },
+
+  "announcementadmin": {
+    "title": "Announcements Management",
+    "add_button": "Add Announcement",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "title_am": "Title (Amharic)",
+        "title_en": "Title (English)",
+        "category": "Category",
+        "date": "Date",
+        "pinned": "Pinned",
+        "image": "Image",
+        "actions": "Actions"
+      },
+      "na": "N/A",
+      "pinned": "Pinned",
+      "normal": "Normal"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "form": {
+      "title_am": "Title (Amharic)",
+      "title_en": "Title (English)",
+      "content_am": "Content (Amharic)",
+      "content_en": "Content (English)",
+      "author_am": "Author (Amharic)",
+      "author_en": "Author (English)",
+      "category_en": "Category (English)",
+      "category_am": "Category (Amharic)",
+      "date": "Date",
+      "pin_label": "Pin this announcement",
+      "image_label": "Announcement Image",
+      "image_description": "Upload a high-quality image (max 5MB)",
+      "image_alt": "Announcement preview",
+      "placeholder": {
+        "title_am": "Enter title in Amharic",
+        "title_en": "Enter title in English",
+        "content_am": "Enter content in Amharic",
+        "content_en": "Enter content in English",
+        "author_am": "Enter author in Amharic",
+        "author_en": "Enter author in English",
+        "category": "Select category",
+        "date": "Select date",
+        "image": "Select an image"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "create": "Create Announcement",
+      "update": "Update Announcement",
+      "delete": "Delete"
+    },
+    "modal": {
+      "create_title": "Create Announcement",
+      "edit_title": "Edit Announcement"
+    },
+    "delete_modal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this announcement?"
+    },
+    "validation": {
+      "title_en": "English title is required",
+      "title_am": "Amharic title is required",
+      "content_en": "English content is required",
+      "content_am": "Amharic content is required",
+      "date": "Date is required",
+      "category": "Category is required",
+      "author_en": "English author is required",
+      "author_am": "Amharic author is required",
+      "image": "Image is required"
+    },
+    "notification": {
+      "success": "Success!",
+      "error": "Error!",
+      "load_success": "Data loaded successfully",
+      "load_error": "Failed to load announcements data",
+      "invalid_id": "Invalid announcement ID",
+      "image_success": "Image uploaded successfully",
+      "image_error": "Failed to upload image",
+      "image_required": "Please upload an image",
+      "update_success": "Announcement updated successfully",
+      "create_success": "Announcement created successfully",
+      "update_error": "Failed to update announcement",
+      "create_error": "Failed to create announcement",
+      "not_found": "Announcement not found",
+      "load_edit_error": "Failed to load announcement for editing",
+      "delete_success": "Announcement deleted successfully",
+      "delete_error": "Failed to delete announcement",
+      "invalid_image_type": "Please upload an image file (JPEG, PNG, etc.)",
+      "image_size": "Image size must be less than 5MB"
+    }
+  },
+
+  "tendersadmin": {
+    "title": "Tender Management",
+    "addNewTender": "Add New Tender",
+    "editTender": "Edit Tender",
+    "createTender": "Create Tender",
+    "deleteConfirmation": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this tender?",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "dataLoadedSuccess": "Data loaded successfully",
+      "failedToLoadTenders": "Failed to load tenders data",
+      "documentsUploadedSuccess": "Documents uploaded successfully",
+      "failedToUploadDocuments": "Failed to upload documents",
+      "tenderUpdatedSuccess": "Tender updated successfully",
+      "tenderCreatedSuccess": "Tender created successfully",
+      "failedToUpdateTender": "Failed to update tender",
+      "failedToCreateTender": "Failed to create tender",
+      "tenderNotFound": "Tender not found",
+      "failedToLoadTenderForEdit": "Failed to load tender for editing",
+      "tenderDeletedSuccess": "Tender deleted successfully",
+      "failedToDeleteTender": "Failed to delete tender"
+    },
+    "form": {
+      "tenderTitle": "Tender Title",
+      "tenderTitlePlaceholder": "Enter tender title",
+      "tenderNumber": "Tender Number",
+      "tenderNumberPlaceholder": "Enter tender number",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter tender description",
+      "category": "Category",
+      "selectCategory": "Select category",
+      "budget": "Budget",
+      "budgetPlaceholder": "Enter budget amount",
+      "status": "Status",
+      "publishedDate": "Published Date",
+      "closingDate": "Closing Date",
+      "openingDate": "Opening Date",
+      "selectDate": "Select date",
+      "requirements": "Requirements",
+      "addNewRequirement": "Add new requirement",
+      "add": "Add",
+      "documents": "Documents",
+      "uploadDocuments": "Upload Documents",
+      "selectDocuments": "Select documents",
+      "uploadDocumentsDescription": "Upload PDF or Word documents",
+      "contactPerson": "Contact Person",
+      "contactName": "Name",
+      "contactNamePlaceholder": "Contact person name",
+      "contactPosition": "Position",
+      "contactPositionPlaceholder": "Contact person position",
+      "contactPhone": "Phone",
+      "contactPhonePlaceholder": "Contact phone number",
+      "contactEmail": "Email",
+      "contactEmailPlaceholder": "Contact email address",
+      "cancel": "Cancel",
+      "updateTender": "Update Tender",
+      "createTender": "Create Tender"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "descriptionRequired": "Description is required",
+      "tenderNumberRequired": "Tender number is required",
+      "publishedDateRequired": "Published date is required",
+      "closingDateRequired": "Closing date is required",
+      "openingDateRequired": "Opening date is required",
+      "categoryRequired": "Category is required",
+      "budgetRequired": "Budget is required",
+      "contactNameRequired": "Contact name is required",
+      "contactPositionRequired": "Contact position is required",
+      "contactPhoneRequired": "Contact phone is required",
+      "validEmailRequired": "Valid email is required"
+    },
+    "table": {
+      "tenderNumber": "Tender No.",
+      "title": "Title",
+      "category": "Category",
+      "budget": "Budget",
+      "published": "Published",
+      "closing": "Closing",
+      "status": "Status",
+      "documents": "Documents",
+      "actions": "Actions"
+    },
+    "categories": {
+      "construction": "Construction",
+      "consultancy": "Consultancy",
+      "supply": "Supply",
+      "service": "Service",
+      "it": "IT"
+    },
+    "status": {
+      "open": "Open",
+      "closed": "Closed",
+      "awarded": "Awarded",
+      "cancelled": "Cancelled"
+    }
+  },
+
+  "eventsadmin": {
+    "title": "Events Management",
+    "addEvent": "Add Event",
+    "featured": "Featured",
+    "columns": {
+      "id": "ID",
+      "title": "Title",
+      "category": "Category",
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "organizer": "Organizer",
+      "attendees": "Attendees",
+      "image": "Image",
+      "actions": "Actions"
+    },
+    "form": {
+      "titleEn": "Title (English)",
+      "titleEnPlaceholder": "Enter title in English",
+      "titleAm": "Title (Amharic)",
+      "titleAmPlaceholder": "Enter title in Amharic",
+      "descriptionEn": "Description (English)",
+      "descriptionEnPlaceholder": "Enter description in English",
+      "descriptionAm": "Description (Amharic)",
+      "descriptionAmPlaceholder": "Enter description in Amharic",
+      "date": "Date",
+      "datePlaceholder": "Select date",
+      "categoryEn": "Category (English)",
+      "categoryAm": "Category (Amharic)",
+      "categoryPlaceholder": "Select category",
+      "timeEn": "Time (English)",
+      "timeEnPlaceholder": "e.g. 9:00 AM",
+      "timeAm": "Time (Amharic)",
+      "timeAmPlaceholder": "e.g. ማታ 9፡00",
+      "locationEn": "Location (English)",
+      "locationEnPlaceholder": "Enter location in English",
+      "locationAm": "Location (Amharic)",
+      "locationAmPlaceholder": "Enter location in Amharic",
+      "organizerName": "Organizer Name",
+      "organizerNamePlaceholder": "Enter organizer name",
+      "organizerContact": "Organizer Contact",
+      "organizerContactPlaceholder": "Enter organizer email",
+      "registrationLink": "Registration Link",
+      "registrationLinkPlaceholder": "Enter registration URL",
+      "attendees": "Expected Attendees",
+      "attendeesPlaceholder": "Enter number of attendees",
+      "tags": "Tags",
+      "tagsPlaceholder": "Select tags",
+      "featuredEvent": "Featured Event",
+      "registrationRequired": "Registration Required",
+      "image": "Event Image",
+      "imagePlaceholder": "Select an image",
+      "imageDescription": "Upload a high-quality image (max 5MB)"
+    },
+    "validation": {
+      "titleEn": "English title is required",
+      "titleAm": "Amharic title is required",
+      "descriptionEn": "English description is required",
+      "descriptionAm": "Amharic description is required",
+      "date": "Date is required",
+      "timeEn": "English time is required",
+      "timeAm": "Amharic time is required",
+      "locationEn": "English location is required",
+      "locationAm": "Amharic location is required",
+      "category": "Category is required",
+      "organizerName": "Organizer name is required",
+      "organizerContact": "Valid email is required",
+      "image": "Image is required",
+      "invalidImageType": "Please upload an image file (JPEG, PNG, etc.)",
+      "imageSize": "Image size must be less than 5MB"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Events loaded successfully",
+      "loadError": "Failed to load events",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadError": "Failed to upload image",
+      "invalidId": "Invalid event ID",
+      "notFound": "Event not found",
+      "updateSuccess": "Event updated successfully",
+      "createSuccess": "Event created successfully",
+      "updateError": "Failed to update event",
+      "createError": "Failed to create event",
+      "loadEditError": "Failed to load event for editing",
+      "deleteSuccess": "Event deleted successfully",
+      "deleteError": "Failed to delete event"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "create": "Create Event",
+      "update": "Update Event",
+      "delete": "Delete"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this event?"
+    },
+    "editTitle": "Edit Event",
+    "createTitle": "Create Event"
+  },
+
+  "addbooksadmin": {
+    "title": "Book Management",
+    "addBookButton": "Add Book",
+    "table": {
+      "headers": {
+        "bookFile": "Book File",
+        "id": "ID",
+        "titleEn": "Title (English)",
+        "titleAm": "Title (Amharic)",
+        "author": "Author",
+        "category": "Category",
+        "pages": "Pages",
+        "rating": "Rating",
+        "featured": "Featured",
+        "cover": "Cover",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "notAvailable": "N/A",
+      "featured": "Featured",
+      "regular": "Regular"
+    },
+    "form": {
+      "titleEn": "Title (English)",
+      "titleEnPlaceholder": "Enter title in English",
+      "titleAm": "Title (Amharic)",
+      "titleAmPlaceholder": "Enter title in Amharic",
+      "authorEn": "Author (English)",
+      "authorEnPlaceholder": "Enter author name in English",
+      "authorAm": "Author (Amharic)",
+      "authorAmPlaceholder": "Enter author name in Amharic",
+      "coverImage": "Cover Image",
+      "upload": "Upload",
+      "coverImageDescription": "Upload cover image (JPG, PNG - max 5MB)",
+      "coverImageAlt": "Cover preview",
+      "bookSource": "Book Source File",
+      "bookSourceDescription": "Upload book source (PDF, EPUB, DOCX, TXT - max 10MB)",
+      "currentFile": "Current file",
+      "descriptionEn": "Description (English)",
+      "descriptionEnPlaceholder": "Enter description in English",
+      "descriptionAm": "Description (Amharic)",
+      "descriptionAmPlaceholder": "Enter description in Amharic",
+      "categoryEn": "Category (English)",
+      "categoryAm": "Category (Amharic)",
+      "selectCategory": "Select category",
+      "pages": "Pages",
+      "language": "Language",
+      "selectLanguage": "Select language",
+      "publishedYear": "Published Year",
+      "readingTimeEn": "Reading Time (English)",
+      "readingTimeAm": "Reading Time (Amharic)",
+      "readingTimePlaceholder": "e.g. 6 hours",
+      "popularityRating": "Popularity Rating",
+      "featuredBook": "Featured Book",
+      "cancelButton": "Cancel",
+      "updateButton": "Update Book",
+      "createButton": "Create Book"
+    },
+    "editModal": {
+      "titleEdit": "Edit Book",
+      "titleCreate": "Create Book"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "confirmMessage": "Are you sure you want to delete this book?",
+      "cancelButton": "Cancel",
+      "deleteButton": "Delete"
+    },
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "booksLoadedSuccess": "Books loaded successfully",
+      "failedLoadBooks": "Failed to load books data",
+      "invalidBookId": "Invalid book ID",
+      "coverImageUploadSuccess": "Cover image uploaded successfully",
+      "coverImageUploadError": "Failed to upload cover image",
+      "uploadCoverImage": "Please upload a cover image",
+      "bookSourceUploadSuccess": "Book source file uploaded successfully",
+      "bookSourceUploadError": "Failed to upload book source file",
+      "uploadBookSource": "Please upload a book source file",
+      "bookUpdatedSuccess": "Book updated successfully",
+      "bookCreatedSuccess": "Book created successfully",
+      "updateBookError": "Failed to update book",
+      "createBookError": "Failed to create book",
+      "bookNotFound": "Book not found",
+      "loadBookError": "Failed to load book for editing",
+      "bookDeletedSuccess": "Book deleted successfully",
+      "deleteBookError": "Failed to delete book",
+      "fileSizeLimit": "File size must be less than {size}"
+    },
+    "validation": {
+      "titleEnRequired": "English title is required",
+      "titleAmRequired": "Amharic title is required",
+      "authorEnRequired": "English author is required",
+      "authorAmRequired": "Amharic author is required",
+      "descriptionEnRequired": "English description is required",
+      "descriptionAmRequired": "Amharic description is required",
+      "categoryEnRequired": "English category is required",
+      "categoryAmRequired": "Amharic category is required",
+      "pagesGreaterThanZero": "Pages must be greater than 0",
+      "languageRequired": "Language is required",
+      "yearRange": "Year must be between 1 and {year}",
+      "readingTimeEnRequired": "English reading time is required",
+      "readingTimeAmRequired": "Amharic reading time is required",
+      "coverImageRequired": "Cover image is required",
+      "bookSourceRequired": "Book source file is required"
+    },
+    "categories": {
+      "fiction": "Fiction",
+      "nonFiction": "Non-Fiction",
+      "biography": "Biography",
+      "science": "Science",
+      "fantasy": "Fantasy"
+    },
+    "languages": {
+      "english": "English",
+      "amharic": "Amharic",
+      "french": "French",
+      "spanish": "Spanish"
+    }
+  },
+  "viewcompliantadmin": {
+    "tabs": {
+      "active": "active",
+      "resolved": "resolved"
+    },
+    "title": "Complaint Management",
+    "searchPlaceholder": "Search complaints...",
+    "notification": {
+      "complaintsLoaded": "Complaints loaded successfully",
+      "failedLoadComplaints": "Failed to load complaints",
+      "complaintDeleted": "Complaint deleted successfully",
+      "failedDeleteComplaint": "Failed to delete complaint",
+      "responseSubmitted": "Response submitted successfully",
+      "failedSubmitResponse": "Failed to submit response",
+      "success": "Success!",
+      "error": "Error!"
+    },
+    "confirmDeletion": "Confirm Deletion",
+    "deleteComplaintConfirm": "Are you sure you want to delete this complaint?",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "status": {
+      "draft": "draft",
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "resolved": "Resolved",
+      "rejected": "Rejected",
+      "unknown": "Unknown"
+    },
+    "columns": {
+      "id": "ID",
+      "fullName": "Full Name",
+      "phone": "Phone",
+      "institution": "Institution",
+      "complaintPlace": "Complaint Place",
+      "status": "Status",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "modal": {
+      "title": "Complaint Details",
+      "complainant": "Complainant",
+      "contactInfo": "Contact Information",
+      "phone": "Phone",
+      "address": "Address",
+      "houseNumber": "House Number",
+      "institutionInfo": "Institution Information",
+      "institution": "Institution",
+      "complaintPlace": "Complaint Place",
+      "status": "Status",
+      "complaintDetails": "Complaint Details",
+      "requestedSolution": "Requested Solution",
+      "supportingEvidence": "Supporting Evidence",
+      "viewEvidence": "View Evidence",
+      "submittedOn": "Submitted on",
+      "disclaimerAccepted": "Disclaimer Accepted",
+      "disclaimerNotAccepted": "Disclaimer Not Accepted"
+    },
+    "responseModal": {
+      "title": "Submit Response",
+      "complaintId": "Complaint ID",
+      "complainant": "Complainant",
+      "complaintEvaluation": "Complaint Evaluation",
+      "selectEvaluation": "Select evaluation",
+      "valid": "Valid",
+      "invalid": "Invalid",
+      "findings": "Findings",
+      "enterFindings": "Enter your findings",
+      "generalResponse": "General Response",
+      "selectResponse": "Select response",
+      "positive": "Positive",
+      "negative": "Negative",
+      "responseDetails": "Response Details",
+      "enterDetails": "Enter response details",
+      "evaluatorName": "Evaluator Name",
+      "enterName": "Enter evaluator name",
+      "submitResponse": "Submit Response"
+    }
+  },
+  "viewcontactadmin": {
+    "title": "Contact Messages",
+    "searchPlaceholder": "Search contacts...",
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Contacts loaded successfully",
+      "loadError": "Failed to load contacts",
+      "deleteSuccess": "Contact deleted successfully",
+      "deleteError": "Failed to delete contact"
+    },
+    "deleteConfirm": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this contact?",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "table": {
+      "columns": {
+        "id": "ID",
+        "fullName": "Full Name",
+        "email": "Email",
+        "subject": "Subject",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "delete": "Delete"
+      }
+    },
+    "modal": {
+      "title": "Contact Details",
+      "fullName": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "date": "Date",
+      "message": "Message"
+    }
+  },
+  "Tendencyy": "Tendency",
+  "Question": "Question",
+
+  "gallerymanagementadmin": {
+    "title": "Gallery Management",
+    "addButton": "Add Gallery",
+    "notifications": {
+      "success": "Success!",
+      "error": "Error!",
+      "loadSuccess": "Gallery data loaded successfully",
+      "loadError": "Failed to load gallery data",
+      "invalidId": "Invalid gallery ID",
+      "notFound": "Gallery item not found",
+      "uploadSuccess": "Images uploaded successfully",
+      "uploadError": "Failed to upload images",
+      "noImages": "Please upload at least one image",
+      "updateSuccess": "Gallery updated successfully",
+      "updateError": "Failed to update gallery",
+      "createSuccess": "Gallery created successfully",
+      "createError": "Failed to create gallery",
+      "deleteSuccess": "Gallery deleted successfully",
+      "deleteError": "Failed to delete gallery",
+      "loadEditError": "Failed to load gallery for editing",
+      "maxImages": "Maximum 10 images can be uploaded at once",
+      "invalidFileType": "Skipped {{fileName}} - Only image files are allowed",
+      "fileSizeError": "Skipped {{fileName}} - Image size must be less than 5MB"
+    },
+    "formErrors": {
+      "titleEn": "English title is required",
+      "titleFr": "French title is required",
+      "descriptionEn": "English description is required",
+      "descriptionFr": "French description is required",
+      "category": "At least one category is required",
+      "date": "Date is required",
+      "images": "At least one image is required"
+    },
+    "table": {
+      "columns": {
+        "id": "ID",
+        "titleEn": "Title (EN)",
+        "titleAm": "Title (AM)",
+        "categories": "Categories",
+        "date": "Date",
+        "images": "Images",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "na": "N/A",
+      "noCategories": "No categories",
+      "noImages": "No images",
+      "more": "more"
+    },
+    "form": {
+      "descriptionAm": "Description (Amharic)",
+      "titleAm": "Title Amharic",
+      "titleEn": "Title (English)",
+      "titleEnPlaceholder": "Enter title in English",
+      "titleFr": "Title (French)",
+      "titleFrPlaceholder": "Enter title in French",
+      "descriptionEn": "Description (English)",
+      "descriptionEnPlaceholder": "Enter description in English",
+      "descriptionFr": "Description (French)",
+      "descriptionFrPlaceholder": "Enter description in French",
+      "categories": "Categories",
+      "categoriesPlaceholder": "Select categories",
+      "createCategory": "Create",
+      "date": "Date",
+      "images": "Gallery Images",
+      "imagesPlaceholder": "Select images",
+      "imagesDescription": "Upload high-quality images (max 5MB each, up to 10 images)",
+      "imagePreviews": "Image Previews ({})",
+      "preview": "Preview",
+      "existing": "Existing",
+      "cancel": "Cancel",
+      "updateButton": "Update Gallery",
+      "createButton": "Create Gallery"
+    },
+    "modal": {
+      "editTitle": "Edit Gallery",
+      "createTitle": "Create Gallery"
+    },
+    "deleteModal": {
+      "title": "Confirm Deletion",
+      "message": "Are you sure you want to delete this gallery item?",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    }
+  },
+
+  "profile": {
+    "title": "Profile",
+    "resetPasswordTitle": "Reset Password",
+    "updatePasswordMessage": "Update your account password for enhanced security",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "notAvailable": "N/A",
+    "currentPasswordLabel": "Current Password",
+    "currentPasswordPlaceholder": "Enter your current password",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "Enter your new password",
+    "confirmPasswordLabel": "Confirm New Password",
+    "confirmPasswordPlaceholder": "Confirm your new password",
+    "passwordValidation": "Password must be at least 8 characters",
+    "passwordMatchValidation": "Passwords do not match",
+    "passwordDescription": "Password must be at least 8 characters long",
+    "updateButton": "Update Password",
+    "successTitle": "Success!",
+    "successMessage": "Your password has been updated successfully",
+    "errorTitle": "Error",
+    "updateFailed": "Failed to update password",
+    "unexpectedError": "An unexpected error occurred. Please try again."
+  },
+  "View All Permission": "View All Permission",
+  "Assign Permission to Role": "Assign Permission to Role",
+
+  "notifications": "Notifications",
+  "notifications.new": "new",
+  "notifications.close": "Close notifications",
+  "notifications.markAllAsRead": "Mark as Read",
+  "notifications.empty": "notifications.empty",
+
+  "idCard": {
+    "organizationName": "Prosperity Organization",
+    "organizationSlogan": "Building a Better Future Together",
+    "invalidId": "Invalid ID or user not found",
+    "fetchError": "Error loading ID card data",
+    "idLabel": "ID Number",
+    "genderLabel": "Gender",
+    "ageLabel": "Age",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "educationLabel": "Education",
+    "issuedLabel": "Issued",
+    "validUntilLabel": "Valid Until",
+    "securityNotice": "This ID is only for members of the Bole Sub-City Prosperity Party.",
+    "allRightsReserved": "All rights reserved"
+  },
+
+  "dms": {
+    "title": "Document Management",
+    "searchPlaceholder": "Search folders...",
+    "noFolders": "No folders in this location",
+    "noMatchingFolders": "No matching folders found",
+    "createFirstFolder": "Create your first folder",
+    "newFolder": "New Folder",
+    "upload": "Upload",
+    "folderName": "Folder Name",
+    "folderNamePlaceholder": "Enter folder name",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter folder description",
+    "sharedFolder": "Shared Folder (visible to others)",
+    "cancel": "Cancel",
+    "createFolder": "Create Folder",
+    "renameFolder": "Rename Folder",
+    "newFolderName": "New Folder Name",
+    "newFolderNamePlaceholder": "Enter new folder name",
+    "deleteFolder": "Delete Folder",
+    "deleteConfirmation": "Are you sure you want to delete this folder and all its contents?",
+    "deleteWarning": "Warning: This action cannot be undone.",
+    "shareFolder": "Share Folder",
+    "selectUser": "Select User",
+    "chooseUser": "Choose a user to share with",
+    "noUsersFound": "No users found",
+    "permissionLevel": "Permission Level",
+    "selectPermission": "Select permission level",
+    "viewOnly": "View Only",
+    "canEdit": "Can Edit",
+    "fullControl": "Full Control",
+    "share": "Share",
+    "shareHistory": "Share History",
+    "noShareHistory": "No sharing history found for this folder",
+    "sharedOn": "Shared on:",
+    "viewShareHistory": "View share history",
+    "download": "Download",
+    "private": "Private",
+    "shared": "Shared",
+    "noDescription": "No description",
+    "errors": {
+      "userNotAuthenticated": "User not authenticated",
+      "fetchFoldersFailed": "Failed to fetch folders",
+      "networkError": "Network error occurred while fetching folders",
+      "createFolderFailed": "Failed to create folder",
+      "deleteFolderFailed": "Failed to delete folder",
+      "renameFolderFailed": "Failed to rename folder",
+      "shareFolderFailed": "Failed to share folder",
+      "selectUser": "Please select a user",
+      "noFolderSelected": "No folder selected for sharing"
+    },
+    "success": {
+      "folderCreated": "Folder created successfully",
+      "folderDeleted": "Folder deleted successfully",
+      "folderRenamed": "Folder renamed successfully",
+      "folderShared": "Folder shared successfully!"
+    }
+  },
+
+  "userManagement": {
+    "password": "Password",
+    "confirmPassword": "Consfirm Password",
+    "addNewUser": "Add New User",
+    "editStaffInfo": "Edit Staff Information",
+    "createNewUser": "Create New User",
+    "updateStaff": "Update Staff",
+    "createUser": "Create User",
+    "cancel": "Cancel",
+    "confirmDelete": "Confirm Deletion",
+    "deleteConfirmation": "Are you sure you want to delete this user? This action cannot be undone.",
+    "deleteCancel": "Cancel",
+    "deleteConfirm": "Delete",
+    "staffIdTitle": "Staff ID Card",
+    "viewId": "View ID",
+    "uploadAvatar": "Upload Avatar",
+    "avatarModalTitle": "Profile Picture",
+    "currentAvatar": "Current Profile Picture",
+    "chooseImage": "Choose Image",
+    "avatarDescription": "Upload a profile picture (max 5MB)",
+    "preview": "Preview",
+    "save": "Save",
+    "accountInfo": "Account Information",
+    "staffInfo": "Staff Information",
+    "confirmDelete": "Confirm Deletion",
+    "deleteConfirmation": "Are you sure you want to delete this user? This action cannot be undone.",
+    "deleteCancel": "Cancel",
+    "deleteConfirm": "Delete",
+    "cancel": "Cancel",
+    "updateStaff": "Update Staff",
+    "createUser": "Create User",
+    "save": "Save",
+    "exportCsv": "Download report",
+    "success": {
+      "create": "User created successfully!",
+      "update": "User updated successfully!",
+      "avatarUpdated": "Profile picture updated successfully!"
+    },
+    "error": {
+      "unknown": "An unknown error occurred",
+      "loadData": "Failed to load data",
+      "createUser": "Failed to create user",
+      "createStaff": "Failed to create staff record",
+      "updateStaff": "Failed to update staff record",
+      "deleteUser": "Failed to delete user",
+      "avatarUpload": "Failed to upload profile picture"
+    },
+    "validation": {
+      "nameRequired": "Username is required",
+      "invalidEmail": "Invalid email address",
+      "passwordLength": "Password must be at least 8 characters",
+      "passwordsMatch": "Passwords must match",
+      "roleRequired": "Role is required",
+      "woredaRequired": "Woreda is required",
+      "subcityRequired": "Subcity is required",
+      "fullNameRequired": "Full name is required",
+      "genderRequired": "Gender is required",
+      "invalidPhone": "Invalid phone number",
+      "responsibilityRequired": "Responsibility is required",
+      "inspectionTypeRequired": "Inspection type is required",
+      "employmentTypeRequired": "Employment type is required",
+      "invalidImageType": "Only image files are allowed (PNG, JPEG, WEBP)",
+      "imageSizeLimit": "Image size must be less than 5MB"
+    },
+    "columns": {
+      "username": "Username",
+      "email": "Email",
+      "role": "Role",
+      "fullName": "Full Name",
+      "gender": "Gender",
+      "phone": "Phone",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "type": "Employment Type",
+      "subcity": "Subcity",
+      "woreda": "Woreda",
+      "actions": "Actions"
+    },
+    "placeholders": {
+      "username": "Enter username",
+      "email": "Enter email address",
+      "password": "Enter password",
+      "confirmPassword": "Confirm password",
+      "selectRole": "Select role",
+      "selectSubcity": "Select subcity",
+      "selectWoreda": "Select woreda",
+      "fullName": "Enter full name",
+      "selectGender": "Select gender",
+      "ethnicity": "Enter ethnicity",
+      "selectEducation": "Select education level",
+      "phone": "Enter phone number",
+      "responsibility": "Enter responsibility",
+      "inspectionType": "Enter inspection type",
+      "rank": "Enter rank"
+    },
+    "genders": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "educationLevels": {
+      "highSchool": "High School",
+      "diploma": "Diploma",
+      "bachelors": "Bachelor's Degree",
+      "masters": "Master's Degree",
+      "phd": "PhD"
+    },
+    "employmentTypes": {
+      "permanent": "Permanent",
+      "contract": "Contract",
+      "temporary": "Temporary"
+    },
+    "unknown": "Unknown",
+    "subcity": "Subcity",
+    "edit": "Edit",
+    "delete": "Delete",
+    "viewId": "View ID",
+    "uploadAvatar": "Upload Avatar",
+    "age": "Age",
+    "ethnicity": "Ethnicity",
+    "educationLevel": "Education Level",
+    "responsibility": "Responsibility",
+    "inspectionType": "Inspection Type",
+    "rank": "Rank",
+    "employmentType": "Employment Type"
+  },
+  "tendencymanagementadmin": {
+    "title": "Tendency Management",
+    "subtitle": "Manage and review all tendency reports",
+    "noTendenciesTitle": "No Tendencies Found",
+    "noTendenciesMessage": "There are no tendency reports available at this time.",
+    "noResultsForFilters": "No results match your filter criteria.",
+    "clearFiltersButton": "Clear Filters",
+    "viewDetailsButton": "View Details",
+    "notifications": {
+      "successTitle": "Success",
+      "errorTitle": "Error",
+      "loadSuccess": "Tendencies loaded successfully",
+      "loadFailed": "Failed to load tendencies",
+      "filterSuccess": "Filters applied successfully",
+      "filterFailed": "Failed to apply filters",
+      "resetSuccess": "Filters reset successfully"
+    },
+    "types": {
+      "positive": "Positive",
+      "negative": "Negative",
+      "neutral": "Neutral",
+      "urgent": "Urgent",
+      "custom": "Custom"
+    },
+    "tableHeaders": {
+      "type": "Type",
+      "title": "Title",
+      "institution": "Institution",
+      "submittedBy": "Submitted By",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "filterLabels": {
+      "user": "Filter by User",
+      "institution": "Filter by Institution",
+      "type": "Filter by Type",
+      "search": "Search",
+      "dateRange": "Filter by Date Range"
+    },
+    "detailsModal": {
+      "title": "Tendency Report Details",
+      "description": "Description",
+      "institution": "Institution",
+      "submittedBy": "Submitted By",
+      "dateSubmitted": "Date Submitted"
+    },
+    "buttons": {
+      "clearFilters": "Clear Filters",
+      "applyFilters": "Apply Filters"
+    }
+  },
+  "positive": "Positive",
+  "negative": "Negative",
+  "neutral": "Neutral",
+  "urgent": "Urgent",
+  "custom": "Custom",
+
+  "tendencyreport": {
+    "title": "Tendency Report",
+    "totalTendencies": "Total Tendencies: ",
+    "itemsCount": " items",
+    "exportCsv": "Download report",
+    "lastAdded": "Last added",
+    "noResults": "No tendencies match your filters",
+    "filters": {
+      "title": "Filters",
+      "type": "Type",
+      "dateRange": "Date Range",
+      "user": "User",
+      "selectType": "Select type",
+      "selectDateRange": "Select date range",
+      "selectUser": "Select user",
+      "allTypes": "All Types",
+      "allUsers": "All Users",
+      "reset": "Reset filters"
+    },
+    "notifications": {
+      "loadSuccess": "Report loaded",
+      "dataLoaded": "Successfully loaded  tendencies",
+      "loadFailed": "Failed to load report",
+      "tryAgain": "Please try again later"
+    }
+  },
+
+  "videos": {
+    "latestUpdates": "Latest Updates",
+    "pageTitle": "Video Gallery",
+    "pageSubtitle": "Explore our collection of videos showcasing our work, events, and more.",
+    "watchNow": "Watch Now",
+    "noVideosTitle": "No Videos Available",
+    "noVideosSubtitle": "Check back later for new video content.",
+    "videoDetails": "Video Details",
+    "close": "Close"
+  },
+
+  "tendency": {
+    "types": {
+      "positive": "Positive",
+      "negative": "Negative",
+      "neutral": "Neutral",
+      "urgent": "Urgent"
+    },
+    "tendencymanagementadmin": {
+      "title": "Tendency Management",
+      "errors": {
+        "invalidId": "Invalid tendency ID",
+        "notFound": "Tendency not found"
+      },
+      "form": {
+        "type": {
+          "label": "Type",
+          "placeholder": "Select tendency type",
+          "error": "Type is required"
+        },
+        "customType": {
+          "label": "Custom Type",
+          "placeholder": "Enter custom tendency type",
+          "error": "Custom type is required when selected"
+        },
+        "title": {
+          "label": "Title",
+          "placeholder": "Enter tendency title",
+          "error": "Title is required"
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Enter tendency description",
+          "error": "Description is required"
+        },
+        "institution": {
+          "label": "Institution",
+          "placeholder": "Enter institution name",
+          "error": "Institution name is required"
+        }
+      },
+      "buttons": {
+        "addTendency": "Add Tendency",
+        "updateTendency": "Update Tendency",
+        "createTendency": "Create Tendency",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "addCustom": "Add Custom Type",
+        "selectPredefined": "Select Predefined Type"
+      },
+      "table": {
+        "headers": {
+          "id": "ID",
+          "type": "Type",
+          "title": "Title",
+          "description": "Description",
+          "institution": "Institution",
+          "user": "User",
+          "createdAt": "Created At",
+          "actions": "Actions"
+        },
+        "actions": {
+          "edit": "Edit",
+          "delete": "Delete"
+        }
+      },
+      "modal": {
+        "createTitle": "Create New Tendency",
+        "editTitle": "Edit Tendency",
+        "deleteTitle": "Confirm Deletion",
+        "deleteConfirmation": "Are you sure you want to delete this tendency? This action cannot be undone."
+      },
+      "notifications": {
+        "successTitle": "Success",
+        "errorTitle": "Error",
+        "loadSuccess": "Tendencies loaded successfully",
+        "loadFailed": "Failed to load tendencies",
+        "createSuccess": "Tendency created successfully",
+        "createFailed": "Failed to create tendency",
+        "updateSuccess": "Tendency updated successfully",
+        "updateFailed": "Failed to update tendency",
+        "deleteSuccess": "Tendency deleted successfully",
+        "deleteFailed": "Failed to delete tendency"
+      }
+    }
+  },
+
+  "tendencyreport": {
+    "total": "Total",
+    "showing": "Showing",
+    "exportCsv": "Download report",
+
+    "of": "of",
+    "tendencies": "tendencies",
+    "filtered": "filtered",
+    "page": "Page",
+    "types": {
+      "positive": "Positive",
+      "negative": "Negative",
+      "neutral": "Neutral",
+      "urgent": "Urgent",
+      "custom": "Custom"
+    },
+    "tendencymanagementadmin": {
+      "title": "Tendency Report Management",
+      "subtitle": "Manage and review all tendency reports",
+      "noTendenciesTitle": "No Tendencies Found",
+      "noTendenciesMessage": "There are no tendency reports available at this time.",
+      "noResultsForFilters": "No results match your filter criteria.",
+      "clearFiltersButton": "Clear Filters",
+      "viewDetailsButton": "View Details",
+      "notifications": {
+        "successTitle": "Success",
+        "errorTitle": "Error",
+        "loadSuccess": "Tendencies loaded successfully",
+        "loadFailed": "Failed to load tendencies",
+        "filterSuccess": "Filters applied successfully",
+        "filterFailed": "Failed to apply filters",
+        "resetSuccess": "Filters reset successfully"
+      },
+      "tableHeaders": {
+        "type": "Type",
+        "title": "Title",
+        "institution": "Institution",
+        "submittedBy": "Submitted By",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "filterLabels": {
+        "user": "Filter by User",
+        "userPlaceholder": "Select user",
+        "institution": "Filter by Institution",
+        "institutionPlaceholder": "Select institution",
+        "type": "Filter by Type",
+        "typePlaceholder": "Select type",
+        "search": "Search",
+        "searchPlaceholder": "Search by title, description, etc.",
+        "dateRange": "Filter by Date Range",
+        "dateRangePlaceholder": "Select date range"
+      },
+      "detailsModal": {
+        "title": "Tendency Report Details",
+        "description": "Description",
+        "institution": "Institution",
+        "submittedBy": "Submitted By",
+        "dateSubmitted": "Date Submitted"
+      },
+      "buttons": {
+        "clearFilters": "Clear Filters",
+        "applyFilters": "Apply Filters"
+      }
+    }
+  },
+  "Questionnaires": "Questionnaires",
+  "Tendency": "Tendency",
+  "Tendency Report": "Tendency Report",
+  "Post Video": "Post Video ",
+
+  "postvideo": {
+    "title": "Video Management",
+    "currentVideo": "Current Video",
+    "thumbnailPreview": "Thumbnail Preview",
+    "currentThumbnail": "Current thumbnail (upload new one to replace)",
+    "externalVideoUrl": "External Video URL",
+    "noVideoAvailable": "No video available",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "title": "Title",
+        "description": "Description",
+        "thumbnail": "Thumbnail",
+        "videoFile": "Video File",
+        "videoUrl": "Video URL",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "na": "N/A"
+    },
+    "buttons": {
+      "addVideo": "Add Video",
+      "uploadVideo": "Upload Video",
+      "updateVideo": "Update Video",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "form": {
+      "title": {
+        "label": "Title",
+        "placeholder": "Enter video title"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter video description"
+      },
+      "videoFile": {
+        "label": "Video File",
+        "placeholder": "Select video file",
+        "description": "Supported formats: MP4, WebM, Ogg. Max size: 100MB"
+      },
+      "thumbnailFile": {
+        "label": "Thumbnail Image",
+        "placeholder": "Select thumbnail image",
+        "description": "Optional. If not provided and uploading a video, a thumbnail will be generated from the video"
+      },
+      "videoUrl": {
+        "label": "Video URL",
+        "placeholder": "Enter external video URL",
+        "description": "Provide either a video file or URL"
+      },
+      "errors": {
+        "title": "Title is required",
+        "description": "Description is required",
+        "videoRequired": "Either video file or URL is required",
+        "invalidVideoType": "Only MP4, WebM, and Ogg video files are allowed",
+        "videoSizeLimit": "Video file must be smaller than 100MB",
+        "invalidImageType": "Only JPEG, PNG, GIF, and WebP images are allowed"
+      }
+    },
+    "modal": {
+      "createTitle": "Upload Video",
+      "editTitle": "Edit Video",
+      "deleteTitle": "Confirm Delete",
+      "deleteConfirmation": "Are you sure you want to delete this video? This action cannot be undone."
+    },
+    "notifications": {
+      "successTitle": "Success",
+      "errorTitle": "Error",
+      "fetchFailed": "Failed to fetch videos",
+      "uploadSuccess": "Files uploaded successfully",
+      "uploadFailed": "Failed to upload files",
+      "createSuccess": "Video created successfully",
+      "createFailed": "Failed to create video",
+      "updateSuccess": "Video updated successfully",
+      "updateFailed": "Failed to update video",
+      "deleteSuccess": "Video deleted successfully",
+      "deleteFailed": "Failed to delete video",
+      "editFailed": "Failed to prepare video for editing"
+    }
+  },
+
+  "videoconference": {
+    "header": {
+      "prefix": "Internal",
+      "title": "Video Conference",
+      "meetingActive": "Meeting Active"
+    },
+    "joinForm": {
+      "title": "Start or Join a Meeting",
+      "subtitle": "Secure video conferencing for internal use",
+      "roomLabel": "Meeting Room Name",
+      "roomPlaceholder": "Enter room name",
+      "generateButton": "Generate",
+      "generatedRoom": "Generated room",
+      "joinButton": "Join Meeting",
+      "featuresTitle": "Internal Use Only",
+      "features": [
+        "Generate a random room name for private meetings",
+        "Share the exact room name with participants",
+        "No external accounts needed"
+      ]
+    },
+    "meeting": {
+      "meetingTitle": "Meeting",
+      "shareInstructions": "Share this link with participants to join",
+      "copyButton": "Copy Link",
+      "copiedButton": "Copied!",
+      "connectedStatus": "Connected",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Exit Fullscreen",
+      "leaveButton": "Leave Meeting",
+      "iframeTitle": "Internal Video Conference"
+    },
+    "toasts": {
+      "joinSuccess": "Meeting joined successfully!",
+      "copySuccess": "Meeting link copied to clipboard!",
+      "leaveMeeting": "You left the meeting"
+    },
+    "footer": {
+      "copyright": "Internal Video Conference System - Secure and Private"
+    }
+  },
+
+  "viewresults": {
+    "title": "Questionnaire Results",
+    "searchPlaceholder": "Search results...",
+    "noData": "No Data",
+    "noResultsFound": "No results found in the database.",
+    "performanceAnalytics": "Performance Analytics",
+    "totalParticipants": "Total Participants",
+    "averageScore": "Average Score",
+    "scoreRange": "Score Range",
+    "performanceDistribution": "Performance Distribution",
+    "excellent": "Excellent (≥75%)",
+    "good": "Good (50-74%)",
+    "average": "Average (25-49%)",
+    "poor": "Poor (<25%)",
+    "topPerformer": "Top Performer",
+    "mostAttempted": "Most Attempted",
+    "questionnaire": "Questionnaire",
+    "attempts": "attempts",
+    "results": "Results",
+    "overallScore": "Overall Score",
+    "points": "points",
+    "completionDate": "Completion Date",
+    "questionBreakdown": "Question Breakdown",
+    "question": "Question",
+    "status": "Status",
+    "selected": "Selected",
+    "noAnswer": "No answer provided",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "confirmDeletion": "Confirm Deletion",
+    "deleteResultConfirm": "Are you sure you want to delete this result?",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "viewDetails": "View details",
+    "downloadReport": "Download report",
+    "columns": {
+      "user": "User",
+      "questionnaire": "Questionnaire",
+      "score": "Score",
+      "performance": "Performance",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "notification": {
+      "success": "Success!",
+      "error": "Error!",
+      "resultsLoaded": "Results loaded successfully",
+      "failedLoadResults": "Failed to load results",
+      "resultDeleted": "Result deleted successfully",
+      "failedDeleteResult": "Failed to delete result"
+    }
+  },
+
+  "compliantresponsepage": {
+    "systemBadge": "Complaint Response System",
+    "title": "Check Your Complaint Status",
+    "subtitle": "Enter your complaint ID and phone number to view the status and response to your complaint",
+    "searchTitle": "Search Complaint Response",
+    "complaintId": "Complaint ID",
+    "complaintIdPlaceholder": "Enter your complaint ID",
+    "phoneNumber": "Phone Number",
+    "phoneNumberPlaceholder": "Enter your phone number",
+    "searchButton": "Search Complaint",
+    "clearSearch": "Clear Search",
+    "findIdHelp": "Where to find my complaint ID?",
+    "underReviewTitle": "Complaint Under Review",
+    "underReviewText": "Your complaint is currently being reviewed by our team. Please check back later for updates on your case.",
+    "checkBack": "We typically respond to complaints within 5-7 business days.",
+    "searchAgain": "Search Again",
+    "responseTitle": "Response to Complaint #{{id}}",
+    "issuedOn": "Issued on {{date}}",
+    "valid": "Valid",
+    "invalid": "Invalid",
+    "institution": "Institution",
+    "complaintType": "Complaint Type",
+    "evaluator": "Evaluator",
+    "complainantInfo": "Complainant Information",
+    "complainant": "Complainant",
+    "address": "Address",
+    "houseNumber": "House No.",
+    "complaintLocation": "Complaint Location",
+    "complaintDetails": "Complaint Details",
+    "description": "Description",
+    "desiredResolution": "Desired Resolution",
+    "evidence": "Evidence",
+    "noEvidence": "No evidence provided with this complaint",
+    "officialResponse": "Official Response",
+    "findings": "Findings",
+    "responseDetails": "Response Details",
+    "status": "Status",
+    "resolved": "Resolved",
+    "pending": "Pending",
+    "timelineTitle": "Complaint Timeline",
+    "submitted": "Complaint Submitted",
+    "evaluationCompleted": "Evaluation Completed",
+    "responseProvided": "Response Provided",
+    "outcome": "Final Outcome: {{status}}",
+    "noComplaintTitle": "No Complaint Searched",
+    "noComplaintText": "Please enter your complaint ID and phone number to view your complaint status and response",
+    "helpModalTitle": "Where to Find Your Complaint ID",
+    "helpModalText": "Your complaint ID was provided to you when you submitted your complaint. Here's where you can find it:",
+    "emailConfirmation": "Email Confirmation",
+    "emailConfirmationText": "Check the email confirmation you received after submitting your complaint. The ID is in the subject line and body of the email.",
+    "smsNotification": "SMS Notification",
+    "smsNotificationText": "If you provided a phone number, you should have received an SMS with your complaint ID.",
+    "submissionReceipt": "Submission Receipt",
+    "submissionReceiptText": "After submitting online, you would have seen a receipt page with your complaint ID. You may have printed or saved this page.",
+    "contactSupport": "If you cannot locate your complaint ID, please contact our support team for assistance.",
+    "searchError": "Failed to fetch complaint response. Please check the ID and phone number and try again."
+  },
+  "error": "Error",
+  "copied": "Copied!",
+  "copy": "Copy",
+
+  "usermanagementadmin": {
+    "Approved Users": "Approved Users",
+    "Pending Approval": "Pending Approval",
+    "Self Registered": "Self Registered",
+    "Admin Registered": "Admin Registered",
+    "All Users": "All Users",
+
+    "title": "User Management",
+    "buttons": {
+      "addUser": "Add User",
+      "updateUser": "Update User",
+      "createUser": "Create User",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "woreda": "Woreda",
+        "subcity": "Subcity",
+        "registrationType": "Registration Type",
+        "status": "Status",
+        "createdAt": "Created At",
+        "updatedAt": "Updated At",
+        "actions": "Actions"
+      },
+      "notAvailable": "N/A"
+    },
+    "form": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter full name",
+        "error": "Name is required"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter email address",
+        "error": "Invalid email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter password",
+        "descriptionEdit": "Leave blank to keep current password",
+        "error": "Password is required for new users"
+      },
+      "passwordConfirm": {
+        "label": "Confirm Password",
+        "placeholder": "Confirm password",
+        "error": "Passwords must match"
+      },
+      "role": {
+        "label": "Role",
+        "placeholder": "Select role",
+        "noResults": "No roles found",
+        "error": "Role is required"
+      },
+      "woreda": {
+        "label": "Woreda",
+        "placeholder": "Select woreda",
+        "noResults": "No woredas found",
+        "error": "Woreda is required for this role"
+      },
+      "subcity": {
+        "label": "Subcity",
+        "placeholder": "Select subcity",
+        "noResults": "No subcities found",
+        "error": "Subcity is required for this role"
+      }
+    },
+    "modal": {
+      "createTitle": "Create New User",
+      "editTitle": "Edit User",
+      "deleteTitle": "Confirm Deletion",
+      "deleteConfirmation": "Are you sure you want to delete this user? This action cannot be undone."
+    },
+    "notifications": {
+      "successTitle": "Success",
+      "errorTitle": "Error",
+      "loadSuccess": "Users loaded successfully",
+      "loadFailed": "Failed to load users",
+      "createSuccess": "User created successfully",
+      "createFailed": "Failed to create user",
+      "updateSuccess": "User updated successfully",
+      "updateFailed": "Failed to update user",
+      "deleteSuccess": "User deleted successfully",
+      "deleteFailed": "Failed to delete user",
+      "approveSuccess": "User approved successfully",
+      "approveFailed": "Failed to approve user",
+      "referenceDataLoadFailed": "Failed to load reference data"
+    },
+    "errors": {
+      "invalidId": "Invalid user ID",
+      "notFound": "User not found"
+    }
+  },
+
+  "signuppage": {
+    "title": "Create your account",
+    "subtitle": "Fill in your details to get started",
+    "badge": "New Account",
+    "nameLabel": "Full Name",
+    "nameTooltip": "Enter your full name as it appears on official documents",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "subcityLabel": "Subcity",
+    "woredaLabel": "Woreda",
+    "submitButton": "Create Account",
+    "dividerText": "Already have an account?",
+    "loginLink": "Sign in instead",
+    "successTitle": "Success!",
+    "successMessage": "Your account has been created successfully! You'll be redirected to login shortly.",
+    "errorTitle": "Error",
+    "passwordStrength": {
+      "0": "Very weak",
+      "1": "Weak",
+      "2": "Moderate",
+      "3": "Strong",
+      "4": "Very strong"
+    },
+    "imageSection": {
+      "title": "Join Us Today!",
+      "subtitle": "Become part of the Bole Subcity Prosperity Party System!",
+      "tagline": "Prosperity Party"
+    }
+  },
+  "View All Permissions": "View All Permissions",
+
+  "viewresultsadmin": {
+    "title": "Questionnaire Results",
+    "searchPlaceholder": "Search results...",
+    "noData": "No Data",
+    "noResultsFound": "No results found in the database.",
+    "confirmDeletion": "Confirm Deletion",
+    "minPoints": "Minimum Points",
+    "maxPoints": "Maximum Points",
+    "minPointsPlaceholder": "Enter minimum points",
+    "maxPointsPlaceholder": "Enter maximum points",
+    "maxPercentage": "Maximum Percentage",
+    "filterByUser": "Filter by User",
+    "deleteResultConfirm": "Are you sure you want to delete this result?",
+    "dateFrom": "Date From",
+    "dateTo": "Date To",
+    "sortBy": "Sort By",
+    "percentage": "Percentage",
+    "resetFilters": "Reset Filters",
+    "applyFilters": "Apply Filters",
+    "ascending": "Ascending",
+    "descending": "Descending",
+    "sortDirection": "sorting direction",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "notification": {
+      "success": "Success!",
+      "error": "Error!",
+      "resultsLoaded": "Results loaded successfully",
+      "failedLoadResults": "Failed to load results",
+      "resultDeleted": "Result deleted successfully",
+      "failedDeleteResult": "Failed to delete result"
+    },
+    "columns": {
+      "user": "User",
+      "questionnaire": "Questionnaire",
+      "score": "Score",
+      "performance": "Performance",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "viewDetails": "View details",
+    "downloadReport": "Download report",
+    "performanceAnalytics": "Performance Analytics",
+    "totalParticipants": "Total Participants",
+    "averageScore": "Average Score",
+    "scoreRange": "Score Range",
+    "performanceDistribution": "Performance Distribution",
+    "excellent": "Excellent (≥75%)",
+    "good": "Good (50-74%)",
+    "average": "Average (25-49%)",
+    "poor": "Poor (<25%)",
+    "topPerformer": "Top Performer",
+    "mostAttempted": "Most Attempted",
+    "questionnaire": "Questionnaire",
+    "attempts": "attempts",
+    "results": "Results",
+    "overallScore": "Overall Score",
+    "points": "points",
+    "completionDate": "Completion Date",
+    "questionBreakdown": "Question Breakdown",
+    "question": "Question",
+    "status": "Status",
+    "selected": "Selected",
+    "noAnswer": "No answer provided",
+    "correct": "Correct",
+    "incorrect": "Incorrect"
+  },
+
+  "professionalIdCard": {
+    "organizationName": "Prosperity Professional Association",
+    "organizationSlogan": "Excellence in Professional Services",
+    "organizationLogoAlt": "Professional Association Logo",
+    "invalidId": "Invalid professional ID",
+    "fetchError": "Error loading professional credentials",
+    "idLabel": "Professional ID",
+    "genderLabel": "Gender",
+    "ageLabel": "Age",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "educationLabel": "Education",
+    "locationLabel": "Location",
+    "issuedLabel": "Issued On",
+    "validUntilLabel": "Valid Until",
+    "securityNotice": "This ID is only for members of the Bole Sub-City Prosperity Party.",
+    "downloadTooltip": "Download Professional ID",
+    "noRole": "Professional Member",
+    "notAvailable": "Not specified"
+  },
+
+  "questionnairespageadmin": {
+    "title": "Questionnaires",
+    "createButton": "Create New Questionnaire",
+    "filterPlaceholder": "Filter by type",
+    "filterOptions": {
+      "exam": "Exam",
+      "practice_test": "Practice Test"
+    },
+    "columns": {
+      "title": "Title",
+      "type": "Type",
+      "status": "Status",
+      "questions": "Questions",
+      "actions": "Actions"
+    },
+    "buttons": {
+      "view": "View",
+      "edit": "Edit",
+      "take": "Take",
+      "publish": "Publish",
+      "unpublish": "Unpublish"
+    },
+    "modals": {
+      "publish": {
+        "title": "Confirm Publish",
+        "content": "Are you sure you want to publish this questionnaire?",
+        "cancel": "Cancel",
+        "confirm": "Confirm Publish"
+      },
+      "unpublish": {
+        "title": "Confirm Unpublish",
+        "content": "Are you sure you want to unpublish this questionnaire?",
+        "cancel": "Cancel",
+        "confirm": "Confirm Unpublish"
+      }
+    },
+    "notifications": {
+      "publishSuccess": "Questionnaire published successfully!",
+      "unpublishSuccess": "Questionnaire unpublished successfully!"
+    },
+    "status": {
+      "published": "Published",
+      "draft": "Draft"
+    }
+  },
+
+  "resultpageadmin": {
+    "title": "Results: {{title}}",
+    "score": "Your Score: {{score}} / {{maxScore}} points",
+    "percentage": "{{percentage}}%",
+    "questionBreakdown": "Question Breakdown",
+    "viewHistory": "View History",
+    "hideHistory": "Hide History",
+    "previousAttempts": "Previous Attempts",
+    "tableHeaders": {
+      "date": "Date",
+      "score": "Score",
+      "percentage": "Percentage",
+      "question": "Question",
+      "yourAnswer": "Your Answer",
+      "correct": "Correct",
+      "points": "Points"
+    },
+    "badges": {
+      "correct": "Correct",
+      "incorrect": "No",
+      "notApplicable": "N/A",
+      "yes": "Yes"
+    },
+    "notAnswered": "Not answered",
+    "noAnswers": "No answers found for this questionnaire",
+    "error": "Failed to load results data"
+  },
+
+  "createquestionpage": {
+    "title": "Add New Question",
+    "error": "Error creating question",
+    "success": "Question created successfully!"
+  },
+
+  "createquestionnairepage": {
+    "title": "Create New Questionnaire",
+    "backButton": "Back",
+    "success": "Questionnaire created successfully!",
+    "error": "Error creating questionnaire"
+  },
+
+  "editquestionpage": {
+    "title": "Edit Question",
+    "error": {
+      "missingId": "Missing question ID",
+      "fetch": "Error fetching question",
+      "update": "Error updating question"
+    },
+    "notFound": "Question not found",
+    "success": "Question updated successfully!"
+  },
+
+  "editquestionnairepage": {
+    "title": "Edit Questionnaire",
+    "notFound": "Questionnaire not found",
+    "error": {
+      "fetch": "Error fetching questionnaire",
+      "update": "Error updating questionnaire"
+    },
+    "success": "Questionnaire updated successfully!"
+  },
+
+  "questionform": {
+    "fields": {
+      "questionText": "Question Text",
+      "questionType": "Question Type",
+      "points": "Points",
+      "order": "Order",
+      "required": "Required",
+      "options": "Options",
+      "optionText": "Option text",
+      "correct": "Correct"
+    },
+    "placeholders": {
+      "question": "Enter the question",
+      "option": "Option text",
+      "order": "Order"
+    },
+    "questionTypes": {
+      "multipleChoice": "Multiple Choice",
+      "openEnded": "Open Ended"
+    },
+    "buttons": {
+      "addOption": "Add Option",
+      "updateQuestion": "Update Question",
+      "createQuestion": "Create Question",
+      "submit": "Submit"
+    },
+    "errors": {
+      "questionRequired": "Question text is required",
+      "invalidType": "Invalid question type",
+      "pointsMinimum": "Points must be at least 1",
+      "optionRequired": "At least one option is required",
+      "optionTextRequired": "Option text is required"
+    }
+  },
+
+  "questionnairedetailpage": {
+    "title": "Questionnaire Details",
+    "back": "Back",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "timeLimit": "Time Limit:",
+    "available": "Available:",
+    "noEndDate": "No end date",
+    "immediately": "Immediately",
+    "questions": "Questions",
+    "addQuestion": "Add Question",
+    "question": "Question",
+    "type": "Type",
+    "points": "Points",
+    "required": "Required",
+    "optional": "Optional",
+    "actions": "Actions",
+    "deleteModal": {
+      "title": "Delete Questionnaire",
+      "content": "Are you sure you want to delete this questionnaire?"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "notFound": "Questionnaire not found"
+  },
+
+  "questionnaireform": {
+    "fields": {
+      "title": "Title",
+      "description": "Description",
+      "type": "Type",
+      "active": "Active",
+      "timeLimit": "Time Limit (minutes)",
+      "startDate": "Start Date",
+      "endDate": "End Date"
+    },
+    "placeholders": {
+      "title": "Enter questionnaire title",
+      "description": "Enter questionnaire description",
+      "timeLimit": "Enter time limit in minutes"
+    },
+    "types": {
+      "exam": "Exam",
+      "practiceTest": "Practice Test"
+    },
+    "buttons": {
+      "update": "Update Questionnaire",
+      "create": "Create Questionnaire"
+    },
+    "errors": {
+      "titleRequired": "Title is required",
+      "invalidType": "Invalid type",
+      "endDateBeforeStart": "End date must be after start date"
+    }
+  },
+
+  "takequestionnairepage": {
+    "loading": "Loading questionnaire...",
+    "error": {
+      "title": "Error loading questionnaire",
+      "message": "Failed to load questionnaire. Please try again later.",
+      "submit": "Failed to submit answer. Please try again."
+    },
+    "notFound": {
+      "title": "Questionnaire Not Found",
+      "message": "The questionnaire you're looking for doesn't exist or may have been removed.",
+      "button": "Browse other questionnaires"
+    },
+    "noQuestions": {
+      "title": "No Questions Available",
+      "message": "This questionnaire doesn't contain any questions yet. Please check back later.",
+      "button": "Browse popular questionnaires"
+    },
+    "navigation": {
+      "goBack": "Go back",
+      "previous": "Previous",
+      "next": "Next Question",
+      "complete": "Complete Questionnaire"
+    },
+    "question": {
+      "title": "Question {{number}}",
+      "required": "Required",
+      "optional": "Optional",
+      "points": "{{points}} points",
+      "count": "{{current}} of {{total}} questions",
+      "answerPlaceholder": "Type your answer here..."
+    },
+    "badges": {
+      "questionCount": "{{count}} questions"
+    }
+  },
+  "exhibitionmanagementadmin": {
+    "title": "Exhibition Management",
+    "table": {
+      "headers": {
+        "id": "ID",
+        "title": "Title",
+        "description": "Description",
+        "coverImage": "Cover Image",
+        "galleryCount": "Gallery Count",
+        "views": "Views",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "notAvailable": "N/A"
+    },
+    "form": {
+      "title": {
+        "label": "Title",
+        "placeholder": "Enter exhibition title",
+        "error": "Title is required"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter exhibition description",
+        "error": "Description is required"
+      },
+      "uploadType": {
+        "label": "Upload Type",
+        "single": "Single Image (Cover)",
+        "multiple": "Multiple Images (Gallery)"
+      },
+      "coverImage": {
+        "label": "Cover Image",
+        "placeholder": "Upload cover image",
+        "description": "Recommended size: 1200x800px, max 5MB",
+        "error": "Cover image is required",
+        "currentImage": "Current Cover Image"
+      },
+      "galleryImages": {
+        "label": "Gallery Images",
+        "placeholder": "Upload gallery images",
+        "description": "Upload multiple images for gallery (max 10, 5MB each)",
+        "error": "At least one gallery image is required",
+        "galleryPreview": "Gallery Preview"
+      }
+    },
+    "buttons": {
+      "addExhibition": "Add Exhibition",
+      "updateExhibition": "Update Exhibition",
+      "createExhibition": "Create Exhibition",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "removeImage": "Remove Image"
+    },
+    "modal": {
+      "createTitle": "Create New Exhibition",
+      "editTitle": "Edit Exhibition",
+      "deleteTitle": "Delete Exhibition",
+      "deleteConfirmation": "Are you sure you want to delete this exhibition?"
+    },
+    "notifications": {
+      "loadSuccess": "Exhibitions loaded successfully",
+      "loadFailed": "Failed to load exhibitions",
+      "uploadSuccess": "Image uploaded successfully",
+      "uploadFailed": "Image upload failed",
+      "uploadsSuccess": "Images uploaded successfully",
+      "uploadsFailed": "Some images failed to upload",
+      "createSuccess": "Exhibition created successfully",
+      "createFailed": "Failed to create exhibition",
+      "updateSuccess": "Exhibition updated successfully",
+      "updateFailed": "Failed to update exhibition",
+      "deleteSuccess": "Exhibition deleted successfully",
+      "deleteFailed": "Failed to delete exhibition"
+    },
+    "errors": {
+      "invalidId": "Invalid exhibition ID",
+      "notFound": "Exhibition not found",
+      "invalidImageType": "Only image files are allowed (JPEG, PNG, WebP)",
+      "imageTooLarge": "Image size must be less than 5MB"
+    }
+  },
+
+  "exhibitionmanagement": {
+    "title": "Exhibition Management",
+    "notifications": {
+      "success": "Success",
+      "error": "Error",
+      "loadSuccess": "Exhibitions loaded successfully",
+      "loadFailed": "Failed to load exhibitions",
+      "createSuccess": "Exhibition created successfully",
+      "createFailed": "Failed to create exhibition",
+      "updateSuccess": "Exhibition updated successfully",
+      "updateFailed": "Failed to update exhibition",
+      "deleteSuccess": "Exhibition deleted successfully",
+      "deleteFailed": "Failed to delete exhibition",
+      "uploadFailed": "Image upload failed",
+      "galleryUploadFailed": "Gallery images upload failed",
+      "editFailed": "Failed to prepare edit form",
+      "notFound": "Exhibition not found"
+    },
+    "errors": {
+      "invalidImageType": "Only image files are allowed",
+      "imageTooLarge": "Image size must be less than 5MB"
+    },
+    "buttons": {
+      "addExhibition": "Add Exhibition",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "create": "Create",
+      "update": "Update",
+      "viewReport": "View Report"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "title": "Title",
+        "description": "Description",
+        "mainImage": "Main Image",
+        "galleryImages": "Gallery Images",
+        "viewCount": "Views",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "noImages": "No images"
+    },
+    "form": {
+      "title": {
+        "label": "Title",
+        "placeholder": "Enter exhibition title",
+        "error": "Title is required"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter exhibition description",
+        "error": "Description is required"
+      },
+      "imageSelection": {
+        "label": "Image Selection Type",
+        "single": "Single Image",
+        "multiple": "Multiple Images"
+      },
+      "mainImage": {
+        "label": "Main Image",
+        "placeholder": "Upload main image",
+        "error": "Main image is required",
+        "currentMainImage": "Current Main Image"
+      },
+      "galleryImages": {
+        "label": "Gallery Images",
+        "placeholder": "Upload gallery images",
+        "error": "At least one gallery image is required",
+        "currentGalleryImages": "Current Gallery Images"
+      }
+    },
+    "modal": {
+      "createTitle": "Create New Exhibition",
+      "editTitle": "Edit Exhibition",
+      "deleteTitle": "Delete Exhibition",
+      "deleteConfirmation": "Are you sure you want to delete this exhibition?"
+    }
+  },
+
+  "exhibitionreport": {
+    "download": "Download",
+    "title": "Exhibition Report",
+    "selectDateRange": "Select date range",
+    "totalVisitors": "Total Visitors",
+    "totalExhibitions": "Total Exhibitions",
+    "uniqueLocations": "Unique Locations",
+    "genderDistribution": "Gender Distribution",
+    "locationDistribution": "Location Distribution",
+    "woredaDistribution": "Woreda Distribution",
+    "exhibitionSummary": "Exhibition Summary",
+    "visitorDetails": "Visitor Details",
+    "filterByExhibition": "Filter by Exhibition",
+    "selectExhibition": "Select Exhibition",
+    "filterByGender": "Filter by Gender",
+    "selectGender": "Select Gender",
+    "filterByLocation": "Filter by Location",
+    "selectLocation": "Select Location",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "visitors": "visitors",
+    "noData": "No data available",
+    "noVisitorsFound": "No visitors found",
+    "name": "Name",
+    "phone": "Phone",
+    "gender": "Gender",
+    "subCity": "Sub City",
+    "woreda": "Woreda",
+    "exhibition": "Exhibition",
+    "visitCount": "Visit Count",
+    "visitedAt": "Visited At"
+  },
+  "Register Viewer": "Register Viewer",
+  "Exibition Report": "Exibition Report",
+  "Exibition": "Exibition",
+
+  "orgstruct": {
+    "title": "Organizational Structure",
+    "subtitle": "Explore the hierarchy of our organization",
+    "departments": {
+      "hr": "Human Resources",
+      "it": "Information Technology",
+      "finance": "Finance"
+    },
+    "profile_tooltip": "{{name}}",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "mobile_hint": "Tap to expand/collapse levels",
+    "desktop_hint": "Hover or click to interact with levels",
+    "error_title": "Error Loading Structure",
+    "error_message": "Failed to fetch organizational data",
+    "empty_title": "No Data Available",
+    "empty_message": "No organizational structure data found"
+  },
+
+  "exhibitioncontrol": {
+    "button": {
+      "returning_visitor": "Returning Visitor",
+      "register_new": "Register New",
+      "verify": "Verify",
+      "register_instead": "Register Instead",
+      "register": "Register",
+      "try_again": "Try Again",
+      "logout": "Logout",
+      "start_slideshow": "Start Slideshow",
+      "view_full_size": "View Full Size",
+      "close": "Close",
+      "register_for_exhibition": "Register for Exhibition"
+    },
+    "form": {
+      "full_name": "Full Name",
+      "placeholder_name": "Enter your full name",
+      "phone_number": "Phone Number",
+      "placeholder_phone": "09XXXXXXXX",
+      "invalid_phone": "Phone number must be 10 digits",
+      "gender": "Gender",
+      "placeholder_gender": "Select your gender",
+      "sub_city": "Sub City",
+      "placeholder_sub_city": "Select your sub city",
+      "woreda": "Woreda",
+      "placeholder_woreda": "Select your woreda",
+      "exhibition": "Exhibition",
+      "placeholder_exhibition": "Select exhibition",
+      "select_sub_city": "Please select sub city",
+      "select_woreda": "Please select woreda",
+      "select_exhibition": "Please select exhibition",
+      "name_too_short": "Name must be at least 2 characters"
+    },
+    "title": {
+      "verify_visitor": "Verify Returning Visitor",
+      "register_visitor": "Register New Visitor",
+      "gallery_preview": "Gallery Preview",
+      "exhibition_not_found": "Exhibition Not Found"
+    },
+    "message": {
+      "welcome_back": "Welcome back  ",
+      "loading_exhibitions": "Loading exhibitions...",
+      "registration_success": "Registration successful!",
+      "slide_count": "Slide {current} of {total}",
+      "exhibition_not_found": "The exhibition you're registered for could not be found."
+    },
+    "error": {
+      "title": "Error",
+      "load_exhibitions": "Failed to load exhibitions. Please try again later.",
+      "visitor_not_found": "Visitor not found. Please register as a new visitor.",
+      "verify_failed": "Verification failed. Please check your details and try again.",
+      "register_failed": "Registration failed. Please try again."
+    }
+  },
+
+  "federalorgstruct": {
+    "banner_title": "Federal Level Organizational Structure",
+    "banner_title_regional": "Regional Level Organizational Structure",
+    "banner_title_subcity": "Subcity Level Organizational Structure",
+    "banner_title_district": "District Level Organizational Structure",
+    "title": "Organizational Structure",
+    "subtitle": "Explore our organizational hierarchy and team structure",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "error_title": "Error Loading Structure",
+    "error_message": "Unable to load the organizational structure. Please try again later.",
+    "empty_title": "No Data Available",
+    "empty_message": "No organizational structure data is currently available.",
+    "mobile_hint": "Tap to expand/collapse team members",
+    "desktop_hint": "Click to expand/collapse team members",
+    "profile_tooltip": "View {{name}}'s profile",
+    "departments": {
+      "executive": "Executive",
+      "finance": "Finance",
+      "hr": "Human Resources",
+      "it": "Information Technology",
+      "marketing": "Marketing",
+      "operations": "Operations"
+    }
+  },
+
+  "familyDiscussion": {
+    "title": "Family Discussion Management",
+    "formTitle": "Family Discussion Form",
+    "formtype": "Political Work Family Discussion Questionnaire Form 09",
+    "buttons": {
+      "addCustom": "Add Custom",
+      "addDiscussion": "Add Family Discussion",
+      "download": "Download",
+      "print": "Print",
+      "cancel": "Cancel",
+      "createDiscussion": "Create Family Discussion",
+      "updateDiscussion": "Update Family Discussion",
+      "delete": "Delete",
+      "close": "Close",
+      "addButton": "Add"
+    },
+    "modal": {
+      "editTitle": "Edit Family Discussion",
+      "createTitle": "Create Family Discussion",
+      "viewTitle": "View Family Discussion",
+      "deleteTitle": "Confirm Deletion",
+      "deleteConfirmation": "Are you sure you want to delete this family discussion?"
+    },
+    "form": {
+      "addButton": "Add",
+      "recordedDate": {
+        "label": "Recorded Date",
+        "error": "Recorded date is required"
+      },
+      "conductedDate": {
+        "label": "Conducted Date",
+        "error": "Conducted date is required"
+      },
+      "district": {
+        "label": "District",
+        "placeholder": "Enter district",
+        "error": "District is required"
+      },
+      "socialBase": {
+        "label": "Social Base",
+        "placeholder": "Enter social base",
+        "error": "Social base is required"
+      },
+      "wing": {
+        "label": "Wing",
+        "placeholder": "Enter wing",
+        "error": "Wing is required"
+      },
+      "unionName": {
+        "label": "Union Name",
+        "placeholder": "Enter union name",
+        "error": "Union name is required"
+      },
+      "familyName": {
+        "label": "Family Name",
+        "placeholder": "Enter family name",
+        "error": "Family name is required"
+      },
+      "male": "Male",
+      "female": "Female",
+      "total": "Total",
+      "totalMembers": "Total Members",
+      "attendingMembers": "Attending Members",
+      "absenceReason": {
+        "label": "Absence Reason",
+        "placeholder": "Enter reason for absence",
+        "error": "Absence reason is required"
+      },
+      "sections": {
+        "familyIssues": "1. Family Issues and Solutions",
+        "positivePoints": "2. Positive Points Raised",
+        "negativePoints": "3. Negative Points Raised",
+        "conclusions": "4. Conclusions Reached",
+        "differingOpinions": "5. Differing Opinions",
+        "summary": "6. Summary"
+      },
+      "addAgendaItem": {
+        "placeholder": "Enter agenda item"
+      },
+      "addNegativePoint": {
+        "placeholder": "Enter negative point"
+      },
+      "addConclusion": {
+        "placeholder": "Enter conclusion"
+      },
+      "addOpinion": {
+        "placeholder": "Enter differing opinion"
+      },
+      "addSummaryItem": {
+        "placeholder": "Enter summary item"
+      },
+      "preparedByName": {
+        "label": "Prepared By",
+        "placeholder": "Enter name",
+        "error": "Prepared by name is required"
+      },
+      "preparedByPosition": {
+        "label": "Position",
+        "placeholder": "Enter position",
+        "error": "Prepared by position is required"
+      },
+      "preparedByDate": {
+        "label": "Date",
+        "error": "Prepared by date is required"
+      },
+      "signature": {
+        "label": "Signature",
+        "error": "Signature file is required"
+      },
+      "currentSignature": "Current Signature",
+      "viewSignature": "View Signature"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "recordedDate": "Recorded Date",
+        "conductedDate": "Conducted Date",
+        "district": "District",
+        "socialBase": "Social Base",
+        "wing": "Wing",
+        "unionName": "Union Name",
+        "familyName": "Family Name",
+        "totalMaleMembers": "Total Male Members",
+        "totalFemaleMembers": "Total Female Members",
+        "totalMembers": "Total Members",
+        "attendingMaleMembers": "Attending Male Members",
+        "attendingFemaleMembers": "Attending Female Members",
+        "totalAttendingMembers": "Total Attending Members",
+        "absenceReason": "Absence Reason",
+        "discussionAgenda": "Discussion Agenda",
+        "keyNegativePoints": "Key Negative Points",
+        "conclusionsReached": "Conclusions Reached",
+        "differingOpinions": "Differing Opinions",
+        "summary": "Summary",
+        "preparedByName": "Prepared By",
+        "preparedByPosition": "Position",
+        "preparedByDate": "Prepared Date",
+        "actions": "Actions"
+      }
+    },
+    "notifications": {
+      "successTitle": "Success",
+      "errorTitle": "Error",
+      "loadSuccess": "Family discussions loaded successfully",
+      "loadFailed": "Failed to load family discussions",
+      "createSuccess": "Family discussion created successfully",
+      "createFailed": "Failed to create family discussion",
+      "updateSuccess": "Family discussion updated successfully",
+      "updateFailed": "Failed to update family discussion",
+      "deleteSuccess": "Family discussion deleted successfully",
+      "deleteFailed": "Failed to delete family discussion",
+      "uploadSuccess": "Signature uploaded successfully",
+      "uploadFailed": "Failed to upload signature"
+    },
+    "errors": {
+      "invalidId": "Invalid ID",
+      "notFound": "Family discussion not found",
+      "invalidImageType": "Invalid file type. Please upload an image.",
+      "imageTooLarge": "File too large. Maximum size is 5MB."
+    }
+  },
+
+  "familydiscussionn": {
+    "report": {
+      "title": "Family Discussion Reports",
+      "subtitle": "Comprehensive overview of all family discussion reports",
+      "total": "Total Reports",
+      "notifications": {
+        "loadSuccess": "Family discussion reports loaded successfully",
+        "loadFailed": "Failed to load family discussion reports",
+        "resetSuccess": "Filters reset successfully",
+        "successTitle": "Success",
+        "errorTitle": "Error"
+      },
+      "tableHeaders": {
+        "familyName": "Family Name",
+        "union": "Union",
+        "wing": "Wing",
+        "totalMembers": "Total Members",
+        "attendance": "Attendance",
+        "conductedDate": "Conducted Date",
+        "actions": "Actions"
+      },
+      "filterLabels": {
+        "fromDate": "From Date",
+        "toDate": "To Date",
+        "conductedFromDate": "Conducted from Date",
+        "conductedToDate": "Conducted to Date",
+        "recordedDate": "Recorded Date",
+        "conductedDate": "Conducted Date",
+        "perPage": "Per Page",
+
+        "district": "District",
+        "districtPlaceholder": "Select district",
+        "wing": "Wing",
+        "wingPlaceholder": "Select wing",
+        "union": "Union",
+        "unionPlaceholder": "Select union",
+        "socialBase": "Social Base",
+        "socialBasePlaceholder": "Select social base",
+        "familyName": "Family Name",
+        "familyNamePlaceholder": "Select family",
+        "recordedDateRange": "Recorded Date Range",
+        "conductedDateRange": "Conducted Date Range",
+        "dateRangePlaceholder": "Select date range",
+        "search": "Search",
+        "searchPlaceholder": "Search reports...",
+        "minMembers": "Min Members",
+        "minMembersPlaceholder": "Minimum family members",
+        "maxMembers": "Max Members",
+        "maxMembersPlaceholder": "Maximum family members",
+        "minAttendance": "Min Attendance",
+        "minAttendancePlaceholder": "Minimum attendance count",
+        "minAttendanceRate": "Min Attendance Rate",
+        "minAttendanceRatePlaceholder": "Minimum attendance rate (%)"
+      },
+      "buttons": {
+        "clearFilters": "Clear Filters",
+        "viewDetails": "View Details",
+        "applyFilters": "Apply Filters"
+      },
+      "form": {
+        "placeholder": "placeholder"
+      },
+      "detailsModal": {
+        "title": "Family Discussion Details",
+        "socialBase": "Social Base",
+        "conductedDate": "Conducted Date",
+        "recordedDate": "Recorded Date",
+        "preparedBy": "Prepared By",
+        "attendanceTitle": "Attendance Information",
+        "totalMembers": "Total Family Members",
+        "attendingMembers": "Attending Members",
+        "male": "Male",
+        "female": "Female",
+        "total": "Total",
+        "attendanceRate": "Attendance Rate",
+        "absenceReason": "Absence Reason",
+        "discussionAgenda": "Discussion Agenda",
+        "keyNegativePoints": "Key Negative Points",
+        "conclusionsReached": "Conclusions Reached",
+        "differingOpinions": "Differing Opinions",
+        "summary": "Summary"
+      }
+    }
+  },
+  "Family Discussion": "Family Discussion",
+  "Family Discussion Report": "Family Discussion Report",
+
+  "Organizational Structure": "Organizational Structure",
+  "Federal": "Federal",
+  "Regional": "Regional",
+  "Subcity": "Subcity",
+  "District": "District",
+  "": "",
+  "": ""
+}

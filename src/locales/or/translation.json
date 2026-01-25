@@ -1,0 +1,1096 @@
+{
+
+  "Hello": "Akkam",
+  "Video Conference": "Waliin Duukaa Irraa Argamu",
+  "All Results": "Deebii Hunda",
+  "user": {
+    "title": "Bulchinsa Fayyadamtoota",
+    "addButton": "Fayyadamtoota Haaraa Dabalachuu",
+    "submit": "Erge",
+    "update": "Haaromsi",
+    "confirmDelete": "Dhugumatti, fayyadamtoo kana haquu barbaaddaa?",
+    "notifications": {
+      "createSuccess": "Fayyadamtoo sirrii ta'een uumame",
+      "createError": "Dogoggora fayyadamtoo uumuu keessatti",
+      "updateSuccess": "Fayyadamtoo sirrii ta'een haaromame",
+      "updateError": "Dogoggora fayyadamtoo haaromsuu keessatti",
+      "deleteSuccess": "Fayyadamtoo sirrii ta'een haqame",
+      "deleteError": "Dogoggora fayyadamtoo haquu keessatti"
+    },
+    "modal": {
+      "addTitle": "Fayyadamtoota Haaraa Dabalachuu",
+      "editTitle": "Fayyadamtoo Haaromsi"
+    },
+    "table": {
+      "photo": "Suuraa",
+      "firstName": "Maqaa Duraa",
+      "lastName": "Maqaa Boodaa",
+      "email": "Imeeli",
+      "position": "Sadarkaa",
+      "experience": "Qophii",
+      "years": "waggaa",
+      "actions": "Hojiiwwan"
+    },
+    "FirstName": "Maqaa Duraa",
+    "LastName": "Maqaa Boodaa",
+    "Email": "Imeeli",
+    "PhoneNumber": "Lakkoofsa Bilbila",
+    "Photo": "Suuraa Profaayilii",
+    "Position": "Sadarkaa Hojii",
+    "Experience": "Qophii (waggaa)",
+    "HiredSince": "Hojii Eegalee",
+    "WorkPlace": "Bakka Hojii"
+  },
+  "user": {
+    "title": "Bulchinsa Fayyadamtoota",
+    "addButton": "Fayyadamtoota Haaraa Dabalachuu",
+    "passwordDescription": "Dhiisuu yoo feete, jecha iccitii ammaa qabachuu",
+    "table": {
+      "name": "Maqaa",
+      "email": "Imeeli",
+      "role": "Gara",
+      "subcity": "Magaalaa Giddugaleessaa",
+      "woreda": "Aanaa",
+      "createdAt": "Yeroo Uumamuu",
+      "actions": "Hojiiwwan"
+    },
+    "modal": {
+      "addTitle": "Fayyadamtoota Haaraa Dabalachuu",
+      "editTitle": "Fayyadamtoo Haaromsi"
+    },
+    "notifications": {
+      "createSuccess": "Fayyadamtoo sirrii ta'een uumame",
+      "createError": "Dogoggora fayyadamtoo uumuu keessatti",
+      "updateSuccess": "Fayyadamtoo sirrii ta'een haaromame",
+      "updateError": "Dogoggora fayyadamtoo haaromsuu keessatti",
+      "deleteSuccess": "Fayyadamtoo sirrii ta'een haqame",
+      "deleteError": "Dogoggora fayyadamtoo haquu keessatti"
+    },
+    "confirmDelete": "Dhugumatti, fayyadamtoo kana haquu barbaaddaa?",
+    "submit": "Erge",
+    "update": "Haaromsi",
+    "validation": {
+      "nameRequired": "Maqaa barbaachisaa dha",
+      "emailRequired": "Imeeli barbaachisaa dha",
+      "emailValid": "Imeeli sirrii ta'uu qaba",
+      "passwordRequired": "Jecha iccitii barbaachisaa dha",
+      "passwordMinLength": "Jecha iccitii waggaa 8 ol ta'uu qaba",
+      "passwordConfirmRequired": "Mirkaneessaa jecha iccitii barbaachisaa dha",
+      "passwordMatch": "Jecha icciitiiwwan wal qabuu qabu",
+      "roleRequired": "Gara barbaachisaa dha",
+      "woredaRequired": "Aanaa barbaachisaa dha",
+      "subcityRequired": "Magaalaa giddugaleessaa barbaachisaa dha"
+    },
+    "name": "Maqaa",
+    "email": "Imeeli",
+    "password": "Jecha Iccitii",
+    "password_confirmation": "Jecha Iccitii Mirkaneessuu",
+    "role": "Gara",
+    "subcity": "Magaalaa Giddugaleessaa",
+    "woreda": "Aanaa"
+  },
+
+  "aboutuspage": {
+    "hero": {
+      "badge": "Waa'ee Keenya",
+      "title": "Walitti Makuu Itoophiyaa Badhaadhaa Ijaru",
+      "subtitle": "Tokkummaa sabaa, guddina qabeenyaa, fi mirga dimokraatawaa Itoophiyaa hundaaf kennuuf kan kaffalan."
+    },
+    "mission": {
+      "badge": "Kaayyoo Keenya",
+      "title": "Eegumsa Nu Qajeelchu",
+      "description": "Tokkummaa sabaa fiduu, guddina qabeenyaa dhiyeessuu, fi mirga dimokraatawaa ummata Itoophiyaa hundaaf mirkaneeffachuuf nuyi qophaa'oodha. Kunis bulchiinsa ifaa fi haqa mijeessuun kan raawwatamudha.",
+      "unityText": "Tokkummaa Garaagarummaan",
+      "list": {
+        "item1": "Nagaa fi walbira qabsiisuu dhiyeessuu",
+        "item2": "Kaayyoon qabeenyaa ummatni hunda fayyadamu dhiyeessuu",
+        "item3": "Bulchiinsa ifaa fi haqa mijeessuu",
+        "item4": "Mirga mootummaa ummata Itoophiyaa hunda eeguu"
+      }
+    },
+    "vision": {
+      "badge": "Hawwii Keenya",
+      "title": "Itoophiyaa Nuti Hawu",
+      "description": "Itoophiyaa tokkoomtee, badhaadhee, fi dimokraatawaa hawu. Kan ummatni hunda carraa walqixaa argatu, haqa mijeessu, fi aadaa keenya qabeenya guddaa kabajamu.",
+      "imageAlt": "Hawwii Itoophiyaa mustawaa irratti",
+      "quote": "Waliin ijaruun Itoophiyaa kan namni tokko hin dhabamin ijaruun ni danda'ama."
+    },
+    "coreValuesSection": {
+      "badge": "Qoosaawwan Mootummaa",
+      "title": "Qoosaawwan Keenya Bu'uuraa",
+      "subtitle": "Qoosaawni kun murtee hunda keenya keessatti nu qajeelcha."
+    },
+    "coreValues": {
+      "dignity": {
+        "title": "Kabaja Namummaa",
+        "description": "Guddaa fi mirga namoota hunda kabajna."
+      },
+      "sovereignty": {
+        "title": "Mootummaa Sabaa",
+        "description": "Dhugaa fi iddoo Itoophiyaa eeguu."
+      },
+      "justice": {
+        "title": "Haqa Bulchiinsaa",
+        "description": "Qooda qabeenyaa fi carraa walqixaa kabajna."
+      },
+      "unity": {
+        "title": "Tokkummaa Sabaa",
+        "description": "Garaagarummaa kabajuun waliin walqabsiisna."
+      },
+      "respect": {
+        "title": "Wal Kabajuu",
+        "description": "Aadaa, amantaa, fi sab-lammii hunda kabajna."
+      },
+      "economy": {
+        "title": "Haqa Qabeenyaa",
+        "description": "Kaayyoon gidduu guddataa dhiisuu fi fayyaa waliigalaa dhiyeessina."
+      },
+      "integrity": {
+        "title": "Amala Sirreeffamaa",
+        "description": "Amala gaarii olaanaa hojii keenya hunda keessatti fudhanna."
+      },
+      "transparency": {
+        "title": "Ifaannaa",
+        "description": "Hojii keenya ifa ta'een fi haqa mijeessuun raawwanna."
+      }
+    },
+    "policyPillars": {
+      "political": {
+        "title": "Qoosaawwan Siyaasaa",
+        "item1": "Dimokraasii fi seeraan bulchuu",
+        "item2": "Sirna federaalaa garaagaraa",
+        "item3": "Hirmaannaa siyaasaa walqixaa"
+      },
+      "economic": {
+        "title": "Qoosaawn Qabeenyaa",
+        "item1": "Jijjiirama qonnaa",
+        "item2": "Guddina industry",
+        "item3": "Qooda qabeenyaa walqixaa"
+      }
+    },
+    "principlesSection": {
+      "badge": "Qoosaawn Qajeelchaa",
+      "title": "Sirna Hojii Keenya",
+      "subtitle": "Qoosaawni kun amaloota bulchii fi guddina keenya keessatti nu qajeelcha."
+    },
+    "principles": {
+      "accountability": {
+        "title": "Haqa Mijeessuu",
+        "description": "Hojii fi murteewwan keenya hunda irratti haqa mijeessina."
+      },
+      "governance": {
+        "title": "Bulchiinsa Gaarii",
+        "description": "Bulchiinsa fooyya'aa, cimaa, fi hirmaataa raawwanna."
+      },
+      "ruleOfLaw": {
+        "title": "Seeraan Bulchuu",
+        "description": "Seerri ummata hundaaf walqixaa ta'een raawwatamu mirkaneeffanna."
+      },
+      "development": {
+        "title": "Guddina Dheerinaa",
+        "description": "Guddina qabeenyaa fi eegumsa lafa gidduutti walqixxessina."
+      },
+      "evidence": {
+        "title": "Raawwii Keessaa",
+        "description": "Murteewwan qorannoo fi beekumsa irratti hundaa'uun murteessina."
+      },
+      "cohesion": {
+        "title": "Walqabsiisaa Bulchiinsaa",
+        "description": "Gidduu hawaasota waliin dhisina."
+      }
+    },
+    "achievements": {
+      "title": "Milkiinnaa Ummataa",
+      "jobs": "Hojii waggaa kudhan darbe keessatti uumame",
+      "electricity": "Ummataa elektiriikii argatu",
+      "universities": "Yuunivarsiitii haaraa ijaarame",
+      "gdp": "Guddina GDP waggaa waggaa"
+    },
+    "commissionPurpose": {
+      "badge": "Mandate Keenya",
+      "title": "Kaayyoo Komishinii",
+      "description": "Komishiniin kun kaayyoon seera ummataa raawwachiisu, seera mootummaa kabaju, fi gidduu sadarkaa garaagaraa bulchii tokkoomsuuf ijaarame."
+    },
+    "dutiesSection": {
+      "badge": "Hojiiwwan",
+      "title": "Hojii fi Hundaawwan",
+      "subtitle": "Hojiiwwan komishinii kan seera mootummaa fi seera ummataan kenname."
+    },
+    "duties": {
+      "bylaw": {
+        "title": "Seera Ijaaru",
+        "description": "Seera fi seeralee raawwachiifamuuf barbaachisu qopheessuu fi kennuu."
+      },
+      "quality": {
+        "title": "Qulqullina Mirkaneeffachuu",
+        "description": "Qulqullina tajaajilaa ummataaf kennamu qorachuu fi mirkaneessuu."
+      },
+      "assets": {
+        "title": "Qabeenya Ummataa Eeguu",
+        "description": "Qabeenya ummataa hojii hin gaafne irraa eeguu."
+      },
+      "memberRights": {
+        "title": "Mirga Fiixee",
+        "description": "Mirga fi fayyaa fiixee fi hojjettoota eeguu."
+      },
+      "complaints": {
+        "title": "Daa'ima Qorachuu",
+        "description": "Daa'imni seera mootummaa dhiibuu qorachuu."
+      },
+      "guidelines": {
+        "title": "Qajeelcha Kennuu",
+        "description": "Qajeelcha hojii iddoo bulchii hundaaf qopheessuu fi kennuu."
+      },
+      "antiCorruption": {
+        "title": "Sochii Hojii Hin Gaafne",
+        "description": "Sochii hojii hin gaafne dhiisuu fi eeguu."
+      },
+      "investigations": {
+        "title": "Qorannoo Raawwachiisu",
+        "description": "Hojii hinqabne iddoo bulchii keessatti qorachuu."
+      }
+    },
+    "cta": {
+      "title": "Waliin Itoophiyaa Mustawaa Ijaruuf Nu Makaa",
+      "subtitle": "Hirmaannaa fi deeggarsa keessan hawwii keenya waliigalaa raawwachuuf guddaadha.",
+      "button1": "Fiixee Ta'uu",
+      "button2": "Nu Qunnamuu"
+    }
+  },
+
+
+    "registeruser": {
+    "user": {
+      "title": "Bulchiinsa Fayyadamaa",
+      "table": {
+        "headers": {
+          "id": "ID",
+          "name": "Maqaa",
+          "email": "Imeelii",
+          "role": "Saayinsii",
+          "woreda": "Woreda",
+          "subcity": "Magaalaa Guddaa",
+          "createdAt": "Yeroo Uumamuu",
+          "actions": "Hojiiwwan"
+        }
+      },
+      "form": {
+        "nameLabel": "Maqaa Guutuu",
+        "namePlaceholder": "Maqaa guutuu galchaa",
+        "emailLabel": "Imeelii",
+        "emailPlaceholder": "Imeelii galchaa",
+        "passwordLabel": "Jecha Darbii",
+        "passwordPlaceholder": "Jecha darbii galchaa (dhibbantoonni 8 ol)",
+        "confirmPasswordLabel": "Jecha Darbii Mirkaneessuu",
+        "confirmPasswordPlaceholder": "Jecha darbii irra deebi'i galchaa",
+        "roleLabel": "Saayinsii",
+        "rolePlaceholder": "Saayinsii filadhu",
+        "woredaLabel": "Woreda",
+        "woredaPlaceholder": "Woreda filadhu",
+        "subcityLabel": "Magaalaa Guddaa",
+        "subcityPlaceholder": "Magaalaa guddaa filadhu"
+      },
+      "buttons": {
+        "addUser": "Fayyadamaa Dabalachuu",
+        "updateUser": "Fayyadamaa Haala Sirreessuu",
+        "createUser": "Fayyadamaa Uumuu",
+        "cancel": "Dhiisuu",
+        "delete": "Haquu"
+      },
+      "modal": {
+        "createTitle": "Fayyadamaa Haaraa Uumuu",
+        "editTitle": "Fayyadamaa Sirreessuu",
+        "deleteTitle": "Haquu Mirkaneessuu",
+        "deleteConfirmation": "Fayyadamaa kana haquu ni barbaaddaa? Hojii kun deebi'aan hin deebifamuu."
+      },
+      "messages": {
+        "dataLoaded": "Fayyadamoonni garaagaraa guutumaan gadi fageenyan",
+        "createSuccess": "Fayyadamaa guutumaan uumame",
+        "updateSuccess": "Fayyadamaa guutumaan sirreeffame",
+        "deleteSuccess": "Fayyadamaa guutumaan haqame"
+      },
+      "errors": {
+        "nameRequired": "Maqaa barbaachisaa dha",
+        "invalidEmail": "Imeelii sirrii miti",
+        "passwordRequired": "Jecha darbii barbaachisaa dha",
+        "passwordLength": "Jecha darbii dhibbantoonni 8 ol ta'uu qaba",
+        "passwordMismatch": "Jechi darbiin wal hin qabne",
+        "roleRequired": "Saayinsii barbaachisaa dha",
+        "invalidId": "ID fayyadamaa sirrii miti",
+        "notFound": "Fayyadamaa hin argamne",
+        "failedLoad": "Fayyadamoonni garaagaraa gadi hin buufamne",
+        "createFailed": "Fayyadamaa uumuu hin dandeenye: {error}",
+        "updateFailed": "Fayyadamaa sirreessuu hin dandeenye: {error}",
+        "deleteFailed": "Fayyadamaa haquu hin dandeenye: {error}",
+        "loadForEditFailed": "Fayyadamaa sirreessuuf gadi bu'uu hin dandeenye"
+      },
+      "roles": {
+        "woredaAdmin": "Admin Woredaa",
+        "superAdmin": "Admin Guddaa",
+        "subcityAdmin": "Admin Magaalaa Guddaa",
+        "officialAdmin": "Admin Hojjettootaa",
+        "employee": "Hojjettoota"
+      },
+      "woredas": {
+        "bole": "Bole",
+        "woreda1": "Woreda 1",
+        "woreda2": "Woreda 2",
+        "woreda3": "Woreda 3"
+      },
+      "subcities": {
+        "addisAbaba": "Finfinnee",
+        "boleSubcity": "Magaalaa Guddaa Bole"
+      }
+    },
+    "common": {
+      "success": "Milkaa'ina",
+      "error": "Dogoggora",
+      "notAvailable": "Hin jiru"
+    }
+  },
+
+  "woredaregistration": {
+    "woreda": {
+      "title": "Bulchiinsa Woredaa",
+      "table": {
+        "headers": {
+          "id": "ID",
+          "nameEn": "Maqaa (Ingliffaa)",
+          "nameAm": "Maqaa (Amhariffaa)",
+          "subcityId": "ID Magaalaa Guddaa",
+          "description": "Ibsa",
+          "createdAt": "Yeroo Uumamuu",
+          "updatedAt": "Yeroo Sirreeffamuu",
+          "actions": "Hojiiwwan"
+        }
+      },
+      "form": {
+        "nameEnLabel": "Maqaa (Ingliffaa)",
+        "nameEnPlaceholder": "Maqaa afaan Ingliffaatiin galchaa",
+        "nameAmLabel": "Maqaa (Amhariffaa)",
+        "nameAmPlaceholder": "Maqaa afaan Amhariffaatiin galchaa",
+        "subcityLabel": "Magaalaa Guddaa",
+        "subcityPlaceholder": "Magaalaa guddaa filadhu",
+        "descriptionLabel": "Ibsa",
+        "descriptionPlaceholder": "Ibsa galchaa"
+      },
+      "buttons": {
+        "addWoreda": "Woreda Dabalachuu",
+        "updateWoreda": "Woreda Sirreessuu",
+        "createWoreda": "Woreda Uumuu",
+        "cancel": "Dhiisuu",
+        "delete": "Haquu"
+      },
+      "modal": {
+        "createTitle": "Woreda Haaraa Uumuu",
+        "editTitle": "Woreda Sirreessuu",
+        "deleteTitle": "Haquu Mirkaneessuu",
+        "deleteConfirmation": "Woreda kana haquu ni barbaaddaa?"
+      },
+      "messages": {
+        "dataLoaded": "Woredootni garaagaraa guutumaan gadi fageenyan",
+        "createSuccess": "Woreda guutumaan uumame",
+        "updateSuccess": "Woreda guutumaan sirreeffame",
+        "deleteSuccess": "Woreda guutumaan haqame"
+      },
+      "errors": {
+        "nameEnRequired": "Maqaa afaan Ingliffaatiin barbaachisaa dha",
+        "nameAmRequired": "Maqaa afaan Amhariffaatiin barbaachisaa dha",
+        "subcityRequired": "Magaalaa guddaa barbaachisaa dha",
+        "descriptionRequired": "Ibsa barbaachisaa dha",
+        "invalidId": "ID woredaa sirrii miti",
+        "notFound": "Woreda hin argamne",
+        "failedLoad": "Woredootni garaagaraa gadi hin buufamne",
+        "createFailed": "Woreda uumuu hin dandeenye: {error}",
+        "updateFailed": "Woreda sirreessuu hin dandeenye: {error}",
+        "deleteFailed": "Woreda haquu hin dandeenye: {error}",
+        "loadForEditFailed": "Woreda sirreessuuf gadi bu'uu hin dandeenye"
+      },
+      "subcities": {
+        "subcity1": "Bole",
+        "subcity2": "Kirkos",
+        "subcity3": "Yeka",
+        "subcity4": "Arada",
+        "subcity5": "Akaki",
+        "subcity6": "Lemi Kura"
+      }
+    },
+    "common": {
+      "success": "Milkaa'ina",
+      "error": "Dogoggora",
+      "notAvailable": "Hin jiru"
+    }
+  },
+
+  "newsdetail": {
+    "error": {
+      "missingId": "ID Oduu hin argamne",
+      "invalidFormat": "Qindoomina oduu sirrii miti",
+      "notFound": "Gaazexaa oduu hin argamne",
+      "failedToLoad": "Gaazexaa oduu gadi bu'uu hin dandeenye"
+    },
+    "time": {
+      "justNow": "Amma ammaa",
+      "minutesAgo": "daqiiqaa dura",
+      "hoursAgo": "sa'aatii dura",
+      "daysAgo": "guyyaa dura"
+    },
+    "actions": {
+      "back": "Deebi'i Oduu",
+      "backToNews": "Deebi'i Oduu"
+    },
+    "breadcrumbs": {
+      "home": "Mana",
+      "news": "Oduu",
+      "details": "Oduu Keessaa"
+    },
+    "imageAlt": "Suuraa oduu",
+    "imageCredit": "Suuraa",
+    "category": {
+      "default": "Waliigala"
+    },
+    "title": {
+      "default": "Maqaa oduu hin argamne"
+    },
+    "author": {
+      "anonymous": "Maqaa hin beekamne",
+      "about": "Waa'ee Barreessituu",
+      "bio": "Gaazexeessa oduu qabatamaan barreessituu oduu sirrii fi yeroo isaa dhiyeessuuf kan qophii qabu."
+    },
+    "views": "ilaalota",
+    "content": {
+      "unavailable": "Qabiyyee oduu hin argamne"
+    },
+    "share": {
+      "facebook": "Facebook irratti qooduu",
+      "twitter": "Twitter irratti qooduu"
+    },
+    "comments": {
+      "loginPrompt":"Seenaa galchuu barbaachisaa dha",
+      "placeholder":"Yaada kee barreessuu",
+      "post": "ergaa",
+      "edited":"jijjiirame",
+      "title": "Yaada",
+      "empty": "Yaada hin jiru. Jalqaba ta'i yaada kennuu!"
+    },
+    "relatedNews": "Oduu Waliin Walqabata",
+    "newsletter": {
+      "title": "Oduu Haaraa Beekuuf",
+      "description": "Oduu haaraa imeelii keetti argadhu",
+      "placeholder": "Imeelii kee",
+      "button": "Galmaa'uu",
+      "privacy": "Dhuunfaa kee eegna. Yeroo kamiiyyuu irraa dhiisuu dandeessu."
+    }
+  },
+
+  "leadershippage": {
+    "language": {
+      "english": "Ingliffaa",
+      "amharic": "Amhariffaa"
+    },
+    "hero": {
+      "governmentLeadership": "Hoggansa Mootummaa",
+      "headsOfGovernment": "Hoggantoota Mootummaa",
+      "leadersDescription": "Hoggantoota Itoophiyaa qabsoo biyyaa qajeelchaa jiran waliin walqunnamtii qabaadhaa"
+    },
+    "leaders": {
+      "noLeadersData": "Odeeffannoo hoggantoota mootummaa ammaan dura hin jiru."
+    },
+    "leader": {
+      "viewProfile": "Pirofaayilii Ilaaluu",
+      "keyAchievements": "Milkaa'ina Gurguddoo",
+      "biography": "Seenaa Jireenyaa",
+      "noBiographyAvailable": "Seenaa jireenyaa hin argamne"
+    },
+    "modal": {
+      "closeLeaderProfile": "Pirofaayilii hoggansa cufuu",
+      "closeModal": "Cufuu"
+    },
+    "governance": {
+      "structure": "Qaama Bulchiinsa Itoophiyaa",
+      "description": "Itoophiyaan bulchiinsa federaalaa paarlaamaa repablikiin bulchitii. Piraayim Ministeerri hojii bulchaa hojjata yoo Prezidentiin miseensa hoggansa aadaa. Finfinneen magaalaa guddaa ta'een bulchiinsa addaa qaba. Hoggansa magaalaa ishee qaba.",
+      "governmentType": "Gosa Mootummaa",
+      "federalParliamentaryRepublic": "Federaalaa Paarlaamaa Repabliki",
+      "constitution": "Hundee Seeraa",
+      "ethiopiaConstitution": "Hundee Seeraa Itoophiyaa 1995",
+      "capitalCity": "Magaalaa Guddaa",
+      "addisAbaba": "Finfinnee"
+    }
+  },
+
+  "subcityofficial": {
+    "officials": {
+      "hero": {
+        "badge": "Hoggansa Naannoo",
+        "title": "Paartii Badhaadina Magaalaa Guddaa Bole",
+        "subtitle": "Hoggantoota qabsoo magaalaa guddaa Bole keessatti hojjetan waliin walqunnamtii qabaadhaa"
+      },
+      "error": {
+        "title": "Dogoggora Odeeffannoo Buufachuu",
+        "loading": "Odeeffannoo hojjettootaa gadi bu'uu hin dandeenye. Irra deebi'i.",
+        "details": "Odeeffannoo hojjettootaa gadi bu'uu hin dandeenye"
+      },
+      "retry": "Irra Deebi'i",
+      "viewProfile": "Pirofaayilii Ilaaluu",
+      "achievements": "Milkaa'ina Gurguddoo",
+      "biography": "Seenaa Jireenyaa",
+      "closeModal": "Pirofaayilii hojjettoota cufuu"
+    },
+    "notification": {
+      "success": "Milkaa'ina!",
+      "error": "Dogoggora!"
+    }
+  },
+
+  "locationpage": {
+    "hero": {
+      "badge": "Bakka Keenya",
+      "title": "Finfinnee Keessatti Nu Argadhu",
+      "subtitle": "Naannoo Bole Magaalaa Guddaa keessatti argamu fi karaa deemuu nagaa qaba",
+      "mapButton": "Google Maps irratti banu"
+    },
+    "map": {
+      "title": "Bakka Qophaa'aa Keenya",
+      "gpsLabel": "Koordineetii GPS",
+      "copy": "Koordineetii dubbisuu",
+      "copied": "Dubbifame!",
+      "iframeTitle": "Bakka Paartii Badhaadina Magaalaa Guddaa Bole"
+    },
+    "address": {
+      "title": "Odeeffannoo Teessoo",
+      "line1": "Magaalaa Guddaa Bole, Woreda 03",
+      "line2": "Finfinnee, Itoophiyaa",
+      "poBox": "P.O. Box 12345"
+    },
+    "hours": {
+      "title": "Yeroo Hojii",
+      "weekdays": "Dilbata - Jimaata",
+      "weekdaysTime": "8:30 WD - 5:30 WB",
+      "saturday": "Sanbata",
+      "saturdayTime": "9:00 WD - 2:00 WB",
+      "sunday": "Dilbata",
+      "closed": "Cufa"
+    },
+    "contact": {
+      "phone": "Bilbila",
+      "email": "Imeelii",
+      "website": "Weebsaayitii"
+    },
+    "transport": {
+      "title": "Deemuu Keenya",
+      "description": "Karaa garaagaraa magaalaa guddaa Finfinnee keessatti nagaa deemuu dandeessu.",
+      "car": "Konkolaataa",
+      "carDesc": "Bakka konkolaataa dhaabbachuuf jira",
+      "bus": "Baasi",
+      "busDesc": "Baasi 12, 45, 78 naannoo dhaabbatu",
+      "train": "Raayilii Laagaa",
+      "trainDesc": "Dhaabbata Bole (deemuuf daqiiqaa 10)",
+      "accessible": "Karaa Nagaa",
+      "accessibleDesc": "Karaa konkolaataa harkisaa jira"
+    },
+    "parking": {
+      "title": "Odeeffannoo Bakka Dhaabbannaa",
+      "description": "Bakka dhaabbannaa bilisaa jira. Bakka dhaabbannaa nageenyaan dhaabbannaa naannoo keessatti argachuu dandeessu (sa'aatii tokkoof 50 ETB)."
+    },
+    "landmarks": {
+      "title": "Bakka Waliin Walqabata",
+      "description": "Bakka keenya wantoota gargaarsaa fi bakka gurguddoo waliin walqabata",
+      "airport": "Xiyyaara Bole (5km)",
+      "mall": "Edna Mall (1.2km)",
+      "church": "Manaa Bole Medhanialem (800m)",
+      "supermarket": "Supeermaarikeetii Bambis (500m)"
+    }
+  },
+
+  "ourpartner": {
+    "strategic_partnerships": "Waliin Hojii Gargaarsaa",
+    "title": "Waliin Hojii Keenya",
+    "subtitle": "Waliin hojii qindeessitoota qindoominaan jijjiirama fi jabeenya uumuuf",
+    "premier_partners": "Waliin Hojii Gurguddoo",
+    "trusted_network": "Waliin Hojii Amantaa Qabu",
+    "featured": "Kan Agarsiifame",
+    "no_category": "Gosa hin qabne",
+    "partner": "Waliin Hojii",
+    "no_description": "Ibsa hin argamne",
+    "more": "dabalataa",
+    "visit_partner": "Waliin Hojii Siiqqee",
+    "learn_more": "Dabalataa Baradhu",
+    "become_partner": "Waliin Hojii Ta'uu",
+    "cta_text": "Waliin hojii keenya keessatti hirmaadhaa. Waliin wanta bareedaa uumna.",
+    "partnership_inquiry": "Gaaffii Waliin Hojii",
+    "error": "Waliin hojii gadi bu'uu hin dandeenye. Yeroo booda irra deebi'i.",
+    "retry": "Irra Deebi'i",
+    "no_partners": "Waliin hojii hin argamne",
+    "description_title": "Ibsa Waliin Hojii"
+  },
+
+  "counter": {
+    "title": "Saayinsii Weebsaayitii",
+    "subtitle": "Saayinsii ilaaltota yeroo dhugaa",
+    "today": "Har'a",
+    "this_month": "Ji'aa Kana",
+    "all_time": "Yeroo Hunda",
+    "visits": "ilaalota",
+    "error_title": "Dogoggora",
+    "error": "Odeeffannoo ilaaltota gadi bu'uu hin dandeenye. Yeroo booda irra deebi'i."
+  },
+  "managementteam": {
+    "title": "Koornii Bulchiinsa Keenya Waliin Walqunnamtii Qabaadhaa",
+    "subtitle": "Hojjettoonni qophii qaban qindeessitoota keenya milkaa'inaaf qajeelchaa jiran",
+    "leadership": "Hoggansa Keenya",
+    "all_departments": "Qooda Hunda",
+    "not_specified": "Kan hin murteeffamne",
+    "general": "Waliigala",
+    "user": "Fayyadamaa",
+    "since": "Eegaluu",
+    "view_profile": "Pirofaayilii Ilaaluu",
+    "email": "Imeelii",
+    "phone": "Bilbila",
+    "responsibilities": "Hojiiwwan",
+    "achievements": "Milkaa'ina Gurguddoo",
+    "close": "Cufuu",
+    "view_image": "Suuraa Guutuu Ilaaluu",
+    "full_image_of": "Suuraa guutuu",
+    "api_error": "Deebii API hin argamne",
+    "array_error": "Hojjettoonni koornii eegaluu",
+    "load_error": "Hojjettoonni koornii gadi bu'uu hin dandeenye",
+    "retry": "Irra Deebi'i",
+    "no_members": "Hojjettoonni koornii hin argamne"
+  },
+  "orgstruct": {
+    "title": "Qaama Qindeessaa",
+    "subtitle": "Qaama qindeessaa keenya ilaali fi koornii keenya milkaa'inaaf qajeelchaa jiran waliin walqunnamtii qabaadhaa",
+    "error_title": "Qaama qindeessaa gadi bu'uu hin dandeenye",
+    "error_message": "Yeroo booda irra deebi'i ykn gargaarsa nu qunnamti",
+    "empty_title": "Odeeffannoo qaama qindeessaa hin jiru",
+    "empty_message": "Qaama qindeessaa keenya amma haala haaraatiin sirreeffamaa jira",
+    "profile_tooltip": "Pirofaayilii {{name}}",
+    "mobile_hint": "Kaardii tapii godhaa itti fayyadamuuf/duukaa baasuuf",
+    "desktop_hint": "Kaardii click godhaa qaama koornii itti fayyadamuuf/duukaa baasuuf",
+    "departments": {
+      "management": "Bulchiinsa",
+      "technical": "Teknikaalaa",
+      "operations": "Hojiiwwan",
+      "finance": "Qabeenya",
+      "hr": "Hojjettoota",
+      "marketing": "Gabaasaa"
+    }
+  },
+
+
+  "compliant": {
+    "compliant": {
+      "successModal": {
+        "title": "Daa'immii Keessan Guutameera",
+        "message": "Galatoomaa daa'immii keessan nuuf dhiyeessuuf. ID daa'immii keessaa eegaluuf ID daa'immii keessan qabaachuu eegaa.",
+        "yourId": "ID Daa'immii Keessan",
+        "note": "ID kana eegaa, akka daa'immii keessan mirkaneessuuf barbaachisaa ta'a.",
+        "close": "Cufi"
+      }
+    },
+    "title": {
+      "badge": "Formii Daa'immii",
+      "main": "Formii Daa'immii Makiinaa",
+      "subtitle": "Seera 143/2015, Qooda 3, Article 9 tiin"
+    },
+    "form": {
+      "title": "Oduu Daa'immii",
+      "fullName": "Maqaa Guutuu",
+      "fullNamePlaceholder": "Maqaa kee guutuu galchi",
+      "phone": "Lakkoofsa Bilbila",
+      "phonePlaceholder": "Lakkoofsa bilbila kee galchi",
+      "subCity": "Magaalaa Guddoo",
+      "subCityPlaceholder": "Magaalaa guddoo galchi",
+      "woreda": "Aanaa",
+      "woredaPlaceholder": "Aanaa galchi",
+      "houseNumber": "Lakkoofsa Manaa",
+      "houseNumberPlaceholder": "Lakkoofsa manaa galchi",
+      "institution": "Maqaa Idil-addunyaa",
+      "institutionPlaceholder": "Maqaa idil-addunyaa galchi",
+      "complaintPlace": "Bakka Daa'immii",
+      "complaintPlacePlaceholder": "Daa'immii eenyu irraa ta'e?",
+      "complaintDetails": "Gabaasa Daa'immii",
+      "complaintDetailsPlaceholder": "Daa'immii kee gabaafadhaan ibsi",
+      "complaintWant": "Furmaata Barbaachisaa",
+      "complaintWantPlaceholder": "Furmaata kam barbaadda?",
+      "evidence": "Raawwii Daa'immii",
+      "evidencePlaceholder": "Fayyileewwan baasu",
+      "selectedFiles": "Fayyileewwan filataman"
+    },
+    "disclaimer": {
+      "title": "Ibsa Dhiibbaa",
+      "text": "Daa'immii ani har'aa dhiyeessee, seera 143/2015 tiin, odeeffannoo kennuun sirrii ta'uu kiyya mirkaneessee, odeeffannoo sobaa dhiyeessuun danda'aan seeraan qabamuun naa ta'a jedhee nibeeku.",
+      "accept": "Haala fi sharii kana fudhachuun nan dhiifama"
+    },
+    "validation": {
+      "nameTooShort": "Maqaan gabaabaa dha",
+      "invalidPhone": "Lakkoofsa bilbila hin sirreessin",
+      "disclaimer": "Ibsa dhiibbaa fudhachuun barbaachisaa"
+    },
+    "notification": {
+      "successTitle": "Milkaa'ina",
+      "success": "Daa'immii keessan guutameera",
+      "errorTitle": "Dogoggora",
+      "error": "Daa'immii dhiyeessuu hin dandeenye. Irra deebi'ii yaali."
+    },
+    "submit": "Daa'immii Dhiyeessi"
+  },
+
+  "bookpage": {
+    "hero": {
+      "badge": "Kitaabota",
+      "title": "Kuusaa Kitaabota Keenya",
+      "subtitle": "Kitaabota nu filataman qo'achuun dubbisuu"
+    },
+    "tabs": {
+      "all": "Kitaabota Hunda"
+    },
+    "batchBooksModal": {
+      "book": "Fayyila",
+      "description": "Fayyileewwan armaan gadii dubbisuu dandeessu."
+    },
+    "search": {
+      "placeholder": "Kitaabota maqaan isaa barbaadi..."
+    },
+    "filter": {
+      "placeholder": "Gosaan filadhu"
+    },
+    "buttons": {
+      "showAll": "Hunda Agarsiisi",
+      "details": "Gabaasaa",
+      "read": "Dubbisuu",
+      "resetFilters": "Filannoo Haquu",
+      "close": "Cufi"
+    },
+    "noBooks": {
+      "title": "Kitaabota Hin Arganne",
+      "description": "Kitaaba filannoo keetii waliin walqabatu hin argine. Barbaadi yookiin filannoo jijjiiri."
+    },
+    "modal": {
+      "detailsTitle": "Gabaasaa Kitaabaa",
+      "author": "Barreessaa",
+      "publishedYear": "Waggaa Maxxansaa",
+      "readingTime": "Yeroo Dubbisuu",
+      "language": "Afaan",
+      "descriptionTitle": "Gabaasaa",
+      "pages": "waraabessaa"
+    },
+    "notifications": {
+      "success": "Kitaabota guutamanii fudhatame",
+      "error": "Kitaabota fudhachuu hin dandeenye",
+      "successTitle": "Milkaa'ina!",
+      "errorTitle": "Dogoggora!"
+    }
+  },
+
+  "galleryimage": {
+    "hero": {
+      "badge": "Gaaleerii Keenya",
+      "title": "Gaaleerii Suuraa",
+      "subtitle": "Yaadannoo fi hawaasaa keenya gaaleerii keessaa ilaaluu"
+    },
+    "buttons": {
+      "viewAlbum": "Albamii Ilaaluu",
+      "closeGallery": "Gaaleerii Cufuu"
+    },
+    "photos": "suuraawwan",
+    "of": "irraa",
+    "image": "Suuraa",
+    "thumbnail": "Suuraa Xixiqqoo",
+    "defaultCategory": "Gaaleerii",
+    "emptyState": {
+      "title": "Wanti Gaaleerii Hin Jiru",
+      "message": "Booda deebi'ii ilaaluu"
+    },
+    "errors": {
+      "title": "Dogoggora",
+      "loadError": "Odeeffannoo gaaleerii fudhachuu hin dandeenye. Booda yaali."
+    }
+  },
+
+  "contactus": {
+    "hero": {
+      "title": "Paartii Badhaadinaa Waliin Qunnamtii",
+      "subtitle": "Sagaleen kee nuuf barbaachisaa dha. Gaaffii, gorsaa ykn yaada nuuf ergaa."
+    },
+    "form": {
+      "title": "Ergaa Nuuf Ergaa",
+      "fullName": "Maqaa Guutuu",
+      "fullNamePlaceholder": "Maqaa kee guutuu",
+      "email": "Email",
+      "emailPlaceholder": "email@keessan.com",
+      "subject": "Maalif",
+      "subjectPlaceholder": "Maalif ergaa keessan",
+      "message": "Ergaa Keessan",
+      "messagePlaceholder": "Ergaa keessan asii gali...",
+      "submit": "Ergaa Ergaa"
+    },
+    "contactInfo": {
+      "title": "Odeeffannoo Qunnamtii Keenya",
+      "address": {
+        "title": "Mootummaa Guddoo",
+        "line1": "Aanaa Bole",
+        "line2": "Finfinnee, Itoophiyaa"
+      },
+      "phone": {
+        "title": "Bilbila",
+        "number1": "+251 123 456 789",
+        "number2": "+251 987 654 321"
+      },
+      "email": {
+        "title": "Email",
+        "address1": "info@paartibadhaadinaa.org",
+        "address2": "deeggarsa@paartibadhaadinaa.org"
+      },
+      "hours": {
+        "title": "Yeroo Hojii",
+        "weekdays": "Dilbata - Jimaata: 8:00 WD - 6:00 WB",
+        "saturday": "Sanbata: 9:00 WD - 1:00 WB"
+      }
+    },
+    "map": {
+      "title": "Bakka Keenya",
+      "description": "Mootummaa guddoo keenya Finfinnee keessatti ilaaluu"
+    },
+    "notifications": {
+      "missingTitle": "Odeeffannoo Hin Arganne",
+      "missingMessage": "Mee bakka hunda guutu",
+      "successTitle": "Milkaa'ina!",
+      "successMessage": "Ergaa keessan guutameera",
+      "errorTitle": "Dogoggora",
+      "errorMessage": "Ergaa erguu hin dandeenye",
+      "unexpectedError": "Dogoggora hin eegamin argame"
+    }
+  },
+
+  "announcementsui": {
+    "badge": "Beekumsa",
+    "title": "Beekumsa Mootummaa",
+    "subtitle": "Beekumsa haaraa fi beekumsa barbaachisaa hawaasa keenya irraa hubadhu",
+    "tabs": {
+      "all": "Beekumsa Hunda"
+    },
+    "search": {
+      "placeholder": "Beekumsa maqaan isaa barbaadi..."
+    },
+    "filter": {
+      "placeholder": "Gosaan filadhu"
+    },
+    "pinned": "Malaajii",
+    "readButton": "Beekumsa Guutuu Dubbisuu",
+    "noResults": {
+      "title": "Beekumsa Hin Argine",
+      "description": "Beekumsa filannoo keetii waliin walqabatu hin argine. Barbaadi yookiin filannoo jijjiiri."
+    },
+    "resetFilters": "Filannoo Haquu",
+    "details": {
+      "title": "Gabaasaa Beekumsaa",
+      "date": "Guyyaa",
+      "author": "Barreessaa",
+      "published": "Maxxansaa"
+    },
+    "attachments": {
+      "title": "Dabalataa"
+    },
+    "content": {
+      "title": "Qabxii"
+    },
+    "closeButton": "Cufi"
+  },
+  "notifications": {
+    "success": "Milkaa'ina!",
+    "error": "Dogoggora!"
+  },
+  "announcements": {
+    "success": "Beekumsa guutamanii fudhatame",
+    "error": "Beekumsa fudhachuu hin dandeenye"
+  },
+
+  "tenderui": {
+    "badge": "Tender",
+    "title": "Tender Dhufaa",
+    "subtitle": "Tender filatamanii fi beekumsa qopheessuu ilaaluu",
+    "tabs": {
+      "all": "Tender Hunda",
+      "open": "Banamaa",
+      "closed": "Cufamaa",
+      "awarded": "Kennamaa"
+    },
+    "status": {
+      "open": "BANAMAA",
+      "closed": "CUFAMAA",
+      "awarded": "KENNAMA"
+    },
+    "search": {
+      "placeholder": "Tender maqaan isaa barbaadi..."
+    },
+    "filter": {
+      "placeholder": "Gosaan filadhu"
+    },
+    "table": {
+      "published": "Maxxansaa",
+      "closing": "Cufuu",
+      "opening": "Banuu",
+      "budget": "Maallaqa",
+      "tenderNumber": "Lakkoofsa Tender"
+    },
+    "viewButton": "Gabaasaa Tender Ilaaluu",
+    "noResults": {
+      "title": "Tender Hin Argine",
+      "description": "Tender filannoo keetii waliin walqabatu hin argine. Barbaadi yookiin filannoo jijjiiri."
+    },
+    "resetFilters": "Filannoo Haquu",
+    "description": {
+      "title": "Gabaasaa Tender"
+    },
+    "requirements": {
+      "title": "Filannoo"
+    },
+    "documents": {
+      "title": "Fayyileewwan Tender"
+    },
+    "contact": {
+      "title": "Odeeffannoo Qunnamtii",
+      "person": "Namoonni Qunnamtii",
+      "phone": "Bilbila",
+      "email": "Email"
+    },
+    "actions": {
+      "save": "Tender Eeguu",
+      "share": "Qooduu"
+    },
+    "notifications": {
+      "success": "Tender guutamanii fudhatame",
+      "error": "Tender fudhachuu hin dandeenye"
+    }
+  },
+  "notifications": {
+    "success": "Milkaa'ina!",
+    "error": "Dogoggora!"
+  },
+
+  "eventui": {
+    "badge": "Hawaasa",
+    "title": "Hawaasa Dhufaa",
+    "subtitle": "Hawaasa keenya, ayyaanaa fi walgahii adda addaa ilaaluu",
+    "tabs": {
+      "all": "Hawaasa Hunda",
+      "upcoming": "Dhufaa",
+      "past": "Hawaasa Darbee",
+      "featured": "Filatamaa"
+    },
+    "search": {
+      "placeholder": "Hawaasa maqaan isaa barbaadi..."
+    },
+    "filter": {
+      "placeholder": "Gosaan filadhu"
+    },
+    "featured": "Filatamaa",
+    "featuredEvent": "Hawaasa Filatamaa",
+    "viewButton": "Gabaasaa Hawaasa Ilaaluu",
+    "noResults": {
+      "title": "Hawaasa Hin Argine",
+      "description": "Hawaasa filannoo keetii waliin walqabatu hin argine. Barbaadi yookiin filannoo jijjiiri."
+    },
+    "resetFilters": "Filannoo Haquu",
+    "details": {
+      "title": "Gabaasaa Hawaasaa",
+      "date": "Guyyaa",
+      "time": "Yeroo",
+      "location": "Bakkoota",
+      "attendees": "Namoonni",
+      "expected": "eegama"
+    },
+    "organizer": {
+      "title": "Qopheessaa"
+    },
+    "tags": {
+      "title": "Tag"
+    },
+    "description": {
+      "title": "Gabaasaa"
+    },
+    "closeButton": "Cufi",
+    "notifications": {
+      "success": "Hawaasa guutamanii fudhatame",
+      "error": "Hawaasa fudhachuu hin dandeenye"
+    }
+  },
+  "notifications": {
+    "success": "Milkaa'ina!",
+    "error": "Dogoggora!"
+  },
+
+  "rolemanagementadmin": {
+    "title": "To'annaa Saamicha",
+    "addRoleButton": "Saamicha Dabalachuu",
+    "formLabels": {
+      "roleKey": "Saamicha Key",
+      "nameEn": "Maqaa (Ingiliffaa)",
+      "nameAm": "Maqaa (Afaan Oromoo)",
+      "description": "Gabaasaa"
+    },
+    "formPlaceholders": {
+      "roleKey": "Saamicha key galchi (fkn, aanaa_admin)",
+      "nameEn": "Maqaa afaan Ingiliffaatiin galchi",
+      "nameAm": "Maqaa afaan Oromootiin galchi",
+      "description": "Gabaasaa saamichaa galchi"
+    },
+    "formErrors": {
+      "roleKey": "Saamicha key barbaachisaa dha",
+      "nameEn": "Maqaa afaan Ingiliffaatiin barbaachisaa dha",
+      "nameAm": "Maqaa afaan Oromootiin barbaachisaa dha",
+      "description": "Gabaasaa barbaachisaa dha"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "roleKey": "Saamicha Key",
+        "nameEn": "Maqaa (Ingiliffaa)",
+        "nameAm": "Maqaa (Afaan Oromoo)",
+        "description": "Gabaasaa",
+        "createdAt": "Yeroo Uumamaa",
+        "updatedAt": "Yeroo Jijjiiramaa",
+        "actions": "Hojii"
+      },
+      "actions": {
+        "edit": "Jijjiiraa",
+        "delete": "Haquu"
+      },
+      "notAvailable": "Hin Jiru"
+    },
+    "modal": {
+      "editTitle": "Saamicha Jijjiiraa",
+      "createTitle": "Saamicha Uumuu"
+    },
+    "deleteModal": {
+      "title": "Mirkaneessaa Haquu",
+      "message": "Saamicha kana haquu ni barbaadda?"
+    },
+    "buttons": {
+      "cancel": "Haquu",
+      "create": "Saamicha Uumuu",
+      "update": "Saamicha Jijjiiraa",
+      "delete": "Haquu"
+    },
+    "notifications": {
+      "success": "Milkaa'ina!",
+      "error": "Dogoggora!",
+      "loadSuccess": "Odeeffannoo guutamanii fudhatame",
+      "loadError": "Odeeffannoo saamichaa fudhachuu hin dandeenye",
+      "invalidId": "ID saamichaa hin sirreessin",
+      "roleNotFound": "Saamicha hin argine",
+      "updateSuccess": "Saamicha jijjiirameera",
+      "createSuccess": "Saamicha uumameera",
+      "deleteSuccess": "Saamicha haquu guutameera",
+      "loadEditError": "Saamicha jijjiiraaf fudhachuu hin dandeenye",
+      "updateError": "Saamicha jijjiiraa hin dandeenye: {{error}}",
+      "createError": "Saamicha uumuu hin dandeenye: {{error}}",
+      "deleteError": "Saamicha haquu hin dandeenye"
+    }
+  }
+
+
+
+
+}
