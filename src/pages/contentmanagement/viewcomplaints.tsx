@@ -174,7 +174,7 @@ const cleanUrl = (url: string): string => {
   }
   
   // Construct the full URL with your domain
-  return `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cleaned}`;
+  return `${import.meta.env.VITE_FILE_API}${cleaned}`;
 };
 
 const ViewComplaints = () => {

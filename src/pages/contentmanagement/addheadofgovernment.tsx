@@ -452,7 +452,7 @@ const GovernmentOfficials = () => {
       header: t("governmentofficalsadmin.table.columns.image"),
       Cell: ({ cell }) => (
         <Image
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cell.getValue<string>()}`}
+          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
           width={60}
           height={40}
           fit="cover"
@@ -670,7 +670,7 @@ const GovernmentOfficials = () => {
               <Image
                 src={
                   previewImage ||
-                  `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.image_path}`
+                  `${import.meta.env.VITE_FILE_API}${form.values.image_path}`
                 }
                 height={160}
                 fit="contain"

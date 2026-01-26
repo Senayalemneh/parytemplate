@@ -264,7 +264,7 @@ export const createNewEmployee = (body: any) => {
 };
 
 export const login = (body: any) => {
-  return fetch(`${API_URL}login`, postHeader(body)).then((res) => res.json());
+  return fetch(`${API_URL}auth/sign-in/email`, postHeader({...body, callbackURL: ''})).then((res) => res.json());
 };
 
 export const createNewRole = (body: any) => {

@@ -93,7 +93,7 @@ const PartnersSection = () => {
   const getImageUrl = (logoPath: string) => {
     if (!logoPath) return null;
     if (logoPath.startsWith("http")) return logoPath;
-    return `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${logoPath}`;
+    return `${import.meta.env.VITE_FILE_API}${logoPath}`;
   };
 
   const truncateDescription = (text: string) => {

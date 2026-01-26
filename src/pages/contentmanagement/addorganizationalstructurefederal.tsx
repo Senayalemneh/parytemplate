@@ -301,7 +301,7 @@ const OrganizationalStructure = () => {
       if (item.image) {
         const imageUrl = item.image.startsWith("http")
           ? item.image
-          : `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${item.image}`;
+          : `${import.meta.env.VITE_FILE_API}${item.image}`;
         setPreviewImage(imageUrl);
       }
 
@@ -411,7 +411,7 @@ const OrganizationalStructure = () => {
             src={
               imageUrl.startsWith("http")
                 ? imageUrl
-                : `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${imageUrl}`
+                : `${import.meta.env.VITE_FILE_API}${imageUrl}`
             }
             width={60}
             height={60}
@@ -599,7 +599,7 @@ const OrganizationalStructure = () => {
                 src={
                   form.values.image.startsWith("http")
                     ? form.values.image
-                    : `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.image}`
+                    : `${import.meta.env.VITE_FILE_API}${form.values.image}`
                 }
                 height={160}
                 width={160}

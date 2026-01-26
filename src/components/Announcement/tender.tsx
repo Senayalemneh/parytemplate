@@ -154,7 +154,7 @@ const TendersPage = () => {
     if (url.startsWith("http") || url.startsWith("https")) {
       return url;
     }
-    return `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${url}`;
+    return `${import.meta.env.VITE_FILE_API}${url}`;
   };
 
   const showNotification = (message: string, type: "success" | "error") => {

@@ -196,7 +196,7 @@ const ProfessionalIDCard: React.FC<UserIDCardProps> = ({
               className="border-4 border-blue-100 shadow-sm"
               src={
                 user.user?.avatar
-                  ? `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${user.user.avatar}`
+                  ? `${import.meta.env.VITE_FILE_API}${user.user.avatar}`
                   : undefined
               }
             >

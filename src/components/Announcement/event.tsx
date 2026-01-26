@@ -347,7 +347,7 @@ const EventsPage = () => {
                     <Card.Section className="relative overflow-hidden rounded-t-lg">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-0" />
                       <Image
-                        src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${event.image}`}
+                        src={`${import.meta.env.VITE_FILE_API}${event.image}`}
                         alt={event.title[i18n.language]}
                         height={450}
                         className="rounded-t-lg  object-contain w-full"
@@ -540,7 +540,7 @@ const EventsPage = () => {
             </Group>
 
             <Image
-              src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${selectedEvent.image}`}
+              src={`${import.meta.env.VITE_FILE_API}${selectedEvent.image}`}
               alt={selectedEvent.title[i18n.language]}
               height={700}
               className="rounded-lg mb-8 object-contain"

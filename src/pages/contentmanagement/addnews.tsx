@@ -91,7 +91,7 @@ interface SelectItem {
   label: string;
 }
 
-const CMS_FILES_BASE_URL = "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+const CMS_FILES_BASE_URL = `${import.meta.env.VITE_FILE_API}`;
 
 const formatImageUrl = (imgPath: string): string => {
   if (!imgPath) return "";
@@ -166,7 +166,7 @@ const NewsManagement = () => {
   const fetchCategories = async () => {
     try {
       const response = await getNewsCategories();
-      if (response?.success && response.data) {
+      if (response.data) {
         const categoryOptions = response.data.map((category: any) => ({
           value: category.id.toString(),
           label:

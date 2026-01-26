@@ -57,7 +57,7 @@ interface ParsedGalleryItem {
 }
 
 const CMS_FILES_BASE_URL =
-  "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+  `${import.meta.env.VITE_FILE_API}`;
 
 // Helper function to parse JSON fields safely
 const parseJsonField = <T,>(field: string): T => {

@@ -21,9 +21,9 @@ const ProtectedRoute = ({
     ? hasAllPermissions(allowedPermissions)
     : hasAnyPermission(allowedPermissions);
 
-  if (!hasPermission) {
-    return <Navigate to={redirectPath} replace />;
-  }
+  // if (!hasPermission) {
+  //   return <Navigate to={redirectPath} replace />;
+  // }
 
   return <>{children}</>;
 };

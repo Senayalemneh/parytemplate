@@ -79,7 +79,7 @@ interface Book {
   updated_at?: string;
 }
 
-const BASE_URL = "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+const BASE_URL = `${import.meta.env.VITE_FILE_API}`;
 
 const useStyles = createStyles((theme) => ({
   hero: {

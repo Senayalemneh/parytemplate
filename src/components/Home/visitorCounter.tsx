@@ -127,7 +127,7 @@ const VisitorBanner: React.FC = () => {
                 <div className="w-24 h-8 bg-white bg-opacity-20 rounded-lg animate-pulse"></div>
               ) : (
                 <p className="text-2xl font-bold tracking-tight">
-                  {visitorData.today.toLocaleString()}
+                  {visitorData.today?.toLocaleString()}
                   <span className="text-sm font-normal ml-1 opacity-80">
                     {t("counter.visits")}
                   </span>
@@ -147,7 +147,7 @@ const VisitorBanner: React.FC = () => {
                 <div className="w-24 h-8 bg-white bg-opacity-20 rounded-lg animate-pulse"></div>
               ) : (
                 <p className="text-2xl font-bold tracking-tight">
-                  {visitorData.this_month.toLocaleString()}
+                  {visitorData.this_month?.toLocaleString()}
                   <span className="text-sm font-normal ml-1 opacity-80">
                     {t("counter.visits")}
                   </span>
@@ -167,7 +167,7 @@ const VisitorBanner: React.FC = () => {
                 <div className="w-24 h-8 bg-white bg-opacity-20 rounded-lg animate-pulse"></div>
               ) : (
                 <p className="text-2xl font-bold tracking-tight">
-                  {visitorData.all_time.toLocaleString()}
+                  {visitorData.all_time?.toLocaleString()}
                   <span className="text-sm font-normal ml-1 opacity-80">
                     {t("counter.visits")}
                   </span>

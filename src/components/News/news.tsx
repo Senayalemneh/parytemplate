@@ -221,7 +221,7 @@ const NewsPage: React.FC = () => {
   };
 
   const BASE_IMAGE_URL =
-    "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+    `${import.meta.env.VITE_FILE_API}`;
 
   useEffect(() => {
     AOS.init({

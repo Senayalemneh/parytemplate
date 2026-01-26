@@ -435,7 +435,7 @@ const ExhibitionReport = () => {
                   <Group>
                     {exhibition.image_path && (
                       <Avatar
-                        src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${exhibition.image_path}`}
+                        src={`${import.meta.env.VITE_FILE_API}${exhibition.image_path}`}
                         size="lg"
                         radius="sm"
                       />

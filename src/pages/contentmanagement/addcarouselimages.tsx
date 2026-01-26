@@ -359,7 +359,7 @@ const CarouselManagement = () => {
       header: t("carouselmanagement.table.columns.image"),
       Cell: ({ cell }) => (
         <Image
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cell.getValue<string>()}`}
+          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
           width={60}
           height={40}
           fit="cover"
@@ -520,7 +520,7 @@ const CarouselManagement = () => {
               <Image
                 src={
                   previewImage ||
-                  `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.imgURL}`
+                  `${import.meta.env.VITE_FILE_API}${form.values.imgURL}`
                 }
                 height={160}
                 fit="contain"

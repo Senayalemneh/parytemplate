@@ -71,7 +71,7 @@ const ExhibitionManagement = () => {
   );
 
   const BASE_IMAGE_URL =
-    "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+    `${import.meta.env.VITE_FILE_API}`;
 
   const form = useForm({
     initialValues: {

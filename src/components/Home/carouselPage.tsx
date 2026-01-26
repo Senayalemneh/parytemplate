@@ -172,11 +172,11 @@ const HomePageCarousel: React.FC = () => {
               </Box>
             </Box>
             <img
-              src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${item.imgURL}`}
+              src={`${import.meta.env.VITE_FILE_API}${item.imgURL}`}
               alt={getLocalizedContent(item, "title")}
               className="w-full h-full object-contain sm:object-fill object-center transform scale-100 transition-transform duration-1200 ease-in-out group-hover:scale-105"
               onLoad={handleImageLoad}
-              onError={handleImageError}
+              // onError={handleImageError}
               loading={index === 0 ? "eager" : "lazy"}
             />
           </SwiperSlide>

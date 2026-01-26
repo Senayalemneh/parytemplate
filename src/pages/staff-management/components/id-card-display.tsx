@@ -149,7 +149,7 @@ export default function IDCardDisplay() {
               className="border-4 border-blue-100 shadow-sm"
               src={
                 userData.user?.avatar
-                  ? `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${userData.user.avatar}`
+                  ? `${import.meta.env.VITE_FILE_API}${userData.user.avatar}`
                   : undefined
               }
             >

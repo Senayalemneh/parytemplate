@@ -302,7 +302,7 @@ const Announcements = () => {
 
       setPreviewImage(
         item.image
-          ? `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${item.image}`
+          ? `${import.meta.env.VITE_FILE_API}${item.image}`
           : null
       );
       setEditingId(item.id);
@@ -440,7 +440,7 @@ const Announcements = () => {
       header: t("announcementadmin.table.headers.image"),
       Cell: ({ cell }) => (
         <Image
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cell.getValue<string>()}`}
+          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
           width={60}
           height={60}
           fit="cover"
@@ -635,7 +635,7 @@ const Announcements = () => {
               <Image
                 src={
                   previewImage ||
-                  `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.image_path}`
+                  `${import.meta.env.VITE_FILE_API}${form.values.image_path}`
                 }
                 height={160}
                 fit="contain"

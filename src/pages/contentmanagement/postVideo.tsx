@@ -41,7 +41,7 @@ import Loader from "../../components/common/loader";
 
 // Define base URL for CMS files
 const CMS_FILES_BASE_URL =
-  "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+  `${import.meta.env.VITE_FILE_API}`;
 
 interface VideoItem {
   id: number;

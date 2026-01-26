@@ -93,7 +93,7 @@ const GovernmentLeaders = () => {
 
   const getImageUrl = (imagePath: string) => {
     if (!imagePath) return "";
-    return `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${imagePath}`;
+    return `${import.meta.env.VITE_FILE_API}${imagePath}`;
   };
 
   if (loading) {

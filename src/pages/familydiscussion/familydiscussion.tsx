@@ -833,7 +833,7 @@ const FamilyDiscussionManagement = () => {
                   <td colspan="4">
                     ${
                       discussion.prepared_by_signature
-                        ? `<img src="https://bole.prosperity.boleprosperityparty.org/CMSFiles/${encodeURIComponent(
+                        ? `<img src="${import.meta.env.VITE_FILE_API}${encodeURIComponent(
                             discussion.prepared_by_signature
                           )}" alt="Signature" class="signature-img"/>`
                         : "N/A"
@@ -976,7 +976,7 @@ ${items.map((item) => `\\item ${escapeLatex(item)}`).join("\n")}
 
       let signatureImage = "N/A";
       if (item.prepared_by_signature) {
-        const imageUrl = `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${encodeURIComponent(
+        const imageUrl = `${import.meta.env.VITE_FILE_API}${encodeURIComponent(
           item.prepared_by_signature
         )}`;
         const base64Image = await fetchImageAsBase64(imageUrl);
@@ -2033,7 +2033,7 @@ ${summarySection}
                     {t("familyDiscussion.form.currentSignature")}
                   </Text>
                   <img
-                    src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.prepared_by_signature}`}
+                    src={`${import.meta.env.VITE_FILE_API}${form.values.prepared_by_signature}`}
                     alt="Current Signature"
                     style={{ maxWidth: "100px", maxHeight: "100px" }}
                   />
@@ -2326,7 +2326,7 @@ ${summarySection}
                   <td colSpan={4}>
                     {viewingItem.prepared_by_signature ? (
                       <img
-                        src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${viewingItem.prepared_by_signature}`}
+                        src={`${import.meta.env.VITE_FILE_API}${viewingItem.prepared_by_signature}`}
                         alt="Signature"
                         style={{ maxWidth: "100px", maxHeight: "100px" }}
                       />

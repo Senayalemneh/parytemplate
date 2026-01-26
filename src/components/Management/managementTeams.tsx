@@ -260,7 +260,7 @@ const ManagementTeamViewer = () => {
               >
                 <Card.Section className="flex justify-center pt-6">
                   <Avatar
-                    src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${member.avatar}`}
+                    src={`${import.meta.env.VITE_FILE_API}${member.avatar}`}
                     alt={member.name.en}
                     size={120}
                     radius={120}
@@ -330,7 +330,7 @@ const ManagementTeamViewer = () => {
             <div className="flex flex-col md:flex-row gap-6 mb-6">
               <div className="flex-shrink-0 flex flex-col items-center">
                 <Image
-                  src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${selectedMember.avatar}`}
+                  src={`${import.meta.env.VITE_FILE_API}${selectedMember.avatar}`}
                   alt={selectedMember.name.en}
                   width={200}
                   height={200}
@@ -451,7 +451,7 @@ const ManagementTeamViewer = () => {
         {selectedMember && (
           <Box className="flex justify-center">
             <Image
-              src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${selectedMember.avatar}`}
+              src={`${import.meta.env.VITE_FILE_API}${selectedMember.avatar}`}
               alt={`${t("managementteam.full_image_of")} ${
                 selectedMember.name.en
               }`}

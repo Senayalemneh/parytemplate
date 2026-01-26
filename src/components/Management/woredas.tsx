@@ -405,7 +405,7 @@ const WoredaShowersViewer = () => {
                 >
                   <Card.Section>
                     <Image
-                      src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${shower.image}`}
+                      src={`${import.meta.env.VITE_FILE_API}${shower.image}`}
                       alt={shower.name.en}
                       height={400}
                       className="rounded-t-xl object-fill p-5 w-full"
@@ -547,7 +547,7 @@ const WoredaShowersViewer = () => {
               </Tabs.List>
               <div className="flex-shrink-0 w-full md:w-1/3">
                 {/* <Image
-                  src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${selectedShower.image}`}
+                  src={`${import.meta.env.VITE_FILE_API}${selectedShower.image}`}
                   alt={selectedShower.name.en}
                   width={300}
                   height={200}

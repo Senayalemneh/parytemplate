@@ -190,7 +190,7 @@ const TrashBooks = () => {
       header: t("addbooksadmin.table.headers.cover"),
       Cell: ({ cell }) => (
         <Image
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cell.getValue<string>()}`}
+          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
           width={60}
           height={60}
           fit="cover"
@@ -325,7 +325,7 @@ const TrashBooks = () => {
             </Text>
             <Box mt="md">
               <Image
-                src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${selectedBook.coverImage}`}
+                src={`${import.meta.env.VITE_FILE_API}${selectedBook.coverImage}`}
                 width={120}
                 height={120}
                 fit="contain"

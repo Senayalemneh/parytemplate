@@ -239,7 +239,7 @@ const DetailedNews: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const BASE_IMAGE_URL =
-    "https://bole.prosperity.boleprosperityparty.org/CMSFiles/";
+    `${import.meta.env.VITE_FILE_API}`;
 
   useEffect(() => {
     AOS.init({

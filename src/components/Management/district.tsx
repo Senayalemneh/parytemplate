@@ -428,7 +428,7 @@ const OrgMemberCard = ({
                   src={
                     member.image.startsWith("http")
                       ? member.image
-                      : `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${member.image}`
+                      : `${import.meta.env.VITE_FILE_API}${member.image}`
                   }
                   size={avatarSize}
                   radius="50%"

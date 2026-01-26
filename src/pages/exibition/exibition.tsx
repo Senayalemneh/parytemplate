@@ -307,7 +307,7 @@ export default function ExhibitionsPage() {
 
   const handleImageViewed = (exhibitionId: number, imagePath: string) => {
     setSelectedImage(
-      `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${imagePath}`
+      `${import.meta.env.VITE_FILE_API}${imagePath}`
     );
     setShowImageModal(true);
     console.log(
@@ -925,7 +925,7 @@ export default function ExhibitionsPage() {
                 <SwiperSlide key={idx}>
                   <div className="relative h-full w-full">
                     <Image
-                      src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${img}`}
+                      src={`${import.meta.env.VITE_FILE_API}${img}`}
                       alt={`${exhibitionToShow.title} - ${idx + 1}`}
                       className="w-full h-full object-fill"
                     />
@@ -1003,7 +1003,7 @@ export default function ExhibitionsPage() {
                       >
                         <div className="aspect-w-16 aspect-h-9">
                           <Image
-                            src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${img}`}
+                            src={`${import.meta.env.VITE_FILE_API}${img}`}
                             alt={`${exhibitionToShow.title} - ${idx + 1}`}
                             className="w-full h-64 object-fill transition-transform duration-500 group-hover:scale-110"
                           />
@@ -1080,7 +1080,7 @@ export default function ExhibitionsPage() {
             <SwiperSlide key={idx}>
               <Box className="relative w-full h-full">
                 <Image
-                  src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${img}`}
+                  src={`${import.meta.env.VITE_FILE_API}${img}`}
                   alt={`${exhibitionToShow.title} - ${idx + 1}`}
                   className="w-full h-full object-contain"
                 />

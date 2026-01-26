@@ -1197,7 +1197,7 @@ const UserManagement: React.FC = () => {
           {selectedUser?.user?.avatar && !avatarFile ? (
             <div className="flex flex-col items-center">
               <Image
-                src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${selectedUser.user.avatar}`}
+                src={`${import.meta.env.VITE_FILE_API}${selectedUser.user.avatar}`}
                 width={250}
                 height={250}
                 radius="md"

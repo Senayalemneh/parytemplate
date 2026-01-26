@@ -501,7 +501,7 @@ const AddBooks = () => {
 
       if (book.coverImage) {
         setCoverImagePreview(
-          `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${book.coverImage}`
+          `${import.meta.env.VITE_FILE_API}${book.coverImage}`
         );
       }
       setEditingId(id);
@@ -673,7 +673,7 @@ const AddBooks = () => {
       header: t("addbooksadmin.table.headers.cover"),
       Cell: ({ cell }) => (
         <Image
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cell.getValue<string>()}`}
+          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
           width={60}
           height={60}
           fit="cover"
@@ -864,7 +864,7 @@ const AddBooks = () => {
               <Image
                 src={
                   coverImagePreview ||
-                  `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.coverImagePath}`
+                  `${import.meta.env.VITE_FILE_API}${form.values.coverImagePath}`
                 }
                 height={160}
                 fit="contain"

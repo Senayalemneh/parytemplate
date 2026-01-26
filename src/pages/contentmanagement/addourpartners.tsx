@@ -319,7 +319,7 @@ const PartnerManagement = () => {
 
       setPreviewImage(
         item.logo
-          ? `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${item.logo}`
+          ? `${import.meta.env.VITE_FILE_API}${item.logo}`
           : null
       );
       setEditingId(item.id);
@@ -370,7 +370,7 @@ const PartnerManagement = () => {
       header: t("partnermanagementadmin.table.logo"),
       Cell: ({ cell }) => (
         <Image
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${cell.getValue<string>()}`}
+          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
           width={60}
           height={40}
           fit="contain"
@@ -609,7 +609,7 @@ const PartnerManagement = () => {
               <Image
                 src={
                   previewImage ||
-                  `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.logo}`
+                  `${import.meta.env.VITE_FILE_API}${form.values.logo}`
                 }
                 height={160}
                 fit="contain"

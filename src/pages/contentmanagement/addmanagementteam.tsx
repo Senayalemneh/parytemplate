@@ -425,7 +425,7 @@ const TeamMembersManagement = () => {
       header: t("teammembersadmin.table.headers.avatar"),
       Cell: ({ row }) => (
         <Avatar
-          src={`https://bole.prosperity.boleprosperityparty.org/CMSFiles/${row.original.avatar}`}
+          src={`${import.meta.env.VITE_FILE_API}${row.original.avatar}`}
           alt={`${row.original.name[i18n.language as "en" | "am"]} avatar`}
           radius="xl"
           size="md"
@@ -778,7 +778,7 @@ const TeamMembersManagement = () => {
               <Image
                 src={
                   previewImage ||
-                  `https://bole.prosperity.boleprosperityparty.org/CMSFiles/${form.values.avatar_path}`
+                  `${import.meta.env.VITE_FILE_API}${form.values.avatar_path}`
                 }
                 height={160}
                 fit="contain"
