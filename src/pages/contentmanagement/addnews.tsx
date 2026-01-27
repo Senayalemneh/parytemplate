@@ -172,8 +172,8 @@ const NewsManagement = () => {
           label:
             typeof category.name === "object"
               ? category.name.en ||
-                category.name.am ||
-                `Category ${category.id}`
+              category.name.am ||
+              `Category ${category.id}`
               : category.name || `Category ${category.id}`,
         }));
         setCategories(categoryOptions);
@@ -210,7 +210,7 @@ const NewsManagement = () => {
     setLoading(true);
     try {
       const response = await getNews();
-      const normalizedData = response?.data?.data.map((item: any) => ({
+      const normalizedData = response?.data?.map((item: any) => ({
         ...item,
         multiple_image_path: parseMultipleImages(item.multiple_image_path)
       })) || [];
@@ -295,7 +295,7 @@ const NewsManagement = () => {
       if (values.multipleImageFiles.length > 0) {
         setFileUploading(true);
         try {
-          const uploadPromises = values.multipleImageFiles.map(file => 
+          const uploadPromises = values.multipleImageFiles.map(file =>
             uploadFile(file, "news/multiple")
           );
           const uploadResponses = await Promise.all(uploadPromises);
@@ -325,7 +325,7 @@ const NewsManagement = () => {
         },
         excerpt: values.excerpt,
         category_id: Number(values.category_id),
-        author_id: Number(values.author_id),
+        author_id: values.author_id,
         is_published: values.is_published,
         image_path: image_path,
         multiple_image_path: multiple_image_path.length > 0 ? multiple_image_path : null,
@@ -360,8 +360,7 @@ const NewsManagement = () => {
       } else {
         showNotification(
           t(
-            `newsmanagementadmin.notifications.${
-              editingId ? "updateFailed" : "createFailed"
+            `newsmanagementadmin.notifications.${editingId ? "updateFailed" : "createFailed"
             }`
           ),
           "error"
@@ -688,7 +687,7 @@ const NewsManagement = () => {
       Cell: ({ cell }) => {
         const images = cell.getValue<string[] | null>();
         const parsedImages = parseMultipleImages(images);
-        
+
         if (parsedImages.length === 0) {
           return (
             <Box
@@ -704,7 +703,7 @@ const NewsManagement = () => {
             </Box>
           );
         }
-        
+
         return (
           <Group spacing="xs">
             {parsedImages.slice(0, 3).map((img, index) => (
@@ -905,7 +904,7 @@ const NewsManagement = () => {
           {(previewImage || form.values.image_path) && (
             <Box mb="md">
               <Text size="sm" mb="xs">
-                {previewImage 
+                {previewImage
                   ? t("newsmanagementadmin.form.image.preview")
                   : t("newsmanagementadmin.form.image.currentImage")}
               </Text>
