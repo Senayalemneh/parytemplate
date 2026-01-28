@@ -87,7 +87,7 @@ const useStyles = createStyles((theme) => ({
     lineHeight: 1.2,
     fontWeight: 800,
     marginBottom: theme.spacing.md,
-    color: theme.colors.gray[9],
+    color: "#112f77", // Navy blue
     [theme.fn.smallerThan("sm")]: {
       fontSize: "1.8rem",
     },
@@ -102,21 +102,21 @@ const useStyles = createStyles((theme) => ({
       fontSize: "1.8rem",
       fontWeight: 700,
       margin: `${theme.spacing.xl}px 0 ${theme.spacing.md}px 0`,
-      color: theme.colors.gray[9],
+      color: "#112f77", // Navy blue
     },
     "& h3": {
       fontSize: "1.5rem",
       fontWeight: 600,
       margin: `${theme.spacing.xl}px 0 ${theme.spacing.md}px 0`,
-      color: theme.colors.gray[9],
+      color: "#112f77", // Navy blue
     },
     "& blockquote": {
-      borderLeft: `4px solid ${theme.colors.blue[5]}`,
+      borderLeft: `4px solid #0275b2`, // Ocean blue
       paddingLeft: theme.spacing.md,
       fontStyle: "italic",
       color: theme.colors.gray[7],
       margin: `${theme.spacing.xl}px 0`,
-      backgroundColor: theme.colors.gray[0],
+      backgroundColor: "#f9db1210", // Yellow with transparency
       padding: theme.spacing.md,
       borderRadius: theme.radius.sm,
     },
@@ -143,11 +143,11 @@ const useStyles = createStyles((theme) => ({
     },
   },
   commentBox: {
-    borderLeft: `3px solid ${theme.colors.blue[5]}`,
+    borderLeft: `3px solid #0275b2`, // Ocean blue
     paddingLeft: theme.spacing.md,
     transition: "all 0.2s ease",
     "&:hover": {
-      borderLeftColor: theme.colors.blue[7],
+      borderLeftColor: "#046d74", // Teal
     },
   },
   commentActions: {
@@ -181,24 +181,29 @@ interface NewsItem {
   excerpt: string;
   image_path?: string;
   multiple_image_path?: string[];
-  category: {
+  category_id?: number;
+  category?: {
     id: number;
     name: {
       am: string;
       en: string;
     };
   };
-  author: {
+  author_id?: string;
+  author?: {
     id: number;
     name: string;
     avatar?: string;
   };
-  is_published: number;
+  is_published: number | boolean;
   created_at: string;
   updated_at: string;
   view_count?: number;
   tags?: string[];
   messages?: Comment[];
+  woreda_id?: number | null;
+  subcity_id?: number | null;
+  published_at?: string | null;
 }
 
 interface Comment {
@@ -241,6 +246,15 @@ const DetailedNews: React.FC = () => {
   const BASE_IMAGE_URL =
     `${import.meta.env.VITE_FILE_API}`;
 
+  // Color variables for consistency
+  const colors = {
+    navyBlue: "#112f77",
+    oceanBlue: "#0275b2",
+    teal: "#046d74",
+    yellow: "#f9db12",
+    white: "#ffffff",
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -250,7 +264,11 @@ const DetailedNews: React.FC = () => {
 
     const user = localStorage.getItem("currentUser");
     if (user) {
-      setCurrentUser(JSON.parse(user));
+      try {
+        setCurrentUser(JSON.parse(user));
+      } catch (e) {
+        console.error("Failed to parse user from localStorage:", e);
+      }
     }
   }, []);
 
@@ -263,101 +281,79 @@ const DetailedNews: React.FC = () => {
           return;
         }
 
-        const allNewsResponse = await getAllNews();
-        const allNewsData =
-          allNewsResponse?.data?.data || allNewsResponse?.data || [];
-
-        if (!Array.isArray(allNewsData)) {
-          console.error("Unexpected news data format:", allNewsData);
-          setError(t("newsdetail.error.invalidFormat"));
-          return;
-        }
-
-        const parsedAllNews = allNewsData.map((item: any) => ({
-          ...item,
-          title:
-            typeof item.title === "string"
-              ? JSON.parse(item.title)
-              : item.title,
-          content:
-            typeof item.content === "string"
-              ? JSON.parse(item.content)
-              : { en: "", am: "" },
-          category: {
-            ...item.category,
-            name:
-              typeof item.category.name === "string"
-                ? JSON.parse(item.category.name)
-                : item.category.name,
-          },
-          image_path: item.image_path || null,
-          multiple_image_path: item.multiple_image_path 
-            ? JSON.parse(item.multiple_image_path)
-            : [],
-          view_count: item.view_count || 0,
-          tags: item.tags || [],
-          messages: item.messages || [],
-        }));
-
-        const newsWithImage = parsedAllNews.find(
-          (item: NewsItem) => item.id === parseInt(id)
-        );
-
-        if (!newsWithImage) {
-          setError(t("newsdetail.error.notFound"));
-          return;
-        }
-
         const detailedResponse = await getNewsById(id);
-        const detailedData = detailedResponse?.data || null;
-
+        console.log("Detailed news response:", detailedResponse); // Debug log
+        
+        // Check if response has data or is the data itself
+        const detailedData = detailedResponse?.data || detailedResponse;
+        
         if (!detailedData) {
           setError(t("newsdetail.error.notFound"));
           return;
         }
 
-        const combinedItem = {
-          ...detailedData,
-          title:
-            typeof detailedData.title === "string"
-              ? JSON.parse(detailedData.title)
-              : detailedData.title,
-          content:
-            typeof detailedData.content === "string"
-              ? JSON.parse(detailedData.content)
-              : { en: "", am: "" },
-          category: {
-            ...detailedData.category,
-            name:
-              typeof detailedData.category.name === "string"
-                ? JSON.parse(detailedData.category.name)
-                : detailedData.category.name,
-          },
-          image_path: newsWithImage.image_path,
-          multiple_image_path: newsWithImage.multiple_image_path,
+        // Parse the response data
+        const parsedItem = {
+          id: detailedData.id,
+          title: typeof detailedData.title === 'string' 
+            ? JSON.parse(detailedData.title) 
+            : (detailedData.title || { am: '', en: '' }),
+          slug: detailedData.slug || '',
+          content: typeof detailedData.content === 'string'
+            ? JSON.parse(detailedData.content)
+            : (detailedData.content || { am: '', en: '' }),
+          excerpt: detailedData.excerpt || '',
+          image_path: detailedData.image_path || null,
+          multiple_image_path: detailedData.multiple_image_path 
+            ? (typeof detailedData.multiple_image_path === 'string'
+              ? JSON.parse(detailedData.multiple_image_path)
+              : detailedData.multiple_image_path)
+            : [],
+          category_id: detailedData.category_id,
+          category: detailedData.category || null,
+          author_id: detailedData.author_id,
+          author: detailedData.author || null,
+          is_published: detailedData.is_published || false,
+          created_at: detailedData.created_at,
+          updated_at: detailedData.updated_at,
           view_count: detailedData.view_count || 0,
-          tags: newsWithImage.tags || [],
+          tags: detailedData.tags || [],
           messages: detailedData.messages || [],
+          woreda_id: detailedData.woreda_id,
+          subcity_id: detailedData.subcity_id,
+          published_at: detailedData.published_at,
         };
 
-        setNewsItem(combinedItem);
-        setRelatedNews(
-          parsedAllNews.filter((item) => item.id !== parseInt(id)).slice(0, 6)
-        );
+        setNewsItem(parsedItem);
 
-        if (combinedItem.messages && combinedItem.messages.length > 0) {
-          const validMessages = combinedItem.messages.filter(
-            (msg: any) => msg.message && msg.username
-          );
-          const sortedComments = [...validMessages].sort(
-            (a, b) =>
-              new Date(b.timestamp || b.created_at).getTime() -
-              new Date(a.timestamp || a.created_at).getTime()
-          );
-          setComments(sortedComments);
-        } else {
-          await fetchComments();
+        // Fetch related news (all news except current)
+        try {
+          const allNewsResponse = await getAllNews();
+          const allNewsData = allNewsResponse?.data || [];
+          
+          const relatedNewsItems = allNewsData
+            .filter((item: any) => item.id !== parseInt(id))
+            .slice(0, 6)
+            .map((item: any) => ({
+              id: item.id,
+              title: typeof item.title === 'string' ? JSON.parse(item.title) : item.title,
+              slug: item.slug || '',
+              content: typeof item.content === 'string' ? JSON.parse(item.content) : item.content,
+              excerpt: item.excerpt || '',
+              image_path: item.image_path || null,
+              category: item.category || null,
+              created_at: item.created_at,
+              view_count: item.view_count || 0,
+            }));
+          
+          setRelatedNews(relatedNewsItems);
+        } catch (error) {
+          console.error("Failed to fetch related news:", error);
+          setRelatedNews([]);
         }
+
+        // Fetch comments
+        await fetchComments();
       } catch (err) {
         console.error("Failed to fetch news:", err);
         setError(t("newsdetail.error.failedToLoad"));
@@ -373,10 +369,10 @@ const DetailedNews: React.FC = () => {
     try {
       setCommentsLoading(true);
       const response = await getNewsComments(parseInt(id as string));
-      const sortedComments = (response.data || []).sort(
+      const sortedComments = (response?.data || []).sort(
         (a: Comment, b: Comment) =>
-          new Date(b.timestamp || b.created_at).getTime() -
-          new Date(a.timestamp || a.created_at).getTime()
+          new Date(b.timestamp || b.created_at || '').getTime() -
+          new Date(a.timestamp || a.created_at || '').getTime()
       );
       setComments(sortedComments);
     } catch (error) {
@@ -387,36 +383,21 @@ const DetailedNews: React.FC = () => {
   };
 
   const handleCommentSubmit = async () => {
-    if (!commentText.trim() || !currentUser || !id) return;
+    if (!commentText.trim() || !id) return;
 
     try {
       setCommentLoading(true);
       const payload = {
-        username: currentUser.name || "Anonymous",
-        email: currentUser.email || "no-email@example.com",
+        username: currentUser?.name || "Anonymous",
+        email: currentUser?.email || "no-email@example.com",
         message: commentText,
-        user_id: currentUser.id || null,
+        user_id: currentUser?.id || null,
         timestamp: new Date().toISOString(),
       };
 
-      const response = await createNewsComment(parseInt(id as string), payload);
-
-      if (response.success) {
-        const updatedNewsResponse = await getNewsById(id);
-        const updatedNews = updatedNewsResponse?.data;
-
-        if (updatedNews && updatedNews.messages) {
-          const newComment = updatedNews.messages.find(
-            (msg: any) =>
-              msg.message === commentText && msg.username === payload.username
-          );
-
-          if (newComment) {
-            setComments([newComment, ...comments]);
-            setCommentText("");
-          }
-        }
-      }
+      await createNewsComment(parseInt(id as string), payload);
+      await fetchComments(); // Refresh comments
+      setCommentText("");
     } catch (error) {
       console.error("Failed to post comment:", error);
     } finally {
@@ -499,8 +480,17 @@ const DetailedNews: React.FC = () => {
     )}`;
   };
 
-  const getLocalizedContent = (content: { am: string; en: string }) => {
+  const getLocalizedContent = (content: { am: string; en: string } | string) => {
+    if (typeof content === 'string') return content;
+    if (!content) return '';
     return i18n.language === "am" ? content.am : content.en;
+  };
+
+  const getCategoryName = () => {
+    if (newsItem?.category?.name) {
+      return getLocalizedContent(newsItem.category.name);
+    }
+    return t("newsdetail.category.default");
   };
 
   if (loading) {
@@ -520,12 +510,8 @@ const DetailedNews: React.FC = () => {
           radius="lg"
           shadow="sm"
           sx={{
-            background: theme.fn.linearGradient(
-              0,
-              theme.fn.rgba(theme.colors.red[0], 0.8),
-              theme.fn.rgba(theme.colors.red[1], 0.8)
-            ),
-            borderColor: theme.colors.red[3],
+            background: `linear-gradient(0deg, rgba(2, 117, 178, 0.1), rgba(17, 47, 119, 0.1))`,
+            borderColor: "#0275b2",
           }}
         >
           <Box className="text-center">
@@ -533,7 +519,7 @@ const DetailedNews: React.FC = () => {
               size={80}
               radius={80}
               variant="gradient"
-              gradient={{ from: "red", to: "orange", deg: 45 }}
+              gradient={{ from: "#0275b2", to: "#046d74", deg: 45 }}
               className="mx-auto mb-6"
               sx={{ boxShadow: theme.shadows.sm }}
             >
@@ -542,15 +528,16 @@ const DetailedNews: React.FC = () => {
             <Title
               order={3}
               className="text-2xl font-semibold mb-2"
-              sx={{ color: theme.colors.red[8] }}
+              sx={{ color: "#112f77" }}
             >
               {error}
             </Title>
             <Button
               variant="outline"
-              color="red"
+              color="blue"
               onClick={() => navigate("/news")}
               mt="md"
+              sx={{ borderColor: "#0275b2", color: "#0275b2" }}
             >
               {t("newsdetail.actions.backToNews")}
             </Button>
@@ -585,9 +572,14 @@ const DetailedNews: React.FC = () => {
         <Button
           leftIcon={<IconArrowLeft size={16} />}
           variant="subtle"
-          color="blue"
           onClick={() => navigate(-1)}
           mb="xl"
+          sx={{ 
+            color: "#0275b2",
+            "&:hover": {
+              backgroundColor: "#0275b210",
+            }
+          }}
         >
           {t("newsdetail.actions.back")}
         </Button>
@@ -621,15 +613,14 @@ const DetailedNews: React.FC = () => {
                     mt="xs"
                     sx={{ fontStyle: "italic" }}
                   >
-                    {t("newsdetail.imageCredit")}:{" "}
-                    {newsItem.image_path.split("/").pop()}
+                    {t("newsdetail.imageCredit")}
                   </Text>
                 </Box>
               )}
 
               {newsItem.multiple_image_path && newsItem.multiple_image_path.length > 0 && (
                 <Box className={classes.multipleImagesContainer}>
-                  <Title order={3} mb="md">
+                  <Title order={3} mb="md" sx={{ color: "#112f77" }}>
                     {t("newsdetail.moreImages")}
                   </Title>
                   <SimpleGrid
@@ -663,21 +654,19 @@ const DetailedNews: React.FC = () => {
               )}
 
               <Badge
-                color="blue"
                 size="lg"
                 radius="sm"
                 variant="filled"
                 leftSection={<IconTags size={14} />}
                 sx={{
-                  backgroundColor: theme.colors.blue[7],
+                  background: "linear-gradient(90deg, #0275b2, #046d74)",
                   textTransform: "uppercase",
                   letterSpacing: "1px",
                   fontWeight: 700,
                   marginBottom: theme.spacing.md,
                 }}
               >
-                {getLocalizedContent(newsItem.category.name) ||
-                  t("newsdetail.category.default")}
+                {getCategoryName()}
               </Badge>
 
               <Title order={1} className={classes.title}>
@@ -688,15 +677,12 @@ const DetailedNews: React.FC = () => {
               <Group position="apart" mb="xl">
                 <Group spacing="md">
                   <Avatar
-                    src={
-                      newsItem.author?.avatar
-                        ? `${BASE_IMAGE_URL}${newsItem.author.avatar}`
-                        : null
-                    }
-                    alt={newsItem.author?.name}
                     radius="xl"
                     size="md"
-                    color="blue"
+                    sx={{ 
+                      backgroundColor: "#0275b2",
+                      color: colors.white
+                    }}
                   >
                     {newsItem.author?.name?.charAt(0) || "A"}
                   </Avatar>
@@ -728,6 +714,7 @@ const DetailedNews: React.FC = () => {
                       variant="default"
                       size="xs"
                       leftIcon={<IconShare size={14} />}
+                      sx={{ borderColor: "#0275b2", color: "#0275b2" }}
                     >
                       {t("newsdetail.share.facebook")}
                     </Button>
@@ -740,6 +727,7 @@ const DetailedNews: React.FC = () => {
                       variant="default"
                       size="xs"
                       leftIcon={<IconShare size={14} />}
+                      sx={{ borderColor: "#046d74", color: "#046d74" }}
                     >
                       {t("newsdetail.share.twitter")}
                     </Button>
@@ -760,9 +748,14 @@ const DetailedNews: React.FC = () => {
               {newsItem.tags && newsItem.tags.length > 0 && (
                 <Box mt="xl">
                   <Group spacing="xs">
-                    <IconTags size={18} color={theme.colors.gray[6]} />
+                    <IconTags size={18} color="#0275b2" />
                     {newsItem.tags.map((tag, index) => (
-                      <Badge key={index} variant="outline" radius="sm">
+                      <Badge 
+                        key={index} 
+                        variant="outline" 
+                        radius="sm"
+                        sx={{ borderColor: "#0275b2", color: "#0275b2" }}
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -773,7 +766,7 @@ const DetailedNews: React.FC = () => {
               <Divider my="xl" />
 
               <Box mt="xl">
-                <Title order={3} mb="md">
+                <Title order={3} mb="md" sx={{ color: "#112f77" }}>
                   {t("newsdetail.comments.title")} ({comments.length})
                 </Title>
 
@@ -784,6 +777,7 @@ const DetailedNews: React.FC = () => {
                     withBorder
                     mb="xl"
                     className={classes.commentInput}
+                    sx={{ borderColor: "#0275b2" }}
                   >
                     <Textarea
                       placeholder={t("newsdetail.comments.placeholder")}
@@ -799,13 +793,25 @@ const DetailedNews: React.FC = () => {
                         onClick={handleCommentSubmit}
                         loading={commentLoading}
                         disabled={!commentText.trim()}
+                        sx={{
+                          background: "linear-gradient(90deg, #0275b2, #046d74)",
+                          "&:hover": {
+                            opacity: 0.9,
+                          },
+                        }}
                       >
                         {t("newsdetail.comments.post")}
                       </Button>
                     </Group>
                   </Paper>
                 ) : (
-                  <Paper p="lg" radius="md" withBorder mb="xl">
+                  <Paper 
+                    p="lg" 
+                    radius="md" 
+                    withBorder 
+                    mb="xl"
+                    sx={{ borderColor: "#f9db12" }}
+                  >
                     <Text align="center" color="dimmed">
                       {t("newsdetail.comments.loginPrompt")}
                     </Text>
@@ -831,12 +837,10 @@ const DetailedNews: React.FC = () => {
                           <Avatar
                             radius="xl"
                             size="md"
-                            color="blue"
-                            src={
-                              comment.user?.avatar
-                                ? `${BASE_IMAGE_URL}${comment.user.avatar}`
-                                : null
-                            }
+                            sx={{ 
+                              backgroundColor: "#0275b2",
+                              color: colors.white
+                            }}
                           >
                             {comment.username?.charAt(0) || "U"}
                           </Avatar>
@@ -859,13 +863,13 @@ const DetailedNews: React.FC = () => {
                               className={classes.commentActions}
                             >
                               <ActionIcon
-                                color="blue"
+                                sx={{ color: "#0275b2" }}
                                 onClick={() => handleEditComment(comment)}
                               >
                                 <IconEdit size={16} />
                               </ActionIcon>
                               <ActionIcon
-                                color="red"
+                                sx={{ color: "#e53e3e" }}
                                 onClick={() =>
                                   comment.id && handleDeleteComment(comment.id)
                                 }
@@ -891,6 +895,7 @@ const DetailedNews: React.FC = () => {
                               variant="default"
                               size="xs"
                               onClick={() => setEditingCommentId(null)}
+                              sx={{ borderColor: "#0275b2", color: "#0275b2" }}
                             >
                               {t("newsdetail.comments.cancel")}
                             </Button>
@@ -898,6 +903,12 @@ const DetailedNews: React.FC = () => {
                               size="xs"
                               onClick={handleUpdateComment}
                               loading={commentLoading}
+                              sx={{
+                                background: "linear-gradient(90deg, #0275b2, #046d74)",
+                                "&:hover": {
+                                  opacity: 0.9,
+                                },
+                              }}
                             >
                               {t("newsdetail.comments.update")}
                             </Button>
@@ -911,11 +922,11 @@ const DetailedNews: React.FC = () => {
                     </Paper>
                   ))
                 ) : (
-                  <Paper p="lg" radius="md" withBorder>
+                  <Paper p="lg" radius="md" withBorder sx={{ borderColor: "#0275b2" }}>
                     <Group position="center">
                       <IconMessageCircle
                         size={40}
-                        color={theme.colors.gray[5]}
+                        color="#0275b2"
                       />
                       <Text color="dimmed">
                         {t("newsdetail.comments.empty")}
@@ -932,6 +943,7 @@ const DetailedNews: React.FC = () => {
                   sx={{
                     position: "relative",
                     paddingBottom: theme.spacing.sm,
+                    color: "#112f77",
                     "&:after": {
                       content: '""',
                       position: "absolute",
@@ -939,7 +951,7 @@ const DetailedNews: React.FC = () => {
                       left: 0,
                       width: "60px",
                       height: "4px",
-                      backgroundColor: theme.colors.blue[6],
+                      backgroundColor: "#0275b2",
                     },
                   }}
                 >
@@ -954,6 +966,7 @@ const DetailedNews: React.FC = () => {
                         radius="md"
                         className={classes.relatedNewsCard}
                         onClick={() => navigate(`/news/${news.id}`)}
+                        sx={{ borderColor: "#0275b2" }}
                       >
                         <Card.Section>
                           <Image
@@ -971,8 +984,15 @@ const DetailedNews: React.FC = () => {
                           />
                         </Card.Section>
                         <Box mt="md">
-                          <Badge color="blue" variant="light" mb="sm">
-                            {getLocalizedContent(news.category.name)}
+                          <Badge 
+                            variant="light" 
+                            mb="sm"
+                            sx={{ 
+                              backgroundColor: "#0275b215",
+                              color: "#0275b2"
+                            }}
+                          >
+                            {getLocalizedContent(news.category?.name || { am: '', en: '' })}
                           </Badge>
                           <Title order={3} size="h5" weight={600} lineClamp={2}>
                             {getLocalizedContent(news.title) ||
@@ -999,21 +1019,19 @@ const DetailedNews: React.FC = () => {
               radius="md"
               mb="xl"
               className={classes.sidebarCard}
+              sx={{ borderColor: "#0275b2" }}
             >
-              <Title order={3} mb="md">
+              <Title order={3} mb="md" sx={{ color: "#112f77" }}>
                 {t("newsdetail.author.about")}
               </Title>
               <Group spacing="md" noWrap align="flex-start">
                 <Avatar
-                  src={
-                    newsItem.author?.avatar
-                      ? `${BASE_IMAGE_URL}${newsItem.author.avatar}`
-                      : null
-                  }
-                  alt={newsItem.author?.name}
+                  sx={{ 
+                    backgroundColor: "#0275b2",
+                    color: colors.white
+                  }}
                   radius="xl"
                   size="lg"
-                  color="blue"
                 >
                   {newsItem.author?.name?.charAt(0) || "A"}
                 </Avatar>
@@ -1034,15 +1052,15 @@ const DetailedNews: React.FC = () => {
               p="lg"
               radius="md"
               sx={{
-                background: `linear-gradient(135deg, ${theme.colors.blue[7]} 0%, ${theme.colors.blue[5]} 100%)`,
-                color: theme.white,
+                background: `linear-gradient(135deg, ${colors.navyBlue} 0%, ${colors.oceanBlue} 100%)`,
+                color: colors.white,
               }}
               className={classes.sidebarCard}
             >
-              <Title order={3} mb="sm" color={theme.white}>
+              <Title order={3} mb="sm" color={colors.white}>
                 {t("newsdetail.newsletter.title")}
               </Title>
-              <Text size="sm" mb="md" color={theme.colors.blue[1]}>
+              <Text size="sm" mb="md" sx={{ color: `${colors.white}CC` }}>
                 {t("newsdetail.newsletter.description")}
               </Text>
               <Box>
@@ -1052,23 +1070,25 @@ const DetailedNews: React.FC = () => {
                   mb="sm"
                   styles={{
                     input: {
-                      backgroundColor: theme.white,
+                      backgroundColor: colors.white,
                     },
                   }}
                 />
                 <Button
                   fullWidth
-                  color="white"
-                  variant="filled"
                   sx={{
-                    color: theme.colors.blue[7],
+                    backgroundColor: colors.yellow,
+                    color: colors.navyBlue,
                     fontWeight: 600,
+                    "&:hover": {
+                      backgroundColor: `${colors.yellow}DD`,
+                    },
                   }}
                 >
                   {t("newsdetail.newsletter.button")}
                 </Button>
               </Box>
-              <Text size="xs" mt="sm" color={theme.colors.blue[2]}>
+              <Text size="xs" mt="sm" sx={{ color: `${colors.white}AA` }}>
                 {t("newsdetail.newsletter.privacy")}
               </Text>
             </Paper>

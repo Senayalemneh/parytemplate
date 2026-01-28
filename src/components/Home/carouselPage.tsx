@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { getCarousels } from "../../services/api/main";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Loader from "../common/loader";
 import { useTranslation } from "react-i18next";
-import { useMediaQuery } from "@mantine/hooks";
-import { Box, Text, Button } from "@mantine/core";
 
 interface CarouselItem {
   id: number;
@@ -22,18 +17,27 @@ interface CarouselItem {
     en: string;
     am: string;
   };
-  created_at: string;
-  updated_at: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
-const HomePageCarousel: React.FC = () => {
+export default function HomePageCarousel() {
   const [carouselItems, setCarouselItems] = useState<CarouselItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const { i18n, t } = useTranslation();
   const currentLanguage = i18n.language;
-  const isMobile = useMediaQuery("(max-width: 640px)");
-  const isTablet = useMediaQuery("(max-width: 1024px)");
+
+  // Color variables
+  const colors = {
+    oceanBlue: "#0275b2",
+    navyBlue: "#112f77",
+    teal: "#046d74",
+    yellow: "#f9db12",
+    white: "#ffffff",
+    black: "#000000",
+  };
 
   useEffect(() => {
     const fetchCarouselData = async () => {
@@ -51,22 +55,13 @@ const HomePageCarousel: React.FC = () => {
     fetchCarouselData();
   }, []);
 
-  const handleImageLoad = () => {
-    setImagesLoaded((prev) => prev + 1);
-  };
-
-  const handleImageError = (
-    e: React.SyntheticEvent<HTMLImageElement, Event>
-  ) => {
-    e.currentTarget.src = "/fallback-image.jpg";
-    setImagesLoaded((prev) => prev + 1);
-  };
-
   useEffect(() => {
-    if (carouselItems.length > 0 && imagesLoaded === carouselItems.length) {
-      setLoading(false);
-    }
-  }, [imagesLoaded, carouselItems.length]);
+    if (!isAutoPlay || carouselItems.length === 0) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % carouselItems.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [isAutoPlay, carouselItems.length]);
 
   const getLocalizedContent = (
     item: CarouselItem,
@@ -81,175 +76,250 @@ const HomePageCarousel: React.FC = () => {
     return item[field].en;
   };
 
+  const getPrevIndex = () => (activeIndex - 1 + carouselItems.length) % carouselItems.length;
+  const getNextIndex = () => (activeIndex + 1) % carouselItems.length;
+
+  const handlePrev = () => {
+    setActiveIndex(getPrevIndex());
+    setIsAutoPlay(false);
+  };
+
+  const handleNext = () => {
+    setActiveIndex(getNextIndex());
+    setIsAutoPlay(false);
+  };
+
+  const handleDotClick = (index: number) => {
+    setActiveIndex(index);
+    setIsAutoPlay(false);
+  };
+
   if (loading) {
     return (
-      <Box className="relative h-[50vh] sm:h-[60vh] md:h-[80vh] flex items-center justify-center bg-gradient-to-br from-gray-900 to-indigo-900">
-        <Loader />
-      </Box>
+      <div className="relative w-full min-h-screen bg-gradient-to-br from-[#112f77] via-[#0275b2] to-[#046d74] flex items-center justify-center">
+        <div className="relative">
+          <Loader />
+          <div className="mt-4 text-white text-lg animate-pulse text-center">
+            Loading Distinguished Leaders...
+          </div>
+        </div>
+      </div>
     );
   }
 
   if (carouselItems.length === 0) {
     return (
-      <Box
-        className={`relative ${
-          isMobile ? "h-[50vh]" : "h-[60vh]"
-        } flex items-center justify-center bg-gradient-to-br from-gray-900 to-indigo-900`}
-      >
-        <Text size="lg" className="text-white font-semibold animate-pulse">
-          {t("carousel.no_items")}
-        </Text>
-      </Box>
+      <div className="relative w-full min-h-screen bg-gradient-to-br from-[#112f77] via-[#0275b2] to-[#046d74] flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-20 h-20 mx-auto text-[#f9db12] mb-4 flex items-center justify-center">
+            <ChevronLeft className="w-10 h-10" />
+            <ChevronRight className="w-10 h-10" />
+          </div>
+          <div className="text-2xl text-white font-semibold">
+            {t("carousel.no_items")}
+          </div>
+        </div>
+      </div>
     );
   }
 
   return (
-    <Box
-      className={`relative ${
-        isMobile ? "h-[50vh]" : isTablet ? "h-[60vh]" : "h-[85vh]"
-      } overflow-hidden group shadow-2xl bg-gray-900/60 backdrop-blur-md rounded-xl`}
-      role="region"
-      aria-label={t("carousel.label")}
-    >
-      <Swiper
-        modules={[Autoplay, Navigation, Pagination]}
-        spaceBetween={0}
-        slidesPerView={1}
-        loop={carouselItems.length > 1}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        pagination={{
-          clickable: true,
-          bulletClass: `swiper-pagination-bullet ${
-            isMobile ? "w-2 h-2" : "w-3 h-3"
-          } bg-white/80 hover:bg-white transition-all duration-300`,
-          bulletActiveClass:
-            "swiper-pagination-bullet-active bg-gradient-to-r from-indigo-500 to-purple-500 scale-125",
-        }}
-        className="h-full w-full rounded-xl"
-      >
-        {carouselItems.map((item, index) => (
-          <SwiperSlide key={item.id} className="relative h-full w-full">
-            <Box className="absolute inset-0 z-10 flex items-end justify-center bg-gradient-to-t from-black/85 via-black/50 to-transparent transition-all duration-700">
-              <Box
-                className={`text-center text-white px-4 sm:px-6 py-8 transform transition-all duration-1000 ease-out ${
-                  isMobile
-                    ? "max-w-full scale-100"
-                    : "max-w-3xl scale-95 group-hover:scale-100"
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-[#112f77] via-[#0275b2] to-[#046d74] overflow-hidden">
+      {/* Main Carousel Container - Full Width */}
+      <div className="w-full h-screen relative">
+        {/* Background Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#112f77]/20 via-[#0275b2]/10 to-[#046d74]/20" />
+
+        {/* Slides Container - Full Width */}
+        <div className="relative w-full h-full flex items-center justify-center px-4 md:px-8 lg:px-16">
+          
+          {/* Left Slide (Previous) - Full Width */}
+          <div
+            className="absolute left-0 w-[30%] h-[70%] rounded-r-xl overflow-hidden transition-all duration-500 ease-out transform opacity-70 scale-90 hover:opacity-85 hover:scale-95 group"
+            style={{ zIndex: 10 }}
+          >
+            <div className="relative w-full h-full">
+              <img
+                src={`${import.meta.env.VITE_FILE_API}${carouselItems[getPrevIndex()].imgURL}`}
+                alt={getLocalizedContent(carouselItems[getPrevIndex()], "title")}
+                className="w-full h-full object-fill brightness-90 group-hover:brightness-95 transition-all duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                <h3 className="text-white text-lg font-semibold opacity-90">
+                  {getLocalizedContent(carouselItems[getPrevIndex()], "title")}
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Center Slide (Active) - Full Width */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 w-[45%] h-[85%] rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 ease-out transform group"
+            style={{ zIndex: 50 }}
+          >
+            <div className="relative w-full h-full">
+              <img
+                src={`${import.meta.env.VITE_FILE_API}${carouselItems[activeIndex].imgURL}`}
+                alt={getLocalizedContent(carouselItems[activeIndex], "title")}
+                className="w-full h-full object-fill transition-transform duration-700 group-hover:scale-105"
+              />
+              
+              {/* Gradient overlay with your color scheme */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#112f77]/90 via-[#0275b2]/40 to-transparent flex flex-col justify-end p-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg leading-tight">
+                  {getLocalizedContent(carouselItems[activeIndex], "title")}
+                </h2>
+                <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-md">
+                  {getLocalizedContent(carouselItems[activeIndex], "description")}
+                </p>
+                <div className="flex items-center gap-2 text-sm text-white font-medium">
+                  <div className="w-2 h-2 bg-[#f9db12] rounded-full animate-pulse" />
+                  <span>Currently Viewing</span>
+                </div>
+              </div>
+
+              {/* Border with your color scheme */}
+              <div className="absolute inset-0 rounded-3xl border-4 border-[#f9db12]/50 shadow-[0_0_60px_rgba(249,219,18,0.4)] pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Right Slide (Next) - Full Width */}
+          <div
+            className="absolute right-0 w-[30%] h-[70%] rounded-l-xl overflow-hidden transition-all duration-500 ease-out transform opacity-70 scale-90 hover:opacity-85 hover:scale-95 group"
+            style={{ zIndex: 10 }}
+          >
+            <div className="relative w-full h-full">
+              <img
+                src={`${import.meta.env.VITE_FILE_API}${carouselItems[getNextIndex()].imgURL}`}
+                alt={getLocalizedContent(carouselItems[getNextIndex()], "title")}
+                className="w-full h-full object-fill brightness-90 group-hover:brightness-95 transition-all duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-[#000000]/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                <h3 className="text-white text-lg font-semibold opacity-90">
+                  {getLocalizedContent(carouselItems[getNextIndex()], "title")}
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 
+              bg-gradient-to-r from-[#f9db12] to-[#0275b2] text-white p-4
+              rounded-full shadow-2xl hover:scale-110 transition-all duration-300 
+              backdrop-blur-md opacity-90 hover:opacity-100
+              border-2 border-white"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 
+              bg-gradient-to-r from-[#046d74] to-[#112f77] text-white p-4
+              rounded-full shadow-2xl hover:scale-110 transition-all duration-300 
+              backdrop-blur-md opacity-90 hover:opacity-100
+              border-2 border-white"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Bottom Controls - Centered and full width */}
+        <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center justify-center space-y-6">
+          {/* Dots Indicator */}
+          <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+            {carouselItems.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`rounded-full transition-all duration-300 ${
+                  index === activeIndex
+                    ? 'w-10 h-2 bg-gradient-to-r from-[#f9db12] via-[#0275b2] to-[#046d74] shadow-lg'
+                    : 'w-2 h-2 bg-gray-600 hover:bg-gray-500'
                 }`}
-              >
-                <Text
-                  component="h2"
-                  className={`font-extrabold tracking-tight animate-slide-up ${
-                    isMobile
-                      ? "text-2xl"
-                      : isTablet
-                      ? "text-3xl"
-                      : "text-4xl md:text-5xl"
-                  } mb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-purple-300 drop-shadow-xl`}
-                >
-                  {getLocalizedContent(item, "title")}
-                </Text>
-                <Text
-                  className={`font-medium animate-slide-up-delayed ${
-                    isMobile
-                      ? "text-sm"
-                      : isTablet
-                      ? "text-base"
-                      : "text-lg md:text-xl"
-                  } mb-6 text-gray-100/90 drop-shadow-lg`}
-                  lineClamp={isMobile ? 2 : 3}
-                >
-                  {getLocalizedContent(item, "description")}
-                </Text>
-              </Box>
-            </Box>
-            <img
-              src={`${import.meta.env.VITE_FILE_API}${item.imgURL}`}
-              alt={getLocalizedContent(item, "title")}
-              className="w-full h-full object-contain sm:object-fill object-center transform scale-100 transition-transform duration-1200 ease-in-out group-hover:scale-105"
-              onLoad={handleImageLoad}
-              // onError={handleImageError}
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
 
-      {/* Navigation buttons */}
-      <button
-        className={`swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-indigo-700 to-purple-700 text-white p-3 sm:p-4 rounded-full shadow-xl hover:scale-110 transition-all duration-300 ${
-          isMobile ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-        }`}
-        aria-label={t("carousel.prev")}
-      >
-        <FaChevronLeft size={isMobile ? 20 : 28} />
-      </button>
-      <button
-        className={`swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-indigo-700 to-purple-700 text-white p-3 sm:p-4 rounded-full shadow-xl hover:scale-110 transition-all duration-300 ${
-          isMobile
-            ? "opacity-100"
-            : "opacity-0 group-hover:opacity interpolation-quart-inout"
-        }`}
-        aria-label={t("carousel.next")}
-      >
-        <FaChevronRight size={isMobile ? 20 : 28} />
-      </button>
+          {/* Auto-play toggle */}
+          <button
+            onClick={() => setIsAutoPlay(!isAutoPlay)}
+            className="bg-white/20 backdrop-blur-sm text-[#112f77] px-4 py-2 rounded-full 
+              hover:bg-white/30 transition-all duration-300 flex items-center gap-2
+              border border-[#f9db12]"
+            aria-label={isAutoPlay ? "Pause auto-play" : "Start auto-play"}
+          >
+            {isAutoPlay ? (
+              <>
+                <Pause className="w-4 h-4" />
+                <span className="text-sm font-medium">Pause Auto-play</span>
+              </>
+            ) : (
+              <>
+                <Play className="w-4 h-4" />
+                <span className="text-sm font-medium">Play Auto-play</span>
+              </>
+            )}
+          </button>
+        </div>
+      </div>
 
-      {/* Custom Pagination Styling */}
-      <style jsx>{`
-        .swiper-pagination {
-          bottom: 20px !important;
-          padding: 0 16px;
-          display: flex;
-          justify-content: center;
-          gap: 8px;
-        }
-        .swiper-pagination-bullet {
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          margin: 0 6px !important;
-          opacity: 0.8;
-        }
-        .swiper-pagination-bullet-active {
-          transform: scale(1.3);
-          opacity: 1;
-        }
-        @keyframes slide-up {
+      {/* Custom styles */}
+      <style jsx global>{`
+        @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(25px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        @keyframes slide-up-delayed {
-          from {
-            opacity: 0;
-            transform: translateY(25px);
+        
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.5;
           }
-          to {
+          50% {
             opacity: 1;
-            transform: translateY(0);
           }
         }
-        .animate-slide-up {
-          animation: slide-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        
+        .animate-pulse {
+          animation: pulse 2s ease-in-out infinite;
         }
-        .animate-slide-up-delayed {
-          animation: slide-up-delayed 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        
+        /* Smooth transitions for carousel */
+        .swiper-slide {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: rgba(2, 117, 178, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(to bottom, #f9db12, #0275b2);
+          border-radius: 4px;
+        }
+        
+        /* Selection style */
+        ::selection {
+          background: rgba(249, 219, 18, 0.5);
+          color: #112f77;
         }
       `}</style>
-    </Box>
+    </div>
   );
-};
-
-export default HomePageCarousel;
+}

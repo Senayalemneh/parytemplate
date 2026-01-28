@@ -16,6 +16,7 @@ import {
   Select,
   Stack,
   SimpleGrid,
+  Loader as MantineLoader,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
@@ -38,51 +39,49 @@ import {
   IconX,
   IconUpload,
   IconPhoto,
+  IconEye,
 } from "@tabler/icons-react";
 import { notifications } from "@mantine/notifications";
 import { useDisclosure } from "@mantine/hooks";
 import { useTranslation } from "react-i18next";
-import Loader from "../../components/common/loader";
 
 interface NewsItem {
   id: number;
-  title_am: string;
-  title_en: string;
+  title: {
+    am: string;
+    en: string;
+  };
   slug: string;
   excerpt: string;
-  content: string | { am: string; en: string };
+  content: {
+    am: string;
+    en: string;
+  };
   category_id: number;
-  author_id: number;
+  author_id: string;
   woreda_id: number | null;
   subcity_id: number | null;
   is_published: boolean;
-  published_at: string;
+  published_at: string | null;
   created_at: string;
   updated_at: string;
   image_path: string;
   multiple_image_path: string[] | null;
-  view_count: number;
+  view_count?: number;
   category: {
     id: number;
-    name: string | { am: string; en: string };
+    name: {
+      am: string;
+      en: string;
+    };
     slug: string;
     created_at: string;
     updated_at: string;
   };
-  author: {
+  author?: {
     id: number;
     name: string;
     email: string;
-    email_verified_at: string | null;
-    role_id: number;
-    woreda_id: number;
-    subcity_id: number;
-    created_at: string;
-    updated_at: string;
-    active_status: number;
-    avatar: string;
-    dark_mode: number;
-    messenger_color: string | null;
   };
 }
 
@@ -90,6 +89,16 @@ interface SelectItem {
   value: string;
   label: string;
 }
+
+// Color variables for consistency
+const colors = {
+  navyBlue: "#112f77",
+  oceanBlue: "#0275b2",
+  teal: "#046d74",
+  yellow: "#f9db12",
+  white: "#ffffff",
+  black: "#000000",
+};
 
 const CMS_FILES_BASE_URL = `${import.meta.env.VITE_FILE_API}`;
 
@@ -154,12 +163,6 @@ const NewsManagement = () => {
         value ? null : t("newsmanagementadmin.form.excerpt.error"),
       category_id: (value) =>
         value ? null : t("newsmanagementadmin.form.category.error"),
-      author_id: (value) =>
-        value ? null : t("newsmanagementadmin.form.author.error"),
-      imageFile: (value, values) =>
-        !editingId && !value && !values.image_path
-          ? t("newsmanagementadmin.form.image.error")
-          : null,
     },
   });
 
@@ -192,7 +195,7 @@ const NewsManagement = () => {
       const response = await getUsers();
       if (response && Array.isArray(response)) {
         const authorOptions = response.map((user: any) => ({
-          value: user.id.toString(),
+          value: user.id?.toString() || user.uid || `user_${user.id}`,
           label: user.name || user.email || `User ${user.id}`,
         }));
         setAuthors(authorOptions);
@@ -210,10 +213,39 @@ const NewsManagement = () => {
     setLoading(true);
     try {
       const response = await getNews();
-      const normalizedData = response?.data?.map((item: any) => ({
-        ...item,
-        multiple_image_path: parseMultipleImages(item.multiple_image_path)
-      })) || [];
+      console.log("News API Response:", response); // Debug log
+      
+      let normalizedData: NewsItem[] = [];
+      
+      if (response?.data && Array.isArray(response.data)) {
+        normalizedData = response.data.map((item: any) => ({
+          id: item.id,
+          title: typeof item.title === 'string' ? JSON.parse(item.title) : (item.title || { am: '', en: '' }),
+          slug: item.slug || '',
+          excerpt: item.excerpt || '',
+          content: typeof item.content === 'string' ? JSON.parse(item.content) : (item.content || { am: '', en: '' }),
+          category_id: item.category_id || 0,
+          author_id: item.author_id || '',
+          woreda_id: item.woreda_id,
+          subcity_id: item.subcity_id,
+          is_published: item.is_published || false,
+          published_at: item.published_at,
+          created_at: item.created_at,
+          updated_at: item.updated_at,
+          image_path: item.image_path || '',
+          multiple_image_path: parseMultipleImages(item.multiple_image_path),
+          view_count: item.view_count || 0,
+          category: item.category || {
+            id: item.category_id || 0,
+            name: { am: '', en: '' },
+            slug: '',
+            created_at: '',
+            updated_at: ''
+          },
+          author: item.author
+        }));
+      }
+      
       setNewsData(normalizedData);
       showNotification(
         t("newsmanagementadmin.notifications.loadSuccess"),
@@ -243,7 +275,7 @@ const NewsManagement = () => {
           ? t("newsmanagementadmin.notifications.successTitle")
           : t("newsmanagementadmin.notifications.errorTitle"),
       message,
-      color: type === "success" ? "teal" : "red",
+      color: type === "success" ? colors.teal : "red",
       icon: type === "success" ? <IconCheck size={18} /> : <IconX size={18} />,
       withBorder: true,
     });
@@ -316,20 +348,25 @@ const NewsManagement = () => {
         }
       }
 
+      // Create payload matching API structure
       const payload = {
-        title_am: values.title_am,
-        title_en: values.title_en,
+        title: {
+          am: values.title_am,
+          en: values.title_en,
+        },
         content: {
           am: values.content_am,
           en: values.content_en,
         },
         excerpt: values.excerpt,
         category_id: Number(values.category_id),
-        author_id: values.author_id,
+        author_id: values.author_id || "system", // Default value if empty
         is_published: values.is_published,
         image_path: image_path,
-        multiple_image_path: multiple_image_path.length > 0 ? multiple_image_path : null,
+        multiple_image_path: multiple_image_path.length > 0 ? JSON.stringify(multiple_image_path) : null,
       };
+
+      console.log("Submitting payload:", payload); // Debug log
 
       if (editingId) {
         await updateNews(editingId, payload);
@@ -349,6 +386,7 @@ const NewsManagement = () => {
       fetchNews();
     } catch (error: any) {
       console.error("Error saving news:", error);
+      console.error("Error details:", error.response?.data); // Debug log
 
       if (error.response?.data?.errors) {
         const errors = error.response.data.errors;
@@ -359,10 +397,8 @@ const NewsManagement = () => {
         });
       } else {
         showNotification(
-          t(
-            `newsmanagementadmin.notifications.${editingId ? "updateFailed" : "createFailed"
-            }`
-          ),
+          error.response?.data?.message || 
+          t(`newsmanagementadmin.notifications.${editingId ? "updateFailed" : "createFailed"}`),
           "error"
         );
       }
@@ -380,6 +416,7 @@ const NewsManagement = () => {
     try {
       setLoading(true);
       const response = await getNewsById(id);
+      console.log("Edit API Response:", response); // Debug log
 
       if (!response?.data) {
         showNotification(t("newsmanagementadmin.errors.notFound"), "error");
@@ -388,51 +425,21 @@ const NewsManagement = () => {
 
       const item = response.data;
 
-      let titleAm = "";
-      let titleEn = "";
-      let contentAm = "";
-      let contentEn = "";
-
-      if (typeof item.title === "string") {
-        try {
-          const title = JSON.parse(item.title);
-          titleAm = title.am || "";
-          titleEn = title.en || "";
-        } catch (e) {
-          console.error("Error parsing title:", e);
-          titleAm = item.title;
-        }
-      } else {
-        titleAm = item.title?.am || "";
-        titleEn = item.title?.en || "";
-      }
-
-      if (typeof item.content === "string") {
-        try {
-          const content = JSON.parse(item.content);
-          contentAm = content.am || "";
-          contentEn = content.en || "";
-        } catch (e) {
-          console.error("Error parsing content:", e);
-          contentAm = item.content;
-        }
-      } else {
-        contentAm = item.content?.am || "";
-        contentEn = item.content?.en || "";
-      }
-
+      // Parse the item data
+      const title = typeof item.title === 'string' ? JSON.parse(item.title) : (item.title || { am: '', en: '' });
+      const content = typeof item.content === 'string' ? JSON.parse(item.content) : (item.content || { am: '', en: '' });
       const multipleImages = parseMultipleImages(item.multiple_image_path);
 
       form.setValues({
-        title_am: titleAm,
-        title_en: titleEn,
-        content_am: contentAm,
-        content_en: contentEn,
-        excerpt: item.excerpt || "",
-        category_id: item.category_id?.toString() || "",
-        author_id: item.author_id?.toString() || "",
-        is_published: item.is_published,
-        image_path: item.image_path || "",
+        title_am: title.am || '',
+        title_en: title.en || '',
+        content_am: content.am || '',
+        content_en: content.en || '',
+        excerpt: item.excerpt || '',
+        category_id: item.category_id?.toString() || '',
+        author_id: item.author_id?.toString() || '',
+        is_published: item.is_published || false,
+        image_path: item.image_path || '',
         imageFile: null,
         multiple_image_path: multipleImages,
         multipleImageFiles: [],
@@ -565,17 +572,7 @@ const NewsManagement = () => {
       size: 80,
     },
     {
-      accessorFn: (row) => {
-        try {
-          if (typeof row.title === "string") {
-            const title = JSON.parse(row.title);
-            return title?.am || t("newsmanagementadmin.table.notAvailable");
-          }
-          return row.title?.am || t("newsmanagementadmin.table.notAvailable");
-        } catch {
-          return t("newsmanagementadmin.table.notAvailable");
-        }
-      },
+      accessorFn: (row) => row.title?.am || t("newsmanagementadmin.table.notAvailable"),
       header: t("newsmanagementadmin.table.headers.titleAm"),
       Cell: ({ cell }) => (
         <Box sx={{ maxWidth: 200 }}>
@@ -584,17 +581,7 @@ const NewsManagement = () => {
       ),
     },
     {
-      accessorFn: (row) => {
-        try {
-          if (typeof row.title === "string") {
-            const title = JSON.parse(row.title);
-            return title?.en || t("newsmanagementadmin.table.notAvailable");
-          }
-          return row.title?.en || t("newsmanagementadmin.table.notAvailable");
-        } catch {
-          return t("newsmanagementadmin.table.notAvailable");
-        }
-      },
+      accessorFn: (row) => row.title?.en || t("newsmanagementadmin.table.notAvailable"),
       header: t("newsmanagementadmin.table.headers.titleEn"),
       Cell: ({ cell }) => (
         <Box sx={{ maxWidth: 200 }}>
@@ -616,25 +603,25 @@ const NewsManagement = () => {
     },
     {
       accessorFn: (row) => {
-        try {
-          if (!row.category) return t("newsmanagementadmin.table.notAvailable");
-          if (typeof row.category.name === "string") {
+        if (!row.category) return t("newsmanagementadmin.table.notAvailable");
+        if (typeof row.category.name === "string") {
+          try {
             const name = JSON.parse(row.category.name);
-            return name?.en || t("newsmanagementadmin.table.notAvailable");
+            return name?.en || name?.am || t("newsmanagementadmin.table.notAvailable");
+          } catch {
+            return row.category.name;
           }
-          return (
-            row.category.name?.en || t("newsmanagementadmin.table.notAvailable")
-          );
-        } catch {
-          return t("newsmanagementadmin.table.notAvailable");
         }
+        return (
+          row.category.name?.en || row.category.name?.am || t("newsmanagementadmin.table.notAvailable")
+        );
       },
       header: t("newsmanagementadmin.table.headers.category"),
       id: "category",
     },
     {
       accessorFn: (row) =>
-        row.author?.name || t("newsmanagementadmin.table.notAvailable"),
+        row.author?.name || row.author_id || t("newsmanagementadmin.table.notAvailable"),
       header: t("newsmanagementadmin.table.headers.author"),
       id: "author",
     },
@@ -727,6 +714,15 @@ const NewsManagement = () => {
     {
       accessorKey: "view_count",
       header: t("newsmanagementadmin.table.headers.views"),
+      Cell: ({ cell }) => {
+        const count = cell.getValue<number>();
+        return (
+          <Group spacing={4}>
+            <IconEye size={14} />
+            <span>{count || 0}</span>
+          </Group>
+        );
+      },
     },
     {
       accessorKey: "published_at",
@@ -735,7 +731,7 @@ const NewsManagement = () => {
         const value = cell.getValue<string>();
         return value
           ? new Date(value).toLocaleString()
-          : t("newsmanagementadmin.table.notAvailable");
+          : t("newsmanagementadmin.table.notPublished");
       },
     },
     {
@@ -746,15 +742,25 @@ const NewsManagement = () => {
         return (
           <Group spacing="xs">
             <ActionIcon
-              color="blue"
-              variant="light"
+              sx={{ 
+                backgroundColor: colors.oceanBlue,
+                color: colors.white,
+                "&:hover": {
+                  backgroundColor: colors.navyBlue,
+                }
+              }}
               onClick={() => handleEdit(itemId)}
             >
               <IconPencil size={16} />
             </ActionIcon>
             <ActionIcon
-              color="red"
-              variant="light"
+              sx={{ 
+                backgroundColor: "#e53e3e",
+                color: colors.white,
+                "&:hover": {
+                  backgroundColor: "#c53030",
+                }
+              }}
               onClick={() => openDeleteConfirm(itemId)}
             >
               <IconTrash size={16} />
@@ -765,14 +771,20 @@ const NewsManagement = () => {
     },
   ];
 
-  if (loading) {
-    return <Loader />;
+  if (loading && newsData.length === 0) {
+    return (
+      <Box className="flex items-center justify-center h-screen">
+        <MantineLoader size="xl" variant="bars" color={colors.oceanBlue} />
+      </Box>
+    );
   }
 
   return (
     <Box p="md" pos="relative">
       <Group position="apart" mb="md">
-        <Title order={2}>{t("newsmanagementadmin.title")}</Title>
+        <Title order={2} sx={{ color: colors.navyBlue }}>
+          {t("newsmanagementadmin.title")}
+        </Title>
         <Button
           leftIcon={<IconPlus size={16} />}
           onClick={() => {
@@ -782,8 +794,12 @@ const NewsManagement = () => {
             setMultiplePreviewImages([]);
             openModal();
           }}
-          variant="gradient"
-          gradient={{ from: "indigo", to: "cyan" }}
+          sx={{
+            background: `linear-gradient(90deg, ${colors.oceanBlue}, ${colors.teal})`,
+            "&:hover": {
+              opacity: 0.9,
+            },
+          }}
         >
           {t("newsmanagementadmin.buttons.addNews")}
         </Button>
@@ -824,8 +840,8 @@ const NewsManagement = () => {
         }
         size="lg"
         overlayProps={{ blur: 3 }}
+        centered
       >
-        {loading && <Loader />}
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <Group grow mb="md">
             <TextInput
@@ -878,7 +894,6 @@ const NewsManagement = () => {
               {...form.getInputProps("category_id")}
             />
             <Select
-              withAsterisk
               label={t("newsmanagementadmin.form.author.label")}
               placeholder={t("newsmanagementadmin.form.author.placeholder")}
               data={authors}
@@ -917,8 +932,13 @@ const NewsManagement = () => {
                   alt="News Image"
                 />
                 <ActionIcon
-                  color="red"
-                  variant="filled"
+                  sx={{ 
+                    backgroundColor: "#e53e3e",
+                    color: colors.white,
+                    "&:hover": {
+                      backgroundColor: "#c53030",
+                    }
+                  }}
                   size="sm"
                   pos="absolute"
                   top={5}
@@ -977,8 +997,13 @@ const NewsManagement = () => {
                         alt={`Preview ${index + 1}`}
                       />
                       <ActionIcon
-                        color="red"
-                        variant="filled"
+                        sx={{ 
+                          backgroundColor: "#e53e3e",
+                          color: colors.white,
+                          "&:hover": {
+                            backgroundColor: "#c53030",
+                          }
+                        }}
                         size="sm"
                         pos="absolute"
                         top={5}
@@ -1001,8 +1026,13 @@ const NewsManagement = () => {
                         alt={`Current Image ${index + 1}`}
                       />
                       <ActionIcon
-                        color="red"
-                        variant="filled"
+                        sx={{ 
+                          backgroundColor: "#e53e3e",
+                          color: colors.white,
+                          "&:hover": {
+                            backgroundColor: "#c53030",
+                          }
+                        }}
                         size="sm"
                         pos="absolute"
                         top={5}
@@ -1028,14 +1058,22 @@ const NewsManagement = () => {
           />
 
           <Group position="right" mt="xl">
-            <Button variant="default" onClick={resetAndCloseModal}>
+            <Button 
+              variant="default" 
+              onClick={resetAndCloseModal}
+              sx={{ borderColor: colors.oceanBlue, color: colors.oceanBlue }}
+            >
               {t("newsmanagementadmin.buttons.cancel")}
             </Button>
             <Button
               type="submit"
-              variant="gradient"
-              gradient={{ from: "indigo", to: "cyan" }}
               loading={loading || fileUploading}
+              sx={{
+                background: `linear-gradient(90deg, ${colors.oceanBlue}, ${colors.teal})`,
+                "&:hover": {
+                  opacity: 0.9,
+                },
+              }}
             >
               {editingId
                 ? t("newsmanagementadmin.buttons.updateNews")
@@ -1051,7 +1089,6 @@ const NewsManagement = () => {
         title={t("newsmanagementadmin.modal.deleteTitle")}
         centered
       >
-        {deleteLoading && <Loader />}
         <Box>
           <Text size="sm" mb="md">
             {t("newsmanagementadmin.modal.deleteConfirmation")}
@@ -1060,11 +1097,18 @@ const NewsManagement = () => {
             <Button
               variant="default"
               onClick={() => setDeleteConfirmOpen(false)}
+              sx={{ borderColor: colors.oceanBlue, color: colors.oceanBlue }}
             >
               {t("newsmanagementadmin.buttons.cancel")}
             </Button>
             <Button
-              color="red"
+              sx={{ 
+                backgroundColor: "#e53e3e",
+                color: colors.white,
+                "&:hover": {
+                  backgroundColor: "#c53030",
+                }
+              }}
               loading={deleteLoading}
               onClick={() => itemToDelete && handleDelete(itemToDelete)}
             >

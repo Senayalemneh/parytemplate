@@ -24,7 +24,6 @@ import {
 } from "@mantine/core";
 import {
   IconCalendar,
-  IconClock,
   IconNews,
   IconArrowRight,
 } from "@tabler/icons-react";
@@ -48,7 +47,6 @@ interface NewsItem {
     am: string;
     en: string;
   };
-  excerpt: string;
   image_path?: string;
   category: {
     id: number;
@@ -57,11 +55,13 @@ interface NewsItem {
       en: string;
     };
   };
-  author: {
-    id: number;
-    name: string;
-  };
-  is_published: number;
+  author_id?: string;
+  category_id: number;
+  woreda_id?: number;
+  subcity_id?: number;
+  is_published: boolean;
+  published_at?: string;
+  messages?: any;
   created_at: string;
   updated_at: string;
 }
@@ -121,9 +121,10 @@ const useStyles = createStyles((theme) => ({
     },
   },
   paginationItem: {
-    border: `1px solid ${theme.colors.blue[2]}`,
+    border: `1px solid #0275b2`,
     "&[data-active]": {
       border: "none",
+      backgroundColor: "#112f77",
     },
   },
   title: {
@@ -136,16 +137,38 @@ const useStyles = createStyles((theme) => ({
       left: 0,
       width: "50%",
       height: 3,
-      background: theme.fn.linearGradient(
-        90,
-        theme.colors.blue[5],
-        theme.colors.blue[7]
-      ),
+      background: "linear-gradient(90deg, #0275b2, #046d74)",
       transition: "width 0.3s ease",
     },
     "&:hover:after": {
       width: "100%",
     },
+  },
+  cardTitle: {
+    minHeight: rem(72),
+    [theme.fn.smallerThan("sm")]: {
+      minHeight: rem(60),
+    },
+    fontSize: "1.1rem",
+    fontWeight: 700,
+    lineHeight: 1.3,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: "vertical",
+  },
+  cardContentText: {
+    lineHeight: 1.6,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    WebkitLineClamp: 4,
+    WebkitBoxOrient: "vertical",
+    fontSize: "0.95rem",
+    color: theme.colors.gray[7],
+    minHeight: rem(100),
+    flex: 1,
   },
   modalContent: {
     "& p": {
@@ -181,14 +204,6 @@ const useStyles = createStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "space-between",
   },
-  cardTitle: {
-    minHeight: rem(72),
-    display: "flex",
-    alignItems: "center",
-    [theme.fn.smallerThan("sm")]: {
-      minHeight: rem(60),
-    },
-  },
   gridCol: {
     display: "flex",
   },
@@ -208,15 +223,9 @@ const NewsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const itemsPerPage = isMobile ? 4 : isTablet ? 6 : 9;
 
-  // Gradient colors
-  const heroGradient = {
-    from: theme.colors.blue[7],
-    to: theme.colors.blue[9],
-    deg: 135,
-  };
   const cardGradient = {
-    from: theme.colors.blue[5],
-    to: theme.colors.blue[7],
+    from: "#0275b2",
+    to: "#046d74",
     deg: 45,
   };
 
@@ -234,7 +243,7 @@ const NewsPage: React.FC = () => {
       try {
         setLoading(true);
         const response = await getAllNews();
-        const data = response?.data?.data || [];
+        const data = response?.data || [];
 
         // Parse the JSON strings in the response
         const parsedData = data.map((item: any) => ({
@@ -273,13 +282,54 @@ const NewsPage: React.FC = () => {
     fetchNews();
   }, []);
 
-  const truncateContent = (text: string, length: number) => {
+  const cleanText = (text: string): string => {
     if (!text) return "";
-    return text.length > length ? `${text.substring(0, length)}...` : text;
+    
+    // Remove HTML tags if they exist
+    let cleaned = text.replace(/<[^>]*>/g, ' ');
+    
+    // Replace common HTML entities
+    cleaned = cleaned
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+    
+    // Replace newlines and multiple spaces
+    cleaned = cleaned
+      .replace(/\n/g, ' ')
+      .replace(/\r/g, ' ')
+      .replace(/\t/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    
+    return cleaned;
   };
 
-  const truncateDescription = (description: string) => {
-    return truncateContent(description, isMobile ? 80 : 120);
+  const truncateText = (text: string, maxLength: number): string => {
+    const cleanedText = cleanText(text);
+    
+    if (cleanedText.length <= maxLength) return cleanedText;
+    
+    // Find the last space before maxLength to avoid cutting words
+    let truncated = cleanedText.substr(0, maxLength);
+    const lastSpace = truncated.lastIndexOf(' ');
+    
+    if (lastSpace > maxLength * 0.7 && lastSpace > 0) {
+      truncated = truncated.substr(0, lastSpace);
+    }
+    
+    return truncated + '...';
+  };
+
+  const getTruncatedTitle = (title: string): string => {
+    return truncateText(title, 100);
+  };
+
+  const getTruncatedContent = (content: string): string => {
+    return truncateText(content, 200);
   };
 
   const getImageUrl = (imagePath: string | null | undefined) => {
@@ -311,9 +361,15 @@ const NewsPage: React.FC = () => {
   }
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-white min-h-screen">
+    <div className="bg-gradient-to-b from-[#112f77]/10 to-white min-h-screen">
       {/* Hero Section */}
-      <Box className={`${classes.hero} bg-blue-800`} py={rem(100)}>
+      <Box 
+        className={`${classes.hero}`} 
+        py={rem(100)}
+        style={{
+          background: "linear-gradient(135deg, #112f77 0%, #0275b2 50%, #046d74 100%)"
+        }}
+      >
         <Container size={1400}>
           <div className="text-center text-white" data-aos="fade-down">
             <Badge
@@ -329,9 +385,7 @@ const NewsPage: React.FC = () => {
                 <IconNews size={18} />
                 <div>{t("news.latestUpdates")}</div>
               </Group>
-             
             </Badge>
-             <div></div>
             <Title
               order={1}
               className={`text-4xl md:text-5xl font-bold mb-4 tracking-tight ${classes.title}`}
@@ -363,135 +417,147 @@ const NewsPage: React.FC = () => {
         {newsData.length > 0 ? (
           <>
             <Grid gutter={isMobile ? 20 : 30}>
-              {paginatedNews.map((news, index) => (
-                <Grid.Col
-                  key={news.id}
-                  span={12}
-                  sm={6}
-                  lg={4}
-                  data-aos="fade-up"
-                  data-aos-delay={(index % 3) * 50}
-                  className={classes.gridCol}
-                >
-                  <Card
-                    shadow="sm"
-                    p={0}
-                    radius="lg"
-                    className={classes.newsCard}
-                    sx={{
-                      borderTop: `3px solid ${theme.colors.blue[5]}`,
-                    }}
+              {paginatedNews.map((news, index) => {
+                const localizedTitle = news.title?.[i18n.language as keyof typeof news.title] || news.title?.en || t("news.noTitle");
+                const localizedContent = news.content?.[i18n.language as keyof typeof news.content] || news.content?.en || news.content?.am || "";
+                
+                // Get truncated title and content
+                const truncatedTitle = getTruncatedTitle(localizedTitle);
+                const truncatedContent = getTruncatedContent(localizedContent);
+                
+                return (
+                  <Grid.Col
+                    key={news.id}
+                    span={12}
+                    sm={6}
+                    lg={4}
+                    data-aos="fade-up"
+                    data-aos-delay={(index % 3) * 50}
+                    className={classes.gridCol}
                   >
-                    <Card.Section className={classes.imageContainer}>
-                      <AspectRatio ratio={16 / 9}>
-                        <Image
-                          src={
-                            getImageUrl(news.image_path) ||
-                            "/news-placeholder.jpg"
-                          }
-                          alt={news.title?.[i18n.language] || "News image"}
-                          className={classes.cardImage}
-                          withPlaceholder
-                          placeholder={
-                            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                              <IconNews
-                                size={40}
-                                color={theme.colors.gray[5]}
-                              />
-                            </div>
-                          }
-                        />
-                      </AspectRatio>
-                      <div className="absolute bottom-4 left-4 z-10">
-                        <Badge
-                          color="blue"
-                          variant="light"
-                          radius="sm"
-                          size={isMobile ? "sm" : "md"}
+                    <Card
+                      shadow="sm"
+                      p={0}
+                      radius="lg"
+                      className={classes.newsCard}
+                      sx={{
+                        borderTop: `3px solid #0275b2`,
+                      }}
+                    >
+                      <Card.Section className={classes.imageContainer}>
+                        <AspectRatio ratio={16 / 9}>
+                          <Image
+                            src={
+                              getImageUrl(news.image_path) ||
+                              "/news-placeholder.jpg"
+                            }
+                            alt={localizedTitle}
+                            className={classes.cardImage}
+                            withPlaceholder
+                            placeholder={
+                              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                <IconNews
+                                  size={40}
+                                  color="#0275b2"
+                                />
+                              </div>
+                            }
+                          />
+                        </AspectRatio>
+                        <div className="absolute bottom-4 left-4 z-10">
+                          <Badge
+                            color="blue"
+                            variant="light"
+                            radius="sm"
+                            size={isMobile ? "sm" : "md"}
+                            sx={{
+                              backgroundColor: "rgba(2, 117, 178, 0.15)",
+                              color: "#0275b2",
+                              fontWeight: 600,
+                              backdropFilter: "blur(2px)",
+                            }}
+                          >
+                            {news.category?.name?.[i18n.language as keyof typeof news.category.name] ||
+                              news.category?.name?.en ||
+                              t("news.generalCategory")}
+                          </Badge>
+                        </div>
+                      </Card.Section>
+
+                      <Box p="lg" className={classes.cardContent}>
+                        <Group spacing="xs" mb="sm">
+                          <ThemeIcon
+                            size={20}
+                            radius="xl"
+                            style={{ 
+                              backgroundColor: "#f9db12",
+                              color: "#112f77"
+                            }}
+                          >
+                            <IconCalendar size={14} />
+                          </ThemeIcon>
+                          <Text size="sm" color="dimmed">
+                            {formatDate(news.created_at)}
+                          </Text>
+                        </Group>
+
+                        {/* Title */}
+                        <Title
+                          order={3}
+                          className={classes.cardTitle}
                           sx={{
-                            backgroundColor: theme.fn.rgba(
-                              theme.colors.blue[0],
-                              0.95
-                            ),
-                            color: theme.colors.blue[7],
-                            fontWeight: 600,
-                            backdropFilter: "blur(2px)",
+                            color: "#112f77",
+                            fontFamily: theme.headings.fontFamily,
+                            marginBottom: theme.spacing.sm,
                           }}
+                          title={localizedTitle}
                         >
-                          {news.category?.name?.[i18n.language] ||
-                            t("news.generalCategory")}
-                        </Badge>
-                      </div>
-                    </Card.Section>
+                          {truncatedTitle}
+                        </Title>
 
-                    <Box p="lg" className={classes.cardContent}>
-                      <Group spacing="xs" mb="sm">
-                        <ThemeIcon
-                          size={20}
-                          radius="xl"
-                          color="gray"
-                          variant="light"
+                        {/* Content below title */}
+                        <Text
+                          className={classes.cardContentText}
+                          sx={{ 
+                            lineHeight: 1.6, 
+                            flex: 1, 
+                            marginBottom: theme.spacing.md,
+                            fontSize: theme.fontSizes.sm,
+                          }}
+                          title={cleanText(localizedContent)}
                         >
-                          <IconCalendar size={14} />
-                        </ThemeIcon>
-                        <Text size="sm" color="dimmed">
-                          {formatDate(news.created_at)}
+                          {truncatedContent}
+                          {cleanText(localizedContent).length > 200 && (
+                            <Text component="span" size="xs" color="dimmed" ml={4}>
+                              ...more
+                            </Text>
+                          )}
                         </Text>
-                      </Group>
 
-                      <Title
-                        order={3}
-                        className={`${classes.title} ${classes.cardTitle}`}
-                        sx={{
-                          color: theme.colors.gray[8],
-                          fontFamily: theme.headings.fontFamily,
-                          lineHeight: 1.3,
-                        }}
-                      >
-                        {news.title?.[i18n.language] || t("news.noTitle")}
-                      </Title>
-
-                      <Title order={3} className="text-sm mt-3 text-red-800">
-                        {(news.content?.[i18n.language]?.slice(0, 150) ||
-                          t("news.noTitle")) +
-                          (news.content?.[i18n.language]?.length > 150
-                            ? "..."
-                            : "")}
-                      </Title>
-
-                      <Text
-                        className="text-gray-700 mb-4"
-                        sx={{ lineHeight: 1.6, flex: 1 }}
-                        size={isMobile ? "sm" : "md"}
-                      >
-                        {truncateDescription(
-                          news.excerpt || news.content?.[i18n.language] || ""
-                        )}
-                      </Text>
-
-                      <Button
-                        variant="gradient"
-                        gradient={cardGradient}
-                        onClick={() => navigate(`/news/${news.id}`)}
-                        fullWidth
-                        radius="md"
-                        rightIcon={<IconArrowRight size={16} />}
-                        className={classes.readMoreButton}
-                        size={isMobile ? "sm" : "md"}
-                      >
-                        {t("news.readMore")}
-                      </Button>
-                    </Box>
-                  </Card>
-                </Grid.Col>
-              ))}
+                        <Button
+                          variant="gradient"
+                          gradient={cardGradient}
+                          onClick={() => navigate(`/news/${news.id}`)}
+                          fullWidth
+                          radius="md"
+                          rightIcon={<IconArrowRight size={16} />}
+                          className={classes.readMoreButton}
+                          size={isMobile ? "sm" : "md"}
+                        >
+                          {t("news.readMore")}
+                        </Button>
+                      </Box>
+                    </Card>
+                  </Grid.Col>
+                );
+              })}
             </Grid>
 
             {/* Pagination */}
             {totalPages > 1 && (
               <Group position="center" mt={40}>
                 <Pagination
-                  page={activePage}
+                  value={activePage}
                   onChange={setActivePage}
                   total={totalPages}
                   color="blue"
@@ -500,7 +566,7 @@ const NewsPage: React.FC = () => {
                   siblings={isMobile ? 0 : 1}
                   boundaries={isMobile ? 0 : 1}
                   classNames={{
-                    item: classes.paginationItem,
+                    control: classes.paginationItem,
                   }}
                 />
               </Group>
@@ -514,12 +580,8 @@ const NewsPage: React.FC = () => {
             radius="lg"
             shadow="sm"
             sx={{
-              background: theme.fn.linearGradient(
-                0,
-                theme.fn.rgba(theme.colors.blue[0], 0.8),
-                theme.fn.rgba(theme.colors.blue[1], 0.8)
-              ),
-              borderColor: theme.colors.blue[3],
+              background: "linear-gradient(0deg, rgba(2, 117, 178, 0.1), rgba(17, 47, 119, 0.1))",
+              borderColor: "#0275b2",
             }}
             data-aos="fade-up"
           >
@@ -537,7 +599,7 @@ const NewsPage: React.FC = () => {
               <Title
                 order={3}
                 className="text-2xl font-semibold mb-2"
-                sx={{ color: theme.colors.blue[8] }}
+                sx={{ color: "#112f77" }}
               >
                 {t("news.noNewsTitle")}
               </Title>
@@ -557,22 +619,20 @@ const NewsPage: React.FC = () => {
           <Title
             order={3}
             sx={{
-              color: theme.colors.blue[8],
+              color: "#112f77",
               fontFamily: theme.headings.fontFamily,
             }}
           >
-            {selectedNews?.title?.[i18n.language] || t("news.newsDetails")}
+            {selectedNews?.title?.[i18n.language as keyof typeof selectedNews.title] || selectedNews?.title?.en || t("news.newsDetails")}
           </Title>
         }
         size={isMobile ? "100%" : "lg"}
-        overlayBlur={5}
-        overlayOpacity={0.7}
+        overlayProps={{ opacity: 0.7, blur: 5 }}
         radius="lg"
         padding="xl"
         centered
         fullScreen={isMobile}
-        transition="slide-up"
-        transitionDuration={300}
+        transitionProps={{ transition: "slide-up", duration: 300 }}
       >
         {selectedNews && (
           <div className={classes.modalContent}>
@@ -582,16 +642,20 @@ const NewsPage: React.FC = () => {
                 size="lg"
                 variant="light"
                 sx={{
-                  backgroundColor: theme.fn.rgba(theme.colors.blue[0], 0.9),
-                  color: theme.colors.blue[7],
+                  backgroundColor: "rgba(2, 117, 178, 0.15)",
+                  color: "#0275b2",
                   fontWeight: 600,
                 }}
               >
-                {selectedNews.category?.name?.[i18n.language] ||
+                {selectedNews.category?.name?.[i18n.language as keyof typeof selectedNews.category.name] ||
+                  selectedNews.category?.name?.en ||
                   t("news.generalCategory")}
               </Badge>
               <Group spacing="xs">
-                <ThemeIcon size={20} radius="xl" color="gray" variant="light">
+                <ThemeIcon size={20} radius="xl" style={{ 
+                  backgroundColor: "#f9db12",
+                  color: "#112f77"
+                }}>
                   <IconCalendar size={14} />
                 </ThemeIcon>
                 <Text size="sm" color="dimmed">
@@ -612,7 +676,7 @@ const NewsPage: React.FC = () => {
                 <AspectRatio ratio={16 / 9}>
                   <Image
                     src={getImageUrl(selectedNews.image_path)}
-                    alt={selectedNews.title?.[i18n.language] || "News image"}
+                    alt={selectedNews.title?.[i18n.language as keyof typeof selectedNews.title] || selectedNews.title?.en || "News image"}
                     className="w-full h-full object-cover"
                     withPlaceholder
                   />
@@ -623,7 +687,7 @@ const NewsPage: React.FC = () => {
             <Divider
               my="md"
               sx={{
-                borderTopColor: theme.colors.blue[2],
+                borderTopColor: "#0275b2",
               }}
             />
 
@@ -632,11 +696,13 @@ const NewsPage: React.FC = () => {
               sx={{
                 fontSize: theme.fontSizes.lg,
                 lineHeight: 1.7,
+                whiteSpace: "pre-line",
               }}
               dangerouslySetInnerHTML={{
                 __html:
-                  selectedNews.content?.[i18n.language] ||
-                  selectedNews.excerpt ||
+                  selectedNews.content?.[i18n.language as keyof typeof selectedNews.content]?.replace(/\n/g, '<br/>') ||
+                  selectedNews.content?.en?.replace(/\n/g, '<br/>') ||
+                  selectedNews.content?.am?.replace(/\n/g, '<br/>') ||
                   t("news.noContent"),
               }}
             />
@@ -663,16 +729,18 @@ const NewsPage: React.FC = () => {
         )}
       </Modal>
 
-      <style jsx global>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes shimmer {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
           }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-      `}</style>
+        `
+      }} />
     </div>
   );
 };
