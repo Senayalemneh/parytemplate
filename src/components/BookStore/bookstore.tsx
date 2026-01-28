@@ -236,7 +236,7 @@ const BooksPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://bole.prosperity.boleprosperityparty.org/api/books"
+      `${BASE_URL}/api/books`
       );
     
       const data = await response.json();

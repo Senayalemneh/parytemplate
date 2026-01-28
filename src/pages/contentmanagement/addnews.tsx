@@ -102,10 +102,21 @@ const colors = {
 
 const CMS_FILES_BASE_URL = `${import.meta.env.VITE_FILE_API}`;
 
+// const formatImageUrl = (imgPath: string): string => {
+//   if (!imgPath) return "";
+//   if (imgPath.startsWith("http")) return imgPath;
+//   return `${CMS_FILES_BASE_URL}${imgPath.replace(/^\/+/, "")}`;
+// };
 const formatImageUrl = (imgPath: string): string => {
   if (!imgPath) return "";
   if (imgPath.startsWith("http")) return imgPath;
-  return `${CMS_FILES_BASE_URL}${imgPath.replace(/^\/+/, "")}`;
+  
+  const cleanPath = imgPath.startsWith("/") ? imgPath : `/${imgPath}`;
+  const baseUrl = CMS_FILES_BASE_URL.endsWith("/") 
+    ? CMS_FILES_BASE_URL.slice(0, -1) 
+    : CMS_FILES_BASE_URL;
+  
+  return `${baseUrl}${cleanPath}`;
 };
 
 const parseMultipleImages = (images: string | string[] | null): string[] => {

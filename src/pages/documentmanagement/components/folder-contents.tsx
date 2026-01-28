@@ -378,7 +378,8 @@ const handleDeleteDocument = async (documentId: number) => {
 
 const handleOpen = async (document: Document) => {
   try {
-    const fullUrl = `https://bole.prosperity.boleprosperityparty.org/${document.path}`;
+   
+    const fullUrl =  `${import.meta.env.VITE_FILE_API}${document.path}`;
     const fileExtension = document.original_name?.split('.').pop()?.toLowerCase();
     const mimeType = document.mime_type?.toLowerCase();
 
