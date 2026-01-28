@@ -1,13 +1,10 @@
 import {
   TextInput,
-  Button,
   Group,
   Box,
   Title,
-  Divider,
   Modal,
   ActionIcon,
-  Badge,
   Text,
   Card,
   Stack,
@@ -15,9 +12,8 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { MRT_ColumnDef, MantineReactTable } from "mantine-react-table";
-import { getAllContact, deleteContact } from "../../services/api/main";
+import { getAllContact } from "../../services/api/main";
 import {
-  IconTrash,
   IconEye,
   IconMail,
   IconUser,
@@ -31,7 +27,7 @@ import Loader from "../../components/common/loader";
 
 interface ContactItem {
   id: number;
-  fullName: string;
+  full_name: string;
   email: string;
   subject: string;
   message: string;
@@ -48,7 +44,6 @@ const ViewContacts = () => {
   const [selectedContact, setSelectedContact] = useState<ContactItem | null>(
     null
   );
-  const [deleteLoading, setDeleteLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchContacts = async () => {
@@ -89,64 +84,11 @@ const ViewContacts = () => {
     openViewModal();
   };
 
-  const handleDelete = async (id: number) => {
-    try {
-      setDeleteLoading(true);
-      await deleteContact(id);
-      showNotification(
-        t("viewcontactadmin.notifications.deleteSuccess"),
-        "success"
-      );
-      setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
-    } catch (error) {
-      console.error("Error deleting contact:", error);
-      showNotification(
-        t("viewcontactadmin.notifications.deleteError"),
-        "error"
-      );
-    } finally {
-      setDeleteLoading(false);
-    }
-  };
-
-  const confirmDelete = (id: number) => {
-    notifications.show({
-      id: `delete-${id}`,
-      title: t("viewcontactadmin.deleteConfirm.title"),
-      message: t("viewcontactadmin.deleteConfirm.message"),
-      color: "red",
-      withBorder: true,
-      autoClose: false,
-      withCloseButton: false,
-      children: (
-        <Group position="right" mt="md">
-          <Button
-            variant="outline"
-            color="gray"
-            onClick={() => notifications.hide(`delete-${id}`)}
-          >
-            {t("viewcontactadmin.deleteConfirm.cancel")}
-          </Button>
-          <Button
-            color="red"
-            loading={deleteLoading}
-            onClick={() => {
-              notifications.hide(`delete-${id}`);
-              handleDelete(id);
-            }}
-          >
-            {t("viewcontactadmin.deleteConfirm.delete")}
-          </Button>
-        </Group>
-      ),
-    });
-  };
-
   const filteredContacts = contacts.filter(
     (contact) =>
-      contact.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.subject.toLowerCase().includes(searchTerm.toLowerCase())
+      (contact.full_name?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
+      (contact.email?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
+      (contact.subject?.toLowerCase() || "").includes(searchTerm.toLowerCase())
   );
 
   const columns: MRT_ColumnDef<ContactItem>[] = [
@@ -156,18 +98,23 @@ const ViewContacts = () => {
       size: 80,
     },
     {
-      accessorKey: "fullName",
+      accessorKey: "full_name",
       header: t("viewcontactadmin.table.columns.fullName"),
-      Cell: ({ cell }) => <Text weight={500}>{cell.getValue<string>()}</Text>,
+      Cell: ({ cell }) => <Text weight={500}>{cell.getValue<string>() || "N/A"}</Text>,
     },
     {
       accessorKey: "email",
       header: t("viewcontactadmin.table.columns.email"),
-      Cell: ({ cell }) => (
-        <Text component="a" href={`mailto:${cell.getValue<string>()}`}>
-          {cell.getValue<string>()}
-        </Text>
-      ),
+      Cell: ({ cell }) => {
+        const email = cell.getValue<string>();
+        return email ? (
+          <Text component="a" href={`mailto:${email}`}>
+            {email}
+          </Text>
+        ) : (
+          <Text>N/A</Text>
+        );
+      },
     },
     {
       accessorKey: "subject",
@@ -181,7 +128,7 @@ const ViewContacts = () => {
               textOverflow: "ellipsis",
             }}
           >
-            {cell.getValue<string>()}
+            {cell.getValue<string>() || "N/A"}
           </Text>
         </Box>
       ),
@@ -190,7 +137,7 @@ const ViewContacts = () => {
       accessorKey: "message",
       header: t("viewcontactadmin.table.columns.message"),
       Cell: ({ cell }) => {
-        const message = cell.getValue<string>();
+        const message = cell.getValue<string>() || "N/A";
         return (
           <Tooltip label={message} withArrow withinPortal>
             <Box sx={{ maxWidth: 200 }}>
@@ -259,7 +206,7 @@ const ViewContacts = () => {
         <MantineReactTable
           columns={columns}
           data={filteredContacts}
-          state={{ isLoading: loading || deleteLoading }}
+          state={{ isLoading: loading }}
           enablePagination
           enableSorting
           enableColumnFilters={false}
@@ -316,9 +263,9 @@ const ViewContacts = () => {
               <Group>
                 <IconUser size={20} />
                 <Text weight={600}>
-                  {t("viewcontactadmin.modal.fullName")}:
+                  {t("viewcontactadmin.modal.full_name")}:
                 </Text>
-                <Text>{selectedContact.fullName}</Text>
+                <Text>{selectedContact.full_name || "N/A"}</Text>
               </Group>
             </Card>
 
@@ -326,9 +273,13 @@ const ViewContacts = () => {
               <Group>
                 <IconMail size={20} />
                 <Text weight={600}>{t("viewcontactadmin.modal.email")}:</Text>
-                <Text component="a" href={`mailto:${selectedContact.email}`}>
-                  {selectedContact.email}
-                </Text>
+                {selectedContact.email ? (
+                  <Text component="a" href={`mailto:${selectedContact.email}`}>
+                    {selectedContact.email}
+                  </Text>
+                ) : (
+                  <Text>N/A</Text>
+                )}
               </Group>
             </Card>
 
@@ -336,7 +287,7 @@ const ViewContacts = () => {
               <Group>
                 <IconMessage size={20} />
                 <Text weight={600}>{t("viewcontactadmin.modal.subject")}:</Text>
-                <Text>{selectedContact.subject}</Text>
+                <Text>{selectedContact.subject || "N/A"}</Text>
               </Group>
             </Card>
 
@@ -345,7 +296,7 @@ const ViewContacts = () => {
                 <IconCalendar size={20} />
                 <Text weight={600}>{t("viewcontactadmin.modal.date")}:</Text>
                 <Text>
-                  {new Date(selectedContact.created_at).toLocaleString()}
+                  {selectedContact.created_at ? new Date(selectedContact.created_at).toLocaleString() : "N/A"}
                 </Text>
               </Group>
             </Card>
@@ -359,7 +310,7 @@ const ViewContacts = () => {
               </Group>
               <Card withBorder p="md" bg="gray.0">
                 <Text style={{ whiteSpace: "pre-wrap" }}>
-                  {selectedContact.message}
+                  {selectedContact.message || "N/A"}
                 </Text>
               </Card>
             </Card>

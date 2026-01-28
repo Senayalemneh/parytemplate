@@ -125,7 +125,7 @@ const useStyles = createStyles((theme) => ({
   coverImage: {
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "fill",
     transition: "transform 0.3s ease",
     "&:hover": {
       transform: "scale(1.05)",
