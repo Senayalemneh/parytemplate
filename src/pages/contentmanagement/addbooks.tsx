@@ -162,9 +162,9 @@ const AddBooks = () => {
           : null,
       bookSourceFile: (value, values) =>
         uploadType === "single" &&
-        !editingId &&
-        !value &&
-        !values.bookSourcePath
+          !editingId &&
+          !value &&
+          !values.bookSourcePath
           ? t("addbooksadmin.validation.bookSourceRequired")
           : null,
       batchBookFiles: (value, values) =>
@@ -462,14 +462,14 @@ const AddBooks = () => {
 
       const hasAdditionalFields = Boolean(
         book.author ||
-          book.description ||
-          book.category ||
-          book.pages ||
-          book.language ||
-          book.publishedYear ||
-          book.readingTime ||
-          book.popularity ||
-          book.isFeatured
+        book.description ||
+        book.category ||
+        book.pages ||
+        book.language ||
+        book.publishedYear ||
+        book.readingTime ||
+        book.popularity ||
+        book.isFeatured
       );
 
       form.setValues({
@@ -669,7 +669,7 @@ const AddBooks = () => {
       ),
     },
     {
-      accessorKey: "coverImage",
+      accessorKey: "cover_image",
       header: t("addbooksadmin.table.headers.cover"),
       Cell: ({ cell }) => (
         <Image
