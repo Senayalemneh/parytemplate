@@ -55,7 +55,7 @@ interface Book {
     en?: string;
     am?: string;
   };
-  coverImage?: string;
+  cover_image?: string;
   book_source_path?: string;
   batchBookPaths?: string[]; // Array of file paths for batch books
   batchBookNames?: string[]; // Array of original filenames for batch books
@@ -117,9 +117,19 @@ const useStyles = createStyles((theme) => ({
         ? theme.colors.dark[5]
         : theme.colors.gray[1],
     overflow: "hidden",
+    borderRadius: theme.radius.md,
+    border: `1px solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+    }`,
   },
   coverImage: {
-    objectFit: "fill",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transition: "transform 0.3s ease",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
   },
   batchBooksModal: {
     maxWidth: "90vw",
@@ -143,12 +153,53 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === "dark"
         ? theme.colors.dark[5]
         : theme.colors.gray[1],
+    borderRadius: theme.radius.md,
   },
   filenameText: {
     wordBreak: "break-word",
     textAlign: "center",
   },
+  imagePlaceholder: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[5]
+        : theme.colors.gray[1],
+    color: theme.colorScheme === "dark" ? theme.colors.dark[2] : theme.colors.gray[6],
+  },
 }));
+
+// Helper function to format image URLs
+const formatImageUrl = (imgPath: string | undefined): string => {
+  if (!imgPath) return "";
+  
+  // If it's already a full URL, return as is
+  if (imgPath.startsWith("http")) return imgPath;
+  
+  // Remove any leading slashes from the path
+  const cleanPath = imgPath.replace(/^\/+/, "");
+  
+  // Ensure base URL doesn't have trailing slash
+  const baseUrl = BASE_URL.replace(/\/+$/, "");
+  
+  return `${baseUrl}/${cleanPath}`;
+};
+
+// Helper function to format file URLs (PDFs)
+const formatFileUrl = (filePath: string | undefined): string => {
+  if (!filePath) return "";
+  
+  if (filePath.startsWith("http")) return filePath;
+  
+  const cleanPath = filePath.replace(/^\/+/, "");
+  const baseUrl = BASE_URL.replace(/\/+$/, "");
+  
+  return `${baseUrl}/${cleanPath}`;
+};
 
 const BooksPage = () => {
   const { t, i18n } = useTranslation();
@@ -242,14 +293,14 @@ const BooksPage = () => {
       const data = await response.json();
 
       const parsedBooks = data.data.map((book: any) => {
-        const { paths, names } = parseBatchBooksPath(book.batchBookPaths);
+        const { paths, names } = parseBatchBooksPath(book.batch_book_paths);
         return {
           ...book,
           title: parseMultilingualField(book.title),
           author: parseMultilingualField(book.author),
           description: parseMultilingualField(book.description),
           category: parseMultilingualField(book.category),
-          readingTime: parseMultilingualField(book.readingTime),
+          readingTime: parseMultilingualField(book.reading_time),
           batchBookPaths: paths,
           batchBookNames: names,
         };
@@ -284,6 +335,12 @@ const BooksPage = () => {
       setCategories(uniqueCategories);
     } catch (error) {
       console.error("Failed to fetch books:", error);
+      notifications.show({
+        title: t("bookpage.notifications.errorTitle") || "Error",
+        message: t("bookpage.notifications.fetchError") || "Failed to load books",
+        color: "red",
+        withBorder: true,
+      });
     } finally {
       setLoading(false);
     }
@@ -344,20 +401,24 @@ const BooksPage = () => {
     setActivePage(1);
   }, [books, searchQuery, activeTab, selectedCategory, i18n.language]);
 
+  // Calculate paginated books
   const totalPages = Math.ceil(filteredBooks.length / itemsPerPage);
   const paginatedBooks = filteredBooks.slice(
     (activePage - 1) * itemsPerPage,
     activePage * itemsPerPage
   );
 
-  const getBookFileUrl = (path?: string) => {
-    if (!path) return null;
-    return `${BASE_URL}/${encodeURIComponent(path)}`;
+  const getBookCoverImage = (book: Book) => {
+    if (!book.cover_image) return null;
+    
+    const imageUrl = formatImageUrl(book.cover_image);
+    console.log("Book cover image URL:", imageUrl); // Debug log
+    return imageUrl;
   };
 
-  const getCoverImageUrl = (path?: string) => {
+  const getBookFileUrl = (path?: string) => {
     if (!path) return null;
-    return `${BASE_URL}/${encodeURIComponent(path)}`;
+    return formatFileUrl(path);
   };
 
   const getFileIcon = (filename?: string) => {
@@ -398,34 +459,33 @@ const BooksPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
-      <div className="w-full bg-blue-800 py-20">
+      <div className="w-full bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 py-20">
         <Container size={1400}>
           <div className="text-center text-white" data-aos="fade-down">
             <Badge
               size="xl"
               radius="sm"
-              color="blue"
               variant="light"
-              className="mb-6"
+              className="mb-6 bg-white/10 backdrop-blur-sm border-white/20"
             >
               <Group spacing="xs">
                 <IconBook size={18} />
-                <span>{t("bookpage.hero.badge")}</span>
+                <span>{t("bookpage.hero.badge") || "Library"}</span>
               </Group>
             </Badge>
             <Title
               order={1}
-              className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
+              className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white"
               data-aos-delay="100"
             >
-              {t("bookpage.hero.title")}
+              {t("bookpage.hero.title") || "Digital Library"}
             </Title>
             <Text
               size="xl"
               className="max-w-3xl mx-auto opacity-90 text-blue-100"
               data-aos-delay="200"
             >
-              {t("bookpage.hero.subtitle")}
+              {t("bookpage.hero.subtitle") || "Explore our collection of books and resources"}
             </Text>
           </div>
         </Container>
@@ -452,7 +512,7 @@ const BooksPage = () => {
                 icon={<IconBook size={16} />}
                 className="text-md font-medium"
               >
-                {t("bookpage.tabs.all")}
+                {t("bookpage.tabs.all") || "All Books"}
               </Tabs.Tab>
               {categories.map((category) => (
                 <Tabs.Tab
@@ -469,7 +529,7 @@ const BooksPage = () => {
             <Grid.Col span={12} md={8}>
               <TextInput
                 icon={<IconSearch size={18} />}
-                placeholder={t("bookpage.search.placeholder")}
+                placeholder={t("bookpage.search.placeholder") || "Search books by title or author..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.currentTarget.value)}
                 size="md"
@@ -480,7 +540,7 @@ const BooksPage = () => {
             <Grid.Col span={12} md={4}>
               <Select
                 icon={<IconFilter size={18} />}
-                placeholder={t("bookpage.filter.placeholder")}
+                placeholder={t("bookpage.filter.placeholder") || "Filter by category"}
                 data={categories}
                 value={selectedCategory}
                 onChange={setSelectedCategory}
@@ -504,44 +564,97 @@ const BooksPage = () => {
                 const category = safeGetField(book.category, currentLang);
                 const readingTime = safeGetField(book.readingTime, currentLang);
                 const description = safeGetField(book.description, currentLang);
+                const coverImageUrl = getBookCoverImage(book);
+                
                 return (
                   <Grid.Col key={book.id} span={12} md={6} lg={4}>
                     <Card
                       shadow="sm"
                       padding="lg"
-                      className={`${classes.bookCard} h-full bg-white rounded-lg flex flex-col`}
+                      className={`${classes.bookCard} h-full bg-white rounded-lg flex flex-col border border-gray-200`}
                       data-aos="fade-up"
                       data-aos-delay={(index % 3) * 100}
                     >
-                      <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
-                        {book.coverImage ? (
-                          <img
-                            src={getCoverImageUrl(book.coverImage)}
+                      {/* Cover Image Section */}
+                      <Card.Section className={classes.coverImageContainer}>
+                        {coverImageUrl ? (
+                          <Image
+                            src={coverImageUrl}
                             alt={`Cover of ${title}`}
-                            className="w-full h-96 object-fill"
+                            className={classes.coverImage}
+                            withPlaceholder
+                            placeholder={
+                              <div className={classes.imagePlaceholder}>
+                                <IconBook size={48} />
+                              </div>
+                            }
+                            onError={(e) => {
+                              console.error("Failed to load cover image:", coverImageUrl);
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              // Show placeholder if image fails to load
+                              const placeholder = target.parentElement?.querySelector('.cover-fallback') as HTMLElement;
+                              if (placeholder) {
+                                placeholder.style.display = 'flex';
+                              }
+                            }}
                           />
                         ) : (
-                          <div className="flex items-center justify-center h-64 bg-gray-100">
-                            {getFileIcon(book.book_source_path)}
+                          <div className={classes.imagePlaceholder}>
+                            <IconBook size={48} />
                           </div>
                         )}
-                      </div>
+                        {/* Fallback placeholder (hidden by default) */}
+                        <div className={`${classes.imagePlaceholder} cover-fallback`} style={{ display: 'none' }}>
+                          <IconBook size={48} />
+                        </div>
+                      </Card.Section>
+
                       <div className="mt-4 flex-grow">
                         <Title
                           order={3}
-                          className="text-xl font-bold text-gray-900 mb-2"
+                          className="text-xl font-bold text-gray-900 mb-2 line-clamp-2"
+                          title={title}
                         >
                           {title}
                         </Title>
+                        
+                        {author && author !== "N/A" && (
+                          <Text size="sm" color="dimmed" className="mb-3">
+                            <IconUser size={14} className="inline mr-1" />
+                            {author}
+                          </Text>
+                        )}
+                        
                         <Stack spacing="xs" className="mb-4">
                           {category && category !== "N/A" && (
-                            <Badge color="blue" variant="light">
+                            <Badge color="blue" variant="light" size="sm">
                               {category}
                             </Badge>
                           )}
+                          {book.publishedYear && (
+                            <Badge variant="outline" color="gray" size="sm">
+                              <IconCalendarEvent size={12} className="mr-1" />
+                              {book.publishedYear}
+                            </Badge>
+                          )}
+                          {readingTime && readingTime !== "N/A" && (
+                            <Badge variant="outline" color="gray" size="sm">
+                              <IconClock size={12} className="mr-1" />
+                              {readingTime}
+                            </Badge>
+                          )}
                         </Stack>
+                        
+                        {description && description !== "N/A" && (
+                          <Text size="sm" color="dimmed" className="mb-4 line-clamp-3">
+                            {description}
+                          </Text>
+                        )}
                       </div>
-                      <Group position="apart" className="mt-auto">
+                      
+                      {/* Action Buttons */}
+                      <Group position="apart" className="mt-auto pt-4 border-t border-gray-100">
                         <Group spacing="xs">
                           {/* Always show "Show All" if batchBooksPath exists */}
                           {book.batchBookPaths &&
@@ -554,7 +667,7 @@ const BooksPage = () => {
                                 leftIcon={<IconBooks size={16} />}
                                 onClick={() => handleBatchBookClick(book)}
                               >
-                                {t("bookpage.buttons.showAll")}
+                                {t("bookpage.buttons.showAll") || "Show All"}
                               </Button>
                             )}
 
@@ -565,20 +678,37 @@ const BooksPage = () => {
                                 <Anchor
                                   href={getBookFileUrl(book.book_source_path)}
                                   target="_blank"
+                                  rel="noopener noreferrer"
                                 >
                                   <Button
-                                    variant="outline"
+                                    variant="filled"
                                     color="blue"
                                     radius="md"
                                     size="sm"
                                     leftIcon={<IconEye size={16} />}
                                   >
-                                    {t("bookpage.buttons.read")}
+                                    {t("bookpage.buttons.read") || "Read"}
                                   </Button>
                                 </Anchor>
                               )
                             : null}
                         </Group>
+                        
+                        {book.book_source_path && (
+                          <ActionIcon
+                            variant="subtle"
+                            color="blue"
+                            title={t("bookpage.buttons.download") || "Download"}
+                            onClick={() => {
+                              const link = document.createElement('a');
+                              link.href = getBookFileUrl(book.book_source_path) || '#';
+                              link.download = `${title}.pdf`;
+                              link.click();
+                            }}
+                          >
+                            <IconDownload size={18} />
+                          </ActionIcon>
+                        )}
                       </Group>
                     </Card>
                   </Grid.Col>
@@ -620,10 +750,12 @@ const BooksPage = () => {
               <IconBook size={36} />
             </ThemeIcon>
             <Title order={3} className="mb-3 text-gray-800">
-              {t("bookpage.noBooks.title")}
+              {t("bookpage.noBooks.title") || "No Books Found"}
             </Title>
             <Text color="dimmed" className="mb-6 max-w-md mx-auto">
-              {t("bookpage.noBooks.description")}
+              {searchQuery || selectedCategory || activeTab !== "all"
+                ? t("bookpage.noBooks.searchDescription") || "Try adjusting your search or filters"
+                : t("bookpage.noBooks.description") || "Check back soon for new books"}
             </Text>
             <Button
               variant="light"
@@ -636,7 +768,7 @@ const BooksPage = () => {
                 setSelectedCategory(null);
               }}
             >
-              {t("bookpage.buttons.resetFilters")}
+              {t("bookpage.buttons.resetFilters") || "Reset Filters"}
             </Button>
           </Paper>
         )}
@@ -667,7 +799,7 @@ const BooksPage = () => {
         {selectedBook && selectedBook.batchBookPaths && selectedBook.batchBookNames && (
           <div>
             <Text size="lg" className="mb-6">
-              {t("bookpage.batchBooksModal.description")}
+              {t("bookpage.batchBooksModal.description") || "This book contains multiple documents. Click on any to read:"}
             </Text>
             <SimpleGrid
               cols={isMobile ? 2 : 4}
@@ -709,7 +841,7 @@ const BooksPage = () => {
                       onClick={() => handleReadBatchBook(path)}
                       leftIcon={<IconEye size={16} />}
                     >
-                      {t("bookpage.buttons.read")}
+                      {t("bookpage.buttons.read") || "Read"}
                     </Button>
                   </Card>
                 );
