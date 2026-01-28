@@ -297,18 +297,18 @@ const FamilyDiscussionManagement = () => {
         wing: customWingInput ? values.custom_wing : values.wing,
         union_name: values.union_name,
         family_name: values.family_name,
-        total_male_members: values.total_male_members,
-        total_female_members: values.total_female_members,
+        total_male_members: parseInt(values.total_male_members),
+        total_female_members: parseInt(values.total_female_members),
         total_family_members: (
           parseInt(values.total_male_members) +
           parseInt(values.total_female_members)
-        ).toString(),
-        attending_male_members: values.attending_male_members,
-        attending_female_members: values.attending_female_members,
+        ),
+        attending_male_members: parseInt(values.attending_male_members),
+        attending_female_members: parseInt(values.attending_female_members),
         total_attending_members: (
           parseInt(values.attending_male_members) +
           parseInt(values.attending_female_members)
-        ).toString(),
+        ),
         absence_reason: values.absence_reason,
         discussion_agenda: values.discussion_agenda,
         key_negative_points: values.key_negative_points,
@@ -630,226 +630,225 @@ const FamilyDiscussionManagement = () => {
               <thead>
                 <tr>
                   <th colspan="6" class="text-right">${escapeHtml(
-                    t("familyDiscussion.formtype")
-                  )}</th>
+      t("familyDiscussion.formtype")
+    )}</th>
                   <th class="text-left">${escapeHtml(
-                    new Date(discussion.recorded_date).toLocaleDateString()
-                  )}</th>
+      new Date(discussion.recorded_date).toLocaleDateString()
+    )}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>${escapeHtml(
-                    t("familyDiscussion.form.socialBase.label")
-                  )}</td>
+      t("familyDiscussion.form.socialBase.label")
+    )}</td>
                   <td class="text-right">${escapeHtml(
-                    discussion.social_base
-                  )}</td>
+      discussion.social_base
+    )}</td>
                   <td>${escapeHtml(t("familyDiscussion.form.wing.label"))}</td>
                   <td>${escapeHtml(discussion.wing)}</td>
                   <td>${escapeHtml(
-                    t("familyDiscussion.form.unionName.label")
-                  )}</td>
+      t("familyDiscussion.form.unionName.label")
+    )}</td>
                   <td colspan="2">${escapeHtml(discussion.union_name)}</td>
                 </tr>
                 <tr>
                   <td>${escapeHtml(
-                    t("familyDiscussion.form.familyName.label")
-                  )}</td>
+      t("familyDiscussion.form.familyName.label")
+    )}</td>
                   <td colspan="6">${escapeHtml(discussion.family_name)}</td>
                 </tr>
                 <tr>
                   <td>${escapeHtml(
-                    t("familyDiscussion.form.totalMembers")
-                  )}</td>
+      t("familyDiscussion.form.totalMembers")
+    )}</td>
                   <td>${escapeHtml(t("familyDiscussion.form.male"))}</td>
                   <td class="text-right">${escapeHtml(
-                    discussion.total_male_members
-                  )}</td>
+      discussion.total_male_members
+    )}</td>
                   <td>${escapeHtml(t("familyDiscussion.form.female"))}</td>
                   <td class="text-right">${escapeHtml(
-                    discussion.total_female_members
-                  )}</td>
+      discussion.total_female_members
+    )}</td>
                   <td class="text-right highlight">${escapeHtml(
-                    t("familyDiscussion.form.total")
-                  )}</td>
+      t("familyDiscussion.form.total")
+    )}</td>
                   <td class="text-right highlight">${escapeHtml(
-                    discussion.total_family_members
-                  )}</td>
+      discussion.total_family_members
+    )}</td>
                 </tr>
                 <tr>
                   <td>${escapeHtml(
-                    t("familyDiscussion.form.attendingMembers")
-                  )}</td>
+      t("familyDiscussion.form.attendingMembers")
+    )}</td>
                   <td>${escapeHtml(t("familyDiscussion.form.male"))}</td>
                   <td class="text-right">${escapeHtml(
-                    discussion.attending_male_members
-                  )}</td>
+      discussion.attending_male_members
+    )}</td>
                   <td>${escapeHtml(t("familyDiscussion.form.female"))}</td>
                   <td class="text-right">${escapeHtml(
-                    discussion.attending_female_members
-                  )}</td>
+      discussion.attending_female_members
+    )}</td>
                   <td class="text-right highlight">${escapeHtml(
-                    t("familyDiscussion.form.total")
-                  )}</td>
+      t("familyDiscussion.form.total")
+    )}</td>
                   <td class="text-right highlight">${escapeHtml(
-                    discussion.total_attending_members
-                  )}</td>
+      discussion.total_attending_members
+    )}</td>
                 </tr>
                 <tr>
                   <td colspan="7">
                     ${escapeHtml(
-                      t("familyDiscussion.form.absenceReason.label")
-                    )}: 
+      t("familyDiscussion.form.absenceReason.label")
+    )}: 
                     ${escapeHtml(discussion.absence_reason)}
                   </td>
                 </tr>
                 <tr>
                   <td colspan="7">
                     <strong>${escapeHtml(
-                      t("familyDiscussion.form.sections.familyIssues")
-                    )}</strong>
+      t("familyDiscussion.form.sections.familyIssues")
+    )}</strong>
                   </td>
                 </tr>
                 ${discussion.discussion_agenda
-                  .map(
-                    (item, index) => `
+        .map(
+          (item, index) => `
                   <tr>
                     <td class="text-right">${index + 1}</td>
                     <td colspan="6">${escapeHtml(item)}</td>
                   </tr>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
                 <tr>
                   <td colspan="7">
                     <strong>${escapeHtml(
-                      t("familyDiscussion.form.sections.negativePoints")
-                    )}</strong>
+          t("familyDiscussion.form.sections.negativePoints")
+        )}</strong>
                   </td>
                 </tr>
                 ${discussion.key_negative_points
-                  .map(
-                    (item, index) => `
+        .map(
+          (item, index) => `
                   <tr>
                     <td class="text-right">${index + 1}</td>
                     <td colspan="6">${escapeHtml(item)}</td>
                   </tr>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
                 <tr>
                   <td colspan="7">
                     <strong>${escapeHtml(
-                      t("familyDiscussion.form.sections.positivePoints")
-                    )}</strong>
+          t("familyDiscussion.form.sections.positivePoints")
+        )}</strong>
                   </td>
                 </tr>
                 ${discussion.key_positive_points
-                  .map(
-                    (item, index) => `
+        .map(
+          (item, index) => `
                   <tr>
                     <td class="text-right">${index + 1}</td>
                     <td colspan="6">${escapeHtml(item)}</td>
                   </tr>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
                 <tr>
                   <td colspan="7">
                     <strong>${escapeHtml(
-                      t("familyDiscussion.form.sections.conclusions")
-                    )}</strong>
+          t("familyDiscussion.form.sections.conclusions")
+        )}</strong>
                   </td>
                 </tr>
                 ${discussion.conclusions_reached
-                  .map(
-                    (item, index) => `
+        .map(
+          (item, index) => `
                   <tr>
                     <td class="text-right">${index + 1}</td>
                     <td colspan="6">${escapeHtml(item)}</td>
                   </tr>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
                 <tr>
                   <td colspan="7">
                     <strong>${escapeHtml(
-                      t("familyDiscussion.form.sections.differingOpinions")
-                    )}</strong>
+          t("familyDiscussion.form.sections.differingOpinions")
+        )}</strong>
                   </td>
                 </tr>
                 ${discussion.differing_opinions
-                  .map(
-                    (item, index) => `
+        .map(
+          (item, index) => `
                   <tr>
                     <td class="text-right">${index + 1}</td>
                     <td colspan="6">${escapeHtml(item)}</td>
                   </tr>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
                 <tr>
                   <td colspan="7">
                     <strong>${escapeHtml(
-                      t("familyDiscussion.form.sections.summary")
-                    )}</strong>
+          t("familyDiscussion.form.sections.summary")
+        )}</strong>
                   </td>
                 </tr>
                 ${discussion.summary
-                  .map(
-                    (item, index) => `
+        .map(
+          (item, index) => `
                   <tr>
                     <td class="text-right">${index + 1}</td>
                     <td colspan="6">${escapeHtml(item)}</td>
                   </tr>
                 `
-                  )
-                  .join("")}
+        )
+        .join("")}
                 <tr>
                   <td colspan="3">
                     ${escapeHtml(
-                      t("familyDiscussion.form.preparedByName.label")
-                    )}:
+          t("familyDiscussion.form.preparedByName.label")
+        )}:
                   </td>
                   <td colspan="4">${escapeHtml(
-                    discussion.prepared_by_name
-                  )}</td>
+          discussion.prepared_by_name
+        )}</td>
                 </tr>
                 <tr>
                   <td colspan="3">
                     ${escapeHtml(
-                      t("familyDiscussion.form.preparedByPosition.label")
-                    )}:
+          t("familyDiscussion.form.preparedByPosition.label")
+        )}:
                   </td>
                   <td colspan="4">${escapeHtml(
-                    discussion.prepared_by_position
-                  )}</td>
+          discussion.prepared_by_position
+        )}</td>
                 </tr>
                 <tr>
                   <td colspan="3">
                     ${escapeHtml(t("familyDiscussion.form.signature.label"))}:
                   </td>
                   <td colspan="4">
-                    ${
-                      discussion.prepared_by_signature
-                        ? `<img src="${import.meta.env.VITE_FILE_API}${encodeURIComponent(
-                            discussion.prepared_by_signature
-                          )}" alt="Signature" class="signature-img"/>`
-                        : "N/A"
-                    }
+                    ${discussion.prepared_by_signature
+        ? `<img src="${import.meta.env.VITE_FILE_API}${encodeURIComponent(
+          discussion.prepared_by_signature
+        )}" alt="Signature" class="signature-img"/>`
+        : "N/A"
+      }
                   </td>
                 </tr>
                 <tr>
                   <td colspan="3">
                     ${escapeHtml(
-                      t("familyDiscussion.form.preparedByDate.label")
-                    )}:
+        t("familyDiscussion.form.preparedByDate.label")
+      )}:
                   </td>
                   <td colspan="4">
                     ${escapeHtml(
-                      new Date(discussion.prepared_by_date).toLocaleDateString()
-                    )}
+        new Date(discussion.prepared_by_date).toLocaleDateString()
+      )}
                   </td>
                 </tr>
               </tbody>
@@ -857,8 +856,8 @@ const FamilyDiscussionManagement = () => {
   
             <div class="footer">
               Generated on: ${new Date().toLocaleString("en-US", {
-                timeZone: "Africa/Addis_Ababa",
-              })}
+        timeZone: "Africa/Addis_Ababa",
+      })}
             </div>
           </div>
         </body>
@@ -1060,23 +1059,23 @@ ${items.map((item) => `\\item ${escapeLatex(item)}`).join("\n")}
     \\parbox{\\linewidth}{
         \\raggedleft
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.recordedDate.label")
-        )}:} ${escapedRecordedDate} \\\\
+        t("familyDiscussion.form.recordedDate.label")
+      )}:} ${escapedRecordedDate} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.district.label")
-        )}:} ${escapedDistrict} \\\\
+        t("familyDiscussion.form.district.label")
+      )}:} ${escapedDistrict} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.socialBase.label")
-        )}:} ${escapedSocialBase} \\\\
+        t("familyDiscussion.form.socialBase.label")
+      )}:} ${escapedSocialBase} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.wing.label")
-        )}:} ${escapedWing} \\\\
+        t("familyDiscussion.form.wing.label")
+      )}:} ${escapedWing} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.unionName.label")
-        )}:} ${escapedUnionName} \\\\
+        t("familyDiscussion.form.unionName.label")
+      )}:} ${escapedUnionName} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.familyName.label")
-        )}:} ${escapedFamilyName}
+        t("familyDiscussion.form.familyName.label")
+      )}:} ${escapedFamilyName}
     }
 }
 
@@ -1089,17 +1088,17 @@ ${items.map((item) => `\\item ${escapeLatex(item)}`).join("\n")}
 \\toprule
 \\rowcolor{headercolor}
  & \\textbf{${escapeLatex(
-   t("familyDiscussion.form.male")
- )}} & \\textbf{${escapeLatex(
+        t("familyDiscussion.form.male")
+      )}} & \\textbf{${escapeLatex(
         t("familyDiscussion.form.female")
       )}} & \\textbf{${escapeLatex(t("familyDiscussion.form.total"))}} \\\\
 \\midrule
 ${escapeLatex(
-  t("familyDiscussion.form.totalMembers")
-)} & ${escapedTotalMaleMembers} & ${escapedTotalFemaleMembers} & \\textbf{\\textcolor{red}{${escapedTotalFamilyMembers}}} \\\\
+        t("familyDiscussion.form.totalMembers")
+      )} & ${escapedTotalMaleMembers} & ${escapedTotalFemaleMembers} & \\textbf{\\textcolor{red}{${escapedTotalFamilyMembers}}} \\\\
 ${escapeLatex(
-  t("familyDiscussion.form.attendingMembers")
-)} & ${escapedAttendingMaleMembers} & ${escapedAttendingFemaleMembers} & \\textbf{\\textcolor{red}{${escapedTotalAttendingMembers}}} \\\\
+        t("familyDiscussion.form.attendingMembers")
+      )} & ${escapedAttendingMaleMembers} & ${escapedAttendingFemaleMembers} & \\textbf{\\textcolor{red}{${escapedTotalAttendingMembers}}} \\\\
 \\bottomrule
 \\end{tabular}
 \\end{center}
@@ -1135,17 +1134,17 @@ ${summarySection}
     \\parbox{\\linewidth}{
         \\raggedleft
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.preparedByName.label")
-        )}:} ${escapedPreparedByName} \\\\
+        t("familyDiscussion.form.preparedByName.label")
+      )}:} ${escapedPreparedByName} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.preparedByPosition.label")
-        )}:} ${escapedPreparedByPosition} \\\\
+        t("familyDiscussion.form.preparedByPosition.label")
+      )}:} ${escapedPreparedByPosition} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.signature.label")
-        )}:} \\parbox[c]{0.3\\textwidth}{\\vspace{0.5cm}${signatureImage}\\vspace{0.5cm}} \\\\
+        t("familyDiscussion.form.signature.label")
+      )}:} \\parbox[c]{0.3\\textwidth}{\\vspace{0.5cm}${signatureImage}\\vspace{0.5cm}} \\\\
         \\textbf{${escapeLatex(
-          t("familyDiscussion.form.preparedByDate.label")
-        )}:} ${escapedPreparedByDate}
+        t("familyDiscussion.form.preparedByDate.label")
+      )}:} ${escapedPreparedByDate}
     }
 }
 

@@ -260,7 +260,7 @@ const Events = () => {
         isFeatured: values.isFeatured,
         registrationRequired: values.registrationRequired,
         registrationLink: values.registrationLink,
-        attendees: values.attendees,
+        attendees: Number(values.attendees),
         tags: values.tags,
       };
 
