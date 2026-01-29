@@ -25,7 +25,7 @@ import {
   IconAlertCircle,
 } from "@tabler/icons-react";
 import { showNotification } from "@mantine/notifications";
-import { login } from "../../services/api/main";
+import { login, userDetail } from "../../services/api/main";
 import { ROLE_ENUM } from "../../enums/main";
 import { useNavigate } from "react-router-dom";
 import { useSession } from "../../context/session-provider";
@@ -159,16 +159,19 @@ export default function LoginPage() {
 
   const mutation = useMutation({
     mutationFn: (credentials) => login(credentials),
-    onMutate: () => {
-      setLoginError(null);
-    },
-    onError: (error) => {
+
+    onMutate: () => setLoginError(null),
+
+    onError: (error: any) => {
       console.error("Login error:", error);
+
       const errorMessage =
         error.response?.data?.message ||
         error.message ||
         "Failed to login. Please try again.";
+
       setLoginError(errorMessage);
+
       showNotification({
         title: "Login Failed",
         message: errorMessage,
@@ -176,7 +179,7 @@ export default function LoginPage() {
         icon: <IconAlertCircle size={18} />,
       });
     },
-    
+
     onSuccess: (data) => {
       if (data?.code) {
         const errorMessage = data?.message || "Invalid credentials";
@@ -190,10 +193,12 @@ export default function LoginPage() {
       }
 
       try {
+        // handleLoginSuccess now gets full user data + login info
         handleLoginSuccess(data);
+
         showNotification({
           title: "Login Successful",
-          message: "Welcome back!",
+          message: `Welcome back, ${user.name || "User"}!`,
           color: "green",
         });
       } catch (error) {
@@ -209,6 +214,7 @@ export default function LoginPage() {
     },
   });
 
+
   const onSubmit = (credentials) => {
     mutation.mutate(credentials);
   };
@@ -223,78 +229,82 @@ export default function LoginPage() {
 
       // Extract data from the nested structure
       const { user } = response;
-      const { role = {id: "addfdsf", "name": "dfadsfa"}, woreda = {id: "adsdfasf", name: "adfadsfsdaf"}, subcity = {name: "adadsfdsf", id: "adfdsfdsf"} } = user;
+      console.log(user)
+      let { role, woreda, subcity } = user;
+      if (!role) {
+        role = { id: "addfdsf", "name": "dfadsfa" }
+      }
       const permissions = response?.data?.permissions || ["manage_roles",
-  "view_roles",
-  "manage_permissions",
-  "view_permissions",
-  "manage_role_permissions",
-  "view_role_permissions",
-  "manage_subcities",
-  "view_subcities",
-  "manage_woredas",
-  "view_woredas",
-  "manage_users",
-  "view_users",
-  "manage_folders",
-  "view_folders",
-  "manage_folder_shares",
-  "view_folder_shares",
-  "manage_documents",
-  "view_documents",
-  "manage_document_metadata",
-  "view_document_metadata",
-  "manage_document_shares",
-  "view_document_shares",
-  "manage_news_categories",
-  "view_news_categories",
-  "manage_news",
-  "view_news",
-  "manage_news_media",
-  "view_news_media",
-  "view_news_analytics",
-  "manage_galleries",
-  "view_galleries",
-  "manage_gallery_media",
-  "view_gallery_media",
-  "manage_book_categories",
-  "view_book_categories",
-  "manage_books",
-  "view_books",
-  "manage_committees",
-  "view_committees",
-  "manage_complaints",
-  "view_complaints",
-  "manage_complaint_attachments",
-  "view_complaint_attachments",
-  "manage_complaint_notes",
-  "view_complaint_notes",
-  "manage_leaders",
-  "view_leaders",
-  "manage_suggestions",
-  "view_suggestions",
-  "manage_suggestion_attachments",
-  "view_suggestion_attachments",
-  "manage_suggestion_responses",
-  "view_suggestion_responses",
-  "manage_video_conferences",
-  "view_video_conferences",
-  "manage_conference_participants",
-  "view_conference_participants",
-  "manage_conference_recordings",
-  "view_conference_recordings",
-  "manage_chat_rooms",
-  "view_chat_rooms",
-  "manage_chat_messages",
-  "view_chat_messages",
-  "manage_chat_message_attachments",
-  "view_chat_message_attachments",
-  "manage_audit_logs",
-  "view_audit_logs",
-  "access_admin_dashboard",
-  "manage_system_settings",
-  "bypass_permissions",
-  "temp_permissions",];
+        "view_roles",
+        "manage_permissions",
+        "view_permissions",
+        "manage_role_permissions",
+        "view_role_permissions",
+        "manage_subcities",
+        "view_subcities",
+        "manage_woredas",
+        "view_woredas",
+        "manage_users",
+        "view_users",
+        "manage_folders",
+        "view_folders",
+        "manage_folder_shares",
+        "view_folder_shares",
+        "manage_documents",
+        "view_documents",
+        "manage_document_metadata",
+        "view_document_metadata",
+        "manage_document_shares",
+        "view_document_shares",
+        "manage_news_categories",
+        "view_news_categories",
+        "manage_news",
+        "view_news",
+        "manage_news_media",
+        "view_news_media",
+        "view_news_analytics",
+        "manage_galleries",
+        "view_galleries",
+        "manage_gallery_media",
+        "view_gallery_media",
+        "manage_book_categories",
+        "view_book_categories",
+        "manage_books",
+        "view_books",
+        "manage_committees",
+        "view_committees",
+        "manage_complaints",
+        "view_complaints",
+        "manage_complaint_attachments",
+        "view_complaint_attachments",
+        "manage_complaint_notes",
+        "view_complaint_notes",
+        "manage_leaders",
+        "view_leaders",
+        "manage_suggestions",
+        "view_suggestions",
+        "manage_suggestion_attachments",
+        "view_suggestion_attachments",
+        "manage_suggestion_responses",
+        "view_suggestion_responses",
+        "manage_video_conferences",
+        "view_video_conferences",
+        "manage_conference_participants",
+        "view_conference_participants",
+        "manage_conference_recordings",
+        "view_conference_recordings",
+        "manage_chat_rooms",
+        "view_chat_rooms",
+        "manage_chat_messages",
+        "view_chat_messages",
+        "manage_chat_message_attachments",
+        "view_chat_message_attachments",
+        "manage_audit_logs",
+        "view_audit_logs",
+        "access_admin_dashboard",
+        "manage_system_settings",
+        "bypass_permissions",
+        "temp_permissions",];
 
       // Validate required fields
       if (!user?.id) {
@@ -389,7 +399,7 @@ export default function LoginPage() {
     };
 
     return navigate("/dashboard/my-dashboard");
-  
+
   };
 
   return (
@@ -414,7 +424,7 @@ export default function LoginPage() {
             Welcome Back!
           </Title>
           <Text className="text-xl mb-8">
-          Welcome to Bole Subcity Prosperity Party System!
+            Welcome to Bole Subcity Prosperity Party System!
           </Text>
           <div className="flex items-center space-x-4">
             <div className="w-12 h-1 bg-blue-400 rounded-full"></div>

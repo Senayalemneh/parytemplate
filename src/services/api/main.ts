@@ -263,8 +263,30 @@ export const createNewEmployee = (body: any) => {
   );
 };
 
-export const login = (body: any) => {
-  return fetch(`${API_URL}auth/sign-in/email`, postHeader({...body, callbackURL: ''})).then((res) => res.json());
+export const login = async (body: any) => {
+  const loginRes = await fetch(
+    `${API_URL}auth/sign-in/email`,
+    postHeader({ ...body, callbackURL: "" })
+  );
+  const loginData = await loginRes.json();
+
+  if (!loginRes.ok || loginData?.code) {
+    // Pass the login error through
+    throw loginData;
+  }
+
+  // Call userDetail next
+  const userData = await userDetail(loginData.user.id);
+
+  loginData.user = { ...loginData.user, ...userData }
+
+  // Return BOTH objects concatenated in one
+  return loginData;
+};
+
+
+export const userDetail = (id: string) => {
+  return fetch(`${API_URL}users/${id}`, getHeader()).then((res) => res.json());
 };
 
 export const createNewRole = (body: any) => {
@@ -606,9 +628,8 @@ export const getFamilyDiscussion = (
     }
   }
 
-  const url = `${API_URL}family-discussions${
-    path ? `/${path}` : ""
-  }?${queryString}`;
+  const url = `${API_URL}family-discussions${path ? `/${path}` : ""
+    }?${queryString}`;
 
   return fetch(url, getHeader()).then((res) => res.json());
 };
@@ -631,9 +652,8 @@ export const getTrashedFamilyDiscussions = (
     }
   }
 
-  const url = `${API_URL}family-discussions/trashed/all${
-    path ? `/${path}` : ""
-  }${queryString.toString() ? `?${queryString}` : ""}`;
+  const url = `${API_URL}family-discussions/trashed/all${path ? `/${path}` : ""
+    }${queryString.toString() ? `?${queryString}` : ""}`;
 
   return fetch(url, getHeader()).then((res) => res.json());
 };
@@ -1131,9 +1151,8 @@ export const getTrashedTendencies = (
       queryString.append(key, String(value));
     }
   }
-  const url = `${API_URL}tendencies/trashed${
-    queryString.toString() ? `?${queryString}` : ""
-  }`;
+  const url = `${API_URL}tendencies/trashed${queryString.toString() ? `?${queryString}` : ""
+    }`;
   return fetch(url, getHeader()).then((res) => res.json());
 };
 
@@ -1163,9 +1182,8 @@ export const getTrashedNews = (
       queryString.append(key, String(value));
     }
   }
-  const url = `${API_URL}news/trashed${
-    queryString.toString() ? `?${queryString}` : ""
-  }`;
+  const url = `${API_URL}news/trashed${queryString.toString() ? `?${queryString}` : ""
+    }`;
   return fetch(url, getHeader()).then((res) => res.json());
 };
 
@@ -1196,7 +1214,7 @@ export const getAllTendencyReport = async (
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      ...getHeader(),
+      // ...getHeader(),
     },
     body: JSON.stringify(params),
   });
@@ -1270,9 +1288,8 @@ export const getTrashedBooks = (
       queryString.append(key, String(value));
     }
   }
-  const url = `${API_URL}books/trashed${
-    queryString.toString() ? `?${queryString}` : ""
-  }`;
+  const url = `${API_URL}books/trashed${queryString.toString() ? `?${queryString}` : ""
+    }`;
   return fetch(url, getHeader()).then((res) => res.json());
 };
 
@@ -1863,9 +1880,8 @@ export const getTrashedQuestionnaires = (
     }
   }
 
-  const url = `${API_URL}questions/trashed${path ? `/${path}` : ""}${
-    queryString.toString() ? `?${queryString}` : ""
-  }`;
+  const url = `${API_URL}questions/trashed${path ? `/${path}` : ""}${queryString.toString() ? `?${queryString}` : ""
+    }`;
 
   return fetch(url, getHeader()).then((res) => res.json());
 };
@@ -1964,7 +1980,7 @@ export const getAllResults = async (
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      ...getHeader(),
+      // ...getHeader(),
     },
     body: JSON.stringify(filters),
   });

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { 
+import {
   Card,
   Grid,
-  TextInput, 
-  Textarea, 
-  Button, 
-  Modal, 
-  Group, 
-  Title, 
-  Text, 
-  Badge, 
+  TextInput,
+  Textarea,
+  Button,
+  Modal,
+  Group,
+  Title,
+  Text,
+  Badge,
   Breadcrumbs,
   Anchor,
   Paper,
@@ -28,11 +28,11 @@ import {
   Stack
 } from '@mantine/core';
 import { useDisclosure, useHover } from '@mantine/hooks';
-import { 
-  IconFolder, 
-  IconFolderPlus, 
-  IconUpload, 
-  IconTrash, 
+import {
+  IconFolder,
+  IconFolderPlus,
+  IconUpload,
+  IconTrash,
   IconInfoCircle,
   IconDotsVertical,
   IconFile,
@@ -48,11 +48,11 @@ import {
 import DocumentUpload from './components/document-uploader';
 import FolderContents from './components/folder-contents';
 import Loader from '../../components/common/loader';
-import { 
-  createFolder, 
-  getFolder, 
-  shareFolder, 
-  getAllUsers, 
+import {
+  createFolder,
+  getFolder,
+  shareFolder,
+  getAllUsers,
   getFolderSharedWith,
   updateFolderName,
   deleteFolder
@@ -126,7 +126,7 @@ interface ShareHistory {
 const DMSFolderManagement: React.FC = () => {
   const [folders, setFolders] = useState<Folder[]>([]);
   const [currentFolder, setCurrentFolder] = useState<Folder | null>(null);
-  const [breadcrumbs, setBreadcrumbs] = useState<{id: number | null, name: string}[]>([{id: null, name: 'Root'}]);
+  const [breadcrumbs, setBreadcrumbs] = useState<{ id: number | null, name: string }[]>([{ id: null, name: 'Root' }]);
   const [subcities, setSubcities] = useState<Subcity[]>([]);
   const [woredas, setWoredas] = useState<Woreda[]>([]);
   const [loading, setLoading] = useState(true);
@@ -137,7 +137,7 @@ const DMSFolderManagement: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [users, setUsers] = useState<User[]>([]);
   const [shareHistory, setShareHistory] = useState<ShareHistory[]>([]);
-  
+
   const [newFolder, setNewFolder] = useState({
     name: '',
     description: '',
@@ -145,7 +145,7 @@ const DMSFolderManagement: React.FC = () => {
     subcity_id: '',
     is_shared: false,
   });
-  
+
   const [shareData, setShareData] = useState({
     folderId: 0,
     userId: '',
@@ -156,7 +156,7 @@ const DMSFolderManagement: React.FC = () => {
   const [renameModalOpened, { open: openRenameModal, close: closeRenameModal }] = useDisclosure(false);
   const [folderToRename, setFolderToRename] = useState<Folder | null>(null);
   const [newFolderName, setNewFolderName] = useState('');
-  
+
   const [createModalOpened, { open: openCreateModal, close: closeCreateModal }] = useDisclosure(false);
   const [deleteModalOpened, { open: openDeleteModal, close: closeDeleteModal }] = useDisclosure(false);
   const [shareModalOpened, { open: openShareModal, close: closeShareModal }] = useDisclosure(false);
@@ -173,7 +173,7 @@ const DMSFolderManagement: React.FC = () => {
     if (user) {
       const parsedUser = JSON.parse(user) as CurrentUser;
       setCurrentUser(parsedUser);
-      
+
       if (parsedUser.subcityId || parsedUser.woredaId) {
         setNewFolder(prev => ({
           ...prev,
@@ -182,7 +182,7 @@ const DMSFolderManagement: React.FC = () => {
         }));
       }
     }
-    
+
     const fetchUsers = async () => {
       try {
         const response = await getAllUsers();
@@ -191,7 +191,7 @@ const DMSFolderManagement: React.FC = () => {
         console.error('Failed to fetch users', err);
       }
     };
-    
+
     fetchUsers();
   }, []);
 
@@ -205,16 +205,16 @@ const DMSFolderManagement: React.FC = () => {
       setLoading(true);
       const user = localStorage.getItem('currentUser');
       const parsedUser = JSON.parse(user) as CurrentUser;
-      
+
       if (!parsedUser) return;
-      
+
       const data = await getFolder(parsedUser?.id);
-      
-      if (data.success) {
-        const filteredFolders = parentId 
+
+      if (data) {
+        const filteredFolders = parentId
           ? data.data.filter((f: Folder) => f.parent_id === parentId)
           : data.data.filter((f: Folder) => f.parent_id === null);
-        
+
         setFolders(filteredFolders);
       } else {
         setError(data.message || 'Failed to fetch folders');
@@ -228,11 +228,11 @@ const DMSFolderManagement: React.FC = () => {
 
   const fetchShareHistory = async (folderId: number) => {
     if (!currentUser) return;
-    
+
     try {
       setLoading(true);
       const response = await getFolderSharedWith(currentUser.id, folderId);
-      
+
       if (response.success) {
         setShareHistory(response.data);
         openShareHistoryModal();
@@ -250,10 +250,10 @@ const DMSFolderManagement: React.FC = () => {
     try {
       const subcitiesResponse = await fetch('/api/subcities');
       const subcitiesData = await subcitiesResponse.json();
-      
+
       const woredasResponse = await fetch('/api/woredas');
       const woredasData = await woredasResponse.json();
-      
+
       if (subcitiesData.success && woredasData.success) {
         setSubcities(subcitiesData.data);
         setWoredas(woredasData.data);
@@ -273,10 +273,10 @@ const DMSFolderManagement: React.FC = () => {
       setError('User not authenticated');
       return;
     }
-  
+
     try {
       setLoading(true);
-      
+
       const payload = {
         name: newFolder?.name,
         description: newFolder.description,
@@ -285,9 +285,9 @@ const DMSFolderManagement: React.FC = () => {
         is_shared: newFolder.is_shared,
         parent_id: currentFolder?.id || null
       };
-  
+
       const data = await createFolder(currentUser.id, payload);
-      
+
       if (data.success) {
         setSuccess('Folder created successfully');
         fetchFolders(currentFolder?.id || null);
@@ -311,35 +311,34 @@ const DMSFolderManagement: React.FC = () => {
 
   const handleDeleteFolder = async () => {
     if (!folderToDelete) return;
-    
+
     try {
       setLoading(true);
-      console.log("folderToDelete,",folderToDelete)
       const response = await deleteFolder(folderToDelete);
 
-      
-  
-        setSuccess('Folder deleted successfully');
-                closeDeleteModal();
-        fetchFolders();
-        closeDeleteModal();
-        setFolderToDelete(null);
+
+
+      setSuccess('Folder deleted successfully');
+      closeDeleteModal();
+      fetchFolders();
+      closeDeleteModal();
+      setFolderToDelete(null);
 
     } catch (err) {
       // setError('Network error occurred while deleting folder');
-      console.log("error",err)
+      console.log("error", err)
     } finally {
       setLoading(false);
     }
   };
 
   const handleRenameFolder = async () => {
-   if (!folderToRename || !newFolderName.trim() || !currentUser) return;
-   
-   try {
-     setLoading(true);
-     const response = await updateFolderName(folderToRename.id, { new_name: newFolderName });
-     
+    if (!folderToRename || !newFolderName.trim() || !currentUser) return;
+
+    try {
+      setLoading(true);
+      const response = await updateFolderName(folderToRename.id, { new_name: newFolderName });
+
       if (response.success) {
         setSuccess('Folder renamed successfully');
         fetchFolders(currentFolder?.id || null);
@@ -361,23 +360,23 @@ const DMSFolderManagement: React.FC = () => {
       setError('Please select a user');
       return;
     }
-  
+
     try {
       setLoading(true);
-      
+
       const folderIdToShare = currentFolder?.id || shareData.folderId;
       if (!folderIdToShare) {
         throw new Error('No folder selected for sharing');
       }
-  
+
       const body = {
         folder_id: folderIdToShare,
         shared_with_user_id: parseInt(shareData.userId),
         permission_level: shareData.permissionLevel
       };
-  
+
       const response = await shareFolder(currentUser.id, body);
-      
+
       if (response.success) {
         setSuccess(`Folder shared successfully!`);
         closeShareModal();
@@ -397,7 +396,7 @@ const DMSFolderManagement: React.FC = () => {
       folderName: folder.name
     });
     setCurrentFolder(folder);
-    setBreadcrumbs([...breadcrumbs, {id: folder.id, name: folder?.name}]);
+    setBreadcrumbs([...breadcrumbs, { id: folder.id, name: folder?.name }]);
   };
 
   if (viewingContents) {
@@ -414,13 +413,12 @@ const DMSFolderManagement: React.FC = () => {
   const navigateToBreadcrumb = (index: number) => {
     const newBreadcrumbs = breadcrumbs.slice(0, index + 1);
     setBreadcrumbs(newBreadcrumbs);
-    
+
     const targetFolderId = newBreadcrumbs[newBreadcrumbs.length - 1].id;
     setCurrentFolder(targetFolderId ? folders.find(f => f.id === targetFolderId) || null : null);
     fetchFolders(targetFolderId);
   };
-
-  const filteredFolders = folders.filter(folder => 
+  const filteredFolders = folders.filter(folder =>
     folder?.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     folder.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -435,13 +433,13 @@ const DMSFolderManagement: React.FC = () => {
   return (
     <div className="container mx-auto p-4">
       {loading && <Loader />}
-      
+
       <Flex justify="space-between" align="center" className="mb-6">
         <Title order={2} className="flex items-center gap-2">
           <IconFolder size={32} className="text-blue-600" />
           <span>Document Management</span>
         </Title>
-        
+
         <Group spacing="sm">
           <Input
             placeholder="Search folders..."
@@ -450,8 +448,8 @@ const DMSFolderManagement: React.FC = () => {
             icon={<IconSearch size={16} />}
             className="w-64"
           />
-          <ActionIcon 
-            variant={viewMode === 'grid' ? 'filled' : 'default'} 
+          <ActionIcon
+            variant={viewMode === 'grid' ? 'filled' : 'default'}
             color="blue"
             onClick={() => setViewMode('grid')}
           >
@@ -459,11 +457,11 @@ const DMSFolderManagement: React.FC = () => {
           </ActionIcon>
         </Group>
       </Flex>
-      
+
       {error && (
-        <Notification 
-          icon={<IconInfoCircle size="1.1rem" />} 
-          color="red" 
+        <Notification
+          icon={<IconInfoCircle size="1.1rem" />}
+          color="red"
           title="Error"
           onClose={() => setError(null)}
           className="mb-4"
@@ -471,11 +469,11 @@ const DMSFolderManagement: React.FC = () => {
           {error}
         </Notification>
       )}
-      
+
       {success && (
-        <Notification 
-          icon={<IconInfoCircle size="1.1rem" />} 
-          color="green" 
+        <Notification
+          icon={<IconInfoCircle size="1.1rem" />}
+          color="green"
           title="Success"
           onClose={() => setSuccess(null)}
           className="mb-4"
@@ -483,13 +481,13 @@ const DMSFolderManagement: React.FC = () => {
           {success}
         </Notification>
       )}
-      
+
       <Paper withBorder shadow="sm" radius="md" className="relative">
         <Flex p="md" justify="space-between" align="center">
           <Breadcrumbs separator="→">
             {breadcrumbs.map((item, index) => (
-              <Anchor 
-                key={index} 
+              <Anchor
+                key={index}
                 onClick={() => navigateToBreadcrumb(index)}
                 className="cursor-pointer hover:text-blue-600"
                 size="sm"
@@ -498,18 +496,18 @@ const DMSFolderManagement: React.FC = () => {
               </Anchor>
             ))}
           </Breadcrumbs>
-          
+
           <Group spacing="sm">
-            <Button 
-              leftIcon={<IconFolderPlus size="1rem" />} 
+            <Button
+              leftIcon={<IconFolderPlus size="1rem" />}
               onClick={openCreateModal}
               variant="light"
               size="sm"
             >
               New Folder
             </Button>
-            <Button 
-              leftIcon={<IconUpload size="1rem" />} 
+            <Button
+              leftIcon={<IconUpload size="1rem" />}
               variant="light"
               size="sm"
               onClick={openUploadModal}
@@ -519,23 +517,23 @@ const DMSFolderManagement: React.FC = () => {
             </Button>
           </Group>
         </Flex>
-        
+
         <Divider />
-        
+
         {viewMode === 'grid' ? (
           <Grid p="md" gutter="lg">
             {filteredFolders.length > 0 ? (
               filteredFolders.map((folder) => (
                 <Grid.Col key={folder.id} span={12} sm={6} md={4} lg={3}>
-                  <FolderCard 
-                    folder={folder} 
+                  <FolderCard
+                    folder={folder}
                     onNavigate={navigateToFolder}
                     onDelete={(id) => {
                       setFolderToDelete(id);
                       openDeleteModal();
                     }}
                     onShare={(id) => {
-                      setShareData(prev => ({...prev, folderId: id}));
+                      setShareData(prev => ({ ...prev, folderId: id }));
                       openShareModal();
                     }}
                     onViewShareHistory={fetchShareHistory}
@@ -554,9 +552,9 @@ const DMSFolderManagement: React.FC = () => {
                   {searchQuery ? 'No matching folders found' : 'No folders in this location'}
                 </Text>
                 {!searchQuery && (
-                  <Button 
-                    variant="subtle" 
-                    size="sm" 
+                  <Button
+                    variant="subtle"
+                    size="sm"
                     leftIcon={<IconFolderPlus size={14} />}
                     onClick={openCreateModal}
                     className="mt-2"
@@ -572,7 +570,7 @@ const DMSFolderManagement: React.FC = () => {
             {filteredFolders.length > 0 ? (
               <div className="space-y-2">
                 {filteredFolders.map((folder) => (
-                  <FolderListItem 
+                  <FolderListItem
                     key={folder.id}
                     folder={folder}
                     onNavigate={navigateToFolder}
@@ -581,7 +579,7 @@ const DMSFolderManagement: React.FC = () => {
                       openDeleteModal();
                     }}
                     onShare={(id) => {
-                      setShareData(prev => ({...prev, folderId: id}));
+                      setShareData(prev => ({ ...prev, folderId: id }));
                       openShareModal();
                     }}
                     onViewShareHistory={fetchShareHistory}
@@ -600,9 +598,9 @@ const DMSFolderManagement: React.FC = () => {
                   {searchQuery ? 'No matching folders found' : 'No folders in this location'}
                 </Text>
                 {!searchQuery && (
-                  <Button 
-                    variant="subtle" 
-                    size="sm" 
+                  <Button
+                    variant="subtle"
+                    size="sm"
                     leftIcon={<IconFolderPlus size={14} />}
                     onClick={openCreateModal}
                     className="mt-2"
@@ -615,10 +613,10 @@ const DMSFolderManagement: React.FC = () => {
           </div>
         )}
       </Paper>
-      
-      <Modal 
-        opened={createModalOpened} 
-        onClose={closeCreateModal} 
+
+      <Modal
+        opened={createModalOpened}
+        onClose={closeCreateModal}
         title="Create New Folder"
         size="md"
         centered
@@ -628,29 +626,29 @@ const DMSFolderManagement: React.FC = () => {
             label="Folder Name"
             placeholder="Enter folder name"
             value={newFolder?.name}
-            onChange={(e) => setNewFolder({...newFolder, name: e.target.value})}
+            onChange={(e) => setNewFolder({ ...newFolder, name: e.target.value })}
             required
           />
-          
+
           <Textarea
             label="Description"
             placeholder="Enter folder description"
             value={newFolder.description}
-            onChange={(e) => setNewFolder({...newFolder, description: e.target.value})}
+            onChange={(e) => setNewFolder({ ...newFolder, description: e.target.value })}
             rows={3}
           />
- 
+
           <Checkbox
             label="Shared Folder (visible to others)"
             checked={newFolder.is_shared}
-            onChange={(e) => setNewFolder({...newFolder, is_shared: e.currentTarget.checked})}
+            onChange={(e) => setNewFolder({ ...newFolder, is_shared: e.currentTarget.checked })}
           />
-          
+
           <Group position="right" mt="md">
             <Button variant="default" onClick={closeCreateModal}>
               Cancel
             </Button>
-            <Button 
+            <Button
               onClick={handleCreateFolder}
               disabled={!newFolder?.name}
               leftIcon={<IconFolderPlus size={16} />}
@@ -660,11 +658,11 @@ const DMSFolderManagement: React.FC = () => {
           </Group>
         </div>
       </Modal>
-      
+
       {/* Rename Folder Modal */}
-      <Modal 
-        opened={renameModalOpened} 
-        onClose={closeRenameModal} 
+      <Modal
+        opened={renameModalOpened}
+        onClose={closeRenameModal}
         title="Rename Folder"
         size="md"
         centered
@@ -677,12 +675,12 @@ const DMSFolderManagement: React.FC = () => {
             onChange={(e) => setNewFolderName(e.target.value)}
             required
           />
-          
+
           <Group position="right" mt="md">
             <Button variant="default" onClick={closeRenameModal}>
               Cancel
             </Button>
-            <Button 
+            <Button
               onClick={handleRenameFolder}
               disabled={!newFolderName.trim()}
               leftIcon={<IconEdit size={16} />}
@@ -692,7 +690,7 @@ const DMSFolderManagement: React.FC = () => {
           </Group>
         </div>
       </Modal>
-      
+
       <DocumentUpload
         folderId={currentFolder?.id || null}
         opened={uploadModalOpened}
@@ -702,10 +700,10 @@ const DMSFolderManagement: React.FC = () => {
         }}
         userId={currentUser?.id || 0}
       />
-      
-      <Modal 
-        opened={deleteModalOpened} 
-        onClose={closeDeleteModal} 
+
+      <Modal
+        opened={deleteModalOpened}
+        onClose={closeDeleteModal}
         title="Delete Folder"
         centered
       >
@@ -714,13 +712,13 @@ const DMSFolderManagement: React.FC = () => {
           <Text size="sm" color="red">
             Warning: This action cannot be undone.
           </Text>
-          
+
           <Group position="right" mt="md">
             <Button variant="default" onClick={closeDeleteModal}>
               Cancel
             </Button>
-            <Button 
-              color="red" 
+            <Button
+              color="red"
               onClick={handleDeleteFolder}
               leftIcon={<IconTrash size={16} />}
             >
@@ -729,10 +727,10 @@ const DMSFolderManagement: React.FC = () => {
           </Group>
         </div>
       </Modal>
-      
-      <Modal 
-        opened={shareModalOpened} 
-        onClose={closeShareModal} 
+
+      <Modal
+        opened={shareModalOpened}
+        onClose={closeShareModal}
         title="Share Folder"
         centered
       >
@@ -742,18 +740,18 @@ const DMSFolderManagement: React.FC = () => {
             placeholder="Choose a user to share with"
             data={userOptions}
             value={shareData.userId}
-            onChange={(value) => setShareData({...shareData, userId: value || ''})}
+            onChange={(value) => setShareData({ ...shareData, userId: value || '' })}
             icon={<IconUser size={16} />}
             searchable
             nothingFound="No users found"
             required
           />
-          
+
           <Select
             label="Permission Level"
             placeholder="Select permission level"
             value={shareData.permissionLevel}
-            onChange={(value) => setShareData({...shareData, permissionLevel: value as 'view' | 'edit' | 'manage'})}
+            onChange={(value) => setShareData({ ...shareData, permissionLevel: value as 'view' | 'edit' | 'manage' })}
             data={[
               { value: 'view', label: 'View Only' },
               { value: 'edit', label: 'Can Edit' },
@@ -761,12 +759,12 @@ const DMSFolderManagement: React.FC = () => {
             ]}
             required
           />
-          
+
           <Group position="right" mt="md">
             <Button variant="default" onClick={closeShareModal}>
               Cancel
             </Button>
-            <Button 
+            <Button
               onClick={handleShareFolder}
               disabled={!shareData.userId}
               leftIcon={<IconShare size={16} />}
@@ -776,10 +774,10 @@ const DMSFolderManagement: React.FC = () => {
           </Group>
         </Stack>
       </Modal>
-      
-      <Modal 
-        opened={shareHistoryModalOpened} 
-        onClose={closeShareHistoryModal} 
+
+      <Modal
+        opened={shareHistoryModalOpened}
+        onClose={closeShareHistoryModal}
         title="Share History"
         size="lg"
         centered
@@ -821,20 +819,20 @@ interface FolderCardProps {
   onRename: (folder: Folder) => void;
 }
 
-const FolderCard: React.FC<FolderCardProps> = ({ 
-  folder, 
-  onNavigate, 
-  onDelete, 
+const FolderCard: React.FC<FolderCardProps> = ({
+  folder,
+  onNavigate,
+  onDelete,
   onShare,
   onViewShareHistory,
   onRename
 }) => {
   const { hovered, ref } = useHover();
-  
+
   return (
-    <Card 
+    <Card
       ref={ref}
-      withBorder 
+      withBorder
       shadow={hovered ? 'sm' : undefined}
       radius="md"
       className={`transition-all cursor-pointer h-full flex flex-col ${hovered ? 'border-blue-300' : ''}`}
@@ -844,8 +842,8 @@ const FolderCard: React.FC<FolderCardProps> = ({
         <div className="absolute top-2 right-2 z-10">
           <Menu withinPortal position="bottom-end" shadow="sm">
             <Menu.Target>
-              <ActionIcon 
-                variant="subtle" 
+              <ActionIcon
+                variant="subtle"
                 color="gray"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -854,7 +852,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
             </Menu.Target>
 
             <Menu.Dropdown>
-              <Menu.Item 
+              <Menu.Item
                 icon={<IconInfoCircle size={14} />}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -863,7 +861,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
               >
                 View share history
               </Menu.Item>
-              <Menu.Item 
+              <Menu.Item
                 icon={<IconShare size={14} />}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -872,7 +870,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
               >
                 Share
               </Menu.Item>
-              <Menu.Item 
+              <Menu.Item
                 icon={<IconEdit size={14} />}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -881,7 +879,7 @@ const FolderCard: React.FC<FolderCardProps> = ({
               >
                 Rename
               </Menu.Item>
-              <Menu.Item 
+              <Menu.Item
                 icon={<IconDownload size={14} />}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -891,8 +889,8 @@ const FolderCard: React.FC<FolderCardProps> = ({
               </Menu.Item>
               <Menu.Divider />
               {/* folder delete */}
-              <Menu.Item 
-                icon={<IconTrash size={14} />} 
+              <Menu.Item
+                icon={<IconTrash size={14} />}
                 color="red"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -904,12 +902,12 @@ const FolderCard: React.FC<FolderCardProps> = ({
             </Menu.Dropdown>
           </Menu>
         </div>
-        
+
         <div className="bg-blue-50 p-8 flex justify-center">
           <IconFolder size={48} className="text-blue-500" />
         </div>
       </Card.Section>
-      
+
       <div className="mt-4 flex-grow">
         <Text weight={600} size="md" lineClamp={1} className="mb-1">
           {folder?.name}
@@ -918,11 +916,11 @@ const FolderCard: React.FC<FolderCardProps> = ({
           {folder.description || 'No description'}
         </Text>
       </div>
-      
+
       <div className="mt-auto pt-2">
         <Group spacing="xs">
-          <Badge 
-            variant="dot" 
+          <Badge
+            variant="dot"
             color={folder.is_shared ? 'green' : 'gray'}
             size="sm"
           >
@@ -946,19 +944,19 @@ interface FolderListItemProps {
   onRename: (folder: Folder) => void;
 }
 
-const FolderListItem: React.FC<FolderListItemProps> = ({ 
-  folder, 
-  onNavigate, 
-  onDelete, 
+const FolderListItem: React.FC<FolderListItemProps> = ({
+  folder,
+  onNavigate,
+  onDelete,
   onShare,
   onViewShareHistory,
   onRename
 }) => {
   return (
-    <Paper 
-      withBorder 
-      p="sm" 
-      radius="md" 
+    <Paper
+      withBorder
+      p="sm"
+      radius="md"
       className="hover:bg-gray-50 cursor-pointer transition-colors"
       onClick={() => onNavigate(folder)}
     >
@@ -966,7 +964,7 @@ const FolderListItem: React.FC<FolderListItemProps> = ({
         <div className="bg-blue-100 p-3 rounded-lg">
           <IconFolder size={24} className="text-blue-600" />
         </div>
-        
+
         <div className="flex-grow">
           <Text weight={600} size="md" lineClamp={1}>
             {folder?.name}
@@ -975,33 +973,33 @@ const FolderListItem: React.FC<FolderListItemProps> = ({
             {folder.description || 'No description'}
           </Text>
         </div>
-        
+
         <div className="hidden md:block">
           <Text size="sm">
             {JSON.parse(folder.subcity?.name).en} / {JSON.parse(folder.woreda?.name).en}
           </Text>
         </div>
-        
+
         <div className="hidden sm:block">
-          <Badge 
-            variant="dot" 
+          <Badge
+            variant="dot"
             color={folder.is_shared ? 'green' : 'gray'}
             size="sm"
           >
             {folder.is_shared ? 'Shared' : 'Private'}
           </Badge>
         </div>
-        
+
         <div className="hidden md:block">
           <Text size="sm" color="dimmed">
             {new Date(folder.created_at).toLocaleDateString()}
           </Text>
         </div>
-        
+
         <Menu withinPortal position="bottom-end" shadow="sm">
           <Menu.Target>
-            <ActionIcon 
-              variant="subtle" 
+            <ActionIcon
+              variant="subtle"
               color="gray"
               onClick={(e) => e.stopPropagation()}
             >
@@ -1010,7 +1008,7 @@ const FolderListItem: React.FC<FolderListItemProps> = ({
           </Menu.Target>
 
           <Menu.Dropdown>
-            <Menu.Item 
+            <Menu.Item
               icon={<IconInfoCircle size={14} />}
               onClick={(e) => {
                 e.stopPropagation();
@@ -1019,7 +1017,7 @@ const FolderListItem: React.FC<FolderListItemProps> = ({
             >
               View share history
             </Menu.Item>
-            <Menu.Item 
+            <Menu.Item
               icon={<IconShare size={14} />}
               onClick={(e) => {
                 e.stopPropagation();
@@ -1028,7 +1026,7 @@ const FolderListItem: React.FC<FolderListItemProps> = ({
             >
               Share
             </Menu.Item>
-            <Menu.Item 
+            <Menu.Item
               icon={<IconEdit size={14} />}
               onClick={(e) => {
                 e.stopPropagation();
@@ -1039,8 +1037,8 @@ const FolderListItem: React.FC<FolderListItemProps> = ({
             </Menu.Item>
             <Menu.Item icon={<IconDownload size={14} />}>Download</Menu.Item>
             <Menu.Divider />
-            <Menu.Item 
-              icon={<IconTrash size={14} />} 
+            <Menu.Item
+              icon={<IconTrash size={14} />}
               color="red"
               onClick={(e) => {
                 e.stopPropagation();

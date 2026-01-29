@@ -65,7 +65,7 @@ export default function QuestionnairesPage() {
 
         const filteredData = data.data.filter((q) => {
           if (q.status === "Published") return true;
-          if (user && q.status === "Draft" && q.creator.id === user.id)
+          if (user && q.status === "Draft" && q.created_by_id === user.id)
             return true;
           return false;
         });
@@ -190,8 +190,7 @@ export default function QuestionnairesPage() {
           color={cell.getValue<string>() === "Published" ? "green" : "gray"}
         >
           {t(
-            `questionnairespageadmin.status.${
-              cell.getValue<string>() === "Published" ? "published" : "draft"
+            `questionnairespageadmin.status.${cell.getValue<string>() === "Published" ? "published" : "draft"
             }`
           )}
         </Badge>
