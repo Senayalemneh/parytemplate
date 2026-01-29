@@ -357,10 +357,10 @@ const NewsPage: React.FC = () => {
 
   const cleanText = (text: string): string => {
     if (!text) return "";
-    
+
     // Remove HTML tags if they exist
     let cleaned = text.replace(/<[^>]*>/g, ' ');
-    
+
     // Replace common HTML entities
     cleaned = cleaned
       .replace(/&nbsp;/g, ' ')
@@ -369,7 +369,7 @@ const NewsPage: React.FC = () => {
       .replace(/&gt;/g, '>')
       .replace(/&quot;/g, '"')
       .replace(/&#39;/g, "'");
-    
+
     // Replace newlines and multiple spaces
     cleaned = cleaned
       .replace(/\n/g, ' ')
@@ -377,23 +377,23 @@ const NewsPage: React.FC = () => {
       .replace(/\t/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
-    
+
     return cleaned;
   };
 
   const truncateText = (text: string, maxLength: number): string => {
     const cleanedText = cleanText(text);
-    
+
     if (cleanedText.length <= maxLength) return cleanedText;
-    
+
     // Find the last space before maxLength to avoid cutting words
     let truncated = cleanedText.substr(0, maxLength);
     const lastSpace = truncated.lastIndexOf(' ');
-    
+
     if (lastSpace > maxLength * 0.7 && lastSpace > 0) {
       truncated = truncated.substr(0, lastSpace);
     }
-    
+
     return truncated + '...';
   };
 
@@ -439,8 +439,8 @@ const NewsPage: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-[#112f77]/10 to-white min-h-screen">
       {/* Hero Section */}
-      <Box 
-        className={`${classes.hero}`} 
+      <Box
+        className={`${classes.hero}`}
         py={rem(100)}
         style={{
           background: "linear-gradient(135deg, #112f77 0%, #0275b2 50%, #046d74 100%)"
@@ -508,7 +508,7 @@ const NewsPage: React.FC = () => {
                 // Get truncated title and content
                 const truncatedTitle = getTruncatedTitle(localizedTitle);
                 const truncatedContent = getTruncatedContent(localizedContent);
-                
+
                 return (
                   <Grid.Col
                     key={news.id}
@@ -571,7 +571,7 @@ const NewsPage: React.FC = () => {
                           <ThemeIcon
                             size={20}
                             radius="xl"
-                            style={{ 
+                            style={{
                               backgroundColor: "#f9db12",
                               color: "#112f77"
                             }}
@@ -600,9 +600,9 @@ const NewsPage: React.FC = () => {
                         {/* Content below title */}
                         <Text
                           className={classes.cardContentText}
-                          sx={{ 
-                            lineHeight: 1.6, 
-                            flex: 1, 
+                          sx={{
+                            lineHeight: 1.6,
+                            flex: 1,
                             marginBottom: theme.spacing.md,
                             fontSize: theme.fontSizes.sm,
                           }}
@@ -736,7 +736,7 @@ const NewsPage: React.FC = () => {
                   : t("news.generalCategory")}
               </Badge>
               <Group spacing="xs">
-                <ThemeIcon size={20} radius="xl" style={{ 
+                <ThemeIcon size={20} radius="xl" style={{
                   backgroundColor: "#f9db12",
                   color: "#112f77"
                 }}>

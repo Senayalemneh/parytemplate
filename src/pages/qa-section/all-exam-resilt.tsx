@@ -171,7 +171,7 @@ const ViewResults = () => {
       const resultsData = await getAllResults(filters);
 
       // Convert numeric string fields to numbers for all results and answers_details
-      const processedResults = resultsData.map((result: any) => ({
+      const processedResults = resultsData.data.map((result: any) => ({
         ...result,
         percentage: parseFloat(result.percentage || "0"),
         total_points: parseFloat(result.total_points || "0"),
@@ -179,16 +179,16 @@ const ViewResults = () => {
         created_at: result.created_at || new Date().toISOString(),
         answers_details: Array.isArray(result.answers_details)
           ? result.answers_details.map((detail: any) => ({
-              ...detail,
-              points_earned:
-                typeof detail.points_earned === "string"
-                  ? parseFloat(detail.points_earned)
-                  : detail.points_earned,
-              points_possible:
-                typeof detail.points_possible === "string"
-                  ? parseFloat(detail.points_possible)
-                  : detail.points_possible,
-            }))
+            ...detail,
+            points_earned:
+              typeof detail.points_earned === "string"
+                ? parseFloat(detail.points_earned)
+                : detail.points_earned,
+            points_possible:
+              typeof detail.points_possible === "string"
+                ? parseFloat(detail.points_possible)
+                : detail.points_possible,
+          }))
           : [],
       }));
 
@@ -206,7 +206,7 @@ const ViewResults = () => {
       console.error("Error fetching results:", error);
       setError(
         t("viewresultsadmin.notification.failedLoadResults") ||
-          "Failed to load results"
+        "Failed to load results"
       );
       notifications.show({
         title: t("viewresultsadmin.notification.error") || "Error!",
@@ -1162,12 +1162,11 @@ const ViewResults = () => {
                             <Text size="xs" color="dimmed" mt={4}>
                               {detail.answer_text ||
                                 (detail.selected_options?.length > 0
-                                  ? `${
-                                      t("viewresultsadmin.selected") ||
-                                      "Selected"
-                                    }: ${detail.selected_options.join(", ")}`
+                                  ? `${t("viewresultsadmin.selected") ||
+                                  "Selected"
+                                  }: ${detail.selected_options.join(", ")}`
                                   : t("viewresultsadmin.noAnswer") ||
-                                    "No answer provided")}
+                                  "No answer provided")}
                             </Text>
                             {detail.feedback && (
                               <Text
@@ -1203,7 +1202,7 @@ const ViewResults = () => {
                               {detail.is_correct
                                 ? t("viewresultsadmin.correct") || "Correct"
                                 : t("viewresultsadmin.incorrect") ||
-                                  "Incorrect"}
+                                "Incorrect"}
                             </Badge>
                           </td>
                         </tr>
