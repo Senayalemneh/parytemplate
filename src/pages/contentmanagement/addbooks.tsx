@@ -56,36 +56,20 @@ interface BookItem {
     fr: string;
     am: string;
   };
-  author?: {
-    en?: string;
-    fr?: string;
-    am?: string;
-  };
-  coverImage: string;
+  author?: string;
+  cover_image: string;
   book_source_path: string | null;
-  batchBookPaths: string | null;
-  description?: {
-    en?: string;
-    fr?: string;
-    am?: string;
-  };
-  category?: {
-    en?: string;
-    fr?: string;
-    am?: string;
-  };
+  batch_book_paths: string | null;
+  description?: string;
+  category?: string;
   pages?: number;
   language?: string;
-  publishedYear?: number;
-  readingTime?: {
-    en?: string;
-    fr?: string;
-    am?: string;
-  };
+  published_year?: number;
+  reading_time?: string;
   popularity?: number;
   isFeatured?: boolean;
-  createdAt: string;
-  updatedAt: string;
+  created_at: string;
+  updated_at: string;
 }
 
 interface BatchBookPaths {
@@ -352,36 +336,27 @@ const AddBooks = () => {
           en: values.title_en,
           am: values.title_am,
         },
-        coverImage: coverImagePath,
+        cover_image: coverImagePath,
       };
 
       // Set the appropriate book path field based on upload type
       if (uploadType === "single") {
         payload.book_source_path = bookSourcePath;
-        payload.batchBookPaths = null;
+        payload.batch_book_paths = null;
       } else {
         payload.book_source_path = null;
-        payload.batchBookPaths = JSON.stringify(batchBookPaths);
+        payload.batch_book_paths = JSON.stringify(batchBookPaths);
       }
 
       // Add optional fields if they exist
       if (values.author_en || values.author_am) {
-        payload.author = {
-          en: values.author_en,
-          am: values.author_am,
-        };
+        payload.author = values.author_en || values.author_am;
       }
       if (values.description_en || values.description_am) {
-        payload.description = {
-          en: values.description_en,
-          am: values.description_am,
-        };
+        payload.description = values.description_en || values.description_am;
       }
       if (values.category_en || values.category_am) {
-        payload.category = {
-          en: values.category_en,
-          am: values.category_am,
-        };
+        payload.category = values.category_en || values.category_am;
       }
       if (values.pages) {
         payload.pages = Number(values.pages);
@@ -390,13 +365,10 @@ const AddBooks = () => {
         payload.language = values.language;
       }
       if (values.publishedYear) {
-        payload.publishedYear = Number(values.publishedYear);
+        payload.published_year = Number(values.publishedYear);
       }
       if (values.readingTime_en || values.readingTime_am) {
-        payload.readingTime = {
-          en: values.readingTime_en,
-          am: values.readingTime_am,
-        };
+        payload.reading_time = values.readingTime_en || values.readingTime_am;
       }
       if (values.popularity) {
         payload.popularity = Number(values.popularity);
@@ -447,16 +419,16 @@ const AddBooks = () => {
       }
 
       // Determine upload type based on book data
-      const uploadType = book.batchBookPaths ? "batch" : "single";
+      const uploadType = book.batch_book_paths ? "batch" : "single";
       setUploadType(uploadType);
 
       // Parse batch book paths if they exist
       let batchBookPaths: BatchBookPaths | null = null;
-      if (book.batchBookPaths) {
+      if (book.batch_book_paths) {
         try {
-          batchBookPaths = JSON.parse(book.batchBookPaths);
+          batchBookPaths = JSON.parse(book.batch_book_paths);
         } catch (e) {
-          console.error("Error parsing batchBookPaths:", e);
+          console.error("Error parsing batch_book_paths:", e);
         }
       }
 
@@ -466,8 +438,8 @@ const AddBooks = () => {
         book.category ||
         book.pages ||
         book.language ||
-        book.publishedYear ||
-        book.readingTime ||
+        book.published_year ||
+        book.reading_time ||
         book.popularity ||
         book.isFeatured
       );
@@ -475,23 +447,23 @@ const AddBooks = () => {
       form.setValues({
         title_en: book.title?.en || "",
         title_am: book.title?.am || "",
-        author_en: book.author?.en || "",
-        author_am: book.author?.am || "",
-        coverImagePath: book.coverImage || "",
+        author_en: book.author || "",
+        author_am: book.author || "",
+        coverImagePath: book.cover_image || "",
         coverImageFile: null,
         bookSourcePath: book.book_source_path || "",
         bookSourceFile: null,
         batchBookFiles: [],
         batchCategory: batchBookPaths?.category || "",
-        description_en: book.description?.en || "",
-        description_am: book.description?.am || "",
-        category_en: book.category?.en || "",
-        category_am: book.category?.am || "",
+        description_en: book.description || "",
+        description_am: book.description || "",
+        category_en: book.category || "",
+        category_am: book.category || "",
         pages: book.pages || 0,
         language: book.language || "",
-        publishedYear: book.publishedYear || new Date().getFullYear(),
-        readingTime_en: book.readingTime?.en || "",
-        readingTime_am: book.readingTime?.am || "",
+        publishedYear: book.published_year || new Date().getFullYear(),
+        readingTime_en: book.reading_time || "",
+        readingTime_am: book.reading_time || "",
         popularity: book.popularity || 0,
         isFeatured: book.isFeatured || false,
         includeAdditionalFields: hasAdditionalFields,
@@ -499,9 +471,9 @@ const AddBooks = () => {
 
       setShowAdditionalFields(hasAdditionalFields);
 
-      if (book.coverImage) {
+      if (book.cover_image) {
         setCoverImagePreview(
-          `${import.meta.env.VITE_FILE_API}${book.coverImage}`
+          `${import.meta.env.VITE_FILE_API}${book.cover_image}`
         );
       }
       setEditingId(id);
@@ -625,23 +597,36 @@ const AddBooks = () => {
       ),
     },
     {
-      accessorFn: (row) => row.author?.en || t("table.notAvailable"),
+      accessorKey: "author",
       header: t("addbooksadmin.table.headers.author"),
-      id: "author",
+      Cell: ({ cell }) => cell.getValue<string>() || t("table.notAvailable"),
     },
     {
-      accessorFn: (row) => row.category?.en || t("table.notAvailable"),
+      accessorKey: "category",
       header: t("addbooksadmin.table.headers.category"),
       id: "category",
-      Cell: ({ cell }) => (
-        <Badge color="blue" variant="light">
-          {cell.getValue<string>()}
-        </Badge>
-      ),
+      Cell: ({ cell }) =>
+        cell.getValue<string>() ? (
+          <Badge color="blue" variant="light">
+            {cell.getValue<string>()}
+          </Badge>
+        ) : (
+          t("table.notAvailable")
+        ),
     },
     {
       accessorKey: "pages",
       header: t("addbooksadmin.table.headers.pages"),
+      Cell: ({ cell }) => cell.getValue<number>() || t("table.notAvailable"),
+    },
+    {
+      accessorKey: "language",
+      header: t("addbooksadmin.table.headers.language"),
+      Cell: ({ cell }) => cell.getValue<string>() || t("table.notAvailable"),
+    },
+    {
+      accessorKey: "published_year",
+      header: t("addbooksadmin.table.headers.publishedYear"),
       Cell: ({ cell }) => cell.getValue<number>() || t("table.notAvailable"),
     },
     {
@@ -653,20 +638,6 @@ const AddBooks = () => {
         ) : (
           t("table.notAvailable")
         ),
-    },
-    {
-      accessorKey: "isFeatured",
-      header: t("addbooksadmin.table.headers.featured"),
-      Cell: ({ cell }) => (
-        <Badge
-          color={cell.getValue<boolean>() ? "green" : "orange"}
-          variant="filled"
-        >
-          {cell.getValue<boolean>()
-            ? t("addbooksadmin.table.featured")
-            : t("addbooksadmin.table.regular")}
-        </Badge>
-      ),
     },
     {
       accessorKey: "cover_image",
@@ -686,10 +657,10 @@ const AddBooks = () => {
       accessorKey: "book_source_path",
       header: t("addbooksadmin.table.headers.bookFile"),
       Cell: ({ cell, row }) => {
-        if (row.original.batchBookPaths) {
+        if (row.original.batch_book_paths) {
           try {
             const batchPaths = JSON.parse(
-              row.original.batchBookPaths
+              row.original.batch_book_paths
             ) as BatchBookPaths;
             return (
               <Group spacing="xs">
@@ -717,7 +688,7 @@ const AddBooks = () => {
       },
     },
     {
-      accessorKey: "createdAt",
+      accessorKey: "created_at",
       header: t("addbooksadmin.table.headers.createdAt"),
       Cell: ({ cell }) => {
         const value = cell.getValue<string>();
