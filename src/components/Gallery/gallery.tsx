@@ -56,6 +56,9 @@ interface GalleryItem {
   updated_at: string;
 }
 
+// Get the base URL from environment variable (same as admin)
+const CMS_FILES_BASE_URL = `${import.meta.env.VITE_FILE_API}`;
+
 const useStyles = createStyles((theme) => ({
   hero: {
     position: "relative",
@@ -184,6 +187,58 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+// Helper function to format image URLs (same as admin)
+const formatImageUrl = (imgPath: string): string => {
+  if (!imgPath) return "";
+  
+  // If it's already a full URL, return as is
+  if (imgPath.startsWith("http")) return imgPath;
+  
+  // If it's a relative path, prepend the base URL
+  // Remove any leading slashes from the path
+  const cleanPath = imgPath.replace(/^\/+/, "");
+  
+  // Ensure base URL doesn't have trailing slash
+  const baseUrl = CMS_FILES_BASE_URL.replace(/\/+$/, "");
+  
+  return `${baseUrl}/${cleanPath}`;
+};
+
+// Helper function to normalize image URLs for display
+const getDisplayImageUrl = (imgPath: string): string => {
+  if (!imgPath) return "";
+  
+  // If it's already a full URL, return as is
+  if (imgPath.startsWith("http")) return imgPath;
+  
+  // If it's a relative path, format it
+  return formatImageUrl(imgPath);
+};
+
+// Helper function to parse API response (similar to admin)
+const parseApiResponse = (data: any[]): GalleryItem[] => {
+  return data.map((item) => {
+    // Parse stringified fields if needed
+    const title = typeof item.title === "string" ? JSON.parse(item.title) : item.title;
+    const description = typeof item.description === "string" ? JSON.parse(item.description) : item.description;
+    const images = typeof item.images === "string" ? JSON.parse(item.images) : item.images;
+    const category = typeof item.category === "string" ? JSON.parse(item.category) : item.category;
+    
+    // Format image URLs for display
+    const formattedImages = Array.isArray(images) 
+      ? images.map((img: string) => getDisplayImageUrl(img))
+      : [];
+    
+    return {
+      ...item,
+      title,
+      description,
+      images: formattedImages,
+      category,
+    };
+  });
+};
+
 const GalleryComponent = () => {
   const { t, i18n } = useTranslation();
   const { classes } = useStyles();
@@ -222,7 +277,7 @@ const GalleryComponent = () => {
         console.log("API Response:", response); // Debug log
 
         // Check if response is an array or has a data property
-        let data: GalleryItem[] = [];
+        let data: any[] = [];
         
         if (Array.isArray(response)) {
           // Response is directly an array
@@ -240,14 +295,19 @@ const GalleryComponent = () => {
           return;
         }
 
-        console.log("Gallery data:", data); // Debug log
+        console.log("Raw gallery data:", data); // Debug log
+
+        // Parse and format the data using the same logic as admin
+        const parsedData = parseApiResponse(data);
+
+        console.log("Parsed gallery data:", parsedData); // Debug log
 
         // Normalize the data - ensure all fields exist
-        const normalizedData = data.map((item: any) => ({
+        const normalizedData = parsedData.map((item: any) => ({
           id: item.id || 0,
           title: item.title || { en: "No Title", am: "ርዕስ የለም" },
           description: item.description || { en: "No description available", am: "መግለጫ የለም" },
-          images: Array.isArray(item.images) ? item.images : [],
+          images: item.images || [],
           category: Array.isArray(item.category) ? item.category : [],
           date: item.date || item.created_at,
           created_at: item.created_at || new Date().toISOString(),
@@ -265,6 +325,9 @@ const GalleryComponent = () => {
         });
 
         console.log("Sorted gallery data:", sortedData); // Debug log
+        console.log("CMS_FILES_BASE_URL:", CMS_FILES_BASE_URL); // Debug log
+        console.log("Sample image URLs:", sortedData[0]?.images); // Debug log
+        
         setGalleryData(sortedData);
         setError(null);
       } catch (err) {
@@ -458,6 +521,11 @@ const GalleryComponent = () => {
                                   />
                                 </div>
                               }
+                              onError={(e) => {
+                                console.error("Image failed to load:", album.images[0]);
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
                             />
                           ) : (
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -702,6 +770,11 @@ const GalleryComponent = () => {
                     alt={`${getLocalizedText(selectedAlbum.title)} - Image ${selectedImageIndex + 1}`}
                     className="rounded-lg"
                     withPlaceholder
+                    onError={(e) => {
+                      console.error("Modal image failed to load:", selectedAlbum.images[selectedImageIndex]);
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
                   />
                 </AspectRatio>
               ) : (
@@ -786,6 +859,11 @@ const GalleryComponent = () => {
                         width={80}
                         className="rounded-sm"
                         withPlaceholder
+                        onError={(e) => {
+                          console.error("Thumbnail failed to load:", img);
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
                       />
                     </div>
                   ))}

@@ -1,171 +1,171 @@
 {
-  "Hello": "ሄሎ",
-  "All Results": "የፈተና ዉጤቶች",
-  "Video Conference": "ቪዲዮ (ገፅ ለገፅ)",
+"Hello": "ሰላም",
+  "All Results": "ጠቅላላ ውጤቶች",
+  "Video Conference": "የቪዲዮ ስብሰባ",
 
   "aboutuspage": {
     "hero": {
       "badge": "ስለ እኛ",
-      "title": "በጋራ ተቀላቅለን ለተሻለች ኢትዮጵያ እንሰራ",
-      "subtitle": "ለብሔራዊ አንድነት፣ ለኢኮኖሚያዊ እድገት እና ለሁሉም ኢትዮጵያውያን ዴሞክራሲያዊ መብቶች ቁርጠኛ።"
+      "title": "ለተሻለች ኢትዮጵያ በጋራ እንትጋ",
+      "subtitle": "ለብሔራዊ አንድነት፣ ለኢኮኖሚ ብልፅግና እና ለዜጎች ዲሞክራሲያዊ መብቶች መከበር የቆመ ተቋም።"
     },
     "mission": {
       "badge": "ተልእኳችን",
-      "title": "የምንመራው አላማ",
-      "description": "በበለፀገ አስተዳደር እና አካታች ፖሊሲዎች በኩል የብሔራዊ አንድነትን ለማሳደግ፣ ኢኮኖሚያዊ እድገትን ለማስተዋወቅ እና ለሁሉም ኢትዮጵያውያን ዴሞክራሲያዊ መብቶችን ለማረጋገጥ ቁርጠኛ ነን።",
-      "unityText": "በብዝሀነት ዉስጥ ያለ አንድነት",
+      "title": "ዓላማን መሠረት ያደረገ ጉዞ",
+      "description": "አካታች ፖሊሲዎችን በመንደፍና ግልፅነት የሰፈነበት አሰራርን በመዘርጋት ብሔራዊ አንድነትን ማጠናከር፣ ፈጣን የኢኮኖሚ ዕድገት ማስመዝገብና የሕግ የበላይነትን ማረጋገጥ።",
+      "unityText": "አንድነት በብዝሃነት",
       "list": {
-        "item1": "ሰላም እና ብሔራዊ መስማማትን ማስተዋወቅ",
-        "item2": "ለሁሉም ዜጋ ጥቅም የሚሆኑ ኢኮኖሚያዊ ፖሊሲዎችን ማራመድ",
-        "item3": "ግልፅ እና ተጠያቂ አስተዳደር ማረጋገጥ",
-        "item4": "የሁሉም ኢትዮጵያውያንን ሕገ መንግሥታዊ መብቶችን መከላከል"
+        "item1": "ሰላምና ብሔራዊ መግባባትን ማስፈን",
+        "item2": "ሁሉን አቀፍ ተጠቃሚነትን የሚያረጋግጡ የኢኮኖሚ ፖሊሲዎችን መቅረፅ",
+        "item3": "ግልፅነትና ተጠያቂነት ያለው አስተዳደር መገንባት",
+        "item4": "የዜጎችን ሕገ-መንግሥታዊ መብቶች መከላከል"
       }
     },
     "vision": {
       "badge": "ራእያችን",
-      "title": "የምንፈልጋት ኢትዮጵያ",
-      "description": "አንድነት ያለው፣ ተስፋ የሚገባ እና ዴሞክራሲያዊ ኢትዮጵያን እናስባለን - እያንዳንዱ ዜጋ እኩል እድሎችን የሚያገኝበት፣ ፍትህ የሚገኝበት እና የባህላዊ ቅርሶቻችን የሚከበርበት።",
-      "imageAlt": "ለወደፊቱ ኢትዮጵያ ራእይ",
-      "quote": "በጋራ ሆነን ማንም የማይቀርበትን ኢትዮጵያ መገንባት እንችላለን።"
+      "title": "የምንመኛት ኢትዮጵያ",
+      "description": "እኩል ዕድል፣ ፍትህ እና ማህበራዊ ስምምነት የሰፈነባት፣ በታሪካዊ እሴቶቿ የኮራችና የበለፀገች ኢትዮጵያን ማየት።",
+      "imageAlt": "የኢትዮጵያ የወደፊት ተስፋ",
+      "quote": "በጋራ ጥረት ማንም የማይቀርባትን ኢትዮጵያ እንገነባለን።"
     },
     "coreValuesSection": {
       "badge": "መሠረታዊ እሴቶች",
-      "title": "የምንመራበት መርሆዎች",
-      "subtitle": "እነዚህ እሴቶች እያንዳንዱን ውሳኔ እና እያንዳንዱን እርምጃ ይመራሉ።"
+      "title": "የምንመራባቸው መርሆዎች",
+      "subtitle": "እነዚህ እሴቶች ለእያንዳንዱ ውሳኔያችን እና እርምጃችን መነሻ ናቸው።"
     },
     "coreValues": {
       "dignity": {
-        "title": "የሰው ልጅ ክብር",
-        "description": "የእያንዳንዱ ግለሰብ የተፈጥሮ ዋጋ እና መብቶችን እንጠብቃለን።"
+        "title": "ሰብዓዊ ክብር",
+        "description": "ለእያንዳንዱ ግለሰብ ስብዕና እና መብት ቅድሚያ እንሰጣለን።"
       },
       "sovereignty": {
-        "title": "ብሔራዊ ነፃነት",
-        "description": "የኢትዮጵያን ነፃነት እና የግዛት አንድነት እንጠብቃለን።"
+        "title": "ሉዓላዊነት",
+        "description": "የሀገርን ነፃነትና የግዛት አንድነት እናስከብራለን።"
       },
       "justice": {
         "title": "ማህበራዊ ፍትህ",
-        "description": "ለመርካቶች እና እድሎች ፍትሃዊ ስርጭት እንታገላለን።"
+        "description": "የሀብትና የዕድል ስርጭት ፍትሃዊ እንዲሆን እንታገላለን።"
       },
       "unity": {
         "title": "ብሔራዊ አንድነት",
-        "description": "የተለያዩ ባህሎችን እያከበርን የጋራ ባለቤትነታችንን እናጠነክራለን።"
+        "description": "ልዩነቶቻችንን እንደ ጌጥ በመመልከት በጋራ ማንነት ላይ እንገነባለን።"
       },
       "respect": {
-        "title": "ጥምረት",
-        "description": "ሁሉንም ባህሎች፣ ሃይማኖቶች እና የብሄር ማንነቶች እናከብራለን።"
+        "title": "መከባበር",
+        "description": "ባህላዊ፣ ሃይማኖታዊ እና ብሔራዊ ማንነቶችን በእኩልነት እናከብራለን።"
       },
       "economy": {
         "title": "ኢኮኖሚያዊ እኩልነት",
-        "description": "እኩልነትን የሚቀንስ እና የጋራ ተስፋ የሚፈጥር ፖሊሲዎችን እንተገብራለን።"
+        "description": "ልዩነትን የሚቀንሱና የጋራ ተጠቃሚነትን የሚያረጋግጡ ፖሊሲዎችን እንተገብራለን።"
       },
       "integrity": {
-        "title": "ቅንነት",
-        "description": "በሁሉም እርምጃዎቻችን ከፍተኛ የሆኑ ሥነ ምግባራዊ ደረጃዎችን እንጠብቃለን።"
+        "title": "ታማኝነት",
+        "description": "በሁሉም ተግባሮቻችን ከፍተኛ የሥነ-ምግባር ደረጃን እንከተላለን።"
       },
       "transparency": {
-        "title": "ብርሃነት",
-        "description": "ሥራችንን በተገለጸ እና በተጠያቂነት እናከናውናለን።"
+        "title": "ግልፅነት",
+        "description": "አሰራራችን ግልፅና ለሕዝብ ተጠያቂነት ያለው ነው።"
       }
     },
     "policyPillars": {
       "political": {
-        "title": "ፖለቲካዊ ምሰሶዎች",
-        "item1": "ሕገ መንግሥታዊ ዴሞክራሲ እና የሕግ የበላይነት",
-        "item2": "የተማከለ የፌዴራል ስርዓት",
+        "title": "የፖለቲካ ምሰሶዎች",
+        "item1": "ሕገ-መንግሥታዊ ዲሞክራሲና የሕግ የበላይነት",
+        "item2": "ተግባራዊ የፌዴራሊዝም ሥርዓት",
         "item3": "አካታች የፖለቲካ ተሳትፎ"
       },
       "economic": {
-        "title": "ኢኮኖሚያዊ ምሰሶዎች",
-        "item1": "የግብርና ለውጥ",
-        "item2": "የኢንዱስትሪ እድገት",
-        "item3": "የገንዘብ ፍትሃዊ ስርጭት"
+        "title": "የኢኮኖሚ ምሰሶዎች",
+        "item1": "ዘመናዊ የግብርና ትራንስፎርሜሽን",
+        "item2": "የኢንዱስትሪና የቴክኖሎጂ ዕድገት",
+        "item3": "ፍትሃዊ የሀብት ስርጭት"
       }
     },
     "principlesSection": {
       "badge": "መሪ መርሆዎች",
-      "title": "የስራ አሰራራችን ማዕቀፍ",
-      "subtitle": "ለአስተዳደር እና ለልማት አቀራረባችን የሚመሩ መርሆዎች።"
+      "title": "የአሰራር ማዕቀፋችን",
+      "subtitle": "ለልማትና ለአስተዳደር የምንከተላቸው ሳይንሳዊ መንገዶች።"
     },
     "principles": {
       "accountability": {
         "title": "ተጠያቂነት",
-        "description": "በሁሉም ደረጃዎች ላይ ስለ እርምጃዎቻችን እና ውሳኔዎቻችን ተጠያቂነት እንይዛለን።"
+        "description": "በሁሉም ደረጃዎች ለሚወሰዱ እርምጃዎች ኃላፊነትን እንወስዳለን።"
       },
       "governance": {
         "title": "መልካም አስተዳደር",
-        "description": "በብቃት ያለ፣ በውጤታማነት እና በተሳታፊነት የሚሰራ አስተዳደር እንተገብራለን።"
+        "description": "ውጤታማ፣ ቀልጣፋና ተሳታፊነትን ያረጋገጠ አስተዳደር።"
       },
       "ruleOfLaw": {
         "title": "የሕግ የበላይነት",
-        "description": "ሕጎችን ለሁሉም ዜጎች በእኩልነት እንተገብራለን።"
+        "description": "ሕግ በሁሉም ዜጎች ላይ እኩል ተፈፃሚ መሆኑን እናረጋግጣለን።"
       },
       "development": {
-        "title": "ተቀጣሪ ልማት",
-        "description": "ኢኮኖሚያዊ እድገትን ከአካባቢ ጥበቃ ጋር እናስተካክላለን።"
+        "title": "ዘላቂ ልማት",
+        "description": "የኢኮኖሚ ዕድገትን ከአካባቢ ጥበቃ ጋር በማጣመር መስራት።"
       },
       "evidence": {
-        "title": "በማስረጃ የተመሠረተ",
-        "description": "ውሳኔዎችን በምርምር እና በመረጃ ላይ በመመስረት እንወስናለን።"
+        "title": "በመረጃ ላይ የተመሠረተ",
+        "description": "ውሳኔዎችን በምርምርና በተጨባጭ መረጃዎች ላይ እንመሰርታለን።"
       },
       "cohesion": {
-        "title": "ማህበራዊ ውህደት",
-        "description": "በማህበረሰቦች መካከል ድልድዮችን እንሰራለን።"
+        "title": "ማህበራዊ ትስስር",
+        "description": "በማህበረሰቦች መካከል ጠንካራ ወንድማማችነትን መገንባት።"
       }
     },
     "achievements": {
-      "title": "የብሔራዊ ስኬቶቻችን",
-      "jobs": "ባለፉት አስር ዓመታት ውስጥ የተፈጠሩ ስራዎች",
-      "electricity": "የኤሌክትሪክ አገልግሎት የሚያገኙ የህዝብ ብዛት",
-      "universities": "የተቋቋሙ አዳዲስ ዩኒቨርሲቲዎች",
-      "gdp": "አማካይ ዓመታዊ የጂዲፒ እድገት"
+      "title": "ብሔራዊ ስኬቶቻችን",
+      "jobs": "የተፈጠሩ የሥራ ዕድሎች",
+      "electricity": "የኤሌክትሪክ ተጠቃሚ የሕዝብ ቁጥር",
+      "universities": "የተገነቡ ከፍተኛ የትምህርት ተቋማት",
+      "gdp": "አማካይ ዓመታዊ የኢኮኖሚ ዕድገት (GDP)"
     },
     "commissionPurpose": {
       "badge": "ስልጣናችን",
       "title": "የኮሚሽኑ ዓላማ",
-      "description": "ኮሚሽኑ የብሔራዊ ፖሊሲዎችን አፈፃፀም ለመቆጣጠር፣ በሕገ መንግሥቱ የተደነገጉ ድንጋጌዎች መሟላታቸውን ለማረጋገጥ እና በተለያዩ የመንግሥት ደረጃዎች መካከል ለመስማማት እና ብሔራዊ አንድነትን እና ፍትሃዊ ልማትን ለማስቀጠል ተቋቁሟል።"
+      "description": "ኮሚሽኑ የብሔራዊ ፖሊሲዎችን አፈፃፀም ለመከታተል፣ የሕገ-መንግሥታዊ ድንጋጌዎችን መከበር ለማረጋገጥ እና በመንግሥት አካላት መካከል ቅንጅት በመፍጠር ብሔራዊ አንድነትንና ፍትሃዊ ልማትን ለማስቀጠል ተቋቁሟል።"
     },
     "dutiesSection": {
       "badge": "ኃላፊነቶች",
-      "title": "ስራዎች እና ኃላፊነቶች",
-      "subtitle": "በሕገ መንግሥቱ እና በብሔራዊ ሕግ መሠረት ለኮሚሽኑ የተመደቡ የተለየ ስራዎች።"
+      "title": "ተግባርና ኃላፊነት",
+      "subtitle": "በሕግና በሕገ-መንግሥቱ መሠረት ለኮሚሽኑ የተሰጡ ዝርዝር ተግባራት።"
     },
     "duties": {
       "bylaw": {
-        "title": "የሕግ ረቂቆች ማዘጋጀት",
-        "description": "ለሕገ መንግሥቱ ድንጋጌዎች አፈፃፀም አስፈላጊ የሆኑ የሕግ ረቂቆችን እና ደንቦችን ማዘጋጀት እና ማስፈጸም።"
+        "title": "የሕግ ረቂቆችን ማዘጋጀት",
+        "description": "ለሕገ-መንግሥታዊ ድንጋጌዎች ተፈፃሚነት የሚያስፈልጉ መመሪያዎችንና ደንቦችን ማርቀቅ።"
       },
       "quality": {
-        "title": "ጥራት ማረጋገጥ",
-        "description": "ለዜጎች የሚሰጡ የህዝብ አገልግሎቶች ጥራት መከታተል እና መገምገም።"
+        "title": "የጥራት ቁጥጥር",
+        "description": "ለሕዝብ የሚቀርቡ አገልግሎቶች ደረጃቸውን የጠበቁ መሆናቸውን መገምገም።"
       },
       "assets": {
-        "title": "የብሔራዊ ንብረቶች ጥበቃ",
-        "description": "ብሔራዊ ንብረቶችን እና ሀብቶችን ከትክክለኛ ያልሆነ አስተዳደር መከላከል።"
+        "title": "የሀገር ሀብት ጥበቃ",
+        "description": "የመንግሥትና የሕዝብ ንብረቶች ከአላግባብ አጠቃቀም መከላከልና መጠበቅ።"
       },
       "memberRights": {
-        "title": "የአባላት መብቶች",
-        "description": "የአባላት እና የሰራተኞች መብቶችን እና ጥቅሞችን መከላከል።"
+        "title": "የአባላት መብት ማስከበር",
+        "description": "የአባላትና የሰራተኞችን ሕጋዊ መብቶችና ጥቅሞች መጠበቅ።"
       },
       "complaints": {
-        "title": "ቅሬታዎችን መቀበል",
-        "description": "በሕገ መንግሥቱ ላይ የተደረጉ ጥሰቶች ቅሬታዎችን መቀበል እና መርምር።"
+        "title": "ቅሬታ መቀበል",
+        "description": "ሕገ-መንግሥታዊ ጥሰቶችን የተመለከቱ አቤቱታዎችን መመርመርና ምላሽ መስጠት።"
       },
       "guidelines": {
-        "title": "የስራ መመሪያዎች ማውጣት",
-        "description": "ለመንግሥት ተቋማት የስራ መመሪያዎችን ማዘጋጀት እና ማሰራጨት።"
+        "title": "መመሪያዎችን ማውጣት",
+        "description": "ለመንግሥት ተቋማት ወጥ የሆነ የአሰራር መመሪያዎችን ማዘጋጀትና ማሰራጨት።"
       },
       "antiCorruption": {
         "title": "ሙስናን መከላከል",
-        "description": "ሙስና እና ትክክለኛ ያልሆነ አስተዳደር ለመከላከል እርምጃዎችን መተግበር።"
+        "description": "ብልሹ አሰራርንና ሙስናን ለመከላከል የሚያስችሉ ሥርዓቶችን መዘርጋት።"
       },
       "investigations": {
-        "title": "ምርመራዎችን ማካሄድ",
-        "description": "በህዝብ ቢሮዎች ውስጥ የተፈጸሙ የሥነ ምግባር ጥሰቶችን መመርመር"
+        "title": "ምርመራ ማካሄድ",
+        "description": "በሕዝብ ተቋማት ውስጥ የሚታዩ የሥነ-ምግባር ግድፈቶችን ማጣራት።"
       }
     },
     "cta": {
-      "title": "በጋራ ሆነን የኢትዮጵያን ወደፊት እንገንባ",
-      "subtitle": "የጋራ ራዕያችንን ለማሳካት የእርስዎ ተሳትፎ እና ድጋፍ ወሳኝ ነው።",
+      "title": "በጋራ የኢትዮጵያን የወደፊት ተስፋ እንገንባ",
+      "subtitle": "የጋራ ራዕያችንን ለማሳካት የእርስዎ ተሳትፎ ወሳኝ ነው።",
       "button1": "አባል ይሁኑ",
       "button2": "ያግኙን"
     }
@@ -174,42 +174,42 @@
   "login": {
     "welcome": {
       "title": "እንኳን ደህና መጡ!",
-      "subtitle": "ኃይለኛውን አስተዳደር ዳሽቦርድ በመጠቀም የስራ ሂደትዎን ያቀናብሩ። ድርጅትዎን በብቃት እና በውጤታማነት ያስተዳድሩ።",
-      "tagline": "የድርጅት መፍትሄ"
+      "subtitle": "በዘመናዊው የአስተዳደር መድረክ ስራዎን ያቀላጥፉ። ተቋምዎን በብቃት ይምሩ።",
+      "tagline": "የተቋም መፍትሄ"
     },
     "form": {
-      "title": "ወደ አካውንትዎ ይግቡ",
-      "subtitle": "ወደ ዳሽቦርድ ለመድረስ የሚስጥር ቁጥርዎን ያስገቡ",
+      "title": "ወደ መለያዎ ይግቡ",
+      "subtitle": "ለመቀጠል መለያዎንና የይለፍ ቃልዎን ያስገቡ",
       "email": {
         "label": "ኢሜይል",
-        "placeholder": "ኢሜይል@ምሳሌ.com"
+        "placeholder": "example@domain.com"
       },
       "password": {
         "label": "የይለፍ ቃል",
-        "placeholder": "የይለፍ ቃልዎ"
+        "placeholder": "የይለፍ ቃልዎን ያስገቡ"
       },
       "submit": "ግባ",
-      "noAccount": "አካውንት የሎትም?",
+      "noAccount": "መለያ የሎትም?",
       "contactAdmin": "አስተዳዳሪን ያግኙ",
       "errors": {
         "email": {
-          "invalid": "ትክክለኛ ያልሆነ ኢሜይል",
-          "required": "ኢሜይል ያስፈልጋል"
+          "invalid": "የገቡት ኢሜይል ትክክል አይደለም",
+          "required": "ኢሜይል ማስገባት አስፈላጊ ነው"
         },
         "password": {
-          "required": "የይለፍ ቃል ያስፈልጋል"
+          "required": "የይለፍ ቃል ማስገባት አስፈላጊ ነው"
         }
       }
     },
     "errors": {
       "title": "ስህተት",
-      "generic": "ወደ ስርዓቱ መግባት አልተቻለም። እባክዎ እንደገና ይሞክሩ።",
-      "invalidCredentials": "ትክክለኛ ያልሆኑ የመግቢያ ውሂቦች",
-      "processing": "የመግቢያ ሂደቱ ላይ ስህተት ተከስቷል። እባክዎ እንደገና ይሞክሩ።",
-      "invalidResponse": "ትክክለኛ ያልሆነ የሰርቨር ምላሽ",
-      "missingUserId": "የተጠቃሚ ውሂብ ያልተሟላ ነው - ID የለም",
-      "missingRoleId": "የሚና  ውሂብ ያልተሟላ ነው - ID የለም",
-      "invalidPermissions": "ፈቃዶች የዝርዝር አይነት መሆን አለባቸው"
+      "generic": "ወደ ሥርዓቱ መግባት አልተቻለም። እባክዎ ደግመው ይሞክሩ።",
+      "invalidCredentials": "የገቡት መረጃዎች ትክክል አይደሉም",
+      "processing": "በመግባት ሂደቱ ላይ ስህተት አጋጥሟል።",
+      "invalidResponse": "ከአገልጋዩ (Server) የተገኘው ምላሽ የተሳሳተ ነው",
+      "missingUserId": "የተጠቃሚ መረጃ አልተሟላም (ID ይጎድላል)",
+      "missingRoleId": "የሚና መረጃ አልተሟላም (Role ID ይጎድላል)",
+      "invalidPermissions": "ይህንን ገፅ ለመመልከት በቂ ፈቃድ የሎትም"
     },
     "notifications": {
       "success": {
@@ -222,11 +222,13 @@
     },
     "defaults": {
       "unknown": "የማይታወቅ",
-      "unknownRole": "የማይታወቅ ሚና"
+      "unknownRole": "ያልተለየ የኃላፊነት ደረጃ"
     }
   },
 
-  "nav": {
+
+
+"nav": {
     "home": "ዋና ገፅ",
     "about": "የብልፅግና ፕሮግራም",
     "headsofgovernment": "የመንግስት አመራሮች",
@@ -236,7 +238,7 @@
     "services": "አገልግሎቶች",
     "management": "አመራር",
     "managementTeam": "የአመራር ቡድን",
-    "organizationalStructure": "የአመራር መዋቅር",
+    "organizationalStructure": "ተቋማዊ መዋቅር",
     "woredas": "ወረዳዎች",
     "announcement": "ማስታወቂያ",
     "announcements": "ማስታወቂያዎች",
@@ -245,13 +247,13 @@
     "contact": "ያግኙን",
     "gallery": "ምስሎች",
     "bookStore": "የመጽሐፍት መደብር",
-    "compliant": "ቅሬታ",
-    "FamilyDiscussion": "የቤተሰብ ዉይይት",
+    "compliant": "ቅሬታ ማቅረቢያ",
+    "FamilyDiscussion": "የቤተሰብ ውይይት",
     "Question and Answer": "ጥያቄና መልስ",
-    "Tendency": "ዝንባሌ መሙያ "
+    "Tendency": "የዝንባሌ መመዝገቢያ"
   },
   "topBar": {
-    "address": "አድራሻ 22 አውራሪስ ሆቴል አጠገብ"
+    "address": "አድራሻ፡ 22 አካባቢ፣ አውራሪስ ሆቴል አጠገብ"
   },
   "social": {
     "facebook": "ፌስቡክ",
@@ -259,7 +261,7 @@
     "instagram": "ኢንስታግራም"
   },
   "logo": {
-    "alt": "ቦሌ ክፍለ ከተማ ሎጎ",
+    "alt": "የቦሌ ክፍለ ከተማ አርማ",
     "title": "ቦሌ ብልፅግና"
   },
   "auth": {
@@ -269,57 +271,55 @@
     "dashboard": "ዳሽቦርድ"
   },
   "mobileMenu": {
-    "title": "ሜኑ",
-    "close": "ሜኡውን ዝጋ"
-  },
-  "language": {
-    "english": "እንግሊዝኛ",
-    "amharic": "አማርኛ",
-    "oromo": "ኦሮምኛ"
-  },
-
-  "news": {
-    "latestUpdates": "የቅርብ ዜና",
-    "pageTitle": "የብልፅግና ፓርቲ ዜና",
-    "pageSubtitle": "ስለ ተቋማችን፣ ስራዎቻችን እና ብሄራዊ እድገታችን ዜና ያግኙ",
-    "readMore": "ተጨማሪ ያንብቡ",
-    "noTitle": "ርዕስ የለም",
-    "generalCategory": "አጠቃላይ",
-    "noNewsTitle": "ዜና የለም",
-    "noNewsSubtitle": "ለዜና ደግመው ይጎብኙ",
-    "newsDetails": "የዜና ዝርዝሮች",
-    "noContent": "ይዘት የለም",
+    "title": "ምናሌ",
     "close": "ዝጋ"
   },
-
+  "language": {
+    "english": "English",
+    "amharic": "አማርኛ",
+    "oromo": "Afaan Oromoo"
+  },
+  "news": {
+    "latestUpdates": "ወቅታዊ መረጃዎች",
+    "pageTitle": "የብልፅግና ፓርቲ ዜና",
+    "pageSubtitle": "ስለ ተቋማችን፣ ስራዎቻችን እና ሀገራዊ ዕድገታችን ይከታተሉ",
+    "readMore": "ዝርዝሩን ያንብቡ",
+    "noTitle": "ርዕስ አልተሰጠውም",
+    "generalCategory": "አጠቃላይ",
+    "noNewsTitle": "ምንም ዜና የለም",
+    "noNewsSubtitle": "ለአዳዲስ መረጃዎች በቅርቡ ተመልሰው ይጎብኙ",
+    "newsDetails": "የዜና ዝርዝር",
+    "noContent": "ምንም ይዘት የለም",
+    "close": "ዝጋ"
+  },
   "dashboard": {
     "title": "የአስተዳደር ዳሽቦርድ",
-    "subtitle": "የመተግበሪያዎ ውሂብ እና መለኪያዎች አጠቃላይ እይታ",
+    "subtitle": "የመተግበሪያው መረጃዎችና መለኪያዎች አጠቃላይ እይታ",
     "tabs": {
       "summary": "ማጠቃለያ",
-      "analytics": "ትንታኔ",
+      "analytics": "ትንታኔ (Analytics)",
       "comparison": "ንፅፅር",
-      "advanced": "ላቀ"
+      "advanced": "የላቀ"
     },
     "cards": {
-      "dataDistribution": "የውሂብ ስርጭት",
-      "topCategories": "ከፍተኛ ምድቦች",
-      "trendsOverTime": "በጊዜ ሂደት አዝማሚያዎች",
+      "dataDistribution": "የመረጃ ስርጭት",
+      "topCategories": "ዋና ዋና ምድቦች",
+      "trendsOverTime": "ወቅታዊ አዝማሚያዎች",
       "areaDistribution": "የአካባቢ ስርጭት",
-      "radialDistribution": "የራዲያል ስርጭት",
-      "dataFunnel": "የውሂብ ፊንጫ",
-      "categoryComparison": "የምድብ ንፅፅር",
-      "dataCorrelation": "የውሂብ ትስስር",
+      "radialDistribution": "ራዲያል ስርጭት",
+      "dataFunnel": "የመረጃ ፍሰት (Funnel)",
+      "categoryComparison": "የምድቦች ንፅፅር",
+      "dataCorrelation": "የመረጃዎች ትስስር",
       "comprehensiveOverview": "ሁለንተናዊ እይታ",
-      "dataHierarchy": "የውሂብ ደረጃ አሰጣጥ",
-      "hierarchicalData": "ደረጃዊ ውሂብ"
+      "dataHierarchy": "የመረጃ ቅደም ተከተል",
+      "hierarchicalData": "ደረጃዊ መረጃ"
     },
     "stats": {
       "active": "ንቁ",
       "empty": "ባዶ",
       "count": "ብዛት",
       "categories": "ምድቦች",
-      "dataPoints": "የውሂብ ነጥቦች",
+      "dataPoints": "የመረጃ ነጥቦች",
       "trend": "አዝማሚያ"
     },
     "categories": {
@@ -336,8 +336,8 @@
       "permissions": "ፈቃዶች",
       "teamMembers": "የቡድን አባላት",
       "books": "መጽሐፍት",
-      "officials": "መኮንኖች",
-      "galleries": "ጋሌሪዎች",
+      "officials": "ኃላፊዎች",
+      "galleries": "ጋለሪዎች",
       "contacts": "እውቂያዎች",
       "complaints": "ቅሬታዎች",
       "partners": "አጋሮች",
@@ -351,41 +351,40 @@
   "Register Subcity": "ክፍለ ከተማ ይመዝግቡ",
   "Register Woreda": "ወረዳ ይመዝግቡ",
   "Register Users": "ተጠቃሚዎችን ይመዝግቡ",
-  "Role Management": "የሚና  አስተዳደር",
-  "Create Role": "ሚና ይፍጠሩ",
+  "Role Management": "የሚና አስተዳደር",
+  "Create Role": "አዲስ ሚና ይፍጠሩ",
   "Assign Role": "ሚና ይመድቡ",
-  "Smart Chat": "ስማርት ውይይት",
+  "Smart Chat": "ብልህ ውይይት (AI Chat)",
   "Document Management": "የሰነድ አስተዳደር",
   "Staff Management": "የሰራተኞች አስተዳደር",
   "Content Management": "የይዘት አስተዳደር",
   "Add News": "ዜና ያክሉ",
   "Add News Category": "የዜና ምድብ ያክሉ",
-  "Add Carousel Images": "ካሩሴል ምስሎች ያክሉ",
-  "Add Head Of Government": "የመንግስት አለቆች ያክሉ",
-  "Add Head Of Subcity": "የክፍለ ከተማ አመራሮችን ያክሉ",
-  "Add Our Partners": "አጋሮቻችንን ያክሉ",
-  "Add Our Success": "የእኛ ስኬቶች ያክሉ",
-  "Add Woredas": "ወረዳዎች ያክሉ",
-  "Add Management Team": "የአስተዳደር ቡድን ያክሉ",
-  "Add Organizational Structure": "የድርጅታዊ መዋቅር ያክሉ",
-  "Add Announcements": "ማስታወቂያዎች ያክሉ",
-  "Add Tenders": "ጨረታዎች ያክሉ",
-  "Add Events": "ክስተቶች ያክሉ",
+  "Add Carousel Images": "ተንቀሳቃሽ ምስሎች (Carousel) ያክሉ",
+  "Add Head Of Government": "የመንግስት አመራር ያክሉ",
+  "Add Head Of Subcity": "የክፍለ ከተማ አመራር ያክሉ",
+  "Add Our Partners": "አጋሮችን ያክሉ",
+  "Add Our Success": "ስኬቶቻችንን ያክሉ",
+  "Add Woredas": "ወረዳዎችን ያክሉ",
+  "Add Management Team": "የአመራር ቡድን ያክሉ",
+  "Add Organizational Structure": "ተቋማዊ መዋቅር ያክሉ",
+  "Add Announcements": "ማስታወቂያ ያክሉ",
+  "Add Tenders": "ጨረታ ያክሉ",
+  "Add Events": "ክስተት ያክሉ",
   "Add Books": "መጽሐፍት ያክሉ",
   "View Contacts": "መልዕክቶችን ይመልከቱ",
   "View Complaints": "ቅሬታዎችን ይመልከቱ",
-  "Add Gallery": "ጋሌሪ ያክሉ",
+  "Add Gallery": "ጋለሪ ያክሉ",
   "Profile": "መገለጫ",
   "Navigation": "አሰሳ",
   "Opens in new window": "በአዲስ መስኮት ይከፈታል",
-
   "subcity": {
-    "title": "ክፍለ ከተማ አስተዳደር",
+    "title": "የክፍለ ከተማ አስተዳደር",
     "table": {
       "headers": {
-        "id": "መለያ",
+        "id": "መለያ (ID)",
         "nameAm": "ስም (አማርኛ)",
-        "nameEn": "ስም (እንግሊዝኛ)",
+        "nameEn": "ስም (English)",
         "description": "መግለጫ",
         "createdAt": "የተፈጠረበት ቀን",
         "updatedAt": "የተሻሻለበት ቀን",
@@ -393,58 +392,58 @@
       }
     },
     "form": {
-      "nameEnLabel": "ስም (እንግሊዝኛ)",
+      "nameEnLabel": "ስም (English)",
       "nameAmLabel": "ስም (አማርኛ)",
       "descriptionLabel": "መግለጫ"
     },
     "buttons": {
-      "addSubcity": "ክፍለ ከተማ ጨምር",
+      "addSubcity": "ክፍለ ከተማ ያክሉ",
       "saveChanges": "ለውጦችን አስቀምጥ",
       "createSubcity": "ክፍለ ከተማ ፍጠር",
-      "cancel": "ሰርዝ",
+      "cancel": "ይቅር",
       "delete": "ሰርዝ"
     },
     "modal": {
-      "editTitle": "ክፍለ ከተማ አርትዕ",
-      "createTitle": "ክፍለ ከተማ ፍጠር",
-      "deleteTitle": "ማስወገጃ �ስተማማኝ",
-      "deleteConfirmation": "እርግጠኛ ነዎት ይህን ክፍለ ከተማ ማስወገድ �ፈር?"
+      "editTitle": "ክፍለ ከተማ ያርትዑ",
+      "createTitle": "አዲስ ክፍለ ከተማ ይፍጠሩ",
+      "deleteTitle": "ስረዛን ያረጋግጡ",
+      "deleteConfirmation": "ይህን ክፍለ ከተማ ለመሰረዝ እርግጠኛ ነዎት?"
     },
     "messages": {
-      "dataLoaded": "ውሂብ በተሳካ ሁኔታ ተጭኗል",
-      "updateSuccess": "ክፍለ ከተማ በተሳካ ሁኔታ ተሻሽሏል",
-      "createSuccess": "ክፍለ ከተማ በተሳካ ሁኔታ ተፈጥሯል",
-      "deleteSuccess": "ክፍለ ከተማ በተሳካ ሁኔታ ተሰርዟል"
+      "dataLoaded": "መረጃው በተሳካ ሁኔታ ተጭኗል",
+      "updateSuccess": "የክፍለ ከተማ መረጃው በተሳካ ሁኔታ ተሻሽሏል",
+      "createSuccess": "ክፍለ ከተማው በተሳካ ሁኔታ ተፈጥሯል",
+      "deleteSuccess": "ክፍለ ከተማው በተሳካ ሁኔታ ተሰርዟል"
     },
     "errors": {
-      "nameEnRequired": "የእንግሊዝኛ ስም ያስፈልጋል",
-      "nameAmRequired": "የአማርኛ ስም ያስፈልጋል",
-      "descriptionRequired": "መግለጫ �ስፈልጋል",
-      "failedLoad": "የክፍለ ከተማ ውሂብ መጫን አልተሳካም",
-      "notFound": "ክፍለ ከተማ አልተገኘም",
-      "loadForEditFailed": "ለማርትዕ የክፍለ ከተማ መጫን አልተሳካም",
-      "updateFailed": "ክፍለ ከተማ ማሻሻል አልተሳካም: {{error}}",
-      "createFailed": "ክፍለ ከተማ መፍጠር አልተሳካም: {{error}}",
-      "deleteFailed": "ክፍለ ከተማ ማስወገድ አልተሳካም"
+      "nameEnRequired": "የእንግሊዝኛ ስም ማስገባት ግዴታ ነው",
+      "nameAmRequired": "የአማርኛ ስም ማስገባት ግዴታ ነው",
+      "descriptionRequired": "መግለጫ ማስገባት አስፈላጊ ነው",
+      "failedLoad": "የክፍለ ከተማ መረጃን መጫን አልተቻለም",
+      "notFound": "ክፍለ ከተማው አልተገኘም",
+      "loadForEditFailed": "ለማስተካከል የሚፈለገው መረጃ ሊገኝ አልቻለም",
+      "updateFailed": "የክፍለ ከተማ ማሻሻያ ስህተት፡ {{error}}",
+      "createFailed": "ክፍለ ከተማውን መፍጠር አልተቻለም፡ {{error}}",
+      "deleteFailed": "ክፍለ ከተማውን መሰረዝ አልተቻለም"
     }
   },
-  "common": {
+ "common": {
     "success": "ተሳክቷል!",
     "error": "ስህተት!"
   },
 
   "registeruser": {
     "user": {
-      "title": "የተጠቃሚ አስተዳደር",
+      "title": "የተጠቃሚዎች አስተዳደር",
       "table": {
         "headers": {
           "id": "መለያ",
-          "name": "ስም",
+          "name": "ሙሉ ስም",
           "email": "ኢሜይል",
-          "role": "የድርጅት ደረጃ",
+          "role": "የሥልጣን ደረጃ",
           "woreda": "ወረዳ",
           "subcity": "ክፍለ ከተማ",
-          "createdAt": "የተፈጠረበት ቀን",
+          "createdAt": "የተመዘገበበት ቀን",
           "actions": "ድርጊቶች"
         }
       },
@@ -452,13 +451,13 @@
         "nameLabel": "ሙሉ ስም",
         "namePlaceholder": "ሙሉ ስም ያስገቡ",
         "emailLabel": "ኢሜይል",
-        "emailPlaceholder": "ኢሜይል አድራሻ ያስገቡ",
+        "emailPlaceholder": "example@domain.com",
         "passwordLabel": "የይለፍ ቃል",
-        "passwordPlaceholder": "የይለፍ ቃል ያስገቡ (ቢያንስ 8 ቁምፊ)",
-        "confirmPasswordLabel": "የይለፍ ቃል አረጋግጥ",
-        "confirmPasswordPlaceholder": "የይለፍ ቃል እንደገና ያስገቡ",
-        "roleLabel": "የድርጅት ደረጃ",
-        "rolePlaceholder": "የድርጅት ደረጃ ይምረጡ",
+        "passwordPlaceholder": "ቢያንስ 8 ቁምፊ ያስገቡ",
+        "confirmPasswordLabel": "የይለፍ ቃል ያረጋግጡ",
+        "confirmPasswordPlaceholder": "የይለፍ ቃሉን ደግመው ያስገቡ",
+        "roleLabel": "የሥልጣን ደረጃ",
+        "rolePlaceholder": "ደረጃ ይምረጡ",
         "woredaLabel": "ወረዳ",
         "woredaPlaceholder": "ወረዳ ይምረጡ",
         "subcityLabel": "ክፍለ ከተማ",
@@ -466,50 +465,50 @@
       },
       "buttons": {
         "addUser": "ተጠቃሚ ያክሉ",
-        "updateUser": "ተጠቃሚ ያዘምኑ",
+        "updateUser": "መረጃ ያዘምኑ",
         "createUser": "ተጠቃሚ ይፍጠሩ",
         "cancel": "ይቅር",
         "delete": "ሰርዝ"
       },
       "modal": {
-        "createTitle": "አዲስ ተጠቃሚ ይፍጠሩ",
-        "editTitle": "ተጠቃሚ ያርትዑ",
-        "deleteTitle": "ስረዛ ያረጋግጡ",
-        "deleteConfirmation": "እርግጠኛ ነዎት ይህን ተጠቃሚ ማስወገድ ይፈልጋሉ? ይህ እርምጃ ሊመለስ አይችልም።"
+        "createTitle": "አዲስ ተጠቃሚ መመዝገቢያ",
+        "editTitle": "የተጠቃሚ መረጃ ማስተካከያ",
+        "deleteTitle": "ስረዛን ያረጋግጡ",
+        "deleteConfirmation": "ይህንን ተጠቃሚ ከሥርዓቱ ለማስወገድ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።"
       },
       "messages": {
-        "dataLoaded": "ተጠቃሚዎች በተሳካ ሁኔታ ተጭነዋል",
-        "createSuccess": "ተጠቃሚ በተሳካ ሁኔታ ተፈጥሯል",
-        "updateSuccess": "ተጠቃሚ በተሳካ ሁኔታ ተዘምኗል",
-        "deleteSuccess": "ተጠቃሚ በተሳካ ሁኔታ ተሰርዟል"
+        "dataLoaded": "የተጠቃሚዎች ዝርዝር በተሳካ ሁኔታ ተጭኗል",
+        "createSuccess": "ተጠቃሚው በተሳካ ሁኔታ ተፈጥሯል",
+        "updateSuccess": "የተጠቃሚው መረጃ በተሳካ ሁኔታ ተዘምኗል",
+        "deleteSuccess": "ተጠቃሚው ከሥርዓቱ ተሰርዟል"
       },
       "errors": {
-        "nameRequired": "ስም ያስፈልጋል",
-        "invalidEmail": "ትክክለኛ ያልሆነ ኢሜይል አድራሻ",
-        "passwordRequired": "የይለፍ ቃል �ስፈልጋል",
-        "passwordLength": "የይለፍ ቃል ቢያንስ 8 ቁምፊ ሊሆን ይገባል",
-        "passwordMismatch": "የይለፍ ቃሎች አንድ አይነት አይደሉም",
-        "roleRequired": "የድርጅት ደረጃ ያስፈልጋል",
-        "invalidId": "ትክክለኛ ያልሆነ የተጠቃሚ መለያ",
-        "notFound": "ተጠቃሚ አልተገኘም",
-        "failedLoad": "ተጠቃሚዎችን ማምጣት አልተቻለም",
-        "createFailed": "ተጠቃሚ ለመፍጠር አልተቻለም: {error}",
-        "updateFailed": "ተጠቃሚን ለማዘመን አልተቻለም: {error}",
-        "deleteFailed": "ተጠቃሚን ለማስወገድ አልተቻለም: {error}",
-        "loadForEditFailed": "ለማርትዕ ተጠቃሚን ማምጣት አልተቻለም"
+        "nameRequired": "ስም ማስገባት ግዴታ ነው",
+        "invalidEmail": "የገቡት ኢሜይል ትክክል አይደለም",
+        "passwordRequired": "የይለፍ ቃል ያስፈልጋል",
+        "passwordLength": "የይለፍ ቃል ርዝመት ቢያንስ 8 ቁምፊ መሆን አለበት",
+        "passwordMismatch": "የገቡት የይለፍ ቃላት አይመሳሰሉም",
+        "roleRequired": "የሥልጣን ደረጃ መመረጥ አለበት",
+        "invalidId": "የተጠቃሚው መለያ (ID) የተሳሳተ ነው",
+        "notFound": "ተጠቃሚው ሊገኝ አልቻለም",
+        "failedLoad": "የተጠቃሚዎችን ዝርዝር መጫን አልተቻለም",
+        "createFailed": "ተጠቃሚውን መፍጠር አልተቻለም: {error}",
+        "updateFailed": "መረጃውን ማዘመን አልተቻለም: {error}",
+        "deleteFailed": "ተጠቃሚውን መሰረዝ አልተቻለም: {error}",
+        "loadForEditFailed": "ለማስተካከል የሚፈለገው መረጃ ሊገኝ አልቻለም"
       },
       "roles": {
-        "woredaAdmin": "ወረዳ አስተዳዳሪ",
-        "superAdmin": "ሱፐር አስተዳዳሪ",
-        "subcityAdmin": "ክፍለ ከተማ አስተዳዳሪ",
-        "officialAdmin": "ይፋዊ አስተዳዳሪ",
-        "employee": "ሰራተኛ"
+        "woredaAdmin": "የወረዳ አስተዳዳሪ",
+        "superAdmin": "ዋና አስተዳዳሪ",
+        "subcityAdmin": "የክፍለ ከተማ አስተዳዳሪ",
+        "officialAdmin": "የሥራ ኃላፊ",
+        "employee": "ባለሙያ/ሰራተኛ"
       },
       "woredas": {
         "bole": "ቦሌ",
-        "woreda1": "ወረዳ 1",
-        "woreda2": "ወረዳ 2",
-        "woreda3": "ወረዳ 3"
+        "woreda1": "ወረዳ 01",
+        "woreda2": "ወረዳ 02",
+        "woreda3": "ወረዳ 03"
       },
       "subcities": {
         "addisAbaba": "አዲስ አበባ",
@@ -519,19 +518,19 @@
     "common": {
       "success": "ተሳክቷል",
       "error": "ስህተት",
-      "notAvailable": "የለም"
+      "notAvailable": "አይገኝም"
     }
   },
 
   "woredaregistration": {
     "woreda": {
-      "title": "ወረዳ አስተዳደር",
+      "title": "የወረዳዎች አስተዳደር",
       "table": {
         "headers": {
           "id": "መለያ",
-          "nameEn": "ስም (እንግሊዝኛ)",
+          "nameEn": "ስም (English)",
           "nameAm": "ስም (አማርኛ)",
-          "subcityId": "ክፍለ ከተማ መለያ",
+          "subcityId": "የክፍለ ከተማ መለያ",
           "description": "መግለጫ",
           "createdAt": "የተፈጠረበት ቀን",
           "updatedAt": "የተሻሻለበት ቀን",
@@ -539,67 +538,57 @@
         }
       },
       "form": {
-        "nameEnLabel": "ስም (እንግሊዝኛ)",
-        "nameEnPlaceholder": "ስም በእንግሊዝኛ ያስገቡ",
+        "nameEnLabel": "ስም (English)",
+        "nameEnPlaceholder": "Enter name in English",
         "nameAmLabel": "ስም (አማርኛ)",
-        "nameAmPlaceholder": "ስም በአማርኛ ያስገቡ",
+        "nameAmPlaceholder": "ስሙን በአማርኛ ያስገቡ",
         "subcityLabel": "ክፍለ ከተማ",
         "subcityPlaceholder": "ክፍለ ከተማ ይምረጡ",
         "descriptionLabel": "መግለጫ",
-        "descriptionPlaceholder": "መግለጫ ያስገቡ"
+        "descriptionPlaceholder": "ዝርዝር መግለጫ እዚህ ያስገቡ"
       },
       "buttons": {
         "addWoreda": "ወረዳ ያክሉ",
-        "updateWoreda": "ወረዳ ያዘምኑ",
+        "updateWoreda": "መረጃ ያዘምኑ",
         "createWoreda": "ወረዳ ይፍጠሩ",
         "cancel": "ይቅር",
         "delete": "ሰርዝ"
       },
       "modal": {
-        "createTitle": "አዲስ ወረዳ ይፍጠሩ",
-        "editTitle": "ወረዳ ያርትዑ",
-        "deleteTitle": "ስረዛ ያረጋግጡ",
-        "deleteConfirmation": "እርግጠኛ ነዎት ይህን ወረዳ ማስወገድ ይፈልጋሉ?"
+        "createTitle": "አዲስ ወረዳ መመዝገቢያ",
+        "editTitle": "የወረዳ መረጃ ማስተካከያ",
+        "deleteTitle": "ስረዛን ያረጋግጡ",
+        "deleteConfirmation": "ይህንን ወረዳ ከዝርዝሩ ውስጥ ለማስወገድ እርግጠኛ ነዎት?"
       },
       "messages": {
-        "dataLoaded": "ወረዳዎች በተሳካ ሁኔታ ተጭነዋል",
-        "createSuccess": "ወረዳ በተሳካ ሁኔታ ተፈጥሯል",
-        "updateSuccess": "ወረዳ በተሳካ ሁኔታ ተዘምኗል",
-        "deleteSuccess": "ወረዳ በተሳካ ሁኔታ ተሰርዟል"
+        "dataLoaded": "የወረዳዎች ዝርዝር በተሳካ ሁኔታ ተጭኗል",
+        "createSuccess": "ወረዳው በተሳካ ሁኔታ ተመዝግቧል",
+        "updateSuccess": "የወረዳው መረጃ በተሳካ ሁኔታ ተዘምኗል",
+        "deleteSuccess": "ወረዳው ከዝርዝሩ ተሰርዟል"
       },
       "errors": {
-        "nameEnRequired": "እንግሊዝኛ ስም ያስፈልጋል",
-        "nameAmRequired": "አማርኛ ስም ያስፈልጋል",
-        "subcityRequired": "ክፍለ ከተማ ያስፈልጋል",
-        "descriptionRequired": "መግለጫ ያስፈልጋል",
-        "invalidId": "ትክክለኛ ያልሆነ የወረዳ መለያ",
-        "notFound": "ወረዳ አልተገኘም",
-        "failedLoad": "ወረዳዎችን ማምጣት አልተቻለም",
-        "createFailed": "ወረዳ ለመፍጠር አልተቻለም: {error}",
-        "updateFailed": "ወረዳን ለማዘመን አልተቻለም: {error}",
-        "deleteFailed": "ወረዳን ለማስወገድ አልተቻለም: {error}",
-        "loadForEditFailed": "ለማርትዕ ወረዳን ማምጣት አልተቻለም"
-      },
-      "subcities": {
-        "subcity1": "ክፍለ ከተማ 1",
-        "subcity2": "ክፍለ ከተማ 2",
-        "subcity3": "ክፍለ ከተማ 3"
+        "nameEnRequired": "የእንግሊዝኛ ስም ያስፈልጋል",
+        "nameAmRequired": "የአማርኛ ስም ያስፈልጋል",
+        "subcityRequired": "ክፍለ ከተማ መመረጥ አለበት",
+        "descriptionRequired": "መግለጫ ማስገባት ግዴታ ነው",
+        "invalidId": "የወረዳው መለያ (ID) የተሳሳተ ነው",
+        "notFound": "ወረዳው ሊገኝ አልቻለም",
+        "failedLoad": "የወረዳዎችን መረጃ መጫን አልተቻለም",
+        "createFailed": "ወረዳውን መፍጠር አልተቻለም: {error}",
+        "updateFailed": "ማሻሻያው አልተሳካም: {error}",
+        "deleteFailed": "መሰረዝ አልተቻለም: {error}",
+        "loadForEditFailed": "ለማስተካከል የሚፈለገው መረጃ ሊገኝ አልቻለም"
       }
-    },
-    "common": {
-      "success": "ተሳክቷል",
-      "error": "ስህተት",
-      "notAvailable": "የለም"
     }
   },
 
   "newsdetail": {
     "moreImages": "ተጨማሪ ምስሎች",
     "error": {
-      "missingId": "የዜና መለያ የለም",
-      "invalidFormat": "የዜና ውሂብ ቅርጽ ትክክል አይደለም",
-      "notFound": "የዜና ጽሑፍ አልተገኘም",
-      "failedToLoad": "የዜና ጽሑፍ ሊጫን አልቻለም"
+      "missingId": "የዜና መለያ (ID) አልተገኘም",
+      "invalidFormat": "የዜናው መረጃ ቅርፀት የተሳሳተ ነው",
+      "notFound": "የተፈለገው ዜና ሊገኝ አልቻለም",
+      "failedToLoad": "ዜናውን መጫን አልተቻለም"
     },
     "time": {
       "justNow": "አሁን",
@@ -608,16 +597,16 @@
       "daysAgo": "ቀናት በፊት"
     },
     "actions": {
-      "back": "ወደ ዜና ተመለስ",
+      "back": "ወደ ዜና ዝርዝር",
       "backToNews": "ወደ ዜና ተመለስ"
     },
     "breadcrumbs": {
       "home": "መነሻ",
       "news": "ዜና",
-      "details": "የዜና ዝርዝር"
+      "details": "ዝርዝር"
     },
     "imageAlt": "የዜና ምስል",
-    "imageCredit": "ፎቶ",
+    "imageCredit": "የምስል ባለቤት",
     "category": {
       "default": "አጠቃላይ"
     },
@@ -625,61 +614,61 @@
       "default": "ርዕስ የለም"
     },
     "author": {
-      "anonymous": "ስም የለሽ",
+      "anonymous": "ስም ያልተጠቀሰ",
       "about": "ስለ ደራሲው",
-      "bio": "በትክክለኛ እና በወቅቱ ዜና ለማቅረብ የሚያዝን ባለሙያ ጋዜጠኛ።"
-    },
-    "views": "እይታዎች",
-    "content": {
-      "unavailable": "ይዘት የለም"
-    },
-    "share": {
-      "facebook": "በፌስቡክ አጋራ",
-      "twitter": "በትዊተር አጋራ"
-    },
-    "comments": {
-      "loginPrompt": "ኮመንት ለመለጠፍ በአካዉንትዎ መግባት አለብዎት",
-      "placeholder": "ኮመንት ይለጥፉ",
-      "edited": "የተስተካከለ",
-      "post": "ለጥፍ",
-      "title": "አስተያየቶች",
-      "empty": "አስተያየቶች የሉም። የመጀመሪያው አስተያየት የሚሰጥ ይሁን!"
-    },
-    "relatedNews": "የተዛመዱ ዜናዎች",
-    "newsletter": {
-      "title": "ዝመና ያግኙ",
-      "description": "የቅርብ ጊዜ ዜናዎችን በኢሜል ይቀበሉ",
-      "placeholder": "የኢሜል አድራሻዎ",
-      "button": "ይመዝገቡ",
-      "privacy": "ግላዊነትዎን እናክበራለን። በማንኛውም ጊዜ ሊወገዱ ይችላሉ።"
+      "bio": "ወቅታዊና ተዓማኒ መረጃዎችን ለሕዝብ ለማድረስ የሚተጋ ባለሙያ ጋዜጠኛ።"
     }
+  },
+   "views": "እይታዎች",
+  "content": {
+    "unavailable": "ይዘት አልተገኘም"
+  },
+  "share": {
+    "facebook": "በፌስቡክ አጋራ",
+    "twitter": "በትዊተር አጋራ"
+  },
+  "comments": {
+    "loginPrompt": "አስተያየት ለመስጠት እባክዎ አስቀድመው ይግቡ",
+    "placeholder": "አስተያየትዎን እዚህ ይፃፉ...",
+    "edited": "የተስተካከለ",
+    "post": "ለጥፍ",
+    "title": "አስተያየቶች",
+    "empty": "እስካሁን ምንም አስተያየት አልተሰጠም። የመጀመሪያው አስተያየት ሰጪ ይሁኑ!"
+  },
+  "relatedNews": "ተዛማጅ ዜናዎች",
+  "newsletter": {
+    "title": "ወቅታዊ መረጃዎችን ያግኙ",
+    "description": "የቅርብ ጊዜ ዜናዎችን በኢሜይል አድራሻዎ እንልክልዎታለን",
+    "placeholder": "የኢሜይል አድራሻዎ",
+    "button": "ይመዝገቡ",
+    "privacy": "ግላዊነትዎን እናከብራለን። በማንኛውም ጊዜ ከምዝገባ መውጣት ይችላሉ።"
   },
   "leadershippage": {
     "hero": {
       "governmentLeadership": "የመንግስት አመራር",
-      "headsOfGovernment": "የመንግስት አመራሮች",
+      "headsOfGovernment": "የመንግስት ከፍተኛ አመራሮች",
       "leadersDescription": "የሀገሪቱን እድገት የሚመሩ የኢትዮጵያ ታዋቂ መሪዎችን ያግኙ"
     },
     "leaders": {
-      "noLeadersData": "በአሁኑ ጊዜ የመንግስት አመራሮች ዳታ የለም።"
+      "noLeadersData": "በአሁኑ ጊዜ የአመራሮች መረጃ አይገኝም።"
     },
     "leader": {
       "viewProfile": "መገለጫ ይመልከቱ",
-      "keyAchievements": "ዋና ውጤቶች",
+      "keyAchievements": "ዋና ዋና ውጤቶች",
       "biography": "የህይወት ታሪክ",
-      "noBiographyAvailable": "የህይወት ታሪክ የለም"
+      "noBiographyAvailable": "ምንም የህይወት ታሪክ አልተመዘገበም"
     },
     "modal": {
       "closeLeaderProfile": "የአመራሩን መገለጫ ዝጋ",
-      "closeModal": "ሞዳሉን ዝጋ"
+      "closeModal": "ዝጋ"
     },
     "governance": {
       "structure": "የኢትዮጵያ አስተዳደራዊ መዋቅር",
-      "description": "ኢትዮጵያ በፌዴራላዊ ፓርላማዊ ሪፐብሊክ ሥርዓት ይሠራል። ጠቅላይ ሚኒስትሩ የስራ ኃላፊነት ሲይዝ ፕሬዝዳንቱ የመንግስት ምልክታዊ አመራር ነው። አዲስ አበባ እንደ ዋና ከተማ ልዩ የአስተዳደር ሁኔታ አለው።",
+      "description": "ኢትዮጵያ በፌዴራላዊ ፓርላማዊ ሪፐብሊክ ሥርዓት ትመራለች። ጠቅላይ ሚኒስትሩ የሥራ አስፈፃሚው ኃላፊ ሲሆኑ፣ ፕሬዝዳንቱ የሀገሪቱ ምልክት (Head of State) ናቸው። አዲስ አበባ እንደ ዋና ከተማ የራሷ የሆነ ልዩ አስተዳደራዊ መዋቅር አላት።",
       "governmentType": "የመንግስት አይነት",
       "federalParliamentaryRepublic": "ፌዴራላዊ ፓርላማዊ ሪፐብሊክ",
-      "constitution": "ሕገ መንግሥት",
-      "ethiopiaConstitution": "የ1995 የኢትዮጵያ ሕገ መንግሥት",
+      "constitution": "ሕገ-መንግሥት",
+      "ethiopiaConstitution": "የ1987 (1995 G.C) የኢትዮጵያ ሕገ-መንግሥት",
       "capitalCity": "ዋና ከተማ",
       "addisAbaba": "አዲስ አበባ"
     }
@@ -688,54 +677,53 @@
     "officials": {
       "hero": {
         "badge": "የአካባቢ አመራር",
-        "title": "ቦሌ ክፍለ ከተማ ብልፅግና ፓርቲ አመራሮች",
-        "subtitle": "በቦሌ ክፍለ ከተማ ለማህበረሰባችን የሚያገለግሉ የተለየ አመራሮችን ያግኙ"
+        "title": "የቦሌ ክፍለ ከተማ ብልፅግና ፓርቲ አመራሮች",
+        "subtitle": "በቦሌ ክፍለ ከተማ ማህበረሰባችንን በቅንነት የሚያገለግሉ አመራሮች"
       },
       "error": {
-        "title": "ዳታ መጫን ላይ ስህተት",
-        "loading": "የአመራሮች መረጃ መጫን አልተሳካም። እንደገና ይሞክሩ።",
-        "details": "የአመራር ዝርዝሮች መጫን አልተሳካም"
+        "title": "መረጃውን መጫን አልተቻለም",
+        "loading": "የአመራሮች መረጃ መጫን አልተሳካም። እባክዎ እንደገና ይሞክሩ።",
+        "details": "የአመራር ዝርዝሮችን ማግኘት አልተቻለም"
       },
-      "retry": "እንደገና ሞክር",
+      "retry": "እንደገና ይሞክሩ",
       "viewProfile": "መገለጫ ይመልከቱ",
-      "achievements": "ዋና ውጤቶች",
-      "biography": "ታሪክ",
-      "closeModal": "የአመራር መገለጫ ዝጋ"
+      "achievements": "ዋና ዋና ውጤቶች",
+      "biography": "የህይወት ታሪክ",
+      "closeModal": "መገለጫውን ዝጋ"
     },
     "notification": {
       "success": "ተሳክቷል!",
       "error": "ስህተት!"
     }
   },
-
   "locationpage": {
     "hero": {
-      "badge": "የእኛ አድራሻ",
-      "title": "በአዲስ አበባ ውስጥ ይጎብኙን",
-      "subtitle": "በቦሌ ክፍለ ከተማ ልብ ውስጥ በሚገኝ ምቹ ቦታ ከተሻለ የትራንስፖርት አገናኝ ጋር",
-      "mapButton": "በጉግል ካርታ ይክፈቱ"
+      "badge": "አድራሻችን",
+      "title": "በአዲስ አበባ ይጎብኙን",
+      "subtitle": "በቦሌ ክፍለ ከተማ መሃል፣ ለትራንስፖርት አመቺ በሆነ ቦታ እንገኛለን",
+      "mapButton": "በጉግል ካርታ (Google Maps) ይመልከቱ"
     },
     "map": {
-      "title": "የመሥሪያ ቤታችን ቦታ",
-      "gpsLabel": "ጂፒኤስ መጋጠሚያዎች",
-      "copy": "መጋጠሚያዎችን ይቅዱ",
-      "copied": "ተቀድሷል!",
-      "iframeTitle": "የቦሌ ክፍለ ከተማ ብልፅግናፓርቲ ቦታ"
+      "title": "የመሥሪያ ቤታችን መገኛ",
+      "gpsLabel": "የጂፒኤስ (GPS) መጋጠሚያዎች",
+      "copy": "መጋጠሚያዎቹን ይቅዱ",
+      "copied": "ተቀድቷል!",
+      "iframeTitle": "የቦሌ ክፍለ ከተማ ብልፅግና ፓርቲ መገኛ"
     },
     "address": {
-      "title": "የአድራሻ ዝርዝሮች",
-      "line1": "ቦሌ ክፍለ ከተማ, ወረዳ 03",
-      "line2": "አዲስ አበባ, ኢትዮጵያ",
+      "title": "የአድራሻ ዝርዝር",
+      "line1": "ቦሌ ክፍለ ከተማ፣ ወረዳ 03",
+      "line2": "አዲስ አበባ፣ ኢትዮጵያ",
       "poBox": "ፖ.ሳ.ቁ 12345"
     },
     "hours": {
-      "title": "የስራ ሰዓቶች",
-      "weekdays": "ሰኞ - አርብ",
-      "weekdaysTime": "8:30 ጥዋት - 5:30 ምሽት",
+      "title": "የስራ ሰዓታት",
+      "weekdays": "ከሰኞ - አርብ",
+      "weekdaysTime": "ከጠዋቱ 2:30 - 11:30",
       "saturday": "ቅዳሜ",
-      "saturdayTime": "9:00 ጥዋት - 2:00 ምሽት",
+      "saturdayTime": "ከጠዋቱ 3:00 - 8:00 (ከሰዓት)",
       "sunday": "እሁድ",
-      "closed": "ዝጋ"
+      "closed": "ዝግ ነው"
     },
     "contact": {
       "phone": "ስልክ",
@@ -743,66 +731,65 @@
       "website": "ድረ-ገጽ"
     },
     "transport": {
-      "title": "እዚህ ለመድረስ",
-      "description": "በአዲስ አበባ ውስጥ በሁሉም ዋና የትራንስፖርት ዘዴዎች በቀላሉ ሊደርሱ ይችላሉ።",
-      "car": "መኪና",
+      "title": "እንዴት መድረስ ይቻላል?",
+      "description": "በአዲስ አበባ ውስጥ በሚገኙ ዋና ዋና የትራንስፖርት አማራጮች በቀላሉ ሊደርሱብን ይችላሉ።",
+      "car": "በግል መኪና",
       "carDesc": "በቂ የመኪና ማቆሚያ ይገኛል",
-      "bus": "አውቶብስ",
-      "busDesc": "አውቶብስ መስመሮች 12, 45, 78 በአቅራቢያ ይቆማሉ",
-      "train": "ቀላል ባቡር",
+      "bus": "በአውቶብስ",
+      "busDesc": "የአውቶብስ መስመሮች 12፣ 45 እና 78 በአቅራቢያችን ይቆማሉ",
+      "train": "በቀላል ባቡር",
       "trainDesc": "የቦሌ ጣቢያ (10 ደቂቃ በእግር)",
       "accessible": "ተደራሽነት",
-      "accessibleDesc": "የተለያዩ የተደራሽነት መንገዶች ይገኛሉ"
+      "accessibleDesc": "ለአካል ጉዳተኞች ምቹ የሆኑ መንገዶች ተዘጋጅተዋል"
     },
     "parking": {
       "title": "የመኪና ማቆሚያ መረጃ",
-      "description": "በግቢው �ይ ነፃ የመኪና ማቆሚያ ይገኛል። ተጨማሪ ደህንነቱ የተጠበቀ መኪና ማቆሚያ በአጠገቡ ያለው ቦታ ይገኛል (ለሰዓት 50 ብር)።"
+      "description": "በግቢው ውስጥ ነፃ የመኪና ማቆሚያ ይገኛል። በተጨማሪም ደህንነቱ የተጠበቀ የሚከፈልበት ማቆሚያ በአቅራቢያ ይገኛል (በሰዓት 50 ብር)።"
     },
     "landmarks": {
-      "title": "በአቅራቢያ ያሉ ነጥቦች",
-      "description": "የእኛ ቦታ በምቹ አገልግሎቶች እና ታዋቂ ቦታዎች የተከበበ ነው",
+      "title": "በአቅራቢያ ያሉ ታዋቂ ቦታዎች",
+      "description": "መሥሪያ ቤታችን በምቹ አገልግሎቶች እና በታዋቂ ስፍራዎች የተከበበ ነው",
       "airport": "ቦሌ ዓለም አቀፍ አውሮፕላን ማረፊያ (5 ኪ.ሜ)",
-      "mall": "ኤድና ማሎት (1.2 ኪ.ሜ)",
-      "church": "ቦሌ መድሃኒአለም ቤተክርስቲያን (800 ሜትር)",
+      "mall": "ኤድና ሞል (1.2 ኪ.ሜ)",
+      "church": "ቦሌ መድኃኔዓለም ቤተክርስቲያን (800 ሜትር)",
       "supermarket": "ባምቢስ ሱፐርማርኬት (500 ሜትር)"
     }
   },
-
   "ourpartner": {
-    "strategic_partnerships": "የስትራቴጂ ትብብሮች",
-    "title": "የእኛ ዋጋ ያላቸው አጋሮች",
-    "subtitle": "እድገት እና አዳዲስ ሀሳቦችን ለማምጣት ከሚስተናገዱ ዋና ዋና ድርጅቶች ጋር በመተባበር",
-    "premier_partners": "ዋና ዋና አጋሮች",
-    "trusted_network": "የታመኑ አጋሮች አውታረመረብ",
-    "featured": "ተለይቶ የቀረበ",
+    "strategic_partnerships": "ስትራቴጂካዊ አጋርነቶች",
+    "title": "ክቡር አጋሮቻችን",
+    "subtitle": "ዕድገትና አዳዲስ ፈጠራዎችን ለማምጣት ከዋና ዋና ድርጅቶች ጋር በትብብር እንሰራለን",
+    "premier_partners": "ከፍተኛ አጋሮች",
+    "trusted_network": "የታመኑ አጋሮች አውታረ መረብ",
+    "featured": "ተለይተው የቀረቡ",
     "no_category": "ምድብ የለም",
     "partner": "አጋር",
-    "no_description": "ምንም መግለጫ የለም",
+    "no_description": "መግለጫ አልተሰጠም",
     "more": "ተጨማሪ",
-    "visit_partner": "አጋሩን ይጎብኙ",
+    "visit_partner": "የአጋሩን ድረ-ገጽ ይጎብኙ",
     "learn_more": "ተጨማሪ ይወቁ",
     "become_partner": "አጋር ይሁኑ",
-    "cta_text": "በስትራቴጂ አጋሮቻችን አውታረመረብ ውስጥ ይቀላቀሉ እና አብረን እንድገኝ። አንድ አስደናቂ ነገር እንፍጠር።",
-    "partnership_inquiry": "የትብብር ጥያቄ",
-    "error": "አጋሮችን ማምጣት አልተቻለም። እባክዎ ቆንጆ አድርገው ይሞክሩ።",
+    "cta_text": "የስትራቴጂካዊ አጋሮቻችን አካል በመሆን አብረን እንድገ። ለውጥ የሚያመጣ ስራ በጋራ እንስራ።",
+    "partnership_inquiry": "የአጋርነት ጥያቄ",
+    "error": "አጋሮችን መጫን አልተቻለም። እባክዎ ቆየት ብለው ይሞክሩ።",
     "retry": "እንደገና ይሞክሩ",
-    "no_partners": "ምንም አጋሮች አልተገኙም",
-    "description_title": "የአጋር መግለጫ"
+    "no_partners": "ምንም አጋር አልተገኘም",
+    "description_title": "የአጋርነት መግለጫ"
   },
   "counter": {
-    "title": "የድረ-ገጽ ትንታኔ",
-    "subtitle": "በቀጥታ የተጎብኙ ሰዎች ስታቲስቲክስ",
+    "title": "የድረ-ገጽ ስታቲስቲክስ",
+    "subtitle": "የጎብኝዎች ብዛት መረጃ",
     "today": "ዛሬ",
-    "this_month": "ይህ ወር",
-    "all_time": "ሁሉም ጊዜ",
+    "this_month": "በዚህ ወር",
+    "all_time": "ከጅምሩ",
     "visits": "ጎብኝዎች",
     "error_title": "ስህተት",
-    "error": "የተጎብኙ ሰዎች ዳታ ማምጣት አልተቻለም። እባክዎ ቆንጆ አድርገው ይሞክሩ።"
+    "error": "የጎብኝዎችን መረጃ ማግኘት አልተቻለም። እባክዎ ቆየት ብለው ይሞክሩ።"
   },
   "managementteam": {
-    "title": "የእኛን አስተዳደር ቡድን ይገናኙ",
-    "subtitle": "ድርጅታችንን ወደ ስኬት የሚመሩ ባለሙያዎች",
-    "leadership": "የመሪነት ቡድናችን",
+    "title": "የአመራር ቡድናችንን ይተዋወቁ",
+    "subtitle": "ተቋማችንን ወደ ስኬት የሚመሩ ባለሙያዎች",
+    "leadership": "የአመራር ቡድን",
     "all_departments": "ሁሉም ክፍሎች",
     "not_specified": "ያልተገለፀ",
     "general": "አጠቃላይ",
@@ -812,117 +799,116 @@
     "email": "ኢሜይል",
     "phone": "ስልክ",
     "responsibilities": "ኃላፊነቶች",
-    "achievements": "ዋና ዋና �ሳጮች",
+    "achievements": "ዋና ዋና ስኬቶች",
     "close": "ዝጋ",
-    "view_image": "ሙሉ ምስል ይመልከቱ",
-    "full_image_of": "የ �ምስል",
-    "api_error": "ከ API ምንም ምላሽ አልተቀበለም",
-    "array_error": "የቡድን አባላት ድርድር ይጠበቅ ነበር",
-    "load_error": "የቡድን አባላትን ማምጣት አልተቻለም",
+    "view_image": "ምስሉን በትልቁ ይመልከቱ",
+    "full_image_of": "የ—ምስል",
+    "api_error": "ከአገልጋዩ ምላሽ አልተገኘም",
+    "array_error": "የቡድን አባላት ዝርዝር አልተገኘም",
+    "load_error": "የቡድን አባላቱን መጫን አልተቻለም",
     "retry": "እንደገና ይሞክሩ",
-    "no_members": "ምንም የቡድን አባላት አልተገኙም"
+    "no_members": "ምንም የአመራር አባል አልተገኘም"
   },
-
   "compliant": {
     "compliant": {
       "successModal": {
-        "title": "Complaint Submitted Successfully",
-        "message": "Thank you for submitting your complaint. Please keep your complaint ID for future reference.",
-        "yourId": "Your Complaint ID",
-        "note": "Please save this ID as you'll need it to check the status of your complaint.",
-        "close": "Close"
+        "title": "ቅሬታዎ በተሳካ ሁኔታ ቀርቧል",
+        "message": "ቅሬታዎን ስላቀረቡ እናመሰግናለን። እባክዎ የቅሬታ መለያ ቁጥርዎን (ID) ይያዙ።",
+        "yourId": "የቅሬታዎ መለያ ቁጥር (ID)",
+        "note": "የቅሬታዎን ሂደት ለመከታተል ይህ መለያ ቁጥር ስለሚያስፈልግዎት እባክዎ ያስቀምጡት።",
+        "close": "ዝጋ"
       }
     },
     "title": {
-      "badge": "ቅሬታ ፎርም",
-      "main": "የደንበኛ ቅሬታ ፎርም",
-      "subtitle": "በ143/2015 ደንብ ምዕራፍ 3 አንቀጽ 9 መሰረት"
-    },
-    "form": {
-      "title": "የቅሬታ መረጃ",
-      "fullName": "ሙሉ ስም",
-      "fullNamePlaceholder": "ሙሉ ስምዎን ያስገቡ",
-      "phone": "ስልክ ቁጥር",
-      "phonePlaceholder": "ስልክ ቁጥርዎን ያስገቡ",
-      "subCity": "ክፍለ ከተማ",
-      "subCityPlaceholder": "ክፍለ ከተማውን ያስገቡ",
-      "woreda": "ወረዳ",
-      "woredaPlaceholder": "ወረዳውን ያስገቡ",
-      "houseNumber": "የቤት ቁጥር",
-      "houseNumberPlaceholder": "የቤት ቁጥርዎን ያስገቡ",
-      "institution": "የተቋም ስም",
-      "institutionPlaceholder": "የተቋሙን ስም ያስገቡ",
-      "complaintPlace": "የቅሬታ ቦታ",
-      "complaintPlacePlaceholder": "የቅሬታው ቦታ የት ነው?",
-      "complaintDetails": "የቅሬታ ዝርዝር",
-      "complaintDetailsPlaceholder": "ቅሬታዎን በዝርዝር ይግለጹ",
-      "complaintWant": "የሚፈለገው መፍትሔ",
-      "complaintWantPlaceholder": "የሚፈልጉት መፍትሔ ምንድን ነው?",
-      "evidence": "ማስረጃ",
-      "evidencePlaceholder": "ፋይሎችን ይጫኑ",
-      "selectedFiles": "የተመረጡ ፋይሎች"
-    },
-    "disclaimer": {
-      "title": "ማስጠንቀቂያ",
-      "text": "ዛሬ የላኩት ጥያቄ በ143/2015 የኃላፊነት ደንብ መሰረት፣ �ስተማማኝነት ያለው መረጃ መስጠቴን እርግጠኛ ነኝ እና የተሳሳተ መረጃ የህግ ክትትል ሊያስከትል እንደሚችል አስተውያለሁ።",
-      "accept": "ውሎችን እቀበላለሁ"
-    },
-    "validation": {
-      "nameTooShort": "ስምዎ በጣም አጭር ነው",
-      "invalidPhone": "የማያገለግል ስልክ ቁጥር",
-      "disclaimer": "እባክዎ ማስጠንቀቂያውን ይቀበሉ"
-    },
-    "notification": {
-      "successTitle": "ተሳክቷል",
-      "success": "ቅሬታዎ በተሳካ ሁኔታ ቀርቧል",
-      "errorTitle": "ስህተት",
-      "error": "ቅሬታውን ለማስገባት አልተቻለም። እባክዎ እንደገና ይሞክሩ።"
-    },
-    "submit": "ቅሬታ አስገባ"
+      "badge": "የቅሬታ ቅጽ",
+      "main": "የደንበኞች ቅሬታ ማቅረቢያ ቅጽ",
+      "subtitle": "በደንብ ቁጥር 143/2015 ምዕራፍ 3 አንቀጽ 9 መሠረት የተዘጋጀ"
+    }
   },
+   "form": {
+    "title": "የቅሬታ መረጃ",
+    "fullName": "ሙሉ ስም",
+    "fullNamePlaceholder": "ሙሉ ስምዎን ያስገቡ",
+    "phone": "ስልክ ቁጥር",
+    "phonePlaceholder": "ስልክ ቁጥርዎን ያስገቡ",
+    "subCity": "ክፍለ ከተማ",
+    "subCityPlaceholder": "ክፍለ ከተማውን ይምረጡ",
+    "woreda": "ወረዳ",
+    "woredaPlaceholder": "ወረዳውን ይምረጡ",
+    "houseNumber": "የቤት ቁጥር",
+    "houseNumberPlaceholder": "የቤት ቁጥርዎን ያስገቡ",
+    "institution": "የተቋሙ ስም",
+    "institutionPlaceholder": "የሚከሰሰውን ተቋም ስም ያስገቡ",
+    "complaintPlace": "የቅሬታው ቦታ",
+    "complaintPlacePlaceholder": "ቅሬታው የተከሰተበት ቦታ",
+    "complaintDetails": "የቅሬታው ዝርዝር",
+    "complaintDetailsPlaceholder": "ቅሬታዎን በዝርዝር እዚህ ይግለጹ",
+    "complaintWant": "የሚፈለግ መፍትሔ",
+    "complaintWantPlaceholder": "ሊሰጥ የሚገባው መፍትሔ ምንድን ነው?",
+    "evidence": "ማስረጃ",
+    "evidencePlaceholder": "ፋይሎችን እዚህ ይጫኑ",
+    "selectedFiles": "የተመረጡ ፋይሎች"
+  },
+  "disclaimer": {
+    "title": "ማረጋገጫ",
+    "text": "እኔ ዛሬ ያቀረብኩት ቅሬታ በደንብ ቁጥር 143/2015 መሠረት፣ መረጃው ትክክለኛና እውነተኛ መሆኑን አረጋግጣለሁ። የተሳሳተ መረጃ መስጠት በሕግ እንደሚያስጠይቅ ተረድቻለሁ።",
+    "accept": "ውሎችንና ግዴታዎችን እቀበላለሁ"
+  },
+  "validation": {
+    "nameTooShort": "የገቡት ስም በጣም አጭር ነው",
+    "invalidPhone": "ትክክለኛ ያልሆነ ስልክ ቁጥር",
+    "disclaimer": "እባክዎ መጀመሪያ ማረጋገጫውን ይቀበሉ"
+  },
+  "notification": {
+    "successTitle": "ተሳክቷል",
+    "success": "ቅሬታዎ በተሳካ ሁኔታ ቀርቧል",
+    "errorTitle": "ስህተት",
+    "error": "ቅሬታውን ማቅረብ አልተቻለም። እባክዎ እንደገና ይሞክሩ።"
+  },
+  "submit": "ቅሬታውን አቅርብ",
 
   "bookpage": {
     "hero": {
-      "badge": "መጽሐፍት",
-      "title": "የእኛን የመጽሐፍት ስብስብ ያስሱ",
-      "subtitle": "የተመረጡ መጽሐፍትን እና ሀብቶችን ያግኙ እና ያንብቡ"
+      "badge": "ቤተ-መጽሐፍት",
+      "title": "የመጽሐፍት ስብስባችንን ያስሱ",
+      "subtitle": "ለእርስዎ የተመረጡ መጽሐፍትንና ሰነዶችን እዚህ ያግኙ"
     },
     "tabs": {
       "all": "ሁሉም መጽሐፍት"
     },
     "search": {
-      "placeholder": "መጽሐፍትን በርዕስ ፈልግ..."
+      "placeholder": "በመጽሐፍ ርዕስ ይፈልጉ..."
     },
     "filter": {
-      "placeholder": "በምድብ አጣራ"
+      "placeholder": "በምድብ ይምረጡ"
     },
     "batchBooksModal": {
       "book": "ፋይል",
-      "description": "ሁሉንም ፋይሎች ከታች ይመልከቱ ሚለዉን በመጫን ማንበብ ይችላሉ።"
+      "description": "ከታች ያለውን ቁልፍ በመጫን ፋይሎቹን ማንበብ ይችላሉ።"
     },
     "buttons": {
-      "showAll": "ሁሉንም ተመልከት",
-      "details": "ዝርዝሮች",
+      "showAll": "ሁሉንም አሳይ",
+      "details": "ዝርዝር መረጃ",
       "read": "አንብብ",
-      "resetFilters": "ማጣሪያዎችን ዳግም አስጀምር",
+      "resetFilters": "ማጣሪያዎችን አጥፋ",
       "close": "ዝጋ"
     },
     "noBooks": {
-      "title": "ምንም መጽሐፍት አልተገኙም",
-      "description": "ከመስፈርትዎ ጋር የሚመጥኑ መጽሐፍት ማግኘት አልቻልንም። የፍለጋዎን ወይም ማጣሪያዎችዎን ይስተካከሉ።"
+      "title": "ምንም መጽሐፍ አልተገኘም",
+      "description": "ከፈለጉት መስፈርት ጋር የሚመጣጠን መጽሐፍ የለም። እባክዎ ፍለጋዎን ያስተካክሉ።"
     },
     "modal": {
-      "detailsTitle": "የመጽሐፍ ዝርዝሮች",
+      "detailsTitle": "የመጽሐፍ ዝርዝር",
       "author": "ደራሲ",
       "publishedYear": "የታተመበት ዓመት",
-      "readingTime": "የማንበብ ጊዜ",
+      "readingTime": "ለማንበብ የሚፈጅ ጊዜ",
       "language": "ቋንቋ",
       "descriptionTitle": "መግለጫ",
       "pages": "ገጾች"
     },
     "notifications": {
-      "success": "መጽሐፍት በተሳካ ሁኔታ ተጭነዋል",
-      "error": "መጽሐፍት ማጫን አልተቻለም",
+      "success": "መጽሐፍቱ በተሳካ ሁኔታ ተጭነዋል",
+      "error": "መጽሐፍቱን መጫን አልተቻለም",
       "successTitle": "ተሳክቷል!",
       "errorTitle": "ስህተት!"
     }
@@ -930,48 +916,48 @@
 
   "galleryimage": {
     "hero": {
-      "badge": "የእኛ ጋሊሪ",
-      "title": "የፎቶ ጋሊሪ",
-      "subtitle": "የምርኩዝ አፍታዎችን እና ዝግጅቶችን ያስሱ"
+      "badge": "ጋለሪ",
+      "title": "የምስል ስብስብ",
+      "subtitle": "የፓርቲያችንን እንቅስቃሴዎችና ልዩ አፍታዎችን በምስል ይመልከቱ"
     },
     "buttons": {
-      "viewAlbum": "አልበም ይመልከቱ",
-      "closeGallery": "ጋሊሪውን ዝጋ"
+      "viewAlbum": "አልበሙን ክፈት",
+      "closeGallery": "ጋለሪውን ዝጋ"
     },
     "photos": "ፎቶዎች",
     "of": "ከ",
     "image": "ምስል",
-    "thumbnail": "ትንሽ ምስል",
-    "defaultCategory": "ጋሊሪ",
+    "thumbnail": "አነስተኛ ምስል",
+    "defaultCategory": "አጠቃላይ",
     "emptyState": {
-      "title": "ምንም የጋሊሪ ንጥሎች አልተገኙም",
-      "message": "ለማዘመኛ ቆይተው ይመልከቱ"
+      "title": "ምንም ምስል አልተገኘም",
+      "message": "ለአዳዲስ ምስሎች በቅርቡ ተመልሰው ይጎብኙ"
     },
     "errors": {
       "title": "ስህተት",
-      "loadError": "የጋሊሪ ውሂብ ማጫን አልተቻለም። እባክዎ ቆይተው ይሞክሩ።"
+      "loadError": "ምስሎችን መጫን አልተቻለም። እባክዎ ቆይተው ይሞክሩ።"
     }
   },
 
   "contactus": {
     "hero": {
-      "title": "ብልፅግና ፓርቲ ያግኙን",
-      "subtitle": "ድምፃችሁ ለእኛ አስፈላጊ ነው። ጥያቄዎች፣ �ሳፅኦች ወይም አስተያየቶች ያሉን ያግኙን።"
+      "title": "ብልፅግና ፓርቲን ያግኙን",
+      "subtitle": "የእርስዎ አስተያየት ለእኛ ትልቅ ዋጋ አለው። በማንኛውም ጥያቄ ወይም ሃሳብ ያግኙን።"
     },
     "form": {
       "title": "መልእክት ይላኩልን",
       "fullName": "ሙሉ ስም",
       "fullNamePlaceholder": "ሙሉ ስምዎን ያስገቡ",
       "email": "ኢሜይል አድራሻ",
-      "emailPlaceholder": "your@email.com",
+      "emailPlaceholder": "example@email.com",
       "subject": "ርዕስ",
-      "subjectPlaceholder": "የመልእክት ርዕስ",
-      "message": "መልእክትዎ",
+      "subjectPlaceholder": "የመልእክቱ ርዕስ",
+      "message": "መልእክት",
       "messagePlaceholder": "መልእክትዎን እዚህ ይፃፉ...",
       "submit": "መልእክት ላክ"
     },
     "contactInfo": {
-      "title": "የእውቂያ መረጃችን",
+      "title": "የእውቂያ መረጃ",
       "address": {
         "title": "ዋና መሥሪያ ቤት",
         "line1": "ቦሌ ክፍለ ከተማ",
@@ -979,168 +965,153 @@
       },
       "phone": {
         "title": "ስልክ",
-        "number1": "+251 123 456 789",
-        "number2": "+251 987 654 321"
+        "number1": "+251 11X XX XX XX",
+        "number2": "+251 9XX XX XX XX"
       },
       "email": {
         "title": "ኢሜይል",
-        "address1": "bsubcity@gmail.com",
-        "address2": "support@prosperityparty.org"
+        "address1": "bole.p.party@gmail.com",
+        "address2": "info@prosperity.org.et"
       },
       "hours": {
-        "title": "የስራ ሰዓት",
-        "weekdays": "ሰኞ - ዓርብ: 8:00 ጥዋት - 6:00 ምሽት",
-        "saturday": "ቅዳሜ: 9:00 ጥዋት - 1:00 ምሽት"
+        "title": "የሥራ ሰዓት",
+        "weekdays": "ከሰኞ - ዓርብ: ከጠዋቱ 2:30 - 11:30",
+        "saturday": "ቅዳሜ: ከጠዋቱ 3:00 - 7:00 (ከሰዓት)"
       }
     },
     "map": {
-      "title": "አካባቢያችን",
-      "description": "ዋና መሥሪያ ቤታችንን በአዲስ አበባ ይጎብኙ"
+      "title": "አድራሻችን በካርታ",
+      "description": "በአዲስ አበባ የሚገኘውን ዋና መሥሪያ ቤታችንን ይጎብኙ"
     },
     "notifications": {
-      "missingTitle": "ጎደለው መረጃ",
-      "missingMessage": "እባክዎ ሁሉንም አስፈላጊ መስኮች ይሙሉ",
+      "missingTitle": "ያልተሟላ መረጃ",
+      "missingMessage": "እባክዎ ሁሉንም አስፈላጊ መረጃዎች ይሙሉ",
       "successTitle": "ተሳክቷል!",
       "successMessage": "መልእክትዎ በተሳካ ሁኔታ ተልኳል",
       "errorTitle": "ስህተት",
-      "errorMessage": "መልእክት ለመላክ አልተሳካም",
-      "unexpectedError": "ያልተጠበቀ ስህተት ተከስቷል"
+      "errorMessage": "መልእክት መላክ አልተቻለም",
+      "unexpectedError": "ያልተጠበቀ ስህተት አጋጥሟል"
     }
   },
 
   "announcementsui": {
     "badge": "ማስታወቂያዎች",
     "title": "ይፋዊ ማስታወቂያዎች",
-    "subtitle": "ከማህበረሰባችን የቅርብ ዜና እና �ሳሳይ ማስታወቂያዎችን ይከታተሉ",
+    "subtitle": "ወቅታዊና አስፈላጊ የሆኑ ይፋዊ መረጃዎችን እዚህ ያግኙ",
     "tabs": {
       "all": "ሁሉም ማስታወቂያዎች"
     },
     "search": {
-      "placeholder": "ማስታወቂያዎችን በርዕስ ፈልግ..."
+      "placeholder": "በማስታወቂያ ርዕስ ይፈልጉ..."
     },
     "filter": {
-      "placeholder": "በምድብ አጣራ"
+      "placeholder": "በምድብ ይምረጡ"
     },
     "pinned": "የተሰካ",
-    "readButton": "ሙሉ ማስታወቂያ አንብብ",
+    "readButton": "ሙሉውን አንብብ",
     "noResults": {
       "title": "ምንም ማስታወቂያ አልተገኘም",
-      "description": "ከሚፈልጉት ጋር የሚመጣጠን ማስታወቂያ ማግኘት አልቻልንም። የፍለጋ ወይም �ሻሻዎችዎን ይለውጡ።"
+      "description": "ከፈለጉት ርዕስ ጋር የሚመሳሰል ማስታወቂያ የለም።"
     },
-    "resetFilters": "ማጣሪያዎችን ዳግም አቀናብር",
+    "resetFilters": "ማጣሪያዎችን አጥፋ",
     "details": {
-      "title": "የማስታወቂያ ዝርዝሮች",
+      "title": "የማስታወቂያ ዝርዝር",
       "date": "ቀን",
-      "author": "ደራሲ",
-      "published": "የታተመ"
+      "author": "ጸሐፊ",
+      "published": "የታተመው"
     },
     "attachments": {
-      "title": "ተቆራኘ"
+      "title": "ተያያዥ ሰነዶች"
     },
     "content": {
       "title": "ይዘት"
     },
     "closeButton": "ዝጋ"
   },
-  "notifications": {
-    "success": "ተሳክቷል!",
-    "error": "ስህተት!"
-  },
-  "announcements": {
-    "success": "ማስታወቂያዎች በተሳካ ሁኔታ ተጭነዋል",
-    "error": "ማስታወቂያዎችን ማምጣት አልተቻለም"
-  },
+
   "tenderui": {
     "badge": "ጨረታዎች",
-    "title": "አሁን ያሉ ጨረታዎች",
-    "subtitle": "ክፍት የጨረታ እድሎችን እና የግዥ ማስታወቂያዎችን ይመልከቱ",
+    "title": "ወቅታዊ የጨረታ ማስታወቂያዎች",
+    "subtitle": "ክፍት የሆኑ የጨረታ ዕድሎችንና የግዥ መረጃዎችን ይመልከቱ",
     "tabs": {
       "all": "ሁሉም ጨረታዎች",
-      "open": "ክፍት",
-      "closed": "ዝጋ",
-      "awarded": "የተሸለሙ"
+      "open": "ክፍት ጨረታዎች",
+      "closed": "የተዘጉ",
+      "awarded": "አሸናፊ የታወቀባቸው"
     },
     "status": {
       "open": "ክፍት",
-      "closed": "ዝጋ",
-      "awarded": "የተሸለመ"
+      "closed": "ዝግ",
+      "awarded": "አሸናፊ የታወቀበት"
     },
     "search": {
-      "placeholder": "ጨረታዎችን በርዕስ ፈልግ..."
+      "placeholder": "በጨረታ ርዕስ ይፈልጉ..."
     },
     "filter": {
-      "placeholder": "በምድብ አጣራ"
+      "placeholder": "በምድብ ይምረጡ"
     },
     "table": {
-      "published": "የታተመ",
-      "closing": "የመዝጋት ቀን",
+      "published": "የወጣበት ቀን",
+      "closing": "የመዝጊያ ቀን",
       "opening": "የመክፈቻ ቀን",
       "budget": "በጀት",
-      "tenderNumber": "ጨረታ ቁጥር"
+      "tenderNumber": "የጨረታ ቁጥር"
     },
-    "viewButton": "የጨረታ ዝርዝሮችን ይመልከቱ",
+    "viewButton": "ዝርዝሩን ተመልከት",
     "noResults": {
       "title": "ምንም ጨረታ አልተገኘም",
-      "description": "ከሚፈልጉት ጋር የሚመጣጠን ጨረታ ማግኘት አልቻልንም። የፍለጋ ወይም ማጣሪያዎችዎን ይለውጡ።"
+      "description": "ለጊዜው ምንም የወጣ ጨረታ የለም።"
     },
-    "resetFilters": "ማጣሪያዎችን ዳግም አቀናብር",
+    "resetFilters": "ማጣሪያዎችን አጥፋ",
     "description": {
-      "title": "የጨረታ መግለጫ"
+      "title": "የጨረታው ዝርዝር መግለጫ"
     },
     "requirements": {
-      "title": "ማስፈላጊያዎች"
+      "title": "መሟላት ያለባቸው መስፈርቶች"
     },
     "documents": {
       "title": "የጨረታ ሰነዶች"
     },
     "contact": {
-      "title": "የመገኛ መረጃ",
-      "person": "የመገኛ ሰው",
+      "title": "የእውቂያ መረጃ",
+      "person": "ተጠሪ ሰው",
       "phone": "ስልክ",
       "email": "ኢሜይል"
     },
     "actions": {
-      "save": "ጨረታ አስቀምጥ",
+      "save": "አስቀምጥ",
       "share": "አጋራ"
-    },
-    "notifications": {
-      "success": "ጨረታዎች በተሳካ ሁኔታ ተጭነዋል",
-      "error": "ጨረታዎችን ማምጣት አልተቻለም"
     }
-  },
-  "notifications": {
-    "success": "ተሳክቷል!",
-    "error": "ስህተት!"
   },
 
   "eventui": {
-    "badge": "የማህበረሰብ ዝግጅቶች",
-    "title": "የሚመጡ ዝግጅቶች እና ስብሰባዎች",
-    "subtitle": "የማህበረሰባችን ዝግጅቶች፣ የባህል በዓላት እና ልዩ ስብሰባዎችን ይመልከቱ",
+    "badge": "ዝግጅቶች",
+    "title": "የሚመጡ ስብሰባዎችና ዝግጅቶች",
+    "subtitle": "ማህበረሰባዊ ዝግጅቶችንና ልዩ ስብሰባዎችን እዚህ ይከታተሉ",
     "tabs": {
       "all": "ሁሉም ዝግጅቶች",
       "upcoming": "የሚመጡ",
       "past": "ያለፉ ዝግጅቶች",
-      "featured": "ልዩ ዝግጅቶች"
+      "featured": "ተለይተው የቀረቡ"
     },
     "search": {
-      "placeholder": "ዝግጅቶችን በስም ፈልግ..."
+      "placeholder": "ዝግጅቶችን በስም ይፈልጉ..."
     },
     "filter": {
-      "placeholder": "በምድብ አጣራ"
+      "placeholder": "በምድብ ይምረጡ"
     },
     "featured": "ልዩ",
     "featuredEvent": "ልዩ ዝግጅት",
-    "viewButton": "የዝግጅት ዝርዝሮችን ይመልከቱ",
+    "viewButton": "ዝርዝሩን ተመልከት",
     "noResults": {
       "title": "ምንም ዝግጅት አልተገኘም",
-      "description": "ከሚፈልጉት ጋር የሚመጣጠን ዝግጅት ማግኘት አልቻልንም። የፍለጋ ወይም ማጣሪያዎችዎን ይለውጡ።"
+      "description": "በቅርብ ቀን የሚከናወን ዝግጅት የለም።"
     },
-    "resetFilters": "ማጣሪያዎችን ዳግም አቀናብር",
+    "resetFilters": "ማጣሪያዎችን አጥፋ",
     "details": {
-      "title": "የዝግጅት ዝርዝሮች",
+      "title": "የዝግጅቱ ዝርዝር",
       "date": "ቀን",
-      "time": "ጊዜ",
+      "time": "ሰዓት",
       "location": "ቦታ",
       "attendees": "ተሳታፊዎች",
       "expected": "የሚጠበቁ"
@@ -1152,50 +1123,42 @@
       "title": "መለያዎች"
     },
     "description": {
-      "title": "መግለጫ"
+      "title": "ዝርዝር መግለጫ"
     },
-    "closeButton": "ዝጋ",
-    "notifications": {
-      "success": "ዝግጅቶች በተሳካ ሁኔታ ተጭነዋል",
-      "error": "ዝግጅቶችን ማምጣት አልተቻለም"
-    }
-  },
-  "notifications": {
-    "success": "ተሳክቷል!",
-    "error": "ስህተት!"
+    "closeButton": "ዝጋ"
   },
 
-  "rolemanagementadmin": {
-    "title": "የሚና አስተዳደር",
-    "addRoleButton": "ሚና ያክሉ",
+"rolemanagementadmin": {
+    "title": "የሥራ ድርሻ (Role) አስተዳደር",
+    "addRoleButton": "አዲስ ድርሻ ያክሉ",
     "formLabels": {
-      "roleKey": "የሚና ቁልፍ",
-      "nameEn": "ስም (እንግሊዝኛ)",
-      "nameAm": "ስም (አማርኛ)",
+      "roleKey": "የድርሻ መለያ ቁልፍ",
+      "nameEn": "ስም (በእንግሊዝኛ)",
+      "nameAm": "ስም (በአማርኛ)",
       "description": "መግለጫ"
     },
     "formPlaceholders": {
-      "roleKey": "የሚና ቁልፍ ያስገቡ (ለምሳሌ፣ woreda_admin)",
-      "nameEn": "ስም በእንግሊዝኛ ያስገቡ",
-      "nameAm": "ስም በአማርኛ ያስገቡ",
-      "description": "የሚና መግለጫ ያስገቡ"
+      "roleKey": "ምሳሌ፦ woreda_admin",
+      "nameEn": "ስሙን በእንግሊዝኛ ያስገቡ",
+      "nameAm": "ስሙን በአማርኛ ያስገቡ",
+      "description": "ስለ ሥራ ድርሻው አጭር መግለጫ ያስገቡ"
     },
     "formErrors": {
-      "roleKey": "የሚና ቁልፍ ያስፈልጋል",
-      "nameEn": "እንግሊዝኛ ስም ያስፈልጋል",
-      "nameAm": "አማርኛ ስም ያስፈልጋል",
-      "description": "መግለጫ ያስፈልጋል"
+      "roleKey": "የድርሻ መለያ ቁልፍ ያስፈልጋል",
+      "nameEn": "የእንግሊዝኛ ስም ያስፈልጋል",
+      "nameAm": "የአማርኛ ስም ያስፈልጋል",
+      "description": "መግለጫ ማስገባት ግዴታ ነው"
     },
     "table": {
       "headers": {
         "id": "መለያ",
-        "roleKey": "የሚና ቁልፍ",
-        "nameEn": "ስም (እንግሊዝኛ)",
-        "nameAm": "ስም (አማርኛ)",
+        "roleKey": "መለያ ቁልፍ",
+        "nameEn": "ስም (EN)",
+        "nameAm": "ስም (AM)",
         "description": "መግለጫ",
         "createdAt": "የተፈጠረበት ቀን",
         "updatedAt": "የተሻሻለበት ቀን",
-        "actions": "ድርጊቶች"
+        "actions": "ተግባራት"
       },
       "actions": {
         "edit": "አርትዕ",
@@ -1204,113 +1167,113 @@
       "notAvailable": "የለም"
     },
     "modal": {
-      "editTitle": "ሚና አርትዕ",
-      "createTitle": "አዲስ ሚና ይፍጠሩ"
+      "editTitle": "የሥራ ድርሻን ያስተካክሉ",
+      "createTitle": "አዲስ የሥራ ድርሻ ይፍጠሩ"
     },
     "deleteModal": {
-      "title": "ማስወገጃ ያረጋግጡ",
-      "message": "ይህን ሚና መሰረዝ ይፈልጋሉ?"
+      "title": "ስረዛን ያረጋግጡ",
+      "message": "ይህንን የሥራ ድርሻ (Role) ለመሰረዝ እርግጠኛ ነዎት?"
     },
     "buttons": {
       "cancel": "ይቅር",
-      "create": "ሚና ይፍጠሩ",
-      "update": "ሚና አዘምን",
+      "create": "ድርሻ ይፍጠሩ",
+      "update": "መረጃ አዘምን",
       "delete": "ሰርዝ"
     },
     "notifications": {
       "success": "ተሳክቷል!",
       "error": "ስህተት!",
-      "loadSuccess": "ውሂብ በተሳካ ሁኔታ ተጭኗል",
-      "loadError": "የሚና ውሂብ መጫን አልተሳካም",
-      "invalidId": "የማያገለግል የሚና መለያ",
-      "roleNotFound": "ሚና አልተገኘም",
-      "updateSuccess": "ሚና በተሳካ ሁኔታ ተሻሽሏል",
-      "createSuccess": "ሚና በተሳካ ሁኔታ ተፈጥሯል",
-      "deleteSuccess": "ሚና በተሳካ ሁኔታ ተሰርዟል",
-      "loadEditError": "ለማርትዕ የሚና መጫን አልተሳካም",
-      "updateError": "ሚና ማዘመን አልተሳካም፡ {{error}}",
-      "createError": "ሚና መፍጠር አልተሳካም፡ {{error}}",
-      "deleteError": "ሚና ማስወገድ አልተሳካም"
+      "loadSuccess": "መረጃው በተሳካ ሁኔታ ተጭኗል",
+      "loadError": "መረጃውን መጫን አልተሳካም",
+      "invalidId": "የማያገለግል መለያ ቁጥር",
+      "roleNotFound": "የሥራ ድርሻው አልተገኘም",
+      "updateSuccess": "የሥራ ድርሻው መረጃ ተሻሽሏል",
+      "createSuccess": "አዲስ የሥራ ድርሻ በተሳካ ሁኔታ ተፈጥሯል",
+      "deleteSuccess": "የሥራ ድርሻው ተሰርዟል",
+      "loadEditError": "ለማስተካከል የሚፈለገው መረጃ ሊጫን አልቻለም",
+      "updateError": "ማዘመን አልተሳካም፡ {{error}}",
+      "createError": "መፍጠር አልተሳካም፡ {{error}}",
+      "deleteError": "መሰረዝ አልተሳካም"
     }
   },
 
   "rolepermissionassignment": {
-    "title": "የሚና ፍቃድ መመደብ",
+    "title": "የድርሻና የፈቃድ መመደቢያ",
     "table": {
       "headers": {
         "id": "መለያ",
-        "roleName": "የሚና ስም",
-        "roleKey": "የሚና ቁልፍ",
-        "actions": "ድርጊቶች",
+        "roleName": "የድርሻ ስም",
+        "roleKey": "የድርሻ ቁልፍ",
+        "actions": "ተግባራት",
         "select": "ምረጥ",
-        "permission": "ፍቃድ",
+        "permission": "ፈቃድ",
         "key": "ቁልፍ",
         "description": "መግለጫ",
         "status": "ሁኔታ"
       }
     },
     "buttons": {
-      "managePermissions": "ፍቃዶችን አስተዳድር",
+      "managePermissions": "ፈቃዶችን ያስተዳድሩ",
       "deselectAll": "ሁሉንም አሰርዝ",
-      "selectAllFiltered": "ሁሉንም የተጣራ ምረጥ",
+      "selectAllFiltered": "የተጣሩትን ሁሉ ምረጥ",
       "cancel": "ይቅር",
-      "savePermissions": "ፍቃዶችን አስቀምጥ"
+      "savePermissions": "ፈቃዶችን መዝግብ"
     },
     "modal": {
-      "title": "የሚና ፍቃዶችን አስተዳድር",
-      "titleWithRole": "ለ {roleName} ፍቃዶችን አስተዳድር",
-      "roleLabel": "ሚና",
+      "title": "የሥራ ድርሻ ፈቃዶችን ያስተዳድሩ",
+      "titleWithRole": "ለ {roleName} ፈቃዶችን ይፍቀዱ",
+      "roleLabel": "የሥራ ድርሻ",
       "keyLabel": "ቁልፍ",
       "idLabel": "መለያ"
     },
     "tabs": {
-      "allPermissions": "ሁሉም ፍቃዶች",
-      "assigned": "የተመደበ",
-      "selected": "የተመረጠ"
+      "allPermissions": "ሁሉም ፈቃዶች",
+      "assigned": "የተፈቀዱ",
+      "selected": "የተመረጡ"
     },
     "search": {
-      "placeholder": "ፍቃዶችን ፈልግ..."
+      "placeholder": "ፈቃዶችን እዚህ ይፈልጉ..."
     },
     "showing": "በማሳየት ላይ",
     "of": "ከ",
-    "permissions": "ፍቃዶች",
+    "permissions": "ፈቃዶች",
     "messages": {
-      "noAssignedPermissions": "ለዚህ ሚና የተመደቡ ፍቃዶች የሉም",
-      "noSelectedPermissions": "የተመረጡ ፍቃዶች የሉም"
+      "noAssignedPermissions": "ለዚህ የሥራ ድርሻ እስካሁን የተሰጠ ፈቃድ የለም",
+      "noSelectedPermissions": "ምንም የተመረጠ ፈቃድ የለም"
     },
     "status": {
-      "assigned": "ተመድቧል",
-      "notAssigned": "አልተመደበም"
+      "assigned": "ተፈቅዷል",
+      "notAssigned": "አልተፈቀደም"
     },
     "notifications": {
       "success": "ተሳክቷል",
       "error": "ስህተት",
-      "permissionsUpdated": "ፍቃዶች በተሳካ ሁኔታ ተዘምነዋል",
-      "failedUpdatePermissions": "ፍቃዶችን ማዘመን አልተሳካም",
-      "failedLoadRoles": "ሚናዎችን መጫን አልተሳካም",
-      "failedLoadPermissions": "ፍቃዶችን መጫን አልተሳካም",
-      "failedLoadAssignedPermissions": "የተመደቡ ፍቃዶችን መጫን አልተሳካም"
+      "permissionsUpdated": "ፈቃዶች በተሳካ ሁኔታ ተዘምነዋል",
+      "failedUpdatePermissions": "ፈቃዶችን ማዘመን አልተሳካም",
+      "failedLoadRoles": "የሥራ ድርሻዎችን መጫን አልተሳካም",
+      "failedLoadPermissions": "ፈቃዶችን መጫን አልተሳካም",
+      "failedLoadAssignedPermissions": "የተመደቡ ፈቃዶችን መጫን አልተሳካም"
     },
     "errors": {
-      "fetchRoles": "ሚናዎችን ማግኘት አልተሳካም",
-      "fetchPermissions": "ፍቃዶችን ማግኘት አልተሳካም",
-      "fetchAssignedPermissions": "የተመደቡ ፍቃዶችን ማግኘት አልተሳካም",
-      "assignPermissions": "ፍቃዶችን መመደብ ላይ"
+      "fetchRoles": "የሥራ ድርሻዎችን ማግኘት አልተቻለም",
+      "fetchPermissions": "ፈቃዶችን ማግኘት አልተቻለም",
+      "fetchAssignedPermissions": "የተመደቡ ፈቃዶችን ማግኘት አልተቻለም",
+      "assignPermissions": "ፈቃዶችን በመመደብ ላይ ስህተት ተከስቷል"
     }
   },
 
   "permissionsview": {
-    "title": "የስርዓት ፈቃዶች",
+    "title": "የሥርዓቱ የፈቃድ አይነቶች",
     "search": {
       "placeholder": "ፈቃዶችን ፈልግ..."
     },
     "notification": {
       "success": "ፈቃዶች በተሳካ ሁኔታ ተጭነዋል",
-      "error": "ፈቃዶችን ማምጣት አልተቻለም",
+      "error": "ፈቃዶችን ማግኘት አልተቻለም",
       "successTitle": "ተሳክቷል!",
       "errorTitle": "ስህተት!",
       "updateSuccess": "ፈቃዱ በተሳካ ሁኔታ ተሻሽሏል",
-      "updateError": "ፈቃዱን ለውጥ ማድረግ አልተቻለም"
+      "updateError": "በፈቃዱ ላይ ለውጥ ማድረግ አልተቻለም"
     },
     "table": {
       "columns": {
@@ -1319,24 +1282,25 @@
         "key": "ቁልፍ",
         "description": "መግለጫ",
         "createdAt": "የተፈጠረበት ቀን",
-        "actions": "ድርጊቶች"
+        "actions": "ተግባራት"
       }
     },
     "editModal": {
-      "title": "ፈቃድ አርትዕ: {name}",
+      "title": "ፈቃድ ያስተካክሉ: {name}",
       "fields": {
         "name": "የፈቃድ ስም",
         "key": "ቁልፍ",
         "description": "መግለጫ"
       },
       "buttons": {
-        "cancel": "ሰርዝ",
+        "cancel": "ይቅር",
         "save": "ለውጦችን አስቀምጥ"
       }
     }
   },
+
   "permissionviewadmin": {
-    "title": "የስርዓት ፈቃዶች",
+    "title": "የስርዓት ፈቃዶች አስተዳደር",
     "search": {
       "placeholder": "ፈቃዶችን ይፈልጉ..."
     },
@@ -1347,7 +1311,7 @@
         "key": "ቁልፍ",
         "description": "መግለጫ",
         "createdAt": "የተፈጠረበት ቀን",
-        "actions": "ድርጊቶች"
+        "actions": "ተግባራት"
       }
     },
     "actions": {
@@ -1368,27 +1332,27 @@
       "description": {
         "label": "መግለጫ"
       }
-    },
-    "modal": {
-      "editTitle": "ፈቃድ አርትዕ:"
-    },
-    "notifications": {
-      "successTitle": "ተሳክቷል!",
-      "errorTitle": "ስህተት!",
-      "loadSuccess": "ፈቃዶች በተሳካ ሁኔታ ተጭነዋል",
-      "loadFailed": "ፈቃዶችን ማምጣት አልተሳካም",
-      "updateSuccess": "ፈቃዱ በተሳካ ሁኔታ ተዘምኗል",
-      "updateFailed": "ፈቃዱን ለሰወጥ ማድረግ አልተሳካም"
-    },
-    "errors": {
-      "fetchFailed": "ፈቃዶችን ማምጣት አልተሳካም",
-      "fetchError": "ፈቃዶችን ማምጣት አልተሳካም:",
-      "updateError": "ፈቃዱን ሲያዘምት ስህተት ተከስቷል:"
     }
+  },
+   "modal": {
+    "editTitle": "ፈቃድ ያስተካክሉ:"
+  },
+  "notifications": {
+    "successTitle": "ተሳክቷል!",
+    "errorTitle": "ስህተት!",
+    "loadSuccess": "ፈቃዶች በተሳካ ሁኔታ ተጭነዋል",
+    "loadFailed": "ፈቃዶችን ማግኘት አልተሳካም",
+    "updateSuccess": "ፈቃዱ በተሳካ ሁኔታ ተዘምኗል",
+    "updateFailed": "በፈቃዱ ላይ ለውጥ ማድረግ አልተሳካም"
+  },
+  "errors": {
+    "fetchFailed": "ፈቃዶችን ማግኘት አልተቻለም",
+    "fetchError": "ፈቃዶችን በማምጣት ላይ ስህተት ተከስቷል:",
+    "updateError": "ፈቃዱን በማዘመን ላይ ስህተት ተከስቷል:"
   },
 
   "newsmanagementadmin": {
-    "title": "ዜና አስተዳደር",
+    "title": "የዜና አስተዳደር",
     "buttons": {
       "addNews": "ዜና ያክሉ",
       "cancel": "ይቅር",
@@ -1401,15 +1365,15 @@
         "multipleImages": "ተጨማሪ ምስሎች",
         "id": "መለያ",
         "titleAm": "ርዕስ (አማርኛ)",
-        "titleEn": "ርዕስ (እንግሊዝኛ)",
-        "excerpt": "መግለጫ",
+        "titleEn": "ርዕስ (EN)",
+        "excerpt": "አጭር መግለጫ",
         "category": "ምድብ",
-        "author": "ደራሲ",
+        "author": "ጸሐፊ",
         "status": "ሁኔታ",
-        "image": "ምስል",
+        "image": "ዋና ምስል",
         "views": "እይታዎች",
         "publishedAt": "የታተመበት ቀን",
-        "actions": "ድርጊቶች"
+        "actions": "ተግባራት"
       },
       "notAvailable": "የለም"
     },
@@ -1424,73 +1388,73 @@
       "titleAm": {
         "label": "ርዕስ (አማርኛ)",
         "placeholder": "ርዕስ በአማርኛ ያስገቡ",
-        "error": "አማርኛ ርዕስ ያስፈልጋል"
+        "error": "የአማርኛ ርዕስ ማስገባት ግዴታ ነው"
       },
       "titleEn": {
         "label": "ርዕስ (እንግሊዝኛ)",
         "placeholder": "ርዕስ በእንግሊዝኛ ያስገቡ",
-        "error": "እንግሊዝኛ ርዕስ ያስፈልጋል"
+        "error": "የእንግሊዝኛ ርዕስ ማስገባት ግዴታ ነው"
       },
       "contentAm": {
-        "label": "ይዘት (አማርኛ)",
-        "placeholder": "ይዘት በአማርኛ ያስገቡ",
-        "error": "አማርኛ ይዘት ያስፈልጋል"
+        "label": "ዝርዝር ይዘት (አማርኛ)",
+        "placeholder": "ዜናውን በአማርኛ እዚህ ይፃፉ",
+        "error": "የዜናው ይዘት በአማርኛ ያስፈልጋል"
       },
       "contentEn": {
-        "label": "ይዘት (እንግሊዝኛ)",
-        "placeholder": "ይዘት በእንግሊዝኛ ያስገቡ",
-        "error": "እንግሊዝኛ ይዘት ያስፈልጋል"
+        "label": "ዝርዝር ይዘት (እንግሊዝኛ)",
+        "placeholder": "ዜናውን በእንግሊዝኛ እዚህ ይፃፉ",
+        "error": "የዜናው ይዘት በእንግሊዝኛ ያስፈልጋል"
       },
       "excerpt": {
-        "label": "መግለጫ",
-        "placeholder": "አጭር መግለጫ ያስገቡ",
-        "error": "መግለጫ ያስፈልጋል"
+        "label": "አጭር ማጠቃለያ",
+        "placeholder": "ስለ ዜናው አጭር ማጠቃለያ ያስገቡ",
+        "error": "ማጠቃለያ ያስፈልጋል"
       },
       "category": {
-        "label": "ምድብ",
+        "label": "የዜና ምድብ",
         "placeholder": "ምድብ ይምረጡ",
-        "error": "ምድብ ያስፈልጋል"
+        "error": "ምድብ መምረጥ ግዴታ ነው"
       },
       "author": {
-        "label": "ዜና ለጣፊ",
-        "placeholder": "ዜና ለጣፊ ይምረጡ",
-        "error": "ዜና ለጣፊ ያስፈልጋል"
+        "label": "ዜናውን ያቀናበረው",
+        "placeholder": "ጸሐፊ ይምረጡ",
+        "error": "ጸሐፊ መምረጥ ያስፈልጋል"
       },
       "image": {
-        "label": "የዜና ምስል",
+        "label": "ዋና ምስል",
         "placeholder": "ምስል ይምረጡ",
-        "description": "ከፍተኛ ጥራት ያለው ምስል ይስቀሉ (ከ5MB በታች)",
+        "description": "ጥራት ያለው ምስል ይስቀሉ (ከ5MB በታች)",
         "error": "ምስል ያስፈልጋል"
       },
       "published": {
-        "label": "የታተመ"
+        "label": "ለህዝብ ይፋ ይሁን"
       }
     },
     "modal": {
-      "createTitle": "ዜና ይፍጠሩ",
-      "editTitle": "ዜና ያዘምኑ",
-      "deleteTitle": "ማስወገጃ ያረጋግጡ",
-      "deleteConfirmation": "ይህን የዜና ምዝገባ ለማስወገድ እርግጠኛ ነዎት?"
+      "createTitle": "አዲስ ዜና ይፍጠሩ",
+      "editTitle": "ዜናውን ያስተካክሉ",
+      "deleteTitle": "ስረዛን ያረጋግጡ",
+      "deleteConfirmation": "ይህንን ዜና ለመሰረዝ እርግጠኛ ነዎት?"
     },
     "notifications": {
       "successTitle": "ተሳክቷል!",
       "errorTitle": "ስህተት!",
-      "loadSuccess": "ዜና በተሳካ �ንገላ ተጭኗል",
-      "loadFailed": "ዜና ማምጣት አልተሳካም",
-      "createSuccess": "ዜና በተሳካ ሁኔታ ተፈጥሯል",
-      "createFailed": "ዜና መፍጠር አልተሳካም",
-      "updateSuccess": "ዜና በተሳካ ሁኔታ ተዘምኗል",
-      "updateFailed": "ዜና ማዘመን አልተሳካም",
-      "deleteSuccess": "ዜና በተሳካ ሁኔታ ተሰርዟል",
-      "deleteFailed": "ዜና ማስወገድ አልተሳካም",
-      "uploadSuccess": "ምስል በተሳካ ሁኔታ ተስቀልጧል",
-      "uploadFailed": "ምስል ማስቀመጥ አልተሳካም"
+      "loadSuccess": "ዜናው በተሳካ ሁኔታ ተጭኗል",
+      "loadFailed": "ዜናውን ማግኘት አልተቻለም",
+      "createSuccess": "ዜናው በተሳካ ሁኔታ ተፈጥሯል",
+      "createFailed": "ዜና መፍጠር አልተቻለም",
+      "updateSuccess": "ዜናው ተዘምኗል",
+      "updateFailed": "ዜናውን ማዘመን አልተቻለም",
+      "deleteSuccess": "ዜናው ተሰርዟል",
+      "deleteFailed": "ዜናውን መሰረዝ አልተቻለም",
+      "uploadSuccess": "ምስሉ በተሳካ ሁኔታ ተጭኗል",
+      "uploadFailed": "ምስሉን መጫን አልተቻለም"
     },
     "errors": {
-      "invalidId": "የዜና መለያ ልክ አይደለም",
-      "notFound": "የዜና ምዝገባ አልተገኘም",
-      "invalidImageType": "እባክዎን የምስል ፋይል (JPEG, PNG, ወዘተ) ይስቀሉ",
-      "imageTooLarge": "የምስል መጠን ከ5MB በታች መሆን አለበት"
+      "invalidId": "ትክክለኛ ያልሆነ የዜና መለያ",
+      "notFound": "የተፈለገው ዜና አልተገኘም",
+      "invalidImageType": "እባክዎን የምስል ፋይል (JPEG, PNG) ብቻ ይጠቀሙ",
+      "imageTooLarge": "የምስሉ መጠን ከ5MB በታች መሆን አለበት"
     }
   },
 
@@ -1501,44 +1465,44 @@
       "headers": {
         "id": "መለያ",
         "nameAm": "ስም (አማርኛ)",
-        "nameEn": "ስም (እንግሊዝኛ)",
-        "slug": "ስልክ",
-        "createdAt": "የተፈጠረበት ቀን",
-        "updatedAt": "የተሻሻለበት ቀን",
-        "actions": "ድርጊቶች"
+        "nameEn": "ስም (EN)",
+        "slug": "ሊንክ (Slug)",
+        "createdAt": "የተፈጠረበት",
+        "updatedAt": "የተሻሻለበት",
+        "actions": "ተግባራት"
       },
       "notAvailable": "የለም",
       "actions": {
-        "edit": "አርም",
+        "edit": "አርትዕ",
         "delete": "ሰርዝ"
       }
     },
     "form": {
       "labels": {
-        "nameAm": "ስም (አማርኛ)",
-        "nameEn": "ስም (እንግሊዝኛ)"
+        "nameAm": "የምድብ ስም (አማርኛ)",
+        "nameEn": "የምድብ ስም (EN)"
       },
       "placeholders": {
-        "nameAm": "በአማርኛ ስም ያስገቡ",
-        "nameEn": "በእንግሊዝኛ ስም ያስገቡ"
+        "nameAm": "ምሳሌ፦ ስፖርት",
+        "nameEn": "Example: Sports"
       },
       "errors": {
-        "amRequired": "አማርኛ ስም ያስፈልጋል",
-        "enRequired": "እንግሊዝኛ ስም ያስፈልጋል"
+        "amRequired": "የአማርኛ ስም ያስፈልጋል",
+        "enRequired": "የእንግሊዝኛ ስም ያስፈልጋል"
       },
       "buttons": {
         "cancel": "ይቅር",
         "create": "ምድብ ይፍጠሩ",
-        "update": "ምድብ ያዘምኑ"
+        "update": "ምድብ አዘምን"
       }
     },
     "modal": {
-      "createTitle": "አዲስ የዜና ምድብ ይፍጠሩ",
-      "editTitle": "የዜና ምድብ ያርሙ"
+      "createTitle": "አዲስ የዜና ምድብ መፍጠሪያ",
+      "editTitle": "የዜና ምድብ ማስተካከያ"
     },
     "deleteModal": {
-      "title": "ማስወገጃ �ስተማማኝ",
-      "message": "እርግጠኛ ነዎት �ይህን ምድብ መሰረዝ ይፈልጋሉ? ይህ እርምጃ ሊቀለበስ አይችልም።",
+      "title": "ስረዛን ያረጋግጡ",
+      "message": "ይህንን ምድብ ለመሰረዝ እርግጠኛ ነዎት? ይህ ድርጊት ሊቀለበስ አይችልም።",
       "buttons": {
         "cancel": "ይቅር",
         "delete": "ሰርዝ"
@@ -1547,115 +1511,116 @@
     "notifications": {
       "success": "ተሳክቷል!",
       "error": "ስህተት!",
-      "loadSuccess": "የዜና ምድቦች በተሳካ ሁኔታ ተጭነዋል",
-      "loadError": "የዜና ምድቦችን ማግኘት አልተቻለም",
-      "createSuccess": "የዜና ምድብ በተሳካ ሁኔታ ተፈጥሯል",
-      "createError": "የዜና ምድብ መፍጠር አልተቻለም: {error}",
-      "updateSuccess": "የዜና ምድብ በተሳካ ሁኔታ ተዘምኗል",
-      "updateError": "የዜና ምድብ ማዘመን አልተቻለም: {error}",
-      "deleteSuccess": "የዜና ምድብ በተሳካ ሁኔታ ተሰርዟል",
-      "deleteError": "የዜና ምድብ መሰረዝ አልተቻለም",
-      "invalidId": "የማያገለግል የምድብ መለያ",
-      "notFound": "የዜና ምድብ አልተገኘም",
-      "editError": "ለማርም የዜና ምድብ ማግኘት አልተቻለም"
+      "loadSuccess": "ምድቦች በተሳካ ሁኔታ ተጭነዋል",
+      "loadError": "ምድቦችን ማግኘት አልተቻለም",
+      "createSuccess": "ምድቡ ተፈጥሯል",
+      "createError": "ምድቡን መፍጠር አልተቻለም: {error}",
+      "updateSuccess": "ምድቡ ተዘምኗል",
+      "updateError": "ማዘመን አልተቻለም: {error}",
+      "deleteSuccess": "ምድቡ ተሰርዟል",
+      "deleteError": "መሰረዝ አልተቻለም",
+      "invalidId": "የማያገለግል መለያ ቁጥር",
+      "notFound": "ምድቡ አልተገኘም",
+      "editError": "ለማስተካከል የተፈለገው ምድብ አልተገኘም"
     }
   },
 
   "carouselmanagement": {
-    "title": "ካሩሴል አስተዳደር",
+    "title": "የካሩሴል (Carousel) አስተዳደር",
     "addButton": "ካሩሴል ያክሉ",
     "table": {
       "columns": {
-        "id": "አይዲ",
+        "id": "መለያ",
         "titleAm": "ርዕስ (አማርኛ)",
-        "titleEn": "ርዕስ (እንግሊዝኛ)",
+        "titleEn": "ርዕስ (EN)",
         "description": "መግለጫ",
         "image": "ምስል",
         "status": "ሁኔታ",
-        "createdAt": "የተፈጠረበት ቀን",
-        "actions": "ድርጊቶች"
+        "createdAt": "የተፈጠረበት",
+        "actions": "ተግባራት"
       },
       "na": "የለም"
     },
     "status": {
       "active": "ንቁ",
-      "inactive": "እርግዝና"
+      "inactive": "ያልነቃ"
     },
     "form": {
       "titleAm": "ርዕስ (አማርኛ)",
-      "titleAmPlaceholder": "ርዕስ በአማርኛ ያስገቡ",
+      "titleAmPlaceholder": "ዋናውን ርዕስ በአማርኛ ያስገቡ",
       "titleEn": "ርዕስ (እንግሊዝኛ)",
-      "titleEnPlaceholder": "ርዕስ በእንግሊዝኛ ያስገቡ",
+      "titleEnPlaceholder": "ዋናውን ርዕስ በእንግሊዝኛ ያስገቡ",
       "descAm": "መግለጫ (አማርኛ)",
-      "descAmPlaceholder": "መግለጫ በአማርኛ ያስገቡ",
+      "descAmPlaceholder": "አጭር መግለጫ በአማርኛ",
       "descEn": "መግለጫ (እንግሊዝኛ)",
-      "descEnPlaceholder": "መግለጫ በእንግሊዝኛ ያስገቡ",
-      "imageLabel": "ካሩሴል ምስል",
+      "descEnPlaceholder": "አጭር መግለጫ በእንግሊዝኛ",
+      "imageLabel": "የካሩሴል ምስል",
       "imagePlaceholder": "ምስል ይምረጡ",
-      "imageDescription": "ከፍተኛ ጥራት ያለው ምስል ይስቀሉ (ከፍተኛው 5MB)",
-      "imagePreviewAlt": "ቅድመ እይታ",
-      "activeLabel": "ንቁ",
+      "imageDescription": "ጥራት ያለው ምስል ይስቀሉ (ከ5MB በታች)",
+      "imagePreviewAlt": "የምስል ቅድመ እይታ",
+      "activeLabel": "በድረ-ገጹ ላይ ይታይ",
       "cancelButton": "ይቅር",
-      "updateButton": "ካሩሴል ያዘምኑ",
+      "updateButton": "መረጃ አዘምን",
       "createButton": "ካሩሴል ይፍጠሩ"
     },
     "modal": {
-      "editTitle": "ካሩሴል አርትዕ",
-      "createTitle": "ካሩሴል ይፍጠሩ"
+      "editTitle": "ካሩሴል ያስተካክሉ",
+      "createTitle": "አዲስ ካሩሴል ይፍጠሩ"
     },
     "deleteModal": {
-      "title": "ማስወገድ ያረጋግጡ",
-      "message": "ይህን ካሩሴል ማስወገድ ይፈልጋሉ?",
+      "title": "ስረዛን ያረጋግጡ",
+      "message": "ይህንን ካሩሴል ለማስወገድ እርግጠኛ ነዎት?",
       "cancelButton": "ይቅር",
       "deleteButton": "ሰርዝ"
     },
     "validation": {
-      "titleAmRequired": "አማርኛ ርዕስ ያስፈልጋል",
-      "titleEnRequired": "እንግሊዝኛ ርዕስ ያስፈልጋል",
-      "descAmRequired": "አማርኛ መግለጫ ያስፈልጋል",
-      "descEnRequired": "እንግሊዝኛ መግለጫ ያስፈልጋል",
-      "imageRequired": "ምስል ያስፈልጋል"
-    },
-    "notifications": {
-      "success": "ተሳክቷል!",
-      "error": "ስህተት!",
-      "loadSuccess": "ውሂብ በተሳካ ሁኔታ ተጭኗል",
-      "loadError": "የካሩሴል ውሂብ መጫን አልተሳካም",
-      "invalidId": "የማያገለግል የካሩሴል አይዲ",
-      "uploadSuccess": "ምስሉ በተሳካ ሁኔታ ተጭኗል",
-      "uploadError": "ምስሉን መጫን አልተሳካም",
-      "imageRequired": "እባክዎ ምስል ይስቀሉ",
-      "updateSuccess": "ካሩሴሉ በተሳካ ሁኔታ ተዘምኗል",
-      "createSuccess": "ካሩሴሉ በተሳካ ሁኔታ ተፈጥሯል",
-      "updateError": "ካሩሴሉን ማዘመን አልተሳካም",
-      "createError": "ካሩሴሉን መፍጠር አልተሳካም",
-      "itemNotFound": "የካሩሴል ንጥል አልተገኘም",
-      "loadEditError": "ለማርትዕ የካሩሴል መጫን አልተሳካም",
-      "deleteSuccess": "ካሩሴሉ በተሳካ ሁኔታ ተሰርዟል",
-      "deleteError": "ካሩሴሉን ማስወገድ አልተሳካም",
-      "invalidImageType": "እባክዎ የምስል ፋይል (JPEG, PNG, ወዘተ) ይስቀሉ",
-      "imageSizeLimit": "የምስል መጠን ከ5MB ያነሰ መሆን አለበት"
+      "titleAmRequired": "የአማርኛ ርዕስ ያስፈልጋል",
+      "titleEnRequired": "የእንግሊዝኛ ርዕስ ያስፈልጋል",
+      "descAmRequired": "የአማርኛ መግለጫ ያስፈልጋል",
+      "descEnRequired": "የእንግሊዝኛ መግለጫ ያስፈልጋል",
+      "imageRequired": "ምስል መምረጥ ግዴታ ነው"
     }
   },
+   "notifications": {
+    "success": "ተሳክቷል!",
+    "error": "ስህተት!",
+    "loadSuccess": "መረጃው በተሳካ ሁኔታ ተጭኗል",
+    "loadError": "የካሩሴል መረጃን መጫን አልተሳካም",
+    "invalidId": "የማያገለግል መለያ ቁጥር",
+    "uploadSuccess": "ምስሉ በተሳካ ሁኔታ ተጭኗል",
+    "uploadError": "ምስሉን መጫን አልተሳካም",
+    "imageRequired": "እባክዎ ምስል ይስቀሉ",
+    "updateSuccess": "ካሩሴሉ በተሳካ ሁኔታ ተዘምኗል",
+    "createSuccess": "ካሩሴሉ በተሳካ ሁኔታ ተፈጥሯል",
+    "updateError": "ካሩሴሉን ማዘመን አልተሳካም",
+    "createError": "ካሩሴሉን መፍጠር አልተሳካም",
+    "itemNotFound": "የካሩሴል ንጥሉ አልተገኘም",
+    "loadEditError": "ለማስተካከል የተፈለገው መረጃ ሊጫን አልቻለም",
+    "deleteSuccess": "ካሩሴሉ በተሳካ ሁኔታ ተሰርዟል",
+    "deleteError": "ካሩሴሉን ማስወገድ አልተሳካም",
+    "invalidImageType": "እባክዎ ትክክለኛ የምስል ፋይል (JPEG, PNG) ይስቀሉ",
+    "imageSizeLimit": "የምስሉ መጠን ከ5MB በታች መሆን አለበት"
+  },
+
   "governmentofficalsadmin": {
-    "title": "የመንግስት ባለስልጣናት",
-    "addButton": "ባለስልጣን ያክሉ",
+    "title": "የመንግሥት ባለሥልጣናት",
+    "addButton": "ባለሥልጣን ያክሉ",
     "table": {
       "columns": {
         "id": "መለያ",
-        "name_en": "ስም (እንግሊዝኛ)",
-        "name_am": "ስም (አማርኛ)",
-        "title_en": "ማዕረግ (እንግሊዝኛ)",
-        "tenure": "የአገልግሎት ጊዜ",
-        "achievements": "ውጤቶች",
+        "name_en": "ስም (EN)",
+        "name_am": "ስም (AM)",
+        "title_en": "የሥራ መደብ (EN)",
+        "tenure": "የአገልግሎት ዘመን",
+        "achievements": "ስኬቶች",
         "image": "ምስል",
         "status": "ሁኔታ",
-        "createdAt": "የተፈጠረበት ቀን",
-        "actions": "ድርጊቶች"
+        "createdAt": "የተመዘገበበት ቀን",
+        "actions": "ተግባራት"
       },
-      "achievements": "ውጤቶች",
+      "achievements": "ስኬቶች",
       "active": "ንቁ",
-      "inactive": "እንቅስቃሴ የለውም",
+      "inactive": "ያልነቃ",
       "actions": {
         "edit": "አርትዕ",
         "delete": "ሰርዝ"
@@ -1665,35 +1630,35 @@
       "labels": {
         "name_en": "ስም (እንግሊዝኛ)",
         "name_am": "ስም (አማርኛ)",
-        "title_en": "ማዕረግ (እንግሊዝኛ)",
-        "title_am": "ማዕረግ (አማርኛ)",
-        "tenure": "የአገልግሎት ጊዜ",
+        "title_en": "የሥራ መደብ (እንግሊዝኛ)",
+        "title_am": "የሥራ መደብ (አማርኛ)",
+        "tenure": "የአገልግሎት ዘመን",
         "bio_en": "አጭር ታሪክ (እንግሊዝኛ)",
         "bio_am": "አጭር ታሪክ (አማርኛ)",
-        "fullBio_en": "ሙሉ ታሪክ (እንግሊዝኛ)",
-        "fullBio_am": "ሙሉ ታሪክ (አማርኛ)",
-        "image": "የባለስልጣን ምስል",
+        "fullBio_en": "ሙሉ የሕይወት ታሪክ (እንግሊዝኛ)",
+        "fullBio_am": "ሙሉ የሕይወት ታሪክ (አማርኛ)",
+        "image": "የባለሥልጣኑ ምስል",
         "is_active": "ንቁ",
-        "achievements": "ውጤቶች",
-        "achievement_en": "ውጤት (እንግሊዝኛ)",
-        "achievement_am": "ውጤት (አማርኛ)"
+        "achievements": "የተመዘገቡ ስኬቶች",
+        "achievement_en": "ስኬት (እንግሊዝኛ)",
+        "achievement_am": "ስኬት (አማርኛ)"
       },
       "placeholders": {
         "name_en": "ስም በእንግሊዝኛ ያስገቡ",
         "name_am": "ስም በአማርኛ ያስገቡ",
-        "title_en": "ማዕረግ በእንግሊዝኛ ያስገቡ",
-        "title_am": "ማዕረግ በአማርኛ ያስገቡ",
-        "tenure": "ለምሳሌ፣ 2020-2025",
-        "bio_en": "አጭር ታሪክ በእንግሊዝኛ ያስገቡ",
-        "bio_am": "አጭር ታሪክ በአማርኛ ያስገቡ",
-        "fullBio_en": "ሙሉ ታሪክ በእንግሊዝኛ ያስገቡ",
-        "fullBio_am": "ሙሉ ታሪክ በአማርኛ ያስገቡ",
+        "title_en": "የሥራ መደብ በእንግሊዝኛ (ምሳ. Minister)",
+        "title_am": "የሥራ መደብ በአማርኛ (ምሳ. ሚኒስትር)",
+        "tenure": "ምሳሌ፦ 2012 - 2016",
+        "bio_en": "አጭር ታሪክ በእንግሊዝኛ",
+        "bio_am": "አጭር ታሪክ በአማርኛ",
+        "fullBio_en": "ሙሉ የሕይወት ታሪክ በእንግሊዝኛ",
+        "fullBio_am": "ሙሉ የሕይወት ታሪክ በአማርኛ",
         "image": "ምስል ይምረጡ",
-        "achievement_en": "ውጤት በእንግሊዝኛ ያስገቡ",
-        "achievement_am": "ውጤት በአማርኛ ያስገቡ"
+        "achievement_en": "ስኬት በእንግሊዝኛ ያስገቡ",
+        "achievement_am": "ስኬት በአማርኛ ያስገቡ"
       },
       "descriptions": {
-        "image": "ከፍተኛ ጥራት ያለው ምስል ይስሩ (ከ5MB ያነሰ)"
+        "image": "ጥራት ያለው ምስል ይስቀሉ (ከ5MB ያነሰ)"
       },
       "altText": {
         "imagePreview": "ቅድመ እይታ"
@@ -1703,18 +1668,18 @@
         "am": "አማርኛ"
       },
       "actions": {
-        "addAchievement": "ያክሉ",
-        "removeAchievement": "ያስወግዱ",
+        "addAchievement": "ጨምር",
+        "removeAchievement": "አስወግድ",
         "cancel": "ይቅር",
-        "create": "ባለስልጣን ይፍጠሩ",
-        "update": "ባለስልጣን ያዘምኑ"
+        "create": "ባለሥልጣን መዝግብ",
+        "update": "መረጃ አዘምን"
       },
       "errors": {
         "name_en": "የእንግሊዝኛ ስም ያስፈልጋል",
         "name_am": "የአማርኛ ስም ያስፈልጋል",
-        "title_en": "የእንግሊዝኛ ማዕረግ ያስፈልጋል",
-        "title_am": "የአማርኛ ማዕረግ ያስፈልጋል",
-        "tenure": "የአገልግሎት ጊዜ ያስፈልጋል",
+        "title_en": "የእንግሊዝኛ የሥራ መደብ ያስፈልጋል",
+        "title_am": "የአማርኛ የሥራ መደብ ያስፈልጋል",
+        "tenure": "የአገልግሎት ዘመን መገለጽ አለበት",
         "bio_en": "የእንግሊዝኛ አጭር ታሪክ ያስፈልጋል",
         "bio_am": "የአማርኛ አጭር ታሪክ ያስፈልጋል",
         "fullBio_en": "የእንግሊዝኛ ሙሉ ታሪክ ያስፈልጋል",
@@ -1723,124 +1688,128 @@
       }
     },
     "modal": {
-      "editTitle": "ባለስልጣን ያርትዑ",
-      "createTitle": "አዲስ ባለስልጣን ይፍጠሩ"
+      "editTitle": "የባለሥልጣን መረጃ ማስተካከያ",
+      "createTitle": "አዲስ ባለሥልጣን መመዝገቢያ"
     },
     "deleteModal": {
-      "title": "ማስወገድን ያረጋግጡ",
-      "message": "ይህን ባለስልጣን ለመሰረዝ እርግጠኛ ነዎት?",
+      "title": "ስረዛን ያረጋግጡ",
+      "message": "ይህንን ባለሥልጣን ከመረጃ ቋቱ ለመሰረዝ እርግጠኛ ነዎት?",
       "cancel": "ይቅር",
       "confirm": "ሰርዝ"
     },
     "notifications": {
-      "success": "በተሳካ ሁኔታ!",
+      "success": "ተሳክቷል!",
       "error": "ስህተት!",
-      "loadSuccess": "ውሂብ በተሳካ ሁኔታ ተጭኗል",
-      "loadError": "የባለስልጣናት ውሂብ ማግኘት አልተቻለም",
-      "invalidId": "የተሳሳተ የባለስልጣን መለያ",
-      "uploadSuccess": "ምስሉ በተሳካ ሁኔታ ተጭኗል",
+      "loadSuccess": "መረጃው በተሳካ ሁኔታ ተጭኗል",
+      "loadError": "የባለሥልጣናት መረጃ ማግኘት አልተቻለም",
+      "invalidId": "የተሳሳተ መለያ ቁጥር",
+      "uploadSuccess": "ምስሉ ተጭኗል",
       "uploadError": "ምስሉን ማስገባት አልተቻለም",
-      "imageRequired": "እባክዎ ምስል �ስር",
-      "updateSuccess": "ባለስልጣኑ በተሳካ ሁኔታ ተሻሽሏል",
-      "createSuccess": "ባለስልጣኑ በተሳካ ሁኔታ ተፈጥሯል",
-      "updateError": "ባለስልጣኑን ማዘመን አልተቻለም",
-      "createError": "ባለስልጣን መፍጠር አልተቻለም",
-      "notFound": "ባለስልጣኑ አልተገኘም",
-      "loadEditError": "ለማርትዕ የባለስልጣን መረጃ ማግኘት አልተቻለም",
-      "deleteSuccess": "ባለስልጣኑ በተሳካ ሁኔታ ተሰርዟል",
-      "deleteError": "ባለስልጣኑን ማስወገድ አልተቻለም",
-      "invalidFileType": "እባክዎ የምስል ፋይል (JPEG, PNG, ወዘተ) ይስሩ",
+      "imageRequired": "እባክዎ ምስል ይስቀሉ",
+      "updateSuccess": "የባለሥልጣኑ መረጃ ተዘምኗል",
+      "createSuccess": "ባለሥልጣኑ ተመዝግቧል",
+      "updateError": "ማዘመን አልተቻለም",
+      "createError": "ባለሥልጣን መመዝገብ አልተቻለም",
+      "notFound": "ባለሥልጣኑ አልተገኘም",
+      "loadEditError": "መረጃውን ለማግኘት አልተቻለም",
+      "deleteSuccess": "ባለሥልጣኑ ተሰርዟል",
+      "deleteError": "ባለሥልጣኑን መሰረዝ አልተቻለም",
+      "invalidFileType": "እባክዎ ትክክለኛ የምስል ፋይል (JPEG, PNG) ይስቀሉ",
       "fileSizeError": "የምስሉ መጠን ከ5MB ያነሰ መሆን አለበት",
-      "achievementAdded": "ውጤት ታክሏል",
-      "achievementRemoved": "ውጤት ተሰርዟል",
-      "achievementRequired": "እባክዎ ሁለቱንም የእንግሊዝኛ እና የአማርኛ ውጤቶች ይሙሉ"
+      "achievementAdded": "ስኬት ታክሏል",
+      "achievementRemoved": "ስኬት ተሰርዟል",
+      "achievementRequired": "እባክዎ ስኬቱን በአማርኛና በእንግሊዝኛ ይሙሉ"
     }
   },
 
   "subcityofficialadmin": {
     "title": "የክፍለ ከተማ ባለሥልጣናት አስተዳደር",
     "addButton": "ባለሥልጣን ያክሉ",
-    "editTitle": "ባለሥልጣን አርትዕ",
-    "createTitle": "አዲስ ባለሥልጣን ይፍጠሩ",
-    "deleteTitle": "ማስወገድ ያረጋግጡ",
-    "deleteConfirmation": "ይህን ባለሥልጣን ለመሰረዝ እርግ᠀ሞ ነዎት?",
+    "editTitle": "ባለሥልጣን ያስተካክሉ",
+    "createTitle": "አዲስ ባለሥልጣን ይመዝግቡ",
+    "deleteTitle": "ስረዛን ያረጋግጡ",
+    "deleteConfirmation": "ይህንን ባለሥልጣን ለመሰረዝ እርግጠኛ ነዎት?",
     "cancelButton": "ይቅር",
-    "updateButton": "ባለሥልጣን አዘምን",
-    "createButton": "ባለሥልጣን ይፍጠሩ",
+    "updateButton": "መረጃ አዘምን",
+    "createButton": "ባለሥልጣን መዝግብ",
     "deleteButton": "ሰርዝ",
     "notifications": {
       "success": "ተሳክቷል!",
       "error": "ስህተት!",
-      "loadSuccess": "ውሂብ በተሳካ ሁኔታ ተጭኗል",
-      "loadError": "የባለሥልጣናት ውሂብ ማግኘት አልተቻለም",
-      "uploadSuccess": "ምስል በተሳካ ሁኔታ ተጭኗል",
-      "uploadError": "ምስል ማስገባት አልተቻለም",
-      "updateSuccess": "ባለሥልጣን በተሳካ ሁኔታ ተዘምኗል",
-      "updateError": "ባለሥልጣን ማዘመን አልተቻለም",
-      "createSuccess": "ባለሥልጣን በተሳካ ሁኔታ ተፈጥሯል",
-      "createError": "ባለሥልጣን መፍጠር አልተቻለም",
-      "deleteSuccess": "ባለሥልጣን በተሳካ ሁኔታ ተሰርዟል",
-      "deleteError": "ባለሥልጣን ማስወገድ አልተቻለም"
+      "loadSuccess": "መረጃው በተሳካ ሁኔታ ተጭኗል",
+      "loadError": "የባለሥልጣናት መረጃ አልተገኘም",
+      "uploadSuccess": "ምስሉ ተጭኗል",
+      "uploadError": "ምስሉን መጫን አልተቻለም",
+      "updateSuccess": "መረጃው ተዘምኗል",
+      "updateError": "ማዘመን አልተቻለም",
+      "createSuccess": "ባለሥልጣኑ ተመዝግቧል",
+      "createError": "መመዝገብ አልተቻለም",
+      "deleteSuccess": "ባለሥልጣኑ ተሰርዟል",
+      "deleteError": "መሰረዝ አልተቻለም"
     },
     "errors": {
-      "invalidId": "የተሳሳተ የባለሥልጣን መለያ",
-      "notFound": "ባለሥልጣን አልተገኘም",
-      "loadError": "ለማርትዕ ባለሥልጣን ማግኘት አልተቻለም",
+      "invalidId": "የተሳሳተ መለያ ቁጥር",
+      "notFound": "ባለሥልጣኑ አልተገኘም",
+      "loadError": "ለማስተካከል የተፈለገው መረጃ አልተገኘም",
       "name_en": "የእንግሊዝኛ ስም ያስፈልጋል",
       "name_am": "የአማርኛ ስም ያስፈልጋል",
-      "title_en": "የእንግሊዝኛ ስምህ ያስፈልጋል",
-      "title_am": "የአማርኛ ስምህ ያስፈልጋል",
-      "bio_en": "የእንግሊዝኛ ባዮ ያስፈልጋል",
-      "bio_am": "የአማርኛ ባዮ ያስፈልጋል",
-      "tenure": "የአገልግሎት ጊዜ ያስፈልጋል",
-      "fullBio_en": "የእንግሊዝኛ ሙሉ ባዮ ያስፈልጋል",
-      "fullBio_am": "የአማርኛ ሙሉ ባዮ ያስፈልጋል",
+      "title_en": "የሥራ መደብ በእንግሊዝኛ ያስፈልጋል",
+      "title_am": "የሥራ መደብ በአማርኛ ያስፈልጋል",
+      "bio_en": "አጭር ታሪክ (EN) ያስፈልጋል",
+      "bio_am": "አጭር ታሪክ (AM) ያስፈልጋል",
+      "tenure": "የአገልግሎት ዘመን ያስፈልጋል",
+      "fullBio_en": "ሙሉ ታሪክ (EN) ያስፈልጋል",
+      "fullBio_am": "ሙሉ ታሪክ (AM) ያስፈልጋል",
       "image": "ምስል ያስፈልጋል",
-      "imageRequired": "እባክዎ ምስል ይግቡ",
-      "invalidImageType": "እባክዎ የምስል ፋይል (JPEG, PNG, ወዘተ) ይግቡ",
-      "imageSize": "የምስል መጠን ከ5MB ያነሰ መሆን አለበት"
+      "imageRequired": "እባክዎ ምስል ይስቀሉ",
+      "invalidImageType": "ትክክለኛ የምስል ፋይል ይጠቀሙ",
+      "imageSize": "የምስሉ መጠን ከ5MB በታች መሆን አለበት"
     },
     "table": {
       "id": "መለያ",
       "nameAm": "ስም (አማርኛ)",
-      "nameEn": "ስም (እንግሊዝኛ)",
-      "title": "ስምህ",
-      "tenure": "የአገልግሎት ጊዜ",
-      "achievements": "የተገኙ ስኬቶች",
-      "achievementsCount": "የተገኙ ስኬቶች",
+      "nameEn": "ስም (EN)",
+      "title": "የሥራ መደብ",
+      "tenure": "የአገልግሎት ዘመን",
+      "achievements": "የተመዘገቡ ስኬቶች",
+      "achievementsCount": "የስኬቶች ብዛት",
       "image": "ምስል",
-      "createdAt": "የተፈጠረበት ቀን",
-      "actions": "ድርጊቶች",
+      "createdAt": "የተመዘገበበት",
+      "actions": "ተግባራት",
       "na": "የለም"
     },
     "form": {
       "nameAm": "ስም (አማርኛ)",
-      "nameAmPlaceholder": "በአማርኛ ስም ያስገቡ",
+      "nameAmPlaceholder": "ሙሉ ስም በአማርኛ ያስገቡ",
       "nameEn": "ስም (እንግሊዝኛ)",
-      "nameEnPlaceholder": "በእንግሊዝኛ ስም ያስገቡ",
-      "titleAm": "ስምህ (አማርኛ)",
-      "titleAmPlaceholder": "በአማርኛ ስምህ ያስገቡ",
-      "titleEn": "ስምህ (እንግሊዝኛ)",
-      "titleEnPlaceholder": "በእንግሊዝኛ ስምህ ያስገቡ",
-      "bioAm": "ባዮ (አማርኛ)",
-      "bioAmPlaceholder": "በአማርኛ ባዮ ያስገቡ",
-      "bioEn": "ባዮ (እንግሊዝኛ)",
-      "bioEnPlaceholder": "በእንግሊዝኛ ባዮ ያስገቡ",
-      "tenure": "የአገልግሎት ጊዜ",
-      "tenurePlaceholder": "ምሳ. 2020-2024",
-      "fullBioAm": "ሙሉ ባዮ (አማርኛ)",
-      "fullBioAmPlaceholder": "በአማርኛ ሙሉ ባዮ ያስገቡ",
-      "fullBioEn": "ሙሉ ባዮ (እንግሊዝኛ)",
-      "fullBioEnPlaceholder": "በእንግሊዝኛ ሙሉ ባዮ ያስገቡ",
-      "image": "የባለሥልጣን ምስል",
+      "nameEnPlaceholder": "ሙሉ ስም በእንግሊዝኛ ያስገቡ",
+      "titleAm": "የሥራ መደብ (አማርኛ)",
+      "titleAmPlaceholder": "የሥራ መደብ በአማርኛ",
+      "titleEn": "የሥራ መደብ (እንግሊዝኛ)",
+      "titleEnPlaceholder": "የሥራ መደብ በእንግሊዝኛ",
+      "bioAm": "አጭር ታሪክ (አማርኛ)",
+      "bioAmPlaceholder": "አጭር የሕይወት ታሪክ በአማርኛ",
+      "bioEn": "አጭር ታሪክ (እንግሊዝኛ)",
+      "bioEnPlaceholder": "አጭር የሕይወት ታሪክ በእንግሊዝኛ",
+      "tenure": "የአገልግሎት ዘመን",
+      "tenurePlaceholder": "ምሳ፦ 2010-2015",
+      "fullBioAm": "ሙሉ የሕይወት ታሪክ (አማርኛ)",
+      "fullBioAmPlaceholder": "ዝርዝር የሕይወት ታሪክ በአማርኛ",
+      "fullBioEn": "ሙሉ የሕይወት ታሪክ (እንግሊዝኛ)",
+      "fullBioEnPlaceholder": "ዝርዝር የሕይወት ታሪክ በእንግሊዝኛ",
+      "image": "የባለሥልጣኑ ምስል",
       "imagePlaceholder": "ምስል ይምረጡ",
-      "imageDescription": "ከፍተኛ ጥራት ያለው ምስል ይግቡ (ከ5MB ያነሰ)",
+      "imageDescription": "ጥራት ያለው ምስል ይስቀሉ (ከ5MB ያነሰ)",
       "imagePreview": "ቅድመ እይታ",
-      "achievements": "የተገኙ ስኬቶች",
-      "achievementPlaceholder": "የተገኘ ስኬት ያስገቡ",
-      "addAchievement": "ያክሉ"
+      "achievements": "የተመዘገቡ ስኬቶች",
+      "achievementPlaceholder": "ስኬቱን እዚህ ይግለጹ",
+      "addAchievement": "ጨምር"
     }
   },
+
+
+
+
 
   "partnermanagementadmin": {
     "title": "የአጋር አስተዳደር",
@@ -4346,6 +4315,18 @@
       "close": "ዝጋ",
       "register_for_exhibition": "ለአውደ ርእይ ይመዝገቡ"
     },
+
+
+
+
+
+
+
+
+
+
+
+    
     "form": {
       "full_name": "ሙሉ ስም",
       "placeholder_name": "ሙሉ ስምዎን ያስገቡ",

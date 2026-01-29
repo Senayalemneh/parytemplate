@@ -98,7 +98,7 @@ const VideoUploader = () => {
   // Helper function to get full URL for CMS files
   const getFileUrl = (path: string) => {
     if (!path) return "";
-    return path.startsWith("http") ? path : `${CMS_FILES_BASE_URL}${path}`;
+    return path.startsWith("http") ? path : `${CMS_FILES_BASE_URL}/${path}`;
   };
 
   // Fetch videos on component mount

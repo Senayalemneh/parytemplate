@@ -179,7 +179,6 @@ export default function ExhibitionsPage() {
     const fetchExhibitions = async () => {
       try {
         const data = await getAllExhibitions();
-        // Sort exhibitions by created_at in descending order (newest first)
         const sortedExhibitions = [...data].sort(
           (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
         );
@@ -227,9 +226,7 @@ export default function ExhibitionsPage() {
     fetchExhibitions();
   }, []);
 
-  const handleVerifyVisitor = async (
-    values: typeof verificationForm.values
-  ) => {
+  const handleVerifyVisitor = async (values: typeof verificationForm.values) => {
     try {
       const payload = {
         full_name: values.full_name,
@@ -237,14 +234,16 @@ export default function ExhibitionsPage() {
         exhibition_id: parseInt(values.exhibition_id),
       };
       const response = await verifyVisitor(payload);
-      if (response && response.visitor && response.visitor.id) {
+      
+      // Fixed: response contains visitor data directly, not nested under 'visitor'
+      if (response && response.id) {
         const visitorData = {
           full_name: values.full_name,
           phone_number: values.phone_number,
           exhibition_id: values.exhibition_id,
           timestamp: new Date().getTime(),
-          visitor_id: response.visitor.id,
-          exhibition: response.exhibition,
+          visitor_id: response.id, // Changed from response.visitor.id
+          exhibition: response.exhibition, // Changed from response.exhibition
         };
         localStorage.setItem("verifiedVisitor", JSON.stringify(visitorData));
         setVisitorData(visitorData);
@@ -260,9 +259,7 @@ export default function ExhibitionsPage() {
     }
   };
 
-  const handleRegisterVisitor = async (
-    values: typeof registrationForm.values
-  ) => {
+  const handleRegisterVisitor = async (values: typeof registrationForm.values) => {
     try {
       const payload = {
         full_name: values.full_name,
@@ -283,12 +280,12 @@ export default function ExhibitionsPage() {
         phone_number: values.phone_number,
         exhibition_id: values.exhibition_id,
         timestamp: new Date().getTime(),
-        visitor_id: response.visitor.id,
-        exhibition: registeredExhibition || null,
+        visitor_id: response.id, // Changed from response.visitor.id
+        exhibition: response.exhibition || registeredExhibition || null, // Changed to response.exhibition
       };
       localStorage.setItem("verifiedVisitor", JSON.stringify(visitorData));
       setVisitorData(visitorData);
-      setCurrentExhibition(registeredExhibition || null);
+      setCurrentExhibition(response.exhibition || registeredExhibition || null);
       setTimeout(() => {
         setShowRegistration(false);
         setAccessGranted(true);

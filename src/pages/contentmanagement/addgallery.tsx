@@ -61,8 +61,7 @@ interface GalleryItem {
   updated_at: string;
 }
 
-const CMS_FILES_BASE_URL =
-  `${import.meta.env.VITE_FILE_API}`;
+const CMS_FILES_BASE_URL = `${import.meta.env.VITE_FILE_API}`;
 
 const parseApiResponse = (data: any[]): GalleryItem[] => {
   return data.map((item) => ({
@@ -81,6 +80,50 @@ const parseApiResponse = (data: any[]): GalleryItem[] => {
   }));
 };
 
+// Helper function to format image URLs
+const formatImageUrl = (imgPath: string): string => {
+  if (!imgPath) return "";
+  
+  // If it's already a full URL, return as is
+  if (imgPath.startsWith("http")) return imgPath;
+  
+  // If it's a relative path, prepend the base URL
+  // Remove any leading slashes from the path
+  const cleanPath = imgPath.replace(/^\/+/, "");
+  
+  // Ensure base URL doesn't have trailing slash
+  const baseUrl = CMS_FILES_BASE_URL.replace(/\/+$/, "");
+  
+  return `${baseUrl}/${cleanPath}`;
+};
+
+// Helper function to normalize image URLs for display
+const getDisplayImageUrl = (imgPath: string): string => {
+  if (!imgPath) return "";
+  
+  // If it's already a full URL, return as is
+  if (imgPath.startsWith("http")) return imgPath;
+  
+  // If it's a relative path, format it
+  return formatImageUrl(imgPath);
+};
+
+// Helper function to normalize image URLs for storage
+const getStorageImageUrl = (imgPath: string): string => {
+  if (!imgPath) return "";
+  
+  // If it's already a full URL with our base, convert to relative path
+  if (imgPath.startsWith(CMS_FILES_BASE_URL)) {
+    return imgPath.replace(CMS_FILES_BASE_URL, "").replace(/^\/+/, "");
+  }
+  
+  // If it's a full URL from another source, keep it
+  if (imgPath.startsWith("http")) return imgPath;
+  
+  // If it's already a relative path, return as is
+  return imgPath.replace(/^\/+/, "");
+};
+
 const GalleryManagement = () => {
   const { t } = useTranslation();
   const [galleryData, setGalleryData] = useState<GalleryItem[]>([]);
@@ -94,16 +137,6 @@ const GalleryManagement = () => {
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState<number | null>(null);
   const [categories, setCategories] = useState<string[]>([]);
-
-  const formatImageUrl = (imgPath: string): string => {
-    if (!imgPath) return "";
-    if (imgPath.startsWith("http")) return imgPath;
-    // Ensure the URL is properly formatted
-    if (!imgPath.startsWith(CMS_FILES_BASE_URL)) {
-      return `${CMS_FILES_BASE_URL}${imgPath.replace(/^\/+/, "")}`;
-    }
-    return imgPath;
-  };
 
   const fetchGalleries = async () => {
     setLoading(true);
@@ -214,14 +247,19 @@ const GalleryManagement = () => {
             uploadFile(file, "gallery")
           );
           const uploadResponses = await Promise.all(uploadPromises);
-          const newImageUrls = uploadResponses.map((res) => {
-            // Ensure the path is properly formatted
-            const path = res.file.path;
-            return path.startsWith("http")
-              ? path
-              : `${CMS_FILES_BASE_URL}${path.replace(/^\/+/, "")}`;
+          
+          // Process upload responses - store only relative paths
+          const newImagePaths = uploadResponses.map((res) => {
+            let path = res.file?.path || "";
+            // If it's a full URL, extract the relative path
+            if (path.startsWith(CMS_FILES_BASE_URL)) {
+              path = path.replace(CMS_FILES_BASE_URL, "").replace(/^\/+/, "");
+            }
+            // If it's a relative path starting with /, remove the leading slash
+            return path.replace(/^\/+/, "");
           });
-          images = [...images, ...newImageUrls];
+          
+          images = [...images, ...newImagePaths];
           showNotification(
             t("gallerymanagementadmin.notifications.uploadSuccess"),
             "success"
@@ -238,7 +276,7 @@ const GalleryManagement = () => {
         }
       }
 
-      // Prepare payload according to API requirements
+      // Prepare payload - store relative paths
       const payload = {
         title: {
           en: values.title_en,
@@ -249,13 +287,10 @@ const GalleryManagement = () => {
           am: values.description_am,
         },
         category: values.category,
-        date: values.date.toISOString().split("T")[0], // Format as YYYY-MM-DD
+        date: values.date.toISOString().split("T")[0],
         images: images.map((img) => {
-          // Ensure all image URLs are properly formatted
-          if (!img.startsWith("http")) {
-            return `${CMS_FILES_BASE_URL}${img.replace(/^\/+/, "")}`;
-          }
-          return img;
+          // Convert to relative path for storage
+          return getStorageImageUrl(img);
         }),
       };
 
@@ -322,7 +357,9 @@ const GalleryManagement = () => {
         imageFiles: [],
       });
 
-      setPreviewImages((item.images || []).map((img) => formatImageUrl(img)));
+      // Format images for display in preview
+      const displayImages = (item.images || []).map((img) => getDisplayImageUrl(img));
+      setPreviewImages(displayImages);
       setEditingId(item.id);
       openModal();
     } catch (error) {
@@ -496,12 +533,13 @@ const GalleryManagement = () => {
                 {images.slice(0, 3).map((img, i) => (
                   <Image
                     key={i}
-                    src={formatImageUrl(img)}
+                    src={getDisplayImageUrl(img)}
                     width={60}
                     height={40}
                     fit="cover"
                     withPlaceholder
                     placeholder={<IconPhoto size={24} />}
+                    alt={`Gallery image ${i + 1}`}
                   />
                 ))}
                 {images.length > 3 && (

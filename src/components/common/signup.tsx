@@ -71,8 +71,8 @@ const passwordRequirements = [
 ];
 
 export default function SignUpPage() {
-  
-   const API_URL ="https://bole.prosperity.boleprosperityparty.org/api/"
+  // const BASE_URL = `${import.meta.env.VITE_FILE_API}`;
+   const API_URL =`${import.meta.env.VITE_FILE_API}/api/`
   const { t } = useTranslation();
   const [signupError, setSignupError] = useState(null);
   const [fetchingData, setFetchingData] = useState(false);
