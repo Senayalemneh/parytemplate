@@ -51,7 +51,7 @@ interface Official {
     en: string;
     am: string;
   }[];
-  fullBio: {
+  full_bio: {
     am: string;
     en: string;
   };
@@ -59,13 +59,116 @@ interface Official {
   updated_at: string;
 }
 
+// Helper function to parse localized text
+const getLocalizedText = (data: any, field: string, language: string): string => {
+  if (!data || !data[field]) return "";
+  
+  const fieldData = data[field];
+  
+  // If it's already an object with language keys
+  if (typeof fieldData === 'object' && fieldData !== null) {
+    return fieldData[language] || fieldData.en || fieldData.am || "";
+  }
+  
+  // If it's a string that might be JSON
+  if (typeof fieldData === 'string') {
+    try {
+      const parsed = JSON.parse(fieldData);
+      if (parsed && typeof parsed === 'object') {
+        return parsed[language] || parsed.en || parsed.am || "";
+      }
+    } catch (e) {
+      // If not JSON, return as is
+      return fieldData;
+    }
+  }
+  
+  return "";
+};
+
+// Helper function to parse achievements
+const getLocalizedAchievements = (achievements: any[], language: string) => {
+  if (!achievements || !Array.isArray(achievements)) return [];
+  
+  return achievements.map(achievement => {
+    if (typeof achievement === 'object') {
+      return {
+        en: achievement.en || "",
+        am: achievement.am || ""
+      };
+    }
+    return { en: "", am: "" };
+  });
+};
+
+// Helper function to parse API data
+const parseApiData = (data: any[]): Official[] => {
+  return data.map(item => {
+    const parsedItem: any = { ...item };
+    
+    // Parse name if it's a string
+    if (typeof item.name === 'string') {
+      try {
+        parsedItem.name = JSON.parse(item.name);
+      } catch (e) {
+        parsedItem.name = { en: item.name, am: item.name };
+      }
+    }
+    
+    // Parse title if it's a string
+    if (typeof item.title === 'string') {
+      try {
+        parsedItem.title = JSON.parse(item.title);
+      } catch (e) {
+        parsedItem.title = { en: item.title, am: item.title };
+      }
+    }
+    
+    // Parse bio if it's a string
+    if (typeof item.bio === 'string') {
+      try {
+        parsedItem.bio = JSON.parse(item.bio);
+      } catch (e) {
+        parsedItem.bio = { en: item.bio, am: item.bio };
+      }
+    }
+    
+    // Parse full_bio if it's a string
+    if (typeof item.full_bio === 'string') {
+      try {
+        parsedItem.full_bio = JSON.parse(item.full_bio);
+      } catch (e) {
+        parsedItem.full_bio = { en: item.full_bio, am: item.full_bio };
+      }
+    }
+    
+    // Parse achievements if they exist
+    if (item.achievements && Array.isArray(item.achievements)) {
+      parsedItem.achievements = item.achievements.map((achievement: any) => {
+        if (typeof achievement === 'string') {
+          try {
+            return JSON.parse(achievement);
+          } catch (e) {
+            return { en: achievement, am: achievement };
+          }
+        }
+        return achievement;
+      });
+    }
+    
+    return parsedItem;
+  });
+};
+
 const GovernmentLeaders = () => {
   const [opened, setOpened] = useState(false);
   const [selectedLeader, setSelectedLeader] = useState<Official | null>(null);
   const [leaders, setLeaders] = useState<Official[]>([]);
   const [loading, setLoading] = useState(true);
-  const [language, setLanguage] = useState<"en" | "am">("en");
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  
+  // Get current language from i18n
+  const currentLanguage = i18n.language as "en" | "am";
 
   React.useEffect(() => {
     AOS.init({ duration: 800 });
@@ -75,7 +178,11 @@ const GovernmentLeaders = () => {
     const fetchLeaders = async () => {
       try {
         const response = await getOfficials();
-        setLeaders(response || []);
+        const data = response?.data || response || [];
+        
+        // Parse the data to handle JSON strings
+        const parsedData = parseApiData(data);
+        setLeaders(parsedData);
       } catch (error) {
         console.error("Failed to fetch officials:", error);
       } finally {
@@ -140,6 +247,8 @@ const GovernmentLeaders = () => {
         </Container>
       </div>
 
+     
+
       {/* Leaders Section */}
       <Container size={1400} className="py-16">
         {leaders.length === 0 ? (
@@ -165,7 +274,7 @@ const GovernmentLeaders = () => {
                       size={160}
                       radius={160}
                       className="border-4 border-white shadow-xl"
-                      alt={leader.name[language]}
+                      alt={getLocalizedText(leader, "name", currentLanguage)}
                     />
                   </Card.Section>
 
@@ -174,10 +283,10 @@ const GovernmentLeaders = () => {
                       order={3}
                       className="text-xl font-bold text-blue-800"
                     >
-                      {leader.name[language]}
+                      {getLocalizedText(leader, "name", currentLanguage)}
                     </Title>
                     <Text className="text-blue-600 font-medium">
-                      {leader.title[language]}
+                      {getLocalizedText(leader, "title", currentLanguage)}
                     </Text>
                     <Badge
                       color="blue"
@@ -192,7 +301,7 @@ const GovernmentLeaders = () => {
                   <Divider my="md" />
 
                   <Text className="text-gray-600 text-sm mb-4">
-                    {leader.bio[language]}
+                    {getLocalizedText(leader, "bio", currentLanguage)}
                   </Text>
 
                   {leader.achievements && leader.achievements.length > 0 && (
@@ -202,9 +311,9 @@ const GovernmentLeaders = () => {
                         {t("leadershippage.leader.keyAchievements")}
                       </Title>
                       <List spacing="sm" className="mb-4">
-                        {leader.achievements.map((achievement, i) => (
+                        {getLocalizedAchievements(leader.achievements, currentLanguage).map((achievement, i) => (
                           <List.Item key={i} className="text-sm">
-                            {achievement[language]}
+                            {achievement[currentLanguage]}
                           </List.Item>
                         ))}
                       </List>
@@ -236,7 +345,7 @@ const GovernmentLeaders = () => {
           size="lg"
           title={
             <Text size="xl" weight={600}>
-              {selectedLeader?.name[language]}
+              {selectedLeader ? getLocalizedText(selectedLeader, "name", currentLanguage) : ""}
             </Text>
           }
           closeButtonLabel={t("leadershippage.modal.closeLeaderProfile")}
@@ -254,14 +363,14 @@ const GovernmentLeaders = () => {
                   width={200}
                   height={200}
                   radius="md"
-                  alt={selectedLeader.name[language]}
+                  alt={getLocalizedText(selectedLeader, "name", currentLanguage)}
                   withPlaceholder
                 />
               </Group>
 
               <div>
                 <Text size="lg" weight={500} className="text-blue-600">
-                  {selectedLeader.title[language]}
+                  {getLocalizedText(selectedLeader, "title", currentLanguage)}
                 </Text>
                 <Badge
                   color="blue"
@@ -279,7 +388,7 @@ const GovernmentLeaders = () => {
                 <Title order={4} className="mb-2">
                   {t("leadershippage.leader.biography")}
                 </Title>
-                {selectedLeader.fullBio[language] ||
+                {getLocalizedText(selectedLeader, "full_bio", currentLanguage) ||
                   t("leadershippage.leader.noBiographyAvailable")}
               </Text>
 
@@ -293,8 +402,8 @@ const GovernmentLeaders = () => {
                       {t("leadershippage.leader.keyAchievements")}
                     </Title>
                     <List spacing="sm">
-                      {selectedLeader.achievements.map((achievement, i) => (
-                        <List.Item key={i}>{achievement[language]}</List.Item>
+                      {getLocalizedAchievements(selectedLeader.achievements, currentLanguage).map((achievement, i) => (
+                        <List.Item key={i}>{achievement[currentLanguage]}</List.Item>
                       ))}
                     </List>
                   </div>

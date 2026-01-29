@@ -209,6 +209,97 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+// Helper function to get localized text
+const getLocalizedText = (data: any, fieldName: string, language: string): string => {
+  if (!data || !data[fieldName]) return "";
+  
+  const field = data[fieldName];
+  
+  // If field is already an object with language keys
+  if (typeof field === 'object' && field !== null) {
+    // Check if the object has the requested language
+    if (field[language] !== undefined) {
+      return field[language] || "";
+    }
+    // Fallback to English
+    if (field.en !== undefined) {
+      return field.en || "";
+    }
+    // Fallback to Amharic
+    if (field.am !== undefined) {
+      return field.am || "";
+    }
+    // If object doesn't have language keys, try to get the first value
+    return Object.values(field)[0] as string || "";
+  }
+  
+  // If field is a string, it might be a JSON string that needs parsing
+  if (typeof field === 'string') {
+    try {
+      const parsed = JSON.parse(field);
+      if (parsed && typeof parsed === 'object') {
+        return parsed[language] || parsed.en || parsed.am || "";
+      }
+    } catch (e) {
+      // If it's not JSON, return the string as is
+      return field;
+    }
+  }
+  
+  return "";
+};
+
+// Helper function to parse data from API
+const parseApiData = (data: any) => {
+  try {
+    // If data is already an array, parse each item
+    if (Array.isArray(data)) {
+      return data.map(item => {
+        const parsedItem: any = { ...item };
+        
+        // Parse title if it's a string
+        if (typeof item.title === 'string') {
+          try {
+            parsedItem.title = JSON.parse(item.title);
+          } catch (e) {
+            parsedItem.title = { en: item.title, am: item.title };
+          }
+        }
+        
+        // Parse content if it's a string
+        if (typeof item.content === 'string') {
+          try {
+            parsedItem.content = JSON.parse(item.content);
+          } catch (e) {
+            parsedItem.content = { en: item.content, am: item.content };
+          }
+        }
+        
+        // Parse category name if it's a string
+        if (item.category && typeof item.category.name === 'string') {
+          try {
+            parsedItem.category = {
+              ...item.category,
+              name: JSON.parse(item.category.name)
+            };
+          } catch (e) {
+            parsedItem.category = {
+              ...item.category,
+              name: { en: item.category.name, am: item.category.name }
+            };
+          }
+        }
+        
+        return parsedItem;
+      });
+    }
+    return [];
+  } catch (error) {
+    console.error("Error parsing API data:", error);
+    return [];
+  }
+};
+
 const NewsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -244,27 +335,9 @@ const NewsPage: React.FC = () => {
         setLoading(true);
         const response = await getAllNews();
         const data = response?.data || [];
-
-        // Parse the JSON strings in the response
-        const parsedData = data.map((item: any) => ({
-          ...item,
-          title:
-            typeof item.title === "string"
-              ? JSON.parse(item.title)
-              : item.title,
-          content:
-            typeof item.content === "string"
-              ? JSON.parse(item.content)
-              : { en: "", am: "" },
-          category: {
-            ...item.category,
-            name:
-              typeof item.category.name === "string"
-                ? JSON.parse(item.category.name)
-                : item.category.name,
-          },
-          image_path: item.image_path ? item.image_path : null,
-        }));
+        
+        // Parse the data using our helper function
+        const parsedData = parseApiData(data);
 
         // Sort by date (newest first)
         parsedData.sort(
@@ -346,6 +419,9 @@ const NewsPage: React.FC = () => {
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
+  // Get current language
+  const currentLanguage = i18n.language;
+
   const totalPages = Math.ceil(newsData.length / itemsPerPage);
   const paginatedNews = newsData.slice(
     (activePage - 1) * itemsPerPage,
@@ -418,8 +494,16 @@ const NewsPage: React.FC = () => {
           <>
             <Grid gutter={isMobile ? 20 : 30}>
               {paginatedNews.map((news, index) => {
-                const localizedTitle = news.title?.[i18n.language as keyof typeof news.title] || news.title?.en || t("news.noTitle");
-                const localizedContent = news.content?.[i18n.language as keyof typeof news.content] || news.content?.en || news.content?.am || "";
+                // Get localized title
+                const localizedTitle = getLocalizedText(news, "title", currentLanguage);
+                
+                // Get localized content
+                const localizedContent = getLocalizedText(news, "content", currentLanguage);
+                
+                // Get localized category name
+                const localizedCategory = news.category 
+                  ? getLocalizedText(news.category, "name", currentLanguage)
+                  : t("news.generalCategory");
                 
                 // Get truncated title and content
                 const truncatedTitle = getTruncatedTitle(localizedTitle);
@@ -477,9 +561,7 @@ const NewsPage: React.FC = () => {
                               backdropFilter: "blur(2px)",
                             }}
                           >
-                            {news.category?.name?.[i18n.language as keyof typeof news.category.name] ||
-                              news.category?.name?.en ||
-                              t("news.generalCategory")}
+                            {localizedCategory}
                           </Badge>
                         </div>
                       </Card.Section>
@@ -623,7 +705,9 @@ const NewsPage: React.FC = () => {
               fontFamily: theme.headings.fontFamily,
             }}
           >
-            {selectedNews?.title?.[i18n.language as keyof typeof selectedNews.title] || selectedNews?.title?.en || t("news.newsDetails")}
+            {selectedNews 
+              ? getLocalizedText(selectedNews, "title", currentLanguage) 
+              : t("news.newsDetails")}
           </Title>
         }
         size={isMobile ? "100%" : "lg"}
@@ -647,9 +731,9 @@ const NewsPage: React.FC = () => {
                   fontWeight: 600,
                 }}
               >
-                {selectedNews.category?.name?.[i18n.language as keyof typeof selectedNews.category.name] ||
-                  selectedNews.category?.name?.en ||
-                  t("news.generalCategory")}
+                {selectedNews.category 
+                  ? getLocalizedText(selectedNews.category, "name", currentLanguage)
+                  : t("news.generalCategory")}
               </Badge>
               <Group spacing="xs">
                 <ThemeIcon size={20} radius="xl" style={{ 
@@ -676,7 +760,7 @@ const NewsPage: React.FC = () => {
                 <AspectRatio ratio={16 / 9}>
                   <Image
                     src={getImageUrl(selectedNews.image_path)}
-                    alt={selectedNews.title?.[i18n.language as keyof typeof selectedNews.title] || selectedNews.title?.en || "News image"}
+                    alt={getLocalizedText(selectedNews, "title", currentLanguage)}
                     className="w-full h-full object-cover"
                     withPlaceholder
                   />
@@ -698,14 +782,9 @@ const NewsPage: React.FC = () => {
                 lineHeight: 1.7,
                 whiteSpace: "pre-line",
               }}
-              dangerouslySetInnerHTML={{
-                __html:
-                  selectedNews.content?.[i18n.language as keyof typeof selectedNews.content]?.replace(/\n/g, '<br/>') ||
-                  selectedNews.content?.en?.replace(/\n/g, '<br/>') ||
-                  selectedNews.content?.am?.replace(/\n/g, '<br/>') ||
-                  t("news.noContent"),
-              }}
-            />
+            >
+              {getLocalizedText(selectedNews, "content", currentLanguage)}
+            </Text>
 
             <Space h="xl" />
 
