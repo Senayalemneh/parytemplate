@@ -582,43 +582,7 @@
     }
   },
 
-  "newsdetail": {
-    "moreImages": "ተጨማሪ ምስሎች",
-    "error": {
-      "missingId": "የዜና መለያ (ID) አልተገኘም",
-      "invalidFormat": "የዜናው መረጃ ቅርፀት የተሳሳተ ነው",
-      "notFound": "የተፈለገው ዜና ሊገኝ አልቻለም",
-      "failedToLoad": "ዜናውን መጫን አልተቻለም"
-    },
-    "time": {
-      "justNow": "አሁን",
-      "minutesAgo": "ደቂቃ በፊት",
-      "hoursAgo": "ሰዓት በፊት",
-      "daysAgo": "ቀናት በፊት"
-    },
-    "actions": {
-      "back": "ወደ ዜና ዝርዝር",
-      "backToNews": "ወደ ዜና ተመለስ"
-    },
-    "breadcrumbs": {
-      "home": "መነሻ",
-      "news": "ዜና",
-      "details": "ዝርዝር"
-    },
-    "imageAlt": "የዜና ምስል",
-    "imageCredit": "የምስል ባለቤት",
-    "category": {
-      "default": "አጠቃላይ"
-    },
-    "title": {
-      "default": "ርዕስ የለም"
-    },
-    "author": {
-      "anonymous": "ስም ያልተጠቀሰ",
-      "about": "ስለ ደራሲው",
-      "bio": "ወቅታዊና ተዓማኒ መረጃዎችን ለሕዝብ ለማድረስ የሚተጋ ባለሙያ ጋዜጠኛ።"
-    }
-  },
+ 
    "views": "እይታዎች",
   "content": {
     "unavailable": "ይዘት አልተገኘም"
@@ -936,6 +900,83 @@
     "errors": {
       "title": "ስህተት",
       "loadError": "ምስሎችን መጫን አልተቻለም። እባክዎ ቆይተው ይሞክሩ።"
+    }
+  },
+  "newsdetail": {
+    "breadcrumbs": {
+      "home": "መነሻ",
+      "news": "ዜና"
+    },
+    "category": {
+      "default": "አጠቃላይ ዜና"
+    },
+    "featured": "ተለይተው የቀረቡ",
+    "trending": "በአሁኑ ሰዓት በመነጋገር ላይ ያሉ",
+    "published": "የታተመው",
+    "readTime": "የንባብ ጊዜ",
+    "views": "እይታዎች",
+    "trendingScore": "የተነባቢነት ደረጃ",
+    "calendar": {
+      "subtitle": "የዛሬ ቀን"
+    },
+    "toc": {
+      "title": "የይዘት ማውጫ",
+      "overview": "አጠቃላይ እይታ",
+      "content": "ይዘት",
+      "gallery": "የምስል ማዕከለ-ስዕላት",
+      "author": "ጸሐፊ",
+      "comments": "አስተያየቶች",
+      "related": "ተያያዥ ዜናዎች"
+    },
+    "controls": {
+      "title": "የንባብ መቆጣጠሪያዎች",
+      "textSize": "የፊደል መጠን",
+      "theme": "ገጽታ",
+      "audio": "ድምጽ"
+    },
+    "tags": {
+      "title": "መለያዎች"
+    },
+    "share": {
+      "title": "ይህንን ዜና ያጋሩ",
+      "description": "ዜናውን ለሌሎች በማጋራት ይተባበሩ"
+    },
+    "author": {
+      "anonymous": "ስሙ ያልተጠቀሰ ጸሐፊ",
+      "bioPlaceholder": "ልምድ ያላቸው እና ለታሪክ ትረካ ፍቅር ያላቸው ጋዜጠኛ።"
+    },
+    "relatedNews": "ተያያዥ ዜናዎች",
+    "comments": {
+      "title": "አስተያየቶች",
+      "placeholder": "ሀሳብዎን እዚህ ያጋሩ...",
+      "post": "አስተያየት ይለጥፉ",
+      "update": "ያድሱ",
+      "cancel": "ይሰርዙ",
+      "loginPrompt": "በውይይቱ ለመሳተፍ ይግቡ",
+      "login": "ይግቡ",
+      "empty": "እስካሁን ምንም አስተያየት የለም",
+      "beFirst": "የመጀመሪያው አስተያየት ሰጪ ይሁኑ!",
+      "characters": "{{count}} ፊደላት"
+    },
+    "actions": {
+      "like": "ወድጄዋለሁ",
+      "bookmark": "ለኋላ አስቀምጥ",
+      "removeBookmark": "ከማስቀመጫው አስወግድ",
+      "share": "አጋራ",
+      "print": "አትም",
+      "scrollToTop": "ወደ ላይ ተመለስ",
+      "backToNews": "ወደ ዜናዎች ተመለስ"
+    },
+    "gallery": "የምስል ማዕከለ-ስዕላት",
+    "error": {
+      "missingId": "የዜና መለኛው አልተገኘም",
+      "notFound": "ዜናው አልተገኘም",
+      "failedToLoad": "ዜናውን መጫን አልተቻለም",
+      "description": "የሚፈልጉት ዜና ተሰርዞ ሊሆን ይችላል ወይም የለም።"
+    },
+    "content": {
+      "unavailable": "ይዘቱ አይገኝም",
+      "noContentAvailable": "ለዚህ ዜና የሚሆን ዝርዝር ይዘት አልተገኘም።"
     }
   },
 

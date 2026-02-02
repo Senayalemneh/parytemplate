@@ -681,67 +681,7 @@
     }
   },
 
-  "newsdetail": {
-    "error": {
-      "missingId": "News ID is missing",
-      "invalidFormat": "Invalid news data format",
-      "notFound": "News article not found",
-      "failedToLoad": "Failed to load news article"
-    },
-    "moreImages": "More Images",
-    "time": {
-      "justNow": "Just now",
-      "minutesAgo": "minutes ago",
-      "hoursAgo": "hours ago",
-      "daysAgo": "days ago"
-    },
-    "actions": {
-      "back": "Back to News",
-      "backToNews": "Back to News"
-    },
-    "breadcrumbs": {
-      "home": "Home",
-      "news": "News",
-      "details": "News Details"
-    },
-    "imageAlt": "News image",
-    "imageCredit": "Photo",
-    "category": {
-      "default": "General"
-    },
-    "title": {
-      "default": "No title available"
-    },
-    "author": {
-      "anonymous": "Anonymous",
-      "about": "About the Author",
-      "bio": "Experienced journalist with a passion for delivering accurate and timely news."
-    },
-    "views": "views",
-    "content": {
-      "unavailable": "No content available"
-    },
-    "share": {
-      "facebook": "Share on Facebook",
-      "twitter": "Share on Twitter"
-    },
-    "comments": {
-      "loginPrompt": "Login is reqired to post comments",
-      "placeholder": "Post your comment",
-      "post": "post",
-      "edited": "edited",
-      "title": "Comments",
-      "empty": "No comments yet. Be the first to comment!"
-    },
-    "relatedNews": "Related News",
-    "newsletter": {
-      "title": "Stay Updated",
-      "description": "Get the latest news delivered to your inbox",
-      "placeholder": "Your email address",
-      "button": "Subscribe",
-      "privacy": "We respect your privacy. Unsubscribe at any time."
-    }
-  },
+ 
 
   "leadershippage": {
     "language": {
@@ -1260,7 +1200,83 @@
     "success": "Success!",
     "error": "Error!"
   },
-
+ "newsdetail": {
+    "breadcrumbs": {
+      "home": "Home",
+      "news": "News"
+    },
+    "category": {
+      "default": "General News"
+    },
+    "featured": "FEATURED",
+    "trending": "TRENDING",
+    "published": "Published",
+    "readTime": "Read Time",
+    "views": "Views",
+    "trendingScore": "Trending Score",
+    "calendar": {
+      "subtitle": "Today's Date"
+    },
+    "toc": {
+      "title": "Table of Contents",
+      "overview": "Overview",
+      "content": "Content",
+      "gallery": "Gallery",
+      "author": "Author",
+      "comments": "Comments",
+      "related": "Related News"
+    },
+    "controls": {
+      "title": "Reading Controls",
+      "textSize": "Text Size",
+      "theme": "Theme",
+      "audio": "Audio"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "share": {
+      "title": "Share This Article",
+      "description": "Help spread this news"
+    },
+    "author": {
+      "anonymous": "Anonymous Author",
+      "bioPlaceholder": "Experienced journalist with a passion for storytelling."
+    },
+    "relatedNews": "Related News",
+    "comments": {
+      "title": "Comments",
+      "placeholder": "Share your thoughts...",
+      "post": "Post Comment",
+      "update": "Update",
+      "cancel": "Cancel",
+      "loginPrompt": "Login to join the conversation",
+      "login": "Login",
+      "empty": "No comments yet",
+      "beFirst": "Be the first to comment!",
+      "characters": "{{count}} characters"
+    },
+    "actions": {
+      "like": "Like",
+      "bookmark": "Bookmark",
+      "removeBookmark": "Remove Bookmark",
+      "share": "Share",
+      "print": "Print",
+      "scrollToTop": "Scroll to Top",
+      "backToNews": "Back to News"
+    },
+    "gallery": "Gallery",
+    "error": {
+      "missingId": "Missing news ID",
+      "notFound": "News article not found",
+      "failedToLoad": "Failed to load news article",
+      "description": "The article you're looking for might have been removed or doesn't exist."
+    },
+    "content": {
+      "unavailable": "Content unavailable",
+      "noContentAvailable": "No content available for this article."
+    }
+  },
   "rolemanagementadmin": {
     "title": "Role Management",
     "addRoleButton": "Add Role",

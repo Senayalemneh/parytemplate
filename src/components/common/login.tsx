@@ -198,7 +198,7 @@ export default function LoginPage() {
 
         showNotification({
           title: "Login Successful",
-          message: `Welcome back, ${user.name || "User"}!`,
+          message: `Welcome back, ${"User"}!`,
           color: "green",
         });
       } catch (error) {
