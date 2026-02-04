@@ -36,7 +36,7 @@ import {
 import { formatDistanceToNow } from "date-fns";
 import { useState, useEffect } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
-import Logo from "../../assets/BoleLogo.png";
+import Logo from "../../assets/logo.jpg";
 import { useTranslation } from "react-i18next";
 import { useSession } from "../../context/session-provider";
 import { ROLE_ENUM } from "../../enums/main";

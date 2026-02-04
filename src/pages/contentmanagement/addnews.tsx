@@ -14,7 +14,6 @@ import {
   Image,
   Text,
   Select,
-  Stack,
   SimpleGrid,
   Loader as MantineLoader,
 } from "@mantine/core";
@@ -102,11 +101,6 @@ const colors = {
 
 const CMS_FILES_BASE_URL = `${import.meta.env.VITE_FILE_API}`;
 
-// const formatImageUrl = (imgPath: string): string => {
-//   if (!imgPath) return "";
-//   if (imgPath.startsWith("http")) return imgPath;
-//   return `${CMS_FILES_BASE_URL}${imgPath.replace(/^\/+/, "")}`;
-// };
 const formatImageUrl = (imgPath: string): string => {
   if (!imgPath) return "";
   if (imgPath.startsWith("http")) return imgPath;
@@ -148,8 +142,8 @@ const NewsManagement = () => {
 
   const form = useForm({
     initialValues: {
-      title_am: "",
-      title_en: "",
+      titleAm: "",
+      titleEn: "",
       content_am: "",
       content_en: "",
       excerpt: "",
@@ -162,9 +156,9 @@ const NewsManagement = () => {
       multiple_image_path: [] as string[],
     },
     validate: {
-      title_am: (value) =>
+      titleAm: (value) =>
         value ? null : t("newsmanagementadmin.form.titleAm.error"),
-      title_en: (value) =>
+      titleEn: (value) =>
         value ? null : t("newsmanagementadmin.form.titleEn.error"),
       content_am: (value) =>
         value ? null : t("newsmanagementadmin.form.contentAm.error"),
@@ -224,7 +218,7 @@ const NewsManagement = () => {
     setLoading(true);
     try {
       const response = await getNews();
-      console.log("News API Response:", response); // Debug log
+      console.log("News API Response:", response);
       
       let normalizedData: NewsItem[] = [];
       
@@ -303,9 +297,22 @@ const NewsManagement = () => {
   const handleSubmit = async (values: typeof form.values) => {
     try {
       setLoading(true);
+      console.log("Form submission started with values:", values);
 
       if (editingId && (isNaN(editingId) || editingId <= 0)) {
+        console.error("Invalid editing ID:", editingId);
         showNotification(t("newsmanagementadmin.errors.invalidId"), "error");
+        return;
+      }
+
+      // Validate required fields
+      if (!values.titleAm || !values.titleEn) {
+        showNotification("Title in both languages is required", "error");
+        return;
+      }
+
+      if (!values.content_am || !values.content_en) {
+        showNotification("Content in both languages is required", "error");
         return;
       }
 
@@ -359,34 +366,39 @@ const NewsManagement = () => {
         }
       }
 
-      // Create payload matching API structure
+      // Create payload matching API structure - UPDATED FOR SCHEMA
       const payload = {
-        title: {
-          am: values.title_am,
-          en: values.title_en,
-        },
-        content: {
+        title: JSON.stringify({
+          am: values.titleAm,
+          en: values.titleEn,
+        }),
+        content: JSON.stringify({
           am: values.content_am,
           en: values.content_en,
-        },
+        }),
         excerpt: values.excerpt,
         category_id: Number(values.category_id),
-        author_id: values.author_id || "system", // Default value if empty
+        author_id: values.author_id || "system",
         is_published: values.is_published,
         image_path: image_path,
         multiple_image_path: multiple_image_path.length > 0 ? JSON.stringify(multiple_image_path) : null,
       };
 
-      console.log("Submitting payload:", payload); // Debug log
+      console.log("Submitting payload:", payload);
 
+      let response;
       if (editingId) {
-        await updateNews(editingId, payload);
+        console.log("Updating news with ID:", editingId);
+        response = await updateNews(editingId, payload);
+        console.log("Update response:", response);
         showNotification(
           t("newsmanagementadmin.notifications.updateSuccess"),
           "success"
         );
       } else {
-        await createNews(payload);
+        console.log("Creating new news");
+        response = await createNews(payload);
+        console.log("Create response:", response);
         showNotification(
           t("newsmanagementadmin.notifications.createSuccess"),
           "success"
@@ -397,7 +409,7 @@ const NewsManagement = () => {
       fetchNews();
     } catch (error: any) {
       console.error("Error saving news:", error);
-      console.error("Error details:", error.response?.data); // Debug log
+      console.error("Error details:", error.response?.data);
 
       if (error.response?.data?.errors) {
         const errors = error.response.data.errors;
@@ -420,41 +432,72 @@ const NewsManagement = () => {
 
   const handleEdit = async (id: number) => {
     if (isNaN(id) || id <= 0) {
+      console.error("Invalid ID provided:", id);
       showNotification(t("newsmanagementadmin.errors.invalidId"), "error");
       return;
     }
 
     try {
       setLoading(true);
+      console.log("Fetching news for edit with ID:", id);
+      
       const response = await getNewsById(id);
-      console.log("Edit API Response:", response); // Debug log
+      console.log("Edit API Response:", response);
 
       if (!response?.data) {
+        console.error("No data received from API for ID:", id);
         showNotification(t("newsmanagementadmin.errors.notFound"), "error");
         return;
       }
 
       const item = response.data;
+      console.log("Raw item data:", item);
 
-      // Parse the item data
-      const title = typeof item.title === 'string' ? JSON.parse(item.title) : (item.title || { am: '', en: '' });
-      const content = typeof item.content === 'string' ? JSON.parse(item.content) : (item.content || { am: '', en: '' });
+      // Parse the item data with better error handling
+      let title = { am: '', en: '' };
+      let content = { am: '', en: '' };
+      
+      try {
+        if (typeof item.title === 'string') {
+          title = JSON.parse(item.title);
+        } else if (item.title && typeof item.title === 'object') {
+          title = item.title;
+        }
+      } catch (e) {
+        console.error("Error parsing title:", e, item.title);
+        title = { am: item.title || '', en: item.title || '' };
+      }
+
+      try {
+        if (typeof item.content === 'string') {
+          content = JSON.parse(item.content);
+        } else if (item.content && typeof item.content === 'object') {
+          content = item.content;
+        }
+      } catch (e) {
+        console.error("Error parsing content:", e, item.content);
+        content = { am: item.content || '', en: item.content || '' };
+      }
+
       const multipleImages = parseMultipleImages(item.multiple_image_path);
+      console.log("Parsed data:", { title, content, multipleImages });
 
       form.setValues({
-        title_am: title.am || '',
-        title_en: title.en || '',
+        titleAm: title.am || '',
+        titleEn: title.en || '',
         content_am: content.am || '',
         content_en: content.en || '',
         excerpt: item.excerpt || '',
         category_id: item.category_id?.toString() || '',
         author_id: item.author_id?.toString() || '',
-        is_published: item.is_published || false,
+        is_published: Boolean(item.is_published),
         image_path: item.image_path || '',
         imageFile: null,
         multiple_image_path: multipleImages,
         multipleImageFiles: [],
       });
+
+      console.log("Form values set:", form.values);
 
       if (item.image_path) {
         setPreviewImage(formatImageUrl(item.image_path));
@@ -464,12 +507,19 @@ const NewsManagement = () => {
 
       setEditingId(item.id);
       openModal();
+      
+      console.log("Edit modal opened for ID:", item.id);
     } catch (error: any) {
       console.error("Error loading news for edit:", error);
-      let errorMessage = t("newsmanagementadmin.notifications.updateFailed");
+      console.error("Error response:", error.response);
+      
+      let errorMessage = t("newsmanagementadmin.notifications.loadFailed");
       if (error.response?.data?.message) {
         errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = error.message;
       }
+      
       showNotification(errorMessage, "error");
     } finally {
       setLoading(false);
@@ -859,13 +909,13 @@ const NewsManagement = () => {
               withAsterisk
               label={t("newsmanagementadmin.form.titleAm.label")}
               placeholder={t("newsmanagementadmin.form.titleAm.placeholder")}
-              {...form.getInputProps("title_am")}
+              {...form.getInputProps("titleAm")}
             />
             <TextInput
               withAsterisk
               label={t("newsmanagementadmin.form.titleEn.label")}
               placeholder={t("newsmanagementadmin.form.titleEn.placeholder")}
-              {...form.getInputProps("title_en")}
+              {...form.getInputProps("titleEn")}
             />
           </Group>
 
@@ -916,7 +966,6 @@ const NewsManagement = () => {
 
           <FileInput
             label={t("newsmanagementadmin.form.image.label")}
-            placeholder={t("newsmanagementadmin.form.image.placeholder")}
             accept="image/png,image/jpeg,image/webp"
             icon={<IconUpload size={14} />}
             onChange={handleFileChange}
@@ -924,7 +973,6 @@ const NewsManagement = () => {
             description={t("newsmanagementadmin.form.image.description")}
             clearable
             required={!editingId}
-            {...form.getInputProps("imageFile")}
           />
 
           {(previewImage || form.values.image_path) && (
@@ -971,7 +1019,6 @@ const NewsManagement = () => {
 
           <FileInput
             label={t("newsmanagementadmin.form.multipleImages.label")}
-            placeholder={t("newsmanagementadmin.form.multipleImages.placeholder")}
             accept="image/png,image/jpeg,image/webp"
             icon={<IconUpload size={14} />}
             onChange={handleMultipleFilesChange}
@@ -979,7 +1026,6 @@ const NewsManagement = () => {
             mb="md"
             description={t("newsmanagementadmin.form.multipleImages.description")}
             clearable
-            {...form.getInputProps("multipleImageFiles")}
           />
 
           {(multiplePreviewImages.length > 0 || form.values.multiple_image_path.length > 0) && (

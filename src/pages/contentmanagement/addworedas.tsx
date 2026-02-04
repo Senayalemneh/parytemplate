@@ -31,6 +31,7 @@ import {
   addWoreda,
   updateWoreda,
   uploadFile,
+  getSubcityById,
 } from "../../services/api/main";
 import {
   IconPencil,
@@ -106,6 +107,17 @@ interface WoredaItem {
   updated_at: string;
 }
 
+interface SubcityItem {
+  id: number;
+  name: {
+    en: string;
+    am: string;
+  };
+  description: string;
+  created_at: string;
+  updated_at: string;
+}
+
 const chipStyles: Styles<ChipProps, Record<string, any>> = (theme) => ({
   label: {
     padding: "8px 12px",
@@ -119,7 +131,7 @@ const chipStyles: Styles<ChipProps, Record<string, any>> = (theme) => ({
 });
 
 const WoredasManagement = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [woredasData, setWoredasData] = useState<WoredaItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [editModalOpen, { open: openModal, close: closeModal }] =
@@ -137,6 +149,33 @@ const WoredasManagement = () => {
     additionalContacts: "",
     serviceAreas: "",
   });
+  const [subcity, setSubcity] = useState<SubcityItem | null>(null);
+  const [subcityLoading, setSubcityLoading] = useState(false);
+
+  // Helper function to get localized name
+  const getLocalizedName = (item: any, language: string): string => {
+    if (!item) return t("woredamanagementadmin.table.na");
+    
+    if (item.name && typeof item.name === 'object') {
+      return item.name[language as keyof typeof item.name] || 
+             item.name.en || 
+             item.name.am || 
+             t("woredamanagementadmin.table.na");
+    }
+    
+    return item.name || t("woredamanagementadmin.table.na");
+  };
+
+  // Helper function to get localized field
+  const getLocalizedField = (field: any, language: string): string => {
+    if (!field) return "";
+    
+    if (typeof field === 'object') {
+      return field[language as keyof typeof field] || field.en || field.am || "";
+    }
+    
+    return field || "";
+  };
 
   const form = useForm({
     initialValues: {
@@ -146,6 +185,7 @@ const WoredasManagement = () => {
       woreda_am: "",
       subCity_en: "",
       subCity_am: "",
+      subcity_id: "",
       location_en: "",
       location_am: "",
       image_path: "",
@@ -183,10 +223,8 @@ const WoredasManagement = () => {
         value ? null : t("woredamanagementadmin.errors.woreda_en"),
       woreda_am: (value) =>
         value ? null : t("woredamanagementadmin.errors.woreda_am"),
-      subCity_en: (value) =>
-        value ? null : t("woredamanagementadmin.errors.subCity_en"),
-      subCity_am: (value) =>
-        value ? null : t("woredamanagementadmin.errors.subCity_am"),
+      subcity_id: (value) =>
+        value ? null : t("woredamanagementadmin.errors.subcityRequired"),
       contactPhone: (value) =>
         /^\+?\d{10,15}$/.test(value)
           ? null
@@ -253,9 +291,87 @@ const WoredasManagement = () => {
     }
   };
 
+  const fetchSubcity = async (subcityId: string) => {
+    if (!subcityId) {
+      setSubcity(null);
+      form.setValues({
+        ...form.values,
+        subCity_en: "",
+        subCity_am: "",
+      });
+      return;
+    }
+
+    setSubcityLoading(true);
+    try {
+      const response = await getSubcityById(parseInt(subcityId));
+      
+      // Handle array response - your API returns an array
+      if (Array.isArray(response) && response.length > 0) {
+        const subcityData = response[0];
+        setSubcity(subcityData);
+        
+        // Update form fields with localized subcity names
+        form.setValues({
+          ...form.values,
+          subCity_en: subcityData?.name?.en || "",
+          subCity_am: subcityData?.name?.am || "",
+        });
+      } else if (response && response.name) {
+        // Handle single object response (if API changes)
+        setSubcity(response);
+        form.setValues({
+          ...form.values,
+          subCity_en: response.name.en || "",
+          subCity_am: response.name.am || "",
+        });
+      } else {
+        setSubcity(null);
+        form.setValues({
+          ...form.values,
+          subCity_en: "",
+          subCity_am: "",
+        });
+        showNotification(
+          t("woredamanagementadmin.notifications.subcityNotFound"),
+          "error"
+        );
+      }
+      
+    } catch (error) {
+      console.error("Failed to fetch subcity:", error);
+      showNotification(
+        t("woredamanagementadmin.notifications.subcityLoadError"),
+        "error"
+      );
+      setSubcity(null);
+      form.setValues({
+        ...form.values,
+        subCity_en: "",
+        subCity_am: "",
+      });
+    } finally {
+      setSubcityLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchWoredas();
   }, [t]);
+
+  useEffect(() => {
+    // Fetch subcity when subcity_id changes
+    if (form.values.subcity_id) {
+      fetchSubcity(form.values.subcity_id);
+    } else {
+      setSubcity(null);
+      form.setValues({
+        ...form.values,
+        subCity_en: "",
+        subCity_am: "",
+      });
+    }
+  }, [form.values.subcity_id]);
 
   const showNotification = (message: string, type: "success" | "error") => {
     notifications.show({
@@ -274,6 +390,7 @@ const WoredasManagement = () => {
     closeModal();
     setEditingId(null);
     setPreviewImage(null);
+    setSubcity(null);
     setArrayInputs({
       amenities: "",
       values: "",
@@ -290,6 +407,12 @@ const WoredasManagement = () => {
 
       if (editingId && (isNaN(editingId) || editingId <= 0)) {
         showNotification(t("woredamanagementadmin.errors.invalidId"), "error");
+        return;
+      }
+
+      // Validate subcity
+      if (!values.subcity_id) {
+        showNotification(t("woredamanagementadmin.errors.subcityRequired"), "error");
         return;
       }
 
@@ -424,13 +547,15 @@ const WoredasManagement = () => {
         return;
       }
 
-      form.setValues({
+      // First set the basic form values
+      const formValues = {
         name_en: item.name?.en || "",
         name_am: item.name?.am || "",
         woreda_en: item.woreda?.en || "",
         woreda_am: item.woreda?.am || "",
         subCity_en: item.subCity?.en || "",
         subCity_am: item.subCity?.am || "",
+        subcity_id: "", // This will be set based on your data structure
         location_en: item.location?.en || "",
         location_am: item.location?.am || "",
         image_path: item.image || "",
@@ -458,7 +583,16 @@ const WoredasManagement = () => {
         additionalContacts: item.additionalContacts || [],
         serviceAreas: item.serviceAreas || [],
         imageFile: null,
-      });
+      };
+
+      form.setValues(formValues);
+
+      // Note: You need to determine how to get the subcity_id from the item
+      // If your WoredaItem has a subcity_id field, use it:
+      // if (item.subcity_id) {
+      //   form.setFieldValue('subcity_id', item.subcity_id.toString());
+      //   // This will trigger the useEffect to fetch subcity
+      // }
 
       setPreviewImage(item.image || null);
       setEditingId(item.id);
@@ -590,7 +724,7 @@ const WoredasManagement = () => {
       size: 80,
     },
     {
-      accessorFn: (row) => row.name?.am || t("woredamanagementadmin.table.na"),
+      accessorFn: (row) => getLocalizedName(row, "am"),
       header: t("woredamanagementadmin.table.nameAm"),
       id: "name_am",
       Cell: ({ cell }) => (
@@ -600,7 +734,7 @@ const WoredasManagement = () => {
       ),
     },
     {
-      accessorFn: (row) => row.name?.en || t("woredamanagementadmin.table.na"),
+      accessorFn: (row) => getLocalizedName(row, "en"),
       header: t("woredamanagementadmin.table.nameEn"),
       id: "name_en",
       Cell: ({ cell }) => (
@@ -610,14 +744,12 @@ const WoredasManagement = () => {
       ),
     },
     {
-      accessorFn: (row) =>
-        row.woreda?.en || t("woredamanagementadmin.table.na"),
+      accessorFn: (row) => getLocalizedField(row.woreda, i18n.language),
       header: t("woredamanagementadmin.table.woreda"),
       id: "woreda",
     },
     {
-      accessorFn: (row) =>
-        row.subCity?.en || t("woredamanagementadmin.table.na"),
+      accessorFn: (row) => getLocalizedField(row.subCity, i18n.language),
       header: t("woredamanagementadmin.table.subCity"),
       id: "subCity",
     },
@@ -645,16 +777,21 @@ const WoredasManagement = () => {
     {
       accessorKey: "image",
       header: t("woredamanagementadmin.table.image"),
-      Cell: ({ cell }) => (
-        <Image
-          src={`${import.meta.env.VITE_FILE_API}${cell.getValue<string>()}`}
-          width={60}
-          height={40}
-          fit="cover"
-          withPlaceholder
-          placeholder={<IconPhoto size={24} />}
-        />
-      ),
+      Cell: ({ cell }) => {
+        const imagePath = cell.getValue<string>();
+        return imagePath ? (
+          <Image
+            src={`${import.meta.env.VITE_FILE_API}${imagePath}`}
+            width={60}
+            height={40}
+            fit="cover"
+            withPlaceholder
+            placeholder={<IconPhoto size={24} />}
+          />
+        ) : (
+          <IconPhoto size={24} />
+        );
+      },
     },
     {
       accessorKey: "created_at",
@@ -704,6 +841,7 @@ const WoredasManagement = () => {
             form.reset();
             setEditingId(null);
             setPreviewImage(null);
+            setSubcity(null);
             openModal();
           }}
           variant="gradient"
@@ -750,7 +888,7 @@ const WoredasManagement = () => {
         overlayProps={{ blur: 3 }}
         scrollAreaComponent={Modal.NativeScrollArea}
       >
-        {(loading || fileUploading) && <Loader />}
+        {(loading || fileUploading || subcityLoading) && <Loader />}
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <Group grow mb="md">
             <TextInput
@@ -782,18 +920,67 @@ const WoredasManagement = () => {
             />
           </Group>
 
+          {/* Subcity Selection and Display */}
+          <Box mb="md">
+            <TextInput
+              label={t("woredamanagementadmin.form.subcityId")}
+              placeholder={t("woredamanagementadmin.form.subcityIdPlaceholder")}
+              required
+              description={t("woredamanagementadmin.form.subcityIdDescription")}
+              {...form.getInputProps("subcity_id")}
+            />
+            
+            {subcityLoading && (
+              <Text size="sm" color="blue" mt="xs">
+                {t("woredamanagementadmin.form.loadingSubcity")}
+              </Text>
+            )}
+            
+            {subcity && (
+              <Paper withBorder p="sm" mt="sm" radius="sm">
+                <Text size="sm" weight={500} mb="xs">
+                  {t("woredamanagementadmin.form.subcityInfo")}
+                </Text>
+                <Group grow>
+                  <Box>
+                    <Text size="xs" color="dimmed">
+                      {t("woredamanagementadmin.form.subcityEn")}
+                    </Text>
+                    <Text size="sm">{subcity.name?.en || "N/A"}</Text>
+                  </Box>
+                  <Box>
+                    <Text size="xs" color="dimmed">
+                      {t("woredamanagementadmin.form.subcityAm")}
+                    </Text>
+                    <Text size="sm">{subcity.name?.am || "N/A"}</Text>
+                  </Box>
+                </Group>
+                {subcity.description && (
+                  <Box mt="xs">
+                    <Text size="xs" color="dimmed">
+                      {t("woredamanagementadmin.form.description")}
+                    </Text>
+                    <Text size="sm">{subcity.description}</Text>
+                  </Box>
+                )}
+              </Paper>
+            )}
+          </Box>
+
           <Group grow mb="md">
             <TextInput
               label={t("woredamanagementadmin.form.subCityEn")}
-              required
+              value={form.values.subCity_en}
               placeholder={t("woredamanagementadmin.form.subCityEnPlaceholder")}
-              {...form.getInputProps("subCity_en")}
+              readOnly
+              disabled
             />
             <TextInput
               label={t("woredamanagementadmin.form.subCityAm")}
-              required
+              value={form.values.subCity_am}
               placeholder={t("woredamanagementadmin.form.subCityAmPlaceholder")}
-              {...form.getInputProps("subCity_am")}
+              readOnly
+              disabled
             />
           </Group>
 
@@ -1032,7 +1219,7 @@ const WoredasManagement = () => {
               type="submit"
               variant="gradient"
               gradient={{ from: "indigo", to: "cyan" }}
-              disabled={loading || fileUploading}
+              disabled={loading || fileUploading || subcityLoading}
             >
               {editingId
                 ? t("woredamanagementadmin.updateButton")
