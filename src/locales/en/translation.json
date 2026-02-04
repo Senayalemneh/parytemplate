@@ -1500,7 +1500,7 @@
     }
   },
 
-  "newsmanagementadmin": {
+"newsmanagementadmin": {
     "title": "News Management",
     "buttons": {
       "addNews": "Add News",
@@ -1524,7 +1524,8 @@
         "publishedAt": "Published At",
         "actions": "Actions"
       },
-      "notAvailable": "N/A"
+      "notAvailable": "N/A",
+      "notPublished": "Not published"
     },
     "status": {
       "published": "Published",
@@ -1532,7 +1533,12 @@
     },
     "form": {
       "multipleImages": {
-        "label": "Aditional Images"
+        "label": "Additional Images",
+        "placeholder": "Select multiple images",
+        "description": "Upload additional images (max 5MB each)",
+        "preview": "New images preview",
+        "currentImages": "Current images",
+        "error": "Please upload valid image files"
       },
       "titleAm": {
         "label": "Title (Amharic)",
@@ -1562,17 +1568,21 @@
       "category": {
         "label": "Category",
         "placeholder": "Select category",
-        "error": "Category is required"
+        "error": "Category is required",
+        "noResults": "No categories found"
       },
       "author": {
         "label": "Author",
         "placeholder": "Select author",
-        "error": "Author is required"
+        "error": "Author is required",
+        "noResults": "No authors found"
       },
       "image": {
         "label": "News Image",
         "placeholder": "Select an image",
         "description": "Upload a high-quality image (max 5MB)",
+        "preview": "New image preview",
+        "currentImage": "Current image",
         "error": "Image is required"
       },
       "published": {
@@ -1597,7 +1607,11 @@
       "deleteSuccess": "News deleted successfully",
       "deleteFailed": "Failed to delete news",
       "uploadSuccess": "Image uploaded successfully",
-      "uploadFailed": "Failed to upload image"
+      "uploadFailed": "Failed to upload image",
+      "multipleUploadSuccess": "Additional images uploaded successfully",
+      "multipleUploadFailed": "Failed to upload additional images",
+      "categoriesLoadFailed": "Failed to load categories",
+      "authorsLoadFailed": "Failed to load authors"
     },
     "errors": {
       "invalidId": "Invalid news ID",

@@ -1088,6 +1088,128 @@
       "createError": "Saamicha uumuu hin dandeenye: {{error}}",
       "deleteError": "Saamicha haquu hin dandeenye"
     }
+  },
+
+
+  "newsmanagementadmin": {
+    "title": "Bulchiinsa Oduu",
+    "buttons": {
+      "addNews": "Oduu Dabali",
+      "cancel": "Haqi",
+      "delete": "Balleessi",
+      "createNews": "Oduu Uumi",
+      "updateNews": "Oduu Haaromsi"
+    },
+    "table": {
+      "headers": {
+        "multipleImages": "Fakkiiwwan Dabalataa",
+        "id": "ID",
+        "titleAm": "Mata-duree (Amariffa)",
+        "titleEn": "Mata-duree (Ingiliffa)",
+        "excerpt": "Gabaajee",
+        "category": "Ramaddii",
+        "author": "Barreessaa",
+        "status": "Haala",
+        "image": "Fakkii",
+        "views": "Ilaalcha",
+        "publishedAt": "Kan Maxxanfame",
+        "actions": "Gochaawwan"
+      },
+      "notAvailable": "Hin jiru",
+      "notPublished": "Hin maxxanfamne"
+    },
+    "status": {
+      "published": "Maxxanfameera",
+      "draft": "Wixinee"
+    },
+    "form": {
+      "multipleImages": {
+        "label": "Fakkiiwwan Dabalataa",
+        "placeholder": "Fakkiiwwan hedduu filadhu",
+        "description": "Fakkiiwwan dabalataa fe'i (Tokkoon tokkoon isaanii 5MB gadi)",
+        "preview": "Dur-argii fakkiiwwan haaraa",
+        "currentImages": "Fakkiiwwan ammaa",
+        "error": "Maaloo fakkii sirrii ta'e fe'i"
+      },
+      "titleAm": {
+        "label": "Mata-duree (Amariffa)",
+        "placeholder": "Mata-duree Amariffaan galchi",
+        "error": "Mata-dureen Amariffaa barbaachisaadha"
+      },
+      "titleEn": {
+        "label": "Mata-duree (Ingiliffa)",
+        "placeholder": "Mata-duree Ingiliffaan galchi",
+        "error": "Mata-dureen Ingiliffaa barbaachisaadha"
+      },
+      "contentAm": {
+        "label": "Qabiyyee (Amariffa)",
+        "placeholder": "Qabiyyee Amariffaan galchi",
+        "error": "Qabiyyee Amariffaa barbaachisaadha"
+      },
+      "contentEn": {
+        "label": "Qabiyyee (Ingiliffa)",
+        "placeholder": "Qabiyyee Ingiliffaan galchi",
+        "error": "Qabiyyee Ingiliffaa barbaachisaadha"
+      },
+      "excerpt": {
+        "label": "Gabaajee",
+        "placeholder": "Gabaajee gabaabaa galchi",
+        "error": "Gabaajeen barbaachisaadha"
+      },
+      "category": {
+        "label": "Ramaddii",
+        "placeholder": "Ramaddii filadhu",
+        "error": "Ramaddiin barbaachisaadha",
+        "noResults": "Ramaddiin hin argamne"
+      },
+      "author": {
+        "label": "Barreessaa",
+        "placeholder": "Barreessaa filadhu",
+        "error": "Barreessaan barbaachisaadha",
+        "noResults": "Barreessaan hin argamne"
+      },
+      "image": {
+        "label": "Fakkii Oduu",
+        "placeholder": "Fakkii filadhu",
+        "description": "Fakkii qulqullina qabu fe'i (Max 5MB)",
+        "preview": "Dur-argii fakkii haaraa",
+        "currentImage": "Fakkii ammaa",
+        "error": "Fakkiin barbaachisaadha"
+      },
+      "published": {
+        "label": "Maxxanfameera"
+      }
+    },
+    "modal": {
+      "createTitle": "Oduu Uumi",
+      "editTitle": "Oduu Sirreessi",
+      "deleteTitle": "Balleessuu mirkaneessi",
+      "deleteConfirmation": "Dhuguma oduu kana balleessuu barbaaduu?"
+    },
+    "notifications": {
+      "successTitle": "Milkaa'eera!",
+      "errorTitle": "Dogoggora!",
+      "loadSuccess": "Oduun milkaa'inaan fe'ameera",
+      "loadFailed": "Oduu fe'uun hin danda'amne",
+      "createSuccess": "Oduun milkaa'inaan uumameera",
+      "createFailed": "Oduu uumuun hin danda'amne",
+      "updateSuccess": "Oduun milkaa'inaan haaromeera",
+      "updateFailed": "Oduu haaromsuun hin danda'amne",
+      "deleteSuccess": "Oduun milkaa'inaan balleeffameera",
+      "deleteFailed": "Oduu balleessuun hin danda'amne",
+      "uploadSuccess": "Fakkiin milkaa'inaan fe'ameera",
+      "uploadFailed": "Fakkii fe'uun hin danda'amne",
+      "multipleUploadSuccess": "Fakkiiwwan dabalataa milkaa'inaan fe'amaniiru",
+      "multipleUploadFailed": "Fakkiiwwan dabalataa fe'uun hin danda'amne",
+      "categoriesLoadFailed": "Ramaddiiwwan fe'uun hin danda'amne",
+      "authorsLoadFailed": "Barreessitoota fe'uun hin danda'amne"
+    },
+    "errors": {
+      "invalidId": "ID oduu sirrii miti",
+      "notFound": "Oduun hin argamne",
+      "invalidImageType": "Maaloo fakkii fe'i (JPEG, PNG, kkf)",
+      "imageTooLarge": "Hammangaan fakkii 5MB gadi ta'uu qaba"
+    }
   }
 
 

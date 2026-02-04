@@ -1392,31 +1392,32 @@
     "updateError": "ፈቃዱን በማዘመን ላይ ስህተት ተከስቷል:"
   },
 
-  "newsmanagementadmin": {
+ "newsmanagementadmin": {
     "title": "የዜና አስተዳደር",
     "buttons": {
-      "addNews": "ዜና ያክሉ",
-      "cancel": "ይቅር",
-      "delete": "ሰርዝ",
-      "createNews": "ዜና ይፍጠሩ",
-      "updateNews": "ዜና ያዘምኑ"
+      "addNews": "ዜና አክል",
+      "cancel": "ሰርዝ",
+      "delete": "አጥፋ",
+      "createNews": "ዜና ፍጠር",
+      "updateNews": "ዜና አሻሽል"
     },
     "table": {
       "headers": {
         "multipleImages": "ተጨማሪ ምስሎች",
-        "id": "መለያ",
-        "titleAm": "ርዕስ (አማርኛ)",
-        "titleEn": "ርዕስ (EN)",
+        "id": "መለያ (ID)",
+        "titleAm": "ርዕስ (በአማርኛ)",
+        "titleEn": "ርዕስ (በእንግሊዝኛ)",
         "excerpt": "አጭር መግለጫ",
         "category": "ምድብ",
         "author": "ጸሐፊ",
         "status": "ሁኔታ",
-        "image": "ዋና ምስል",
+        "image": "ምስል",
         "views": "እይታዎች",
         "publishedAt": "የታተመበት ቀን",
-        "actions": "ተግባራት"
+        "actions": "ድርጊቶች"
       },
-      "notAvailable": "የለም"
+      "notAvailable": "የማይገኝ",
+      "notPublished": "ያልታተመ"
     },
     "status": {
       "published": "የታተመ",
@@ -1424,78 +1425,91 @@
     },
     "form": {
       "multipleImages": {
-        "label": "ተጨማሪ ምስሎች"
+        "label": "ተጨማሪ ምስሎች",
+        "placeholder": "በርካታ ምስሎችን ይምረጡ",
+        "description": "ተጨማሪ ምስሎችን ይጫኑ (ቢበዛ 5MB እያንዳንዱ)",
+        "preview": "የአዲስ ምስሎች ቅድመ እይታ",
+        "currentImages": "ያሉ ምስሎች",
+        "error": "እባክዎ ትክክለኛ የምስል ፋይሎችን ይጫኑ"
       },
       "titleAm": {
-        "label": "ርዕስ (አማርኛ)",
-        "placeholder": "ርዕስ በአማርኛ ያስገቡ",
-        "error": "የአማርኛ ርዕስ ማስገባት ግዴታ ነው"
+        "label": "ርዕስ (በአማርኛ)",
+        "placeholder": "ርዕሱን በአማርኛ ያስገቡ",
+        "error": "የአማርኛ ርዕስ ያስፈልጋል"
       },
       "titleEn": {
-        "label": "ርዕስ (እንግሊዝኛ)",
-        "placeholder": "ርዕስ በእንግሊዝኛ ያስገቡ",
-        "error": "የእንግሊዝኛ ርዕስ ማስገባት ግዴታ ነው"
+        "label": "ርዕስ (በእንግሊዝኛ)",
+        "placeholder": "ርዕሱን በእንግሊዝኛ ያስገቡ",
+        "error": "የእንግሊዝኛ ርዕስ ያስፈልጋል"
       },
       "contentAm": {
-        "label": "ዝርዝር ይዘት (አማርኛ)",
-        "placeholder": "ዜናውን በአማርኛ እዚህ ይፃፉ",
-        "error": "የዜናው ይዘት በአማርኛ ያስፈልጋል"
+        "label": "ይዘት (በአማርኛ)",
+        "placeholder": "ይዘቱን በአማርኛ ያስገቡ",
+        "error": "የአማርኛ ይዘት ያስፈልጋል"
       },
       "contentEn": {
-        "label": "ዝርዝር ይዘት (እንግሊዝኛ)",
-        "placeholder": "ዜናውን በእንግሊዝኛ እዚህ ይፃፉ",
-        "error": "የዜናው ይዘት በእንግሊዝኛ ያስፈልጋል"
+        "label": "ይዘት (በእንግሊዝኛ)",
+        "placeholder": "ይዘቱን በእንግሊዝኛ ያስገቡ",
+        "error": "የእንግሊዝኛ ይዘት ያስፈልጋል"
       },
       "excerpt": {
-        "label": "አጭር ማጠቃለያ",
-        "placeholder": "ስለ ዜናው አጭር ማጠቃለያ ያስገቡ",
-        "error": "ማጠቃለያ ያስፈልጋል"
+        "label": "አጭር መግለጫ",
+        "placeholder": "አጭር መግለጫ ያስገቡ",
+        "error": "አጭር መግለጫ ያስፈልጋል"
       },
       "category": {
-        "label": "የዜና ምድብ",
+        "label": "ምድብ",
         "placeholder": "ምድብ ይምረጡ",
-        "error": "ምድብ መምረጥ ግዴታ ነው"
+        "error": "ምድብ ያስፈልጋል",
+        "noResults": "ምንም ምድብ አልተገኘም"
       },
       "author": {
-        "label": "ዜናውን ያቀናበረው",
+        "label": "ጸሐፊ",
         "placeholder": "ጸሐፊ ይምረጡ",
-        "error": "ጸሐፊ መምረጥ ያስፈልጋል"
+        "error": "ጸሐፊ ያስፈልጋል",
+        "noResults": "ምንም ጸሐፊ አልተገኘም"
       },
       "image": {
-        "label": "ዋና ምስል",
+        "label": "የዜና ምስል",
         "placeholder": "ምስል ይምረጡ",
-        "description": "ጥራት ያለው ምስል ይስቀሉ (ከ5MB በታች)",
+        "description": "ከፍተኛ ጥራት ያለው ምስል ይጫኑ (ቢበዛ 5MB)",
+        "preview": "የአዲስ ምስል ቅድመ እይታ",
+        "currentImage": "ያለው ምስል",
         "error": "ምስል ያስፈልጋል"
       },
       "published": {
-        "label": "ለህዝብ ይፋ ይሁን"
+        "label": "የታተመ"
       }
     },
     "modal": {
-      "createTitle": "አዲስ ዜና ይፍጠሩ",
-      "editTitle": "ዜናውን ያስተካክሉ",
-      "deleteTitle": "ስረዛን ያረጋግጡ",
-      "deleteConfirmation": "ይህንን ዜና ለመሰረዝ እርግጠኛ ነዎት?"
+      "createTitle": "ዜና ፍጠር",
+      "editTitle": "ዜና አርትዕ",
+      "deleteTitle": "መሰረዙን ያረጋግጡ",
+      "deleteConfirmation": "እርግጠኛ ነዎት ይህንን ዜና መሰረዝ ይፈልጋሉ?"
     },
     "notifications": {
       "successTitle": "ተሳክቷል!",
       "errorTitle": "ስህተት!",
       "loadSuccess": "ዜናው በተሳካ ሁኔታ ተጭኗል",
-      "loadFailed": "ዜናውን ማግኘት አልተቻለም",
+      "loadFailed": "ዜናውን መጫን አልተቻለም",
       "createSuccess": "ዜናው በተሳካ ሁኔታ ተፈጥሯል",
-      "createFailed": "ዜና መፍጠር አልተቻለም",
-      "updateSuccess": "ዜናው ተዘምኗል",
-      "updateFailed": "ዜናውን ማዘመን አልተቻለም",
-      "deleteSuccess": "ዜናው ተሰርዟል",
+      "createFailed": "ዜናውን መፍጠር አልተቻለም",
+      "updateSuccess": "ዜናው በተሳካ ሁኔታ ታድሷል",
+      "updateFailed": "ዜናውን ማደስ አልተቻለም",
+      "deleteSuccess": "ዜናው በተሳካ ሁኔታ ተሰርዟል",
       "deleteFailed": "ዜናውን መሰረዝ አልተቻለም",
       "uploadSuccess": "ምስሉ በተሳካ ሁኔታ ተጭኗል",
-      "uploadFailed": "ምስሉን መጫን አልተቻለም"
+      "uploadFailed": "ምስሉን መጫን አልተቻለም",
+      "multipleUploadSuccess": "ተጨማሪ ምስሎች በተሳካ ሁኔታ ተጭነዋል",
+      "multipleUploadFailed": "ተጨማሪ ምስሎችን መጫን አልተቻለም",
+      "categoriesLoadFailed": "ምድቦችን መጫን አልተቻለም",
+      "authorsLoadFailed": "ጸሐፊዎችን መጫን አልተቻለም"
     },
     "errors": {
-      "invalidId": "ትክክለኛ ያልሆነ የዜና መለያ",
-      "notFound": "የተፈለገው ዜና አልተገኘም",
-      "invalidImageType": "እባክዎን የምስል ፋይል (JPEG, PNG) ብቻ ይጠቀሙ",
-      "imageTooLarge": "የምስሉ መጠን ከ5MB በታች መሆን አለበት"
+      "invalidId": "የዜና መለያው (ID) የተሳሳተ ነው",
+      "notFound": "ዜናው አልተገኘም",
+      "invalidImageType": "እባክዎ የምስል ፋይል ይጫኑ (JPEG, PNG, ወዘተ)",
+      "imageTooLarge": "የምስሉ መጠን ከ 5MB በታች መሆን አለበት"
     }
   },
 
