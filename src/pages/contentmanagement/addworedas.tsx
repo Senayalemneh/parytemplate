@@ -106,6 +106,67 @@ interface WoredaItem {
   updated_at: string;
 }
 
+// Interface for API response (snake_case)
+interface WoredaApiResponse {
+  id: number;
+  name: {
+    am: string;
+    en: string;
+  };
+  woreda: {
+    en: string;
+    am: string;
+  };
+  sub_city: {
+    en: string;
+    am: string;
+  };
+  location: {
+    en: string;
+    am: string;
+  };
+  image: string;
+  description: {
+    en: string;
+    am: string;
+  };
+  operating_hours: {
+    en: string;
+    am: string;
+  };
+  capacity: string;
+  amenities: string[];
+  rating: number;
+  access_type: {
+    en: string;
+    am: string;
+  };
+  maintenance_schedule: {
+    en: string;
+    am: string;
+  };
+  contact_person: {
+    en: string;
+    am: string;
+  };
+  contact_phone: string;
+  mission: {
+    en: string;
+    am: string;
+  };
+  vision: {
+    en: string;
+    am: string;
+  };
+  values: string[];
+  email: string;
+  social_media: string[];
+  additional_contacts: string[];
+  service_areas: string[];
+  created_at: string;
+  updated_at: string;
+}
+
 interface SubcityItem {
   id: number;
   name: {
@@ -291,7 +352,39 @@ const WoredasManagement = () => {
     setLoading(true);
     try {
       const response = await getWoredas();
-      setWoredasData(response || []);
+      console.log("Raw API response:", response);
+      
+      // Map the API response to match our interface
+      const mappedData = (response || []).map((item: WoredaApiResponse) => ({
+        id: item.id,
+        name: item.name || { en: "", am: "" },
+        woreda: item.woreda || { en: "", am: "" },
+        subCity: item.sub_city || { en: "", am: "" }, // Map sub_city to subCity
+        location: item.location || { en: "", am: "" },
+        image: item.image || "",
+        description: item.description || { en: "", am: "" },
+        operatingHours: item.operating_hours || { en: "", am: "" }, // Map operating_hours to operatingHours
+        capacity: item.capacity || "",
+        amenities: item.amenities || [],
+        rating: item.rating || 0,
+        accessType: item.access_type || { en: "", am: "" }, // Map access_type to accessType
+        maintenanceSchedule: item.maintenance_schedule || { en: "", am: "" }, // Map maintenance_schedule to maintenanceSchedule
+        contactPerson: item.contact_person || { en: "", am: "" }, // Map contact_person to contactPerson
+        contactPhone: item.contact_phone || "", // Map contact_phone to contactPhone
+        mission: item.mission || { en: "", am: "" },
+        vision: item.vision || { en: "", am: "" },
+        values: item.values || [],
+        email: item.email || "",
+        socialMedia: item.social_media || [], // Map social_media to socialMedia
+        additionalContacts: item.additional_contacts || [], // Map additional_contacts to additionalContacts
+        serviceAreas: item.service_areas || [], // Map service_areas to serviceAreas
+        created_at: item.created_at || "",
+        updated_at: item.updated_at || "",
+      }));
+      
+      console.log("Mapped data:", mappedData);
+      setWoredasData(mappedData);
+      
       showNotification(
         t("woredamanagementadmin.notifications.loadSuccess"),
         "success"
@@ -578,7 +671,7 @@ const WoredasManagement = () => {
           en: values.woreda_en,
           am: values.woreda_am,
         },
-        subCity: {
+        sub_city: { // Use snake_case for API
           en: values.subCity_en,
           am: values.subCity_am,
         },
@@ -591,26 +684,26 @@ const WoredasManagement = () => {
           en: values.description_en,
           am: values.description_am,
         },
-        operatingHours: {
+        operating_hours: { // Use snake_case for API
           en: values.operatingHours_en,
           am: values.operatingHours_am,
         },
         capacity: values.capacity,
         amenities: values.amenities,
-        rating: values.rating,
-        accessType: {
+        rating: Number(values.rating) || 0,
+        access_type: { // Use snake_case for API
           en: values.accessType_en,
           am: values.accessType_am,
         },
-        maintenanceSchedule: {
+        maintenance_schedule: { // Use snake_case for API
           en: values.maintenanceSchedule_en,
           am: values.maintenanceSchedule_am,
         },
-        contactPerson: {
+        contact_person: { // Use snake_case for API
           en: values.contactPerson_en,
           am: values.contactPerson_am,
         },
-        contactPhone: values.contactPhone,
+        contact_phone: values.contactPhone, // Use snake_case for API
         mission: {
           en: values.mission_en,
           am: values.mission_am,
@@ -621,9 +714,9 @@ const WoredasManagement = () => {
         },
         values: values.values,
         email: values.email,
-        socialMedia: values.socialMedia,
-        additionalContacts: values.additionalContacts,
-        serviceAreas: values.serviceAreas,
+        social_media: values.socialMedia, // Use snake_case for API
+        additional_contacts: values.additionalContacts, // Use snake_case for API
+        service_areas: values.serviceAreas, // Use snake_case for API
       };
 
       if (editingId) {
@@ -665,59 +758,64 @@ const WoredasManagement = () => {
 
     try {
       setLoading(true);
-      const item = await getWoredaById(id);
+      const response = await getWoredaById(id);
+      console.log("Edit API response:", response);
+      
+      // Handle both array and single object responses
+      const item = Array.isArray(response) ? response[0] : response;
+      
       if (!item) {
         showNotification(t("woredamanagementadmin.errors.notFound"), "error");
         return;
       }
 
-      // First set the basic form values
+      // Map API response fields to form fields
       const formValues = {
         name_en: item.name?.en || "",
         name_am: item.name?.am || "",
         woreda_en: item.woreda?.en || "",
         woreda_am: item.woreda?.am || "",
-        subCity_en: item.subCity?.en || "",
-        subCity_am: item.subCity?.am || "",
+        subCity_en: item.sub_city?.en || item.subCity?.en || "", // Handle both snake_case and camelCase
+        subCity_am: item.sub_city?.am || item.subCity?.am || "",
         subcity_id: "", // This will be set based on your data structure
         location_en: item.location?.en || "",
         location_am: item.location?.am || "",
         image_path: item.image || "",
         description_en: item.description?.en || "",
         description_am: item.description?.am || "",
-        operatingHours_en: item.operatingHours?.en || "",
-        operatingHours_am: item.operatingHours?.am || "",
+        operatingHours_en: item.operating_hours?.en || item.operatingHours?.en || "",
+        operatingHours_am: item.operating_hours?.am || item.operatingHours?.am || "",
         capacity: item.capacity || "",
         amenities: item.amenities || [],
         rating: item.rating || 0,
-        accessType_en: item.accessType?.en || "",
-        accessType_am: item.accessType?.am || "",
-        maintenanceSchedule_en: item.maintenanceSchedule?.en || "",
-        maintenanceSchedule_am: item.maintenanceSchedule?.am || "",
-        contactPerson_en: item.contactPerson?.en || "",
-        contactPerson_am: item.contactPerson?.am || "",
-        contactPhone: item.contactPhone || "",
+        accessType_en: item.access_type?.en || item.accessType?.en || "",
+        accessType_am: item.access_type?.am || item.accessType?.am || "",
+        maintenanceSchedule_en: item.maintenance_schedule?.en || item.maintenanceSchedule?.en || "",
+        maintenanceSchedule_am: item.maintenance_schedule?.am || item.maintenanceSchedule?.am || "",
+        contactPerson_en: item.contact_person?.en || item.contactPerson?.en || "",
+        contactPerson_am: item.contact_person?.am || item.contactPerson?.am || "",
+        contactPhone: item.contact_phone || item.contactPhone || "",
         mission_en: item.mission?.en || "",
         mission_am: item.mission?.am || "",
         vision_en: item.vision?.en || "",
         vision_am: item.vision?.am || "",
         values: item.values || [],
         email: item.email || "",
-        socialMedia: item.socialMedia || [],
-        additionalContacts: item.additionalContacts || [],
-        serviceAreas: item.serviceAreas || [],
+        socialMedia: item.social_media || item.socialMedia || [],
+        additionalContacts: item.additional_contacts || item.additionalContacts || [],
+        serviceAreas: item.service_areas || item.serviceAreas || [],
         imageFile: null,
       };
 
       form.setValues(formValues);
-      console.log("Editing woreda with subCity:", item.subCity); // Debug log
+      console.log("Editing woreda with subCity:", item.sub_city || item.subCity); // Debug log
 
       // Try to find subcity from the list by matching the name
-      // This is a workaround if subcity_id is not stored in woreda
-      if (item.subCity?.en || item.subCity?.am) {
+      const subCityData = item.sub_city || item.subCity;
+      if (subCityData?.en || subCityData?.am) {
         const foundSubcity = subcitiesList.find(sc => 
-          (sc.name?.en && item.subCity?.en && sc.name.en === item.subCity.en) || 
-          (sc.name?.am && item.subCity?.am && sc.name.am === item.subCity.am)
+          (sc.name?.en && subCityData?.en && sc.name.en === subCityData.en) || 
+          (sc.name?.am && subCityData?.am && sc.name.am === subCityData.am)
         );
         
         console.log("Found matching subcity:", foundSubcity); // Debug log
