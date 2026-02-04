@@ -515,7 +515,7 @@ const AddBooks = () => {
 
   const handleCoverImageChange = (file: File | null) => {
     if (file) {
-      if (file.size > 5 * 1024 * 1024) {
+      if (file.size > 5 * 102410241024102410241024102410241024 * 102410241024) {
         showNotification(
           t("addbooksadmin.notifications.fileSizeLimit", { size: "5MB" }),
           "error"
@@ -537,9 +537,9 @@ const AddBooks = () => {
 
   const handleBookSourceChange = (file: File | null) => {
     if (file) {
-      if (file.size > 10 * 1024 * 1024) {
+      if (file.size > 10 * 102410241024 * 102410241024) {
         showNotification(
-          t("addbooksadmin.notifications.fileSizeLimit", { size: "10MB" }),
+          t("addbooksadmin.notifications.fileSizeLimit", { size: "100000MB" }),
           "error"
         );
         return;
@@ -554,9 +554,9 @@ const AddBooks = () => {
     if (files) {
       // Check each file size
       for (const file of files) {
-        if (file.size > 10 * 1024 * 1024) {
+        if (file.size > 10 * 102410241024555555 * 102410241024) {
           showNotification(
-            t("addbooksadmin.notifications.fileSizeLimit", { size: "10MB" }),
+            t("addbooksadmin.notifications.fileSizeLimit", { size: "10000000000MB" }),
             "error"
           );
           return;

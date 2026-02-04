@@ -2299,15 +2299,13 @@
     }
   },
 
-  "orgstructureadmin": {
+   "orgstructureadmin": {
     "title": "Organizational Structure",
     "buttons": {
       "addMember": "Add Member",
       "updateMember": "Update Member",
       "cancel": "Cancel",
-      "delete": "Delete",
-      "confirm": "Confirm",
-      "upload": "Upload"
+      "delete": "Delete"
     },
     "columns": {
       "id": "ID",
@@ -2321,53 +2319,55 @@
     "form": {
       "labels": {
         "name": "Name",
-        "title": "Title",
+        "title": "Position/Title",
         "parent": "Reports To",
         "image": "Profile Image"
       },
       "placeholders": {
         "name": "Enter member name",
-        "title": "Enter member title/position",
-        "parent": "Select supervisor (leave empty for top level)",
-        "image": "Select an image"
+        "title": "Enter position title",
+        "parent": "Select supervisor/manager",
+        "image": "Upload profile image"
       },
       "descriptions": {
-        "image": "Upload a square profile image (max 5MB)"
+        "image": "Upload a profile photo (JPG, PNG, WebP - max 5MB)"
       },
       "errors": {
         "required": "This field is required",
-        "imageRequired": "Please upload an image",
-        "invalidImage": "Please upload an image file (JPEG, PNG, etc.)",
-        "imageSize": "Image size must be less than 5MB"
+        "imageRequired": "Profile image is required",
+        "invalidImage": "Please upload a valid image file",
+        "imageSize": "Image size should be less than 5MB"
       }
     },
     "modals": {
       "addTitle": "Add Organization Member",
       "editTitle": "Edit Organization Member",
-      "deleteTitle": "Confirm Deletion",
-      "deleteMessage": "Are you sure you want to delete this organization member?"
+      "deleteTitle": "Delete Member",
+      "deleteMessage": "Are you sure you want to delete this member? This action cannot be undone."
+    },
+    "misc": {
+      "topLevel": "Top Level (No Supervisor)",
+      "noImage": "No image",
+      "currentImage": "Current Image"
     },
     "notifications": {
       "success": {
-        "load": "Data loaded successfully",
-        "create": "Member created successfully",
+        "title": "Success",
+        "load": "Organizational structure loaded successfully",
+        "upload": "Image uploaded successfully",
         "update": "Member updated successfully",
-        "delete": "Member deleted successfully",
-        "upload": "Image uploaded successfully"
+        "create": "Member created successfully",
+        "delete": "Member deleted successfully"
       },
       "error": {
-        "load": "Failed to load organizational data",
-        "create": "Failed to create member",
-        "update": "Failed to update member",
-        "delete": "Failed to delete member",
+        "title": "Error",
+        "load": "Failed to load organizational structure",
         "upload": "Failed to upload image",
+        "update": "Failed to update member",
+        "create": "Failed to create member",
+        "delete": "Failed to delete member",
         "notFound": "Member not found"
       }
-    },
-    "misc": {
-      "topLevel": "Top Level",
-      "noImage": "N/A",
-      "currentImage": "Current Image:"
     }
   },
 
@@ -2671,112 +2671,89 @@
     "createTitle": "Create Event"
   },
 
-  "addbooksadmin": {
-    "title": "Book Management",
-    "addBookButton": "Add Book",
-    "table": {
-      "headers": {
-        "bookFile": "Book File",
-        "id": "ID",
-        "titleEn": "Title (English)",
-        "titleAm": "Title (Amharic)",
-        "author": "Author",
-        "category": "Category",
-        "pages": "Pages",
-        "rating": "Rating",
-        "featured": "Featured",
-        "cover": "Cover",
-        "createdAt": "Created At",
-        "actions": "Actions"
-      },
-      "notAvailable": "N/A",
-      "featured": "Featured",
-      "regular": "Regular"
+ "addbooksadmin": {
+    "title": "Books Management",
+    "addBookButton": "Add New Book",
+    "editModal": {
+      "titleEdit": "Edit Book",
+      "titleCreate": "Add New Book"
     },
     "form": {
+      "uploadType": "Upload Type",
+      "singleBook": "Single Book",
+      "batchBooks": "Batch Upload",
       "titleEn": "Title (English)",
-      "titleEnPlaceholder": "Enter title in English",
+      "titleEnPlaceholder": "Enter English title",
       "titleAm": "Title (Amharic)",
-      "titleAmPlaceholder": "Enter title in Amharic",
+      "titleAmPlaceholder": "Enter Amharic title",
+      "coverImage": "Cover Image",
+      "upload": "Upload File",
+      "coverImageDescription": "Upload book cover image (max 5MB)",
+      "coverImageAlt": "Book cover preview",
+      "bookSource": "Book File",
+      "bookSourceDescription": "Upload book file (PDF, EPUB, DOC, TXT - max 10MB)",
+      "batchCategory": "Batch Category",
+      "selectCategory": "Select a category",
+      "batchBooks": "Batch Book Files",
+      "batchBooksDescription": "Upload multiple book files at once (max 10MB each)",
+      "selectedFiles": "Selected Files",
+      "includeAdditionalFields": "Include Additional Fields",
       "authorEn": "Author (English)",
       "authorEnPlaceholder": "Enter author name in English",
       "authorAm": "Author (Amharic)",
       "authorAmPlaceholder": "Enter author name in Amharic",
-      "coverImage": "Cover Image",
-      "upload": "Upload",
-      "coverImageDescription": "Upload cover image (JPG, PNG - max 5MB)",
-      "coverImageAlt": "Cover preview",
-      "bookSource": "Book Source File",
-      "bookSourceDescription": "Upload book source (PDF, EPUB, DOCX, TXT - max 10MB)",
-      "currentFile": "Current file",
       "descriptionEn": "Description (English)",
-      "descriptionEnPlaceholder": "Enter description in English",
+      "descriptionEnPlaceholder": "Enter book description in English",
       "descriptionAm": "Description (Amharic)",
-      "descriptionAmPlaceholder": "Enter description in Amharic",
+      "descriptionAmPlaceholder": "Enter book description in Amharic",
       "categoryEn": "Category (English)",
       "categoryAm": "Category (Amharic)",
-      "selectCategory": "Select category",
-      "pages": "Pages",
+      "pages": "Number of Pages",
       "language": "Language",
       "selectLanguage": "Select language",
       "publishedYear": "Published Year",
       "readingTimeEn": "Reading Time (English)",
       "readingTimeAm": "Reading Time (Amharic)",
-      "readingTimePlaceholder": "e.g. 6 hours",
+      "readingTimePlaceholder": "e.g., 5 hours",
       "popularityRating": "Popularity Rating",
       "featuredBook": "Featured Book",
       "cancelButton": "Cancel",
       "updateButton": "Update Book",
-      "createButton": "Create Book"
+      "createButton": "Create Book",
+      "currentFile": "Current file"
     },
-    "editModal": {
-      "titleEdit": "Edit Book",
-      "titleCreate": "Create Book"
-    },
-    "deleteModal": {
-      "title": "Confirm Deletion",
-      "confirmMessage": "Are you sure you want to delete this book?",
-      "cancelButton": "Cancel",
-      "deleteButton": "Delete"
+    "validation": {
+      "titleEnRequired": "English title is required",
+      "titleAmRequired": "Amharic title is required",
+      "coverImageRequired": "Cover image is required",
+      "bookSourceRequired": "Book file is required for single upload",
+      "batchBooksRequired": "At least one book file is required for batch upload",
+      "batchCategoryRequired": "Category is required for batch upload",
+      "invalidNumber": "Please enter a valid number"
     },
     "notifications": {
-      "success": "Success!",
-      "error": "Error!",
+      "success": "Success",
+      "error": "Error",
       "booksLoadedSuccess": "Books loaded successfully",
-      "failedLoadBooks": "Failed to load books data",
+      "failedLoadBooks": "Failed to load books",
       "invalidBookId": "Invalid book ID",
       "coverImageUploadSuccess": "Cover image uploaded successfully",
       "coverImageUploadError": "Failed to upload cover image",
       "uploadCoverImage": "Please upload a cover image",
-      "bookSourceUploadSuccess": "Book source file uploaded successfully",
-      "bookSourceUploadError": "Failed to upload book source file",
-      "uploadBookSource": "Please upload a book source file",
+      "bookSourceUploadSuccess": "Book file uploaded successfully",
+      "bookSourceUploadError": "Failed to upload book file",
+      "uploadBookSource": "Please upload a book file for single upload",
+      "batchUploadSuccess": "{{count}} book files uploaded successfully",
+      "batchUploadError": "Failed to upload batch files",
       "bookUpdatedSuccess": "Book updated successfully",
       "bookCreatedSuccess": "Book created successfully",
       "updateBookError": "Failed to update book",
       "createBookError": "Failed to create book",
       "bookNotFound": "Book not found",
-      "loadBookError": "Failed to load book for editing",
+      "loadBookError": "Failed to load book data",
       "bookDeletedSuccess": "Book deleted successfully",
       "deleteBookError": "Failed to delete book",
-      "fileSizeLimit": "File size must be less than {size}"
-    },
-    "validation": {
-      "titleEnRequired": "English title is required",
-      "titleAmRequired": "Amharic title is required",
-      "authorEnRequired": "English author is required",
-      "authorAmRequired": "Amharic author is required",
-      "descriptionEnRequired": "English description is required",
-      "descriptionAmRequired": "Amharic description is required",
-      "categoryEnRequired": "English category is required",
-      "categoryAmRequired": "Amharic category is required",
-      "pagesGreaterThanZero": "Pages must be greater than 0",
-      "languageRequired": "Language is required",
-      "yearRange": "Year must be between 1 and {year}",
-      "readingTimeEnRequired": "English reading time is required",
-      "readingTimeAmRequired": "Amharic reading time is required",
-      "coverImageRequired": "Cover image is required",
-      "bookSourceRequired": "Book source file is required"
+      "fileSizeLimit": "File size exceeds {{size}} limit"
     },
     "categories": {
       "fiction": "Fiction",
@@ -2790,7 +2767,35 @@
       "amharic": "Amharic",
       "french": "French",
       "spanish": "Spanish"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "titleEn": "Title (EN)",
+        "titleAm": "Title (AM)",
+        "author": "Author",
+        "category": "Category",
+        "pages": "Pages",
+        "language": "Language",
+        "publishedYear": "Year",
+        "rating": "Rating",
+        "cover": "Cover",
+        "bookFile": "Book File",
+        "createdAt": "Created At",
+        "actions": "Actions"
+      },
+      "batchFiles": "{{count}} files",
+      "notAvailable": "N/A"
+    },
+    "deleteModal": {
+      "title": "Delete Book",
+      "confirmMessage": "Are you sure you want to delete this book? This action cannot be undone.",
+      "cancelButton": "Cancel",
+      "deleteButton": "Delete"
     }
+  },
+  "table": {
+    "notAvailable": "N/A"
   },
   "viewcompliantadmin": {
     "tabs": {

@@ -2195,21 +2195,19 @@
     }
   },
 
-  "orgstructureadmin": {
-    "title": "የድርጅት አወቃቀር",
+ "orgstructureadmin": {
+    "title": "የድርጅታዊ መዋቅር",
     "buttons": {
-      "addMember": "አባል ያክሉ",
-      "updateMember": "አባል ያዘምኑ",
-      "cancel": "ይቅር",
-      "delete": "ሰርዝ",
-      "confirm": "አረጋግጥ",
-      "upload": "ጫን"
+      "addMember": "አባል ጨምር",
+      "updateMember": "አባል አዘምን",
+      "cancel": "ሰርዝ",
+      "delete": "አጥፋ"
     },
     "columns": {
       "id": "መለያ",
       "name": "ስም",
-      "title": "ሃላፊነት",
-      "parent_id": "ወደ የት ይሰራል",
+      "title": "የስራ መደብ",
+      "parent_id": "ተጠሪነቱ ለ",
       "image": "ምስል",
       "created_at": "የተፈጠረበት ቀን",
       "actions": "ድርጊቶች"
@@ -2217,53 +2215,55 @@
     "form": {
       "labels": {
         "name": "ስም",
-        "title": "ሃላፊነት",
-        "parent": "ወደ የት ይሰራል",
-        "image": "ፕሮፋይል ምስል"
+        "title": "የስራ መደብ/ማዕረግ",
+        "parent": "ተጠሪነቱ ለ",
+        "image": "የፕሮፋይል ምስል"
       },
       "placeholders": {
-        "name": "የአባሉ ስም ያስገቡ",
-        "title": "የአባሉ ሃላፊነት/ስራ ያስገቡ",
-        "parent": "በላይኛው �ለላ ይምረጡ (ለከፍተኛ ደረጃ ባዶ ይተዉ)",
-        "image": "ምስል ይምረጡ"
+        "name": "የአባል ስም ያስገቡ",
+        "title": "የስራ መደቡን ያስገቡ",
+        "parent": "ተቆጣጣሪ/ስራ አስኪያጅ ይምረጡ",
+        "image": "የፕሮፋይል ምስል ይጫኑ"
       },
       "descriptions": {
-        "image": "ካሬ የሆነ ፕሮፋይል ምስል ይጫኑ (ከ5MB ያነሰ)"
+        "image": "የፕሮፋይል ፎቶ ይጫኑ (JPG, PNG, WebP - ቢበዛ 5MB)"
       },
       "errors": {
-        "required": "ይህ መስክ አስፈላጊ ነው",
-        "imageRequired": "እባክዎ ምስል ይጫኑ",
-        "invalidImage": "እባክዎ የምስል ፋይል ይጫኑ (JPEG, PNG, ወዘተ)",
-        "imageSize": "የምስል መጠን ከ5MB ያነሰ መሆን አለበት"
+        "required": "ይህ ቦታ መሞላት አለበት",
+        "imageRequired": "የፕሮፋይል ምስል ያስፈልጋል",
+        "invalidImage": "እባክዎን ትክክለኛ የምስል ፋይል ይጫኑ",
+        "imageSize": "የምስሉ መጠን ከ 5MB ያነሰ መሆን አለበት"
       }
     },
     "modals": {
-      "addTitle": "የድርጅት አባል ያክሉ",
-      "editTitle": "የድርጅት አባል ያዘምኑ",
-      "deleteTitle": "ስረዛ አረጋግጥ",
-      "deleteMessage": "ይህን የድርጅት አባል ለመሰረዝ እርግጠኛ ነዎት?"
+      "addTitle": "የድርጅት አባል ጨምር",
+      "editTitle": "የድርጅት አባል ያርሙ",
+      "deleteTitle": "አባል ሰርዝ",
+      "deleteMessage": "ይህንን አባል ለመሰረዝ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።"
+    },
+    "misc": {
+      "topLevel": "ከፍተኛ ደረጃ (ተጠሪ የሌለው)",
+      "noImage": "ምስል የለም",
+      "currentImage": "የአሁኑ ምስል"
     },
     "notifications": {
       "success": {
-        "load": "ውሂብ በተሳካ ሁኔታ ተጭኗል",
-        "create": "አባሉ በተሳካ ሁኔታ ተፈጥሯል",
-        "update": "አባሉ በተሳካ ሁኔታ ተዘምኗል",
-        "delete": "አባሉ በተሳካ ሁኔታ ተሰርዟል",
-        "upload": "ምስሉ በተሳካ ሁኔታ ተጫኗል"
+        "title": "ተሳክቷል",
+        "load": "የድርጅታዊ መዋቅር በተሳካ ሁኔታ ተጭኗል",
+        "upload": "ምስሉ በተሳካ ሁኔታ ተጭኗል",
+        "update": "የአባል መረጃ በተሳካ ሁኔታ ተዘምኗል",
+        "create": "አባል በተሳካ ሁኔታ ተፈጥሯል",
+        "delete": "አባል በተሳካ ሁኔታ ተሰርዟል"
       },
       "error": {
-        "load": "የድርጅት ውሂብ ሊጭን አልቻለም",
-        "create": "አባል ለመፍጠር አልተቻለም",
-        "update": "አባል ለማዘመን አልተቻለም",
-        "delete": "አባል ለመሰረዝ አልተቻለም",
-        "upload": "ምስል ለመጫን አልተቻለም",
+        "title": "ስህተት",
+        "load": "የድርጅታዊ መዋቅር መጫን አልተቻለም",
+        "upload": "ምስሉን መጫን አልተቻለም",
+        "update": "የአባል መረጃን ማዘመን አልተቻለም",
+        "create": "አባል መፍጠር አልተቻለም",
+        "delete": "አባል መሰረዝ አልተቻለም",
         "notFound": "አባሉ አልተገኘም"
       }
-    },
-    "misc": {
-      "topLevel": "ከፍተኛ ደረጃ",
-      "noImage": "የለም",
-      "currentImage": "አሁን ያለው ምስል:"
     }
   },
   "announcementadmin": {
@@ -2565,126 +2565,131 @@
     "editTitle": "ዝግጅት ያርትዑ",
     "createTitle": "ዝግጅት ይፍጠሩ"
   },
-  "addbooksadmin": {
-    "title": "የመጽሐፍ አስተዳደር",
-    "addBookButton": "መጽሐፍ ጨምር",
-    "table": {
-      "headers": {
-        "bookFile": "የመፅህፉ ፋይል",
-        "id": "መለያ",
-        "titleEn": "ርዕስ (እንግሊዝኛ)",
-        "titleAm": "ርዕስ (አማርኛ)",
-        "author": "ደራሲ",
-        "category": "ምድብ",
-        "pages": "ገጾች",
-        "rating": "ደረጃ",
-        "featured": "ተለምዶ",
-        "cover": "ሽፋን",
-        "createdAt": "የተፈጠረበት ቀን",
-        "actions": "ድርጊቶች"
-      },
-      "notAvailable": "የለም",
-      "featured": "ተለምዶ",
-      "regular": "መደበኛ"
+ "addbooksadmin": {
+    "title": "የመጽሐፍት አስተዳደር",
+    "addBookButton": "አዲስ መጽሐፍ ጨምር",
+    "editModal": {
+      "titleEdit": "መጽሐፍ ያርሙ",
+      "titleCreate": "አዲስ መጽሐፍ ይጨምሩ"
     },
     "form": {
-      "titleEn": "ርዕስ (እንግሊዝኛ)",
-      "titleEnPlaceholder": "ርዕሱን በእንግሊዝኛ ያስገቡ",
-      "titleAm": "ርዕስ (አማርኛ)",
+      "uploadType": "የጭነት አይነት",
+      "singleBook": "ነጠላ መጽሐፍ",
+      "batchBooks": "በጅምላ መጫን",
+      "titleEn": "ርዕስ (በእንግሊዘኛ)",
+      "titleEnPlaceholder": "ርዕሱን በእንግሊዘኛ ያስገቡ",
+      "titleAm": "ርዕስ (በአማርኛ)",
       "titleAmPlaceholder": "ርዕሱን በአማርኛ ያስገቡ",
-      "authorEn": "ዜና ለጣፊ(እንግሊዝኛ)",
-      "authorEnPlaceholder": "የደራሲውን ስም በእንግሊዝኛ ያስገቡ",
-      "authorAm": "ዜና ለጣፊ(አማርኛ)",
-      "authorAmPlaceholder": "የደራሲውን ስም በአማርኛ ያስገቡ",
       "coverImage": "የሽፋን ምስል",
-      "upload": "ጫን",
-      "coverImageDescription": "የሽፋን ምስል ጫን (JPG, PNG - ከፍተኛው 5MB)",
-      "coverImageAlt": "የሽፋን ቅድመ እይታ",
-      "bookSource": "የመጽሐፍ ምንጭ ፋይል",
-      "bookSourceDescription": "የመጽሐፍ ምንጭ ጫን (PDF, EPUB, DOCX, TXT - ከፍተኛው 10MB)",
-      "currentFile": "አሁን ያለው ፋይል",
-      "descriptionEn": "መግለጫ (እንግሊዝኛ)",
-      "descriptionEnPlaceholder": "መግለጫውን በእንግሊዝኛ ያስገቡ",
-      "descriptionAm": "መግለጫ (አማርኛ)",
-      "descriptionAmPlaceholder": "መግለጫውን በአማርኛ ያስገቡ",
-      "categoryEn": "ምድብ (እንግሊዝኛ)",
-      "categoryAm": "ምድብ (አማርኛ)",
+      "upload": "ፋይል ይጫኑ",
+      "coverImageDescription": "የመጽሐፉን የሽፋን ምስል ይጫኑ (ከ 5MB ያልበለጠ)",
+      "coverImageAlt": "የመጽሐፍ ሽፋን ቅድመ እይታ",
+      "bookSource": "የመጽሐፉ ፋይል",
+      "bookSourceDescription": "የመጽሐፉን ፋይል ይጫኑ (PDF, EPUB, DOC, TXT - ቢበዛ 10MB)",
+      "batchCategory": "የጅምላ ምድብ",
       "selectCategory": "ምድብ ይምረጡ",
-      "pages": "ገጾች",
+      "batchBooksFiles": "የጅምላ መጽሐፍት ፋይሎች",
+      "batchBooksDescription": "በርካታ የመጽሐፍ ፋይሎችን በአንድ ጊዜ ይጫኑ (እያንዳንዳቸው ቢበዛ 10MB)",
+      "selectedFiles": "የተመረጡ ፋይሎች",
+      "includeAdditionalFields": "ተጨማሪ መረጃዎችን አካትት",
+      "authorEn": "ደራሲ (በእንግሊዘኛ)",
+      "authorEnPlaceholder": "የደራሲውን ስም በእንግሊዘኛ ያስገቡ",
+      "authorAm": "ደራሲ (በአማርኛ)",
+      "authorAmPlaceholder": "የደራሲውን ስም በአማርኛ ያስገቡ",
+      "descriptionEn": "መግለጫ (በእንግሊዘኛ)",
+      "descriptionEnPlaceholder": "የመጽሐፉን መግለጫ በእንግሊዘኛ ያስገቡ",
+      "descriptionAm": "መግለጫ (በአማርኛ)",
+      "descriptionAmPlaceholder": "የመጽሐፉን መግለጫ በአማርኛ ያስገቡ",
+      "categoryEn": "ምድብ (በእንግሊዘኛ)",
+      "categoryAm": "ምድብ (በአማርኛ)",
+      "pages": "የገጽ ብዛት",
       "language": "ቋንቋ",
       "selectLanguage": "ቋንቋ ይምረጡ",
       "publishedYear": "የታተመበት ዓመት",
-      "readingTimeEn": "የማንበብ ጊዜ (እንግሊዝኛ)",
-      "readingTimeAm": "የማንበብ ጊዜ (አማርኛ)",
-      "readingTimePlaceholder": "ለምሳሌ: 6 ሰዓታት",
-      "popularityRating": "የታዋቂነት ደረጃ",
-      "featuredBook": "ተለምዶ የሆነ መጽሐፍ",
+      "readingTimeEn": "የንባብ ጊዜ (በእንግሊዘኛ)",
+      "readingTimeAm": "የንባብ ጊዜ (በአማርኛ)",
+      "readingTimePlaceholder": "ምሳሌ፡ 5 ሰዓት",
+      "popularityRating": "የተወዳጅነት ደረጃ",
+      "featuredBook": "ልዩ መጽሐፍ",
       "cancelButton": "ሰርዝ",
-      "updateButton": "መጽሐፍ አዘምን",
-      "createButton": "መጽሐፍ ፍጠር"
-    },
-    "editModal": {
-      "titleEdit": "መጽሐፍ አርትዕ",
-      "titleCreate": "መጽሐፍ ፍጠር"
-    },
-    "deleteModal": {
-      "title": "ማስወገድን ያረጋግጡ",
-      "confirmMessage": "ይህን መጽሐፍ ለመሰረዝ እርግጠኛ ነዎት?",
-      "cancelButton": "ሰርዝ",
-      "deleteButton": "ሰርዝ"
-    },
-    "notifications": {
-      "success": "ተሳክቷል!",
-      "error": "ስህተት!",
-      "booksLoadedSuccess": "መጽሐፎች በተሳካ ሁኔታ ተጭነዋል",
-      "failedLoadBooks": "የመጽሐፎች ዳታ መጫን አልተሳካም",
-      "invalidBookId": "የተሳሳተ የመጽሐፍ መለያ",
-      "coverImageUploadSuccess": "የሽፋን ምስል በተሳካ ሁኔታ ተጫኗል",
-      "coverImageUploadError": "የሽፋን ምስል መጫን አልተሳካም",
-      "uploadCoverImage": "እባክዎ የሽፋን ምስል ይጭኑ",
-      "bookSourceUploadSuccess": "የመጽሐፍ ምንጭ ፋይል በተሳካ ሁኔታ ተጫኗል",
-      "bookSourceUploadError": "የመጽሐፍ ምንጭ ፋይል መጫን አልተሳካም",
-      "uploadBookSource": "እባክዎ የመጽሐፍ ምንጭ ፋይል ይጭኑ",
-      "bookUpdatedSuccess": "መጽሐፉ በተሳካ ሁኔታ ተዘምኗል",
-      "bookCreatedSuccess": "መጽሐፉ በተሳካ ሁኔታ ተፈጥሯል",
-      "updateBookError": "መጽሐፍን �ወጥ ማድረግ አልተሳካም",
-      "createBookError": "መጽሐፍ መፍጠር አልተሳካም",
-      "bookNotFound": "መጽሐፉ አልተገኘም",
-      "loadBookError": "ለማርትዕ መጽሐፍን መጫን አልተሳካም",
-      "bookDeletedSuccess": "መጽሐፉ በተሳካ ሁኔታ ተሰርዟል",
-      "deleteBookError": "መጽሐፍን ማስወገድ አልተሳካም",
-      "fileSizeLimit": "የፋይል መጠን ከ {size} በታች መሆን አለበት"
+      "updateButton": "መጽሐፉን አዘምን",
+      "createButton": "መጽሐፍ ፍጠር",
+      "currentFile": "የአሁኑ ፋይል"
     },
     "validation": {
-      "titleEnRequired": "የእንግሊዝኛ ርዕስ ያስፈልጋል",
+      "titleEnRequired": "የእንግሊዘኛ ርዕስ ያስፈልጋል",
       "titleAmRequired": "የአማርኛ ርዕስ ያስፈልጋል",
-      "authorEnRequired": "የእንግሊዝኛ ዜና ለጣፊያስፈልጋል",
-      "authorAmRequired": "የአማርኛ ዜና ለጣፊ ያስፈልጋል",
-      "descriptionEnRequired": "የእንግሊዝኛ መግለጫ ያስፈልጋል",
-      "descriptionAmRequired": "የአማርኛ መግለጫ ያስፈልጋል",
-      "categoryEnRequired": "የእንግሊዝኛ ምድብ ያስፈልጋል",
-      "categoryAmRequired": "የአማርኛ ምድብ ያስፈልጋል",
-      "pagesGreaterThanZero": "ገጾች ከ 0 በላይ መሆን አለባቸው",
-      "languageRequired": "ቋንቋ ያስፈልጋል",
-      "yearRange": "ዓመቱ ከ 1 እስከ {year} መሆን አለበት",
-      "readingTimeEnRequired": "የእንግሊዝኛ የማንበብ ጊዜ ያስፈልጋል",
-      "readingTimeAmRequired": "የአማርኛ የማንበብ ጊዜ ያስፈልጋል",
       "coverImageRequired": "የሽፋን ምስል ያስፈልጋል",
-      "bookSourceRequired": "የመጽሐፍ ምንጭ ፋይል ያስፈልጋል"
+      "bookSourceRequired": "ለነጠላ ጭነት የመጽሐፍ ፋይል ያስፈልጋል",
+      "batchBooksRequired": "ለጅምላ ጭነት ቢያንስ አንድ ፋይል ያስፈልጋል",
+      "batchCategoryRequired": "ለጅምላ ጭነት ምድብ መምረጥ ያስፈልጋል",
+      "invalidNumber": "እባክዎን ትክክለኛ ቁጥር ያስገቡ"
+    },
+    "notifications": {
+      "success": "ተሳክቷል",
+      "error": "ስህተት",
+      "booksLoadedSuccess": "መጽሐፍት በተሳካ ሁኔታ ተጭነዋል",
+      "failedLoadBooks": "መጽሐፍቱን መጫን አልተቻለም",
+      "invalidBookId": "የማይታወቅ የመጽሐፍ መለያ",
+      "coverImageUploadSuccess": "የሽፋን ምስል በተሳካ ሁኔታ ተጭኗል",
+      "coverImageUploadError": "የሽፋን ምስሉን መጫን አልተቻለም",
+      "uploadCoverImage": "እባክዎን የሽፋን ምስል ይጫኑ",
+      "bookSourceUploadSuccess": "የመጽሐፉ ፋይል በተሳካ ሁኔታ ተጭኗል",
+      "bookSourceUploadError": "የመጽሐፉን ፋይል መጫን አልተቻለም",
+      "uploadBookSource": "ለነጠላ ጭነት እባክዎን የመጽሐፍ ፋይል ይጫኑ",
+      "batchUploadSuccess": "{{count}} መጽሐፍት በተሳካ ሁኔታ ተጭነዋል",
+      "batchUploadError": "ፋይሎቹን በጅምላ መጫን አልተቻለም",
+      "bookUpdatedSuccess": "መጽሐፉ በተሳካ ሁኔታ ተዘምኗል",
+      "bookCreatedSuccess": "መጽሐፉ በተሳካ ሁኔታ ተፈጥሯል",
+      "updateBookError": "መጽሐፉን ማዘመን አልተቻለም",
+      "createBookError": "መጽሐፉን መፍጠር አልተቻለም",
+      "bookNotFound": "መጽሐፉ አልተገኘም",
+      "loadBookError": "የመጽሐፉን መረጃ መጫን አልተቻለም",
+      "bookDeletedSuccess": "መጽሐፉ በተሳካ ሁኔታ ተሰርዟል",
+      "deleteBookError": "መጽሐፉን መሰረዝ አልተቻለም",
+      "fileSizeLimit": "የፋይሉ መጠን ከ {{size}} ገደብ በላይ ነው"
     },
     "categories": {
-      "fiction": "ተፈጥሯዊ",
-      "nonFiction": "ካልተፈጥሮ",
-      "biography": "ህይወት ታሪክ",
+      "fiction": "ልብ ወለድ",
+      "nonFiction": "ልብ ወለድ ያልሆኑ",
+      "biography": "የህይወት ታሪክ",
       "science": "ሳይንስ",
-      "fantasy": "ምናባዊ"
+      "fantasy": "ፈጠራ"
     },
     "languages": {
-      "english": "እንግሊዝኛ",
+      "english": "እንግሊዘኛ",
       "amharic": "አማርኛ",
       "french": "ፈረንሳይኛ",
       "spanish": "ስፓኒሽ"
+    },
+    "table": {
+      "headers": {
+        "id": "መለያ",
+        "titleEn": "ርዕስ (EN)",
+        "titleAm": "ርዕስ (AM)",
+        "author": "ደራሲ",
+        "category": "ምድብ",
+        "pages": "ገጾች",
+        "language": "ቋንቋ",
+        "publishedYear": "ዓመት",
+        "rating": "ደረጃ",
+        "cover": "ሽፋን",
+        "bookFile": "ፋይል",
+        "createdAt": "የተፈጠረበት ቀን",
+        "actions": "ድርጊቶች"
+      },
+      "batchFiles": "{{count}} ፋይሎች",
+      "notAvailable": "የማይገኝ"
+    },
+    "deleteModal": {
+      "title": "መጽሐፍ ሰርዝ",
+      "confirmMessage": "ይህንን መጽሐፍ ለመሰረዝ እርግጠኛ ነዎት? ይህ ድርጊት ወደ ኋላ ሊመለስ አይችልም።",
+      "cancelButton": "ተው",
+      "deleteButton": "ሰርዝ"
     }
+  },
+  "table": {
+    "notAvailable": "የማይገኝ"
   },
   "viewcompliantadmin": {
     "tabs": {

@@ -486,7 +486,203 @@
       "privacy": "Dhuunfaa kee eegna. Yeroo kamiiyyuu irraa dhiisuu dandeessu."
     }
   },
-
+  "addbooksadmin": {
+    "title": "Bulchiinsa Kitaabotaa",
+    "addBookButton": "Kitaaba Haaraa Dabali",
+    "editModal": {
+      "titleEdit": "Kitaaba Sirreessi",
+      "titleCreate": "Kitaaba Haaraa Dabali"
+    },
+    "form": {
+      "uploadType": "Gosa Ol-fe'iinsaa",
+      "singleBook": "Kitaaba Tokko",
+      "batchBooks": "Baay'inaan Ol-fe'uu",
+      "titleEn": "Mata-duree (Ingiliffa)",
+      "titleEnPlaceholder": "Mata-duree Ingiliffaan galchi",
+      "titleAm": "Mata-duree (Amaaraa)",
+      "titleAmPlaceholder": "Mata-duree Amaaraun galchi",
+      "coverImage": "Fakkii Qoloo",
+      "upload": "Faayila Ol-fe'i",
+      "coverImageDescription": "Fakkii qoloo kitaabaa ol-fe'i (max 5MB)",
+      "coverImageAlt": "Ilaalcha qoloo kitaabaa",
+      "bookSource": "Faayila Kitaabaa",
+      "bookSourceDescription": "Faayila kitaabaa ol-fe'i (PDF, EPUB, DOC, TXT - max 10MB)",
+      "batchCategory": "Ramaddii Walalo",
+      "selectCategory": "Ramaddii filadhu",
+      "batchBooksFiles": "Faayiloota Kitaabaa Baay'ee",
+      "batchBooksDescription": "Faayiloota kitaabaa hedduu yeroo tokkotti ol-fe'i (tokkoon tokkoon max 10MB)",
+      "selectedFiles": "Faayiloota Filataman",
+      "includeAdditionalFields": "Dirreewwan Dabalataa Of-keessatti Hammati",
+      "authorEn": "Barreessaa (Ingiliffa)",
+      "authorEnPlaceholder": "Maqaa barreessaa Ingiliffaan galchi",
+      "authorAm": "Barreessaa (Amaaraa)",
+      "authorAmPlaceholder": "Maqaa barreessaa Amaaraun galchi",
+      "descriptionEn": "Ibsa (Ingiliffa)",
+      "descriptionEnPlaceholder": "Ibsa kitaabaa Ingiliffaan galchi",
+      "descriptionAm": "Ibsa (Amaaraa)",
+      "descriptionAmPlaceholder": "Ibsa kitaabaa Amaaraun galchi",
+      "categoryEn": "Ramaddii (Ingiliffa)",
+      "categoryAm": "Ramaddii (Amaaraa)",
+      "pages": "Baay'ina Fuulaa",
+      "language": "Afaan",
+      "selectLanguage": "Afaan filadhu",
+      "publishedYear": "Bara Maxxanfame",
+      "readingTimeEn": "Yeroo Dubbisuu (Ingiliffa)",
+      "readingTimeAm": "Yeroo Dubbisuu (Amaaraa)",
+      "readingTimePlaceholder": "fkn, sa'aatii 5",
+      "popularityRating": "Sadarkaa Jaallatamaa",
+      "featuredBook": "Kitaaba Addatti Filatame",
+      "cancelButton": "Haqui",
+      "updateButton": "Kitaaba Haaromsi",
+      "createButton": "Kitaaba Uumi",
+      "currentFile": "Faayila Ammaa"
+    },
+    "validation": {
+      "titleEnRequired": "Mata-duree Ingiliffaa ni barbaachisa",
+      "titleAmRequired": "Mata-duree Amaaraa ni barbaachisa",
+      "coverImageRequired": "Fakkii qoloo ni barbaachisa",
+      "bookSourceRequired": "Kitaaba tokko ol-fe'uuf faayilli ni barbaachisa",
+      "batchBooksRequired": "Kitaaba baay'ee ol-fe'uuf yoo xiqqaate faayilli tokko ni barbaachisa",
+      "batchCategoryRequired": "Kitaaba baay'ee ol-fe'uuf ramaddiin ni barbaachisa",
+      "invalidNumber": "Maaloo lakkoofsa sirrii galchi"
+    },
+    "notifications": {
+      "success": "Milkaa'eera",
+      "error": "Dogoggora",
+      "booksLoadedSuccess": "Kitaabonni milkaa'inaan fe'amaniiru",
+      "failedLoadBooks": "Kitaabota fe'uun hin danda'amne",
+      "invalidBookId": "ID kitaabaa sirrii hin taane",
+      "coverImageUploadSuccess": "Fakkii qoloo milkaa'inaan ol-fe'ameera",
+      "coverImageUploadError": "Fakkii qoloo ol-fe'uun hin danda'amne",
+      "uploadCoverImage": "Maaloo fakkii qoloo ol-fe'i",
+      "bookSourceUploadSuccess": "Faayilli kitaabaa milkaa'inaan ol-fe'ameera",
+      "bookSourceUploadError": "Faayila kitaabaa ol-fe'uun hin danda'amne",
+      "uploadBookSource": "Maaloo faayila kitaabaa ol-fe'i",
+      "batchUploadSuccess": "Kitaabonni {{count}} milkaa'inaan ol-fe'amaniiru",
+      "batchUploadError": "Faayiloota baay'ee ol-fe'uun hin danda'amne",
+      "bookUpdatedSuccess": "Kitaabni milkaa'inaan haaromeera",
+      "bookCreatedSuccess": "Kitaabni milkaa'inaan uumameera",
+      "updateBookError": "Kitaaba haaromsuun hin danda'amne",
+      "createBookError": "Kitaaba uumuun hin danda'amne",
+      "bookNotFound": "Kitaabni hin argamne",
+      "loadBookError": "Odeeffannoo kitaabaa fe'uun hin danda'amne",
+      "bookDeletedSuccess": "Kitaabni milkaa'inaan haqameera",
+      "deleteBookError": "Kitaaba haquun hin danda'amne",
+      "fileSizeLimit": "Hammi faayilaa daangaa {{size}} darbeera"
+    },
+    "categories": {
+      "fiction": "Asoosama",
+      "nonFiction": "Asoosama Kan Hin Taane",
+      "biography": "Seenaa Jireenyaa",
+      "science": "Saayinsii",
+      "fantasy": "Fantaasii"
+    },
+    "languages": {
+      "english": "Ingiliffa",
+      "amharic": "Amaaraa",
+      "french": "Faransaay",
+      "spanish": "Ispeen"
+    },
+    "table": {
+      "headers": {
+        "id": "ID",
+        "titleEn": "Mata-duree (EN)",
+        "titleAm": "Mata-duree (AM)",
+        "author": "Barreessaa",
+        "category": "Ramaddii",
+        "pages": "Fuula",
+        "language": "Afaan",
+        "publishedYear": "Bara",
+        "rating": "Sadarkaa",
+        "cover": "Qoloo",
+        "bookFile": "Faayila",
+        "createdAt": "Guyyaa Uumame",
+        "actions": "Gochaalee"
+      },
+      "batchFiles": "Faayiloota {{count}}",
+      "notAvailable": "Hin jiru"
+    },
+    "deleteModal": {
+      "title": "Kitaaba Haqui",
+      "confirmMessage": "Kitaaba kana haquu akka barbaaddu mirkaneeffatteettaa? Gochi kun boodatti hin deebi'u.",
+      "cancelButton": "Dhiisi",
+      "deleteButton": "Haqui"
+    }
+  },
+  "table": {
+    "notAvailable": "Hin jiru"
+  },
+"orgstructureadmin": {
+    "title": "Caasaa Dhaabbataa",
+    "buttons": {
+      "addMember": "Miseensa Dabali",
+      "updateMember": "Miseensa Haaromsi",
+      "cancel": "Dhiisi",
+      "delete": "Haqi"
+    },
+    "columns": {
+      "id": "ID",
+      "name": "Maqaa",
+      "title": "Gosa Hojii",
+      "parent_id": "Gabaasa Kan Qeessu",
+      "image": "Fakkii",
+      "created_at": "Guyyaa Uumame",
+      "actions": "Gochaalee"
+    },
+    "form": {
+      "labels": {
+        "name": "Maqaa",
+        "title": "Gosa Hojii/Itaayitaa",
+        "parent": "Gabaasa Kan Qeessu",
+        "image": "Fakkii Proofayilii"
+      },
+      "placeholders": {
+        "name": "Maqaa miseensaa galchi",
+        "title": "Gosa hojii galchi",
+        "parent": "Supervaayizara/Maneejara filadhu",
+        "image": "Fakkii proofayilii ol-fe'i"
+      },
+      "descriptions": {
+        "image": "Fakkii proofayilii ol-fe'i (JPG, PNG, WebP - hamma guddaa 5MB)"
+      },
+      "errors": {
+        "required": "Bakki kun guutamuu qaba",
+        "imageRequired": "Fakkii proofayilii ni barbaachisa",
+        "invalidImage": "Maaloo faayila fakkii sirrii ol-fe'aa",
+        "imageSize": "Hammi fakkii 5MB gadi ta'uu qaba"
+      }
+    },
+    "modals": {
+      "addTitle": "Miseensa Dhaabbataa Dabali",
+      "editTitle": "Miseensa Dhaabbataa Sirreessi",
+      "deleteTitle": "Miseensa Haqui",
+      "deleteMessage": "Miseensa kana haquu akka barbaaddu mirkaneeffatteettaa? Gochi kun boodatti hin deebi'u."
+    },
+    "misc": {
+      "topLevel": "Sadarkaa Olaanaa (Gabaasa kan hin qabne)",
+      "noImage": "Fakkiin hin jiru",
+      "currentImage": "Fakkii Ammaa"
+    },
+    "notifications": {
+      "success": {
+        "title": "Milkaa'eera",
+        "load": "Caasaan dhaabbataa milkaa'inaan fe'ameera",
+        "upload": "Fakkiin milkaa'inaan ol-fe'ameera",
+        "update": "Miseensi milkaa'inaan haaromeera",
+        "create": "Miseensi milkaa'inaan uumameera",
+        "delete": "Miseensi milkaa'inaan haqameera"
+      },
+      "error": {
+        "title": "Dogoggora",
+        "load": "Caasaa dhaabbataa fe'uun hin danda'amne",
+        "upload": "Fakkii ol-fe'uun hin danda'amne",
+        "update": "Miseensa haaromsuun hin danda'amne",
+        "create": "Miseensa uumuun hin danda'amne",
+        "delete": "Miseensa haquun hin danda'amne",
+        "notFound": "Miseensi hin argamne"
+      }
+    }
+  },
   "leadershippage": {
     "language": {
       "english": "Ingliffaa",
