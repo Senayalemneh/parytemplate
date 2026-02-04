@@ -10,11 +10,9 @@ import {
   ActionIcon,
   Select,
   Badge,
-  MultiSelect,
   FileInput,
   Image,
   Text,
-  Stack,
   Paper,
   ScrollArea,
   Chip,
@@ -32,6 +30,7 @@ import {
   updateWoreda,
   uploadFile,
   getSubcityById,
+  getAllSubcity, // CORRECTED: Use getAllSubcity instead of getSubcities
 } from "../../services/api/main";
 import {
   IconPencil,
@@ -151,6 +150,8 @@ const WoredasManagement = () => {
   });
   const [subcity, setSubcity] = useState<SubcityItem | null>(null);
   const [subcityLoading, setSubcityLoading] = useState(false);
+  const [subcitiesList, setSubcitiesList] = useState<SubcityItem[]>([]);
+  const [subcitiesLoading, setSubcitiesLoading] = useState(false);
 
   // Helper function to get localized name
   const getLocalizedName = (item: any, language: string): string => {
@@ -175,6 +176,21 @@ const WoredasManagement = () => {
     }
     
     return field || "";
+  };
+
+  // Helper to get localized name for dropdown
+  const getLocalizedSubcityName = (subcity: SubcityItem): string => {
+    if (!subcity || !subcity.name) {
+      return `Subcity ${subcity?.id || 'Unknown'}`;
+    }
+    
+    const lang = i18n.language as keyof typeof subcity.name;
+    
+    // Try current language first, then fallback to English, then Amharic, then ID
+    return subcity.name[lang] || 
+           subcity.name.en || 
+           subcity.name.am || 
+           `Subcity ${subcity.id}`;
   };
 
   const form = useForm({
@@ -291,6 +307,59 @@ const WoredasManagement = () => {
     }
   };
 
+  const fetchAllSubcities = async () => {
+    setSubcitiesLoading(true);
+    try {
+      const response = await getAllSubcity();
+      console.log("Fetched subcities raw response:", response);
+      
+      let subcitiesData: SubcityItem[] = [];
+      
+      // Handle different response formats
+      if (Array.isArray(response)) {
+        subcitiesData = response;
+      } else if (response && response.data && Array.isArray(response.data)) {
+        subcitiesData = response.data;
+      } else if (response && typeof response === 'object') {
+        // If it's a single object, wrap it in an array
+        subcitiesData = [response];
+      } else {
+        console.error("Unexpected response format for subcities:", response);
+        subcitiesData = [];
+      }
+      
+      console.log("Processed subcities data:", subcitiesData);
+      
+      // Validate and clean the data
+      const validSubcities = subcitiesData.filter(subcity => 
+        subcity && 
+        subcity.id && 
+        subcity.name && 
+        (subcity.name.en || subcity.name.am)
+      );
+      
+      console.log("Valid subcities:", validSubcities);
+      
+      setSubcitiesList(validSubcities);
+      
+      if (validSubcities.length === 0) {
+        showNotification(
+          "No subcities found or invalid data format",
+          "error"
+        );
+      }
+    } catch (error) {
+      console.error("Failed to fetch subcities:", error);
+      showNotification(
+        "Failed to load subcities",
+        "error"
+      );
+      setSubcitiesList([]);
+    } finally {
+      setSubcitiesLoading(false);
+    }
+  };
+
   const fetchSubcity = async (subcityId: string) => {
     if (!subcityId) {
       setSubcity(null);
@@ -305,6 +374,7 @@ const WoredasManagement = () => {
     setSubcityLoading(true);
     try {
       const response = await getSubcityById(parseInt(subcityId));
+      console.log("Fetched subcity by ID:", response); // Debug log
       
       // Handle array response - your API returns an array
       if (Array.isArray(response) && response.length > 0) {
@@ -355,14 +425,68 @@ const WoredasManagement = () => {
     }
   };
 
+  const handleSubcitySelect = (subcityId: string | null) => {
+    const selectedId = subcityId || "";
+    console.log("Subcity selected:", selectedId);
+    console.log("Available subcities:", subcitiesList);
+    
+    form.setFieldValue("subcity_id", selectedId);
+    
+    if (!selectedId) {
+      // Clear subcity data if no selection
+      form.setValues({
+        ...form.values,
+        subCity_en: "",
+        subCity_am: "",
+      });
+      setSubcity(null);
+      return;
+    }
+    
+    // Find the selected subcity from the list
+    const selectedSubcity = subcitiesList.find(sc => sc.id.toString() === selectedId);
+    console.log("Found subcity in list:", selectedSubcity);
+    
+    if (selectedSubcity) {
+      // Update form fields with the selected subcity's localized names
+      const updatedValues = {
+        ...form.values,
+        subcity_id: selectedId,
+        subCity_en: selectedSubcity.name?.en || "",
+        subCity_am: selectedSubcity.name?.am || "",
+      };
+      
+      console.log("Updating form with values:", updatedValues);
+      form.setValues(updatedValues);
+      setSubcity(selectedSubcity);
+    } else {
+      // If not found in list, fetch from API as fallback
+      console.log("Subcity not found in list, fetching from API...");
+      fetchSubcity(selectedId);
+    }
+  };
+
   useEffect(() => {
     fetchWoredas();
+    fetchAllSubcities(); // Fetch all subcities when component mounts
   }, [t]);
 
   useEffect(() => {
-    // Fetch subcity when subcity_id changes
+    // Fetch subcity when subcity_id changes (for manual ID entry)
     if (form.values.subcity_id) {
-      fetchSubcity(form.values.subcity_id);
+      // Check if the subcity is already in our list
+      const existingSubcity = subcitiesList.find(sc => sc.id.toString() === form.values.subcity_id);
+      if (existingSubcity) {
+        setSubcity(existingSubcity);
+        form.setValues({
+          ...form.values,
+          subCity_en: existingSubcity.name?.en || "",
+          subCity_am: existingSubcity.name?.am || "",
+        });
+      } else {
+        // If not in list, fetch from API
+        fetchSubcity(form.values.subcity_id);
+      }
     } else {
       setSubcity(null);
       form.setValues({
@@ -586,13 +710,22 @@ const WoredasManagement = () => {
       };
 
       form.setValues(formValues);
+      console.log("Editing woreda with subCity:", item.subCity); // Debug log
 
-      // Note: You need to determine how to get the subcity_id from the item
-      // If your WoredaItem has a subcity_id field, use it:
-      // if (item.subcity_id) {
-      //   form.setFieldValue('subcity_id', item.subcity_id.toString());
-      //   // This will trigger the useEffect to fetch subcity
-      // }
+      // Try to find subcity from the list by matching the name
+      // This is a workaround if subcity_id is not stored in woreda
+      if (item.subCity?.en || item.subCity?.am) {
+        const foundSubcity = subcitiesList.find(sc => 
+          (sc.name?.en && item.subCity?.en && sc.name.en === item.subCity.en) || 
+          (sc.name?.am && item.subCity?.am && sc.name.am === item.subCity.am)
+        );
+        
+        console.log("Found matching subcity:", foundSubcity); // Debug log
+        
+        if (foundSubcity) {
+          form.setFieldValue('subcity_id', foundSubcity.id.toString());
+        }
+      }
 
       setPreviewImage(item.image || null);
       setEditingId(item.id);
@@ -888,7 +1021,7 @@ const WoredasManagement = () => {
         overlayProps={{ blur: 3 }}
         scrollAreaComponent={Modal.NativeScrollArea}
       >
-        {(loading || fileUploading || subcityLoading) && <Loader />}
+        {(loading || fileUploading || subcityLoading || subcitiesLoading) && <Loader />}
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <Group grow mb="md">
             <TextInput
@@ -920,15 +1053,52 @@ const WoredasManagement = () => {
             />
           </Group>
 
-          {/* Subcity Selection and Display */}
+          {/* Subcity Selection - DROPDOWN VERSION */}
           <Box mb="md">
-            <TextInput
-              label={t("woredamanagementadmin.form.subcityId")}
-              placeholder={t("woredamanagementadmin.form.subcityIdPlaceholder")}
+            <Group position="apart" mb="xs">
+              <Text size="sm" weight={500}>
+                {t("woredamanagementadmin.form.subcity")} *
+              </Text>
+              <Button
+                size="xs"
+                variant="subtle"
+                onClick={fetchAllSubcities}
+                loading={subcitiesLoading}
+                leftIcon={<IconPlus size={12} />}
+              >
+                {t("woredamanagementadmin.form.refreshSubcities")}
+              </Button>
+            </Group>
+            
+            <Select
+              placeholder={t("woredamanagementadmin.form.subcityPlaceholder")}
               required
-              description={t("woredamanagementadmin.form.subcityIdDescription")}
-              {...form.getInputProps("subcity_id")}
+              data={subcitiesList.map((subcity) => {
+                const label = getLocalizedSubcityName(subcity);
+                console.log(`Subcity ${subcity.id}: ${label}`, subcity); // Debug each item
+                return {
+                  value: subcity.id.toString(),
+                  label: label,
+                };
+              })}
+              searchable
+              clearable
+              nothingFound={subcitiesLoading ? 
+                t("woredamanagementadmin.form.loadingSubcities") : 
+                t("woredamanagementadmin.form.noSubcitiesFound")
+              }
+              disabled={subcitiesLoading}
+              value={form.values.subcity_id}
+              onChange={handleSubcitySelect}
+              description={`${t("woredamanagementadmin.form.subcityDescription")} (${subcitiesList.length} ${t("woredamanagementadmin.form.available")})`}
+              error={form.errors.subcity_id}
             />
+            
+            {subcitiesLoading && (
+              <Text size="sm" color="blue" mt="xs">
+                {t("woredamanagementadmin.form.loadingSubcities")}
+              </Text>
+            )}
             
             {subcityLoading && (
               <Text size="sm" color="blue" mt="xs">
@@ -956,6 +1126,16 @@ const WoredasManagement = () => {
                   </Box>
                 </Group>
                 {subcity.description && (
+                  <Box mt="xs">
+                    <Text size="xs" color="dimmed">
+                      {t("woredamanagementadmin.form.description")}
+                    </Text>
+                    <Text size="sm">{subcity.description}</Text>
+                  </Box>
+                )}
+              </Paper>
+            )}
+          </Box>
                   <Box mt="xs">
                     <Text size="xs" color="dimmed">
                       {t("woredamanagementadmin.form.description")}
@@ -1003,7 +1183,6 @@ const WoredasManagement = () => {
 
           <FileInput
             label={t("woredamanagementadmin.form.image")}
-            placeholder={t("woredamanagementadmin.form.imagePlaceholder")}
             accept="image/png,image/jpeg,image/webp"
             icon={<IconUpload size={14} />}
             onChange={handleFileChange}
@@ -1011,7 +1190,6 @@ const WoredasManagement = () => {
             description={t("woredamanagementadmin.form.imageDescription")}
             clearable
             required={!editingId}
-            {...form.getInputProps("imageFile")}
           />
 
           {(previewImage || form.values.image_path) && (
@@ -1219,7 +1397,7 @@ const WoredasManagement = () => {
               type="submit"
               variant="gradient"
               gradient={{ from: "indigo", to: "cyan" }}
-              disabled={loading || fileUploading || subcityLoading}
+              disabled={loading || fileUploading || subcityLoading || subcitiesLoading}
             >
               {editingId
                 ? t("woredamanagementadmin.updateButton")
