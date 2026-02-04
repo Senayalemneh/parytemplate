@@ -13,6 +13,7 @@ import {
   FileInput,
   Image,
   Text,
+  NumberInput,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
@@ -50,6 +51,7 @@ interface CarouselItem {
     am: string;
     en: string;
   };
+  order: number;
   is_active: boolean;
   created_at: string;
   updated_at: string;
@@ -101,6 +103,7 @@ const CarouselManagement = () => {
       imgURL: "",
       is_active: true,
       imageFile: null as File | null,
+      order: 0,
     },
     validate: {
       title_am: (value) =>
@@ -115,6 +118,8 @@ const CarouselManagement = () => {
         !editingId && !value && !values.imgURL
           ? t("carouselmanagement.validation.imageRequired")
           : null,
+      order: (value) =>
+        value ? null : t("carouselmanagement.validation.orderRequired"),
     },
   });
 
@@ -189,6 +194,7 @@ const CarouselManagement = () => {
           en: values.description_en,
           am: values.description_am,
         },
+        order: values.order,
         is_active: values.is_active,
       };
 
@@ -248,6 +254,7 @@ const CarouselManagement = () => {
         imgURL: item.imgURL || "",
         is_active: item.is_active || true,
         imageFile: null,
+        order: item.order || 0,
       });
 
       setPreviewImage(item.imgURL || null);
@@ -323,6 +330,16 @@ const CarouselManagement = () => {
       accessorKey: "id",
       header: t("carouselmanagement.table.columns.id"),
       size: 80,
+    },
+    {
+      accessorFn: (row) => row.order,
+      header: t("carouselmanagement.table.columns.order"),
+      id: "order",
+      Cell: ({ cell }) => (
+        <Box sx={{ maxWidth: 200 }}>
+          <div className="truncate">{cell.getValue<number>()}</div>
+        </Box>
+      ),
     },
     {
       accessorFn: (row) => row.title?.am || t("table.na"),
@@ -501,6 +518,12 @@ const CarouselManagement = () => {
               {...form.getInputProps("description_en")}
             />
           </Group>
+
+          <NumberInput
+            label={t("carouselmanagement.form.order")}
+            placeholder={t("carouselmanagement.form.orderPlaceholder")}
+            {...form.getInputProps("order")}
+          />
 
           <FileInput
             label={t("carouselmanagement.form.imageLabel")}
