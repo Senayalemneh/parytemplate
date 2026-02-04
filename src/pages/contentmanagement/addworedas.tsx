@@ -30,7 +30,7 @@ import {
   updateWoreda,
   uploadFile,
   getSubcityById,
-  getAllSubcity, // CORRECTED: Use getAllSubcity instead of getSubcities
+  getAllSubcity,
 } from "../../services/api/main";
 import {
   IconPencil,
@@ -1126,16 +1126,6 @@ const WoredasManagement = () => {
                   </Box>
                 </Group>
                 {subcity.description && (
-                  <Box mt="xs">
-                    <Text size="xs" color="dimmed">
-                      {t("woredamanagementadmin.form.description")}
-                    </Text>
-                    <Text size="sm">{subcity.description}</Text>
-                  </Box>
-                )}
-              </Paper>
-            )}
-          </Box>
                   <Box mt="xs">
                     <Text size="xs" color="dimmed">
                       {t("woredamanagementadmin.form.description")}

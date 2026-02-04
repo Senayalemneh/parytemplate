@@ -9,7 +9,7 @@ import {
   ActionIcon,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { MRT_ColumnDef, MantineReactTable } from "mantine-react-table";
 import {
   createNewsCategory,
@@ -35,7 +35,7 @@ interface NewsCategory {
   name: {
     am: string;
     en: string;
-  };
+  } | null; // Allow null
   slug: string;
   created_at: string;
   updated_at: string;
@@ -72,7 +72,12 @@ const NewsCategoryManagement = () => {
     setLoading(true);
     try {
       const response = await getNewsCategories();
-      setCategories(response?.data || []);
+      // Ensure all categories have proper name structure
+      const safeCategories = (response?.data || []).map((category: any) => ({
+        ...category,
+        name: category.name || { am: "", en: "" } // Provide default if null
+      }));
+      setCategories(safeCategories);
       showNotification(
         t("newscategorymanagement.notifications.loadSuccess"),
         "success"
@@ -90,7 +95,49 @@ const NewsCategoryManagement = () => {
 
   useEffect(() => {
     fetchCategories();
-  }, [i18n.language]);
+  }, []);
+
+  // Helper function to get localized name with null safety
+  const getLocalizedName = (category: NewsCategory) => {
+    // Check if name exists and is not null/undefined
+    if (!category.name) {
+      return t("newscategorymanagement.table.notAvailable");
+    }
+    
+    const currentLang = i18n.language;
+    
+    // Type-safe access with fallbacks
+    if (currentLang === 'am' && category.name.am) {
+      return category.name.am;
+    }
+    
+    // Default to English if available
+    if (category.name.en) {
+      return category.name.en;
+    }
+    
+    // Fallback to Amharic if English not available
+    if (category.name.am) {
+      return category.name.am;
+    }
+    
+    return t("newscategorymanagement.table.notAvailable");
+  };
+
+  // Helper function to format date in current locale
+  const formatLocalizedDate = (dateString: string) => {
+    if (!dateString) {
+      return t("newscategorymanagement.table.notAvailable");
+    }
+    
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleString(i18n.language);
+    } catch (error) {
+      console.error("Error formatting date:", error, dateString);
+      return dateString;
+    }
+  };
 
   const showNotification = (message: string, type: "success" | "error") => {
     notifications.show({
@@ -116,8 +163,8 @@ const NewsCategoryManagement = () => {
       setLoading(true);
       const payload = {
         name: {
-          am: values.name_am,
-          en: values.name_en,
+          am: values.name_am.trim(),
+          en: values.name_en.trim(),
         },
       };
       if (editingId) {
@@ -159,8 +206,8 @@ const NewsCategoryManagement = () => {
       }
       const category = response.data;
       form.setValues({
-        name_am: category.name.am || "",
-        name_en: category.name.en || "",
+        name_am: category.name?.am || "",
+        name_en: category.name?.en || "",
       });
       setEditingId(category.id);
       openModal();
@@ -204,61 +251,70 @@ const NewsCategoryManagement = () => {
     openDeleteConfirm();
   };
 
-  const columns: MRT_ColumnDef<NewsCategory>[] = [
-    {
-      accessorKey: "id",
-      header: t("newscategorymanagement.table.headers.id"),
-      size: 80,
-    },
-    {
-      accessorKey: "name.am",
-      header: t("newscategorymanagement.table.headers.nameAm"),
-    },
-    {
-      accessorKey: "name.en",
-      header: t("newscategorymanagement.table.headers.nameEn"),
-    },
-    {
-      accessorKey: "slug",
-      header: t("newscategorymanagement.table.headers.slug"),
-    },
-    {
-      accessorKey: "created_at",
-      header: t("newscategorymanagement.table.headers.createdAt"),
-      Cell: ({ cell }) =>
-        new Date(cell.getValue<string>()).toLocaleString(i18n.language),
-    },
-    {
-      accessorKey: "updated_at",
-      header: t("newscategorymanagement.table.headers.updatedAt"),
-      Cell: ({ cell }) =>
-        new Date(cell.getValue<string>()).toLocaleString(i18n.language),
-    },
-    {
-      id: "actions",
-      header: t("newscategorymanagement.table.headers.actions"),
-      Cell: ({ row }) => (
-        <Group spacing="xs">
-          <ActionIcon
-            color="blue"
-            variant="light"
-            onClick={() => handleEdit(row.original.id)}
-            title={t("newscategorymanagement.table.actions.edit")}
-          >
-            <IconPencil size={16} />
-          </ActionIcon>
-          <ActionIcon
-            color="red"
-            variant="light"
-            onClick={() => confirmDelete(row.original.id)}
-            title={t("newscategorymanagement.table.actions.delete")}
-          >
-            <IconTrash size={16} />
-          </ActionIcon>
-        </Group>
-      ),
-    },
-  ];
+  // Memoize columns to prevent unnecessary re-renders
+  const columns = useMemo<MRT_ColumnDef<NewsCategory>[]>(
+    () => [
+      {
+        accessorKey: "id",
+        header: t("newscategorymanagement.table.headers.id"),
+        size: 80,
+      },
+      {
+        id: "name", // Add unique id for the column
+        header: t("newscategorymanagement.table.headers.name"),
+        accessorFn: (row) => getLocalizedName(row),
+        Cell: ({ cell }) => {
+          return (
+            <Box sx={{ maxWidth: 200 }}>
+              <div className="truncate">{cell.getValue<string>()}</div>
+            </Box>
+          );
+        },
+      },
+      {
+        accessorKey: "slug",
+        header: t("newscategorymanagement.table.headers.slug"),
+        Cell: ({ cell }) => cell.getValue<string>() || t("newscategorymanagement.table.notAvailable"),
+      },
+      {
+        id: "created_at",
+        accessorKey: "created_at",
+        header: t("newscategorymanagement.table.headers.createdAt"),
+        Cell: ({ cell }) => formatLocalizedDate(cell.getValue<string>()),
+      },
+      {
+        id: "updated_at",
+        accessorKey: "updated_at",
+        header: t("newscategorymanagement.table.headers.updatedAt"),
+        Cell: ({ cell }) => formatLocalizedDate(cell.getValue<string>()),
+      },
+      {
+        id: "actions",
+        header: t("newscategorymanagement.table.headers.actions"),
+        Cell: ({ row }) => (
+          <Group spacing="xs">
+            <ActionIcon
+              color="blue"
+              variant="light"
+              onClick={() => handleEdit(row.original.id)}
+              title={t("newscategorymanagement.table.actions.edit")}
+            >
+              <IconPencil size={16} />
+            </ActionIcon>
+            <ActionIcon
+              color="red"
+              variant="light"
+              onClick={() => confirmDelete(row.original.id)}
+              title={t("newscategorymanagement.table.actions.delete")}
+            >
+              <IconTrash size={16} />
+            </ActionIcon>
+          </Group>
+        ),
+      },
+    ],
+    [t, i18n.language] // Recreate columns when language changes
+  );
 
   return (
     <Box p="md" pos="relative">
@@ -299,6 +355,38 @@ const NewsCategoryManagement = () => {
             sx: {
               maxHeight: "calc(100vh - 210px)",
             },
+          }}
+          localization={{
+            // Localize table controls as well
+            actions: t("newscategorymanagement.table.actions.actions", { defaultValue: "Actions" }),
+            cancel: t("newscategorymanagement.table.actions.cancel", { defaultValue: "Cancel" }),
+            clearFilter: t("newscategorymanagement.table.actions.clearFilter", { defaultValue: "Clear Filter" }),
+            clearSearch: t("newscategorymanagement.table.actions.clearSearch", { defaultValue: "Clear Search" }),
+            columnActions: t("newscategorymanagement.table.actions.columnActions", { defaultValue: "Column Actions" }),
+            edit: t("newscategorymanagement.table.actions.edit", { defaultValue: "Edit" }),
+            filterByColumn: t("newscategorymanagement.table.actions.filterByColumn", { defaultValue: "Filter by {column}" }),
+            filterMode: t("newscategorymanagement.table.actions.filterMode", { defaultValue: "Filter Mode" }),
+            grouping: t("newscategorymanagement.table.actions.grouping", { defaultValue: "Grouping" }),
+            hideAll: t("newscategorymanagement.table.actions.hideAll", { defaultValue: "Hide All" }),
+            hideColumn: t("newscategorymanagement.table.actions.hideColumn", { defaultValue: "Hide Column" }),
+            sortByColumnAsc: t("newscategorymanagement.table.actions.sortByColumnAsc", { defaultValue: "Sort by {column} ascending" }),
+            sortByColumnDesc: t("newscategorymanagement.table.actions.sortByColumnDesc", { defaultValue: "Sort by {column} descending" }),
+            thenBy: t("newscategorymanagement.table.actions.thenBy", { defaultValue: "Then by" }),
+            toggleDensity: t("newscategorymanagement.table.actions.toggleDensity", { defaultValue: "Toggle Density" }),
+            toggleFullScreen: t("newscategorymanagement.table.actions.toggleFullScreen", { defaultValue: "Toggle Full Screen" }),
+            toggleVisibility: t("newscategorymanagement.table.actions.toggleVisibility", { defaultValue: "Toggle Visibility" }),
+            search: t("newscategorymanagement.table.actions.search", { defaultValue: "Search" }),
+            showAll: t("newscategorymanagement.table.actions.showAll", { defaultValue: "Show All" }),
+            showHideColumns: t("newscategorymanagement.table.actions.showHideColumns", { defaultValue: "Show/Hide Columns" }),
+            showHideFilters: t("newscategorymanagement.table.actions.showHideFilters", { defaultValue: "Show/Hide Filters" }),
+            showHideSearch: t("newscategorymanagement.table.actions.showHideSearch", { defaultValue: "Show/Hide Search" }),
+            noRecordsToDisplay: t("newscategorymanagement.table.actions.noRecordsToDisplay", { defaultValue: "No records to display" }),
+            of: t("newscategorymanagement.table.actions.of", { defaultValue: "of" }),
+            or: t("newscategorymanagement.table.actions.or", { defaultValue: "or" }),
+            rowsPerPage: t("newscategorymanagement.table.actions.rowsPerPage", { defaultValue: "Rows per page" }),
+            save: t("newscategorymanagement.table.actions.save", { defaultValue: "Save" }),
+            select: t("newscategorymanagement.table.actions.select", { defaultValue: "Select" }),
+            selectedCountOfRowCountRowsSelected: t("newscategorymanagement.table.actions.selectedCountOfRowCountRowsSelected", { defaultValue: "{selectedCount} of {rowCount} row(s) selected" }),
           }}
         />
       </Box>

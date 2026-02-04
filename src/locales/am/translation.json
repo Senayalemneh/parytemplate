@@ -1405,8 +1405,10 @@
       "headers": {
         "multipleImages": "ተጨማሪ ምስሎች",
         "id": "መለያ (ID)",
+        "title": "ርዕስ",
         "titleAm": "ርዕስ (በአማርኛ)",
         "titleEn": "ርዕስ (በእንግሊዝኛ)",
+        "content": "ይዘት",
         "excerpt": "አጭር መግለጫ",
         "category": "ምድብ",
         "author": "ጸሐፊ",
@@ -1519,6 +1521,7 @@
     "table": {
       "headers": {
         "id": "መለያ",
+        "name": "ስም",
         "nameAm": "ስም (አማርኛ)",
         "nameEn": "ስም (EN)",
         "slug": "ሊንክ (Slug)",

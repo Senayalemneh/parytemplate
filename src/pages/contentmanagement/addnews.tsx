@@ -43,6 +43,7 @@ import {
 import { notifications } from "@mantine/notifications";
 import { useDisclosure } from "@mantine/hooks";
 import { useTranslation } from "react-i18next";
+import i18n from "../../utils/i18n";
 
 interface NewsItem {
   id: number;
@@ -175,15 +176,28 @@ const NewsManagement = () => {
     try {
       const response = await getNewsCategories();
       if (response.data) {
-        const categoryOptions = response.data.map((category: any) => ({
-          value: category.id.toString(),
-          label:
-            typeof category.name === "object"
-              ? category.name.en ||
-              category.name.am ||
-              `Category ${category.id}`
-              : category.name || `Category ${category.id}`,
-        }));
+        const categoryOptions = response.data.map((category: any) => {
+          let label = `Category ${category.id}`;
+          
+          if (typeof category.name === "object" && category.name) {
+            // Dynamic localization for category options
+            const currentLang = i18n.language as 'am' | 'en';
+            label = category.name[currentLang] || category.name.en || category.name.am || `Category ${category.id}`;
+          } else if (typeof category.name === "string") {
+            try {
+              const parsedName = JSON.parse(category.name);
+              const currentLang = i18n.language as 'am' | 'en';
+              label = parsedName[currentLang] || parsedName.en || parsedName.am || category.name;
+            } catch {
+              label = category.name;
+            }
+          }
+          
+          return {
+            value: category.id.toString(),
+            label: label,
+          };
+        });
         setCategories(categoryOptions);
       }
     } catch (error) {
@@ -198,12 +212,23 @@ const NewsManagement = () => {
   const fetchAuthors = async () => {
     try {
       const response = await getUsers();
+      console.log("Authors API Response:", response);
+      
       if (response && Array.isArray(response)) {
-        const authorOptions = response.map((user: any) => ({
-          value: user.id?.toString() || user.uid || `user_${user.id}`,
-          label: user.name || user.email || `User ${user.id}`,
-        }));
+        const authorOptions = response.map((user: any) => {
+          const userId = user.id?.toString() || user.uid || `user_${user.id}`;
+          const userName = user.name || user.email || `User ${user.id}`;
+          
+          return {
+            value: userId,
+            label: userName,
+            // Store additional author info for potential use
+            email: user.email,
+            role: user.role_id,
+          };
+        });
         setAuthors(authorOptions);
+        console.log("Processed authors:", authorOptions);
       }
     } catch (error) {
       console.error("Failed to fetch authors:", error);
@@ -272,6 +297,13 @@ const NewsManagement = () => {
   useEffect(() => {
     fetchNews();
   }, []);
+
+  // Refresh categories when language changes for proper localization
+  useEffect(() => {
+    if (categories.length > 0) {
+      fetchCategories();
+    }
+  }, [i18n.language]);
 
   const showNotification = (message: string, type: "success" | "error") => {
     notifications.show({
@@ -633,8 +665,12 @@ const NewsManagement = () => {
       size: 80,
     },
     {
-      accessorFn: (row) => row.title?.am || t("newsmanagementadmin.table.notAvailable"),
-      header: t("newsmanagementadmin.table.headers.titleAm"),
+      accessorFn: (row) => {
+        // Dynamic localization based on current language
+        const currentLang = i18n.language as 'am' | 'en';
+        return row.title?.[currentLang] || row.title?.en || row.title?.am || t("newsmanagementadmin.table.notAvailable");
+      },
+      header: t("newsmanagementadmin.table.headers.title"),
       Cell: ({ cell }) => (
         <Box sx={{ maxWidth: 200 }}>
           <div className="truncate">{cell.getValue<string>()}</div>
@@ -642,17 +678,13 @@ const NewsManagement = () => {
       ),
     },
     {
-      accessorFn: (row) => row.title?.en || t("newsmanagementadmin.table.notAvailable"),
-      header: t("newsmanagementadmin.table.headers.titleEn"),
-      Cell: ({ cell }) => (
-        <Box sx={{ maxWidth: 200 }}>
-          <div className="truncate">{cell.getValue<string>()}</div>
-        </Box>
-      ),
-    },
-    {
-      accessorKey: "excerpt",
-      header: t("newsmanagementadmin.table.headers.excerpt"),
+      accessorFn: (row) => {
+        // Dynamic localization for content preview
+        const currentLang = i18n.language as 'am' | 'en';
+        const content = row.content?.[currentLang] || row.content?.en || row.content?.am || '';
+        return content.substring(0, 100) + (content.length > 100 ? '...' : '');
+      },
+      header: t("newsmanagementadmin.table.headers.content"),
       Cell: ({ cell }) => (
         <Box sx={{ maxWidth: 200 }}>
           <div className="truncate">
@@ -665,26 +697,57 @@ const NewsManagement = () => {
     {
       accessorFn: (row) => {
         if (!row.category) return t("newsmanagementadmin.table.notAvailable");
+        
+        // Dynamic localization for category names
+        const currentLang = i18n.language as 'am' | 'en';
+        
         if (typeof row.category.name === "string") {
           try {
             const name = JSON.parse(row.category.name);
-            return name?.en || name?.am || t("newsmanagementadmin.table.notAvailable");
+            return name?.[currentLang] || name?.en || name?.am || t("newsmanagementadmin.table.notAvailable");
           } catch {
             return row.category.name;
           }
         }
         return (
-          row.category.name?.en || row.category.name?.am || t("newsmanagementadmin.table.notAvailable")
+          row.category.name?.[currentLang] || row.category.name?.en || row.category.name?.am || t("newsmanagementadmin.table.notAvailable")
         );
       },
       header: t("newsmanagementadmin.table.headers.category"),
       id: "category",
     },
     {
-      accessorFn: (row) =>
-        row.author?.name || row.author_id || t("newsmanagementadmin.table.notAvailable"),
+      accessorFn: (row) => {
+        // Show author name only, never show author_id
+        if (row.author && row.author.name) {
+          return row.author.name;
+        }
+        return t("newsmanagementadmin.table.notAvailable");
+      },
       header: t("newsmanagementadmin.table.headers.author"),
       id: "author",
+      Cell: ({ row }) => {
+        const author = row.original.author;
+        if (author && author.name) {
+          return (
+            <Box>
+              <Text size="sm" weight={500}>
+                {author.name}
+              </Text>
+              {author.email && (
+                <Text size="xs" color="dimmed">
+                  {author.email}
+                </Text>
+              )}
+            </Box>
+          );
+        }
+        return (
+          <Text size="sm" color="dimmed">
+            {t("newsmanagementadmin.table.notAvailable")}
+          </Text>
+        );
+      },
     },
     {
       accessorKey: "is_published",

@@ -1513,8 +1513,10 @@
       "headers": {
         "multipleImages": "Additional Images",
         "id": "ID",
+        "title": "Title",
         "titleAm": "Title (Amharic)",
         "titleEn": "Title (English)",
+        "content": "Content",
         "excerpt": "Excerpt",
         "category": "Category",
         "author": "Author",
@@ -1626,6 +1628,7 @@
     "table": {
       "headers": {
         "id": "ID",
+        "name": "Name",
         "nameAm": "Name (Amharic)",
         "nameEn": "Name (English)",
         "slug": "Slug",
