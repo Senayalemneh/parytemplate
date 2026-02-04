@@ -46,6 +46,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { format } from "date-fns";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/common/loader";
+import { Navigate } from "react-router-dom";
 
 interface LocalizedField {
   en?: string;
@@ -162,17 +163,17 @@ const cleanUrl = (url: string): string => {
   if (!url) return "";
   let cleaned = url.replace(/\\/g, "/");
   cleaned = cleaned.replace(/([^:]\/)\/+/g, "$1");
-  
+
   // If it's already a full URL, return as is
   if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
     return cleaned;
   }
-  
+
   // Handle different URL formats
   if (cleaned.startsWith("/")) {
     cleaned = cleaned.substring(1);
   }
-  
+
   // Construct the full URL with your domain
   return `${import.meta.env.VITE_FILE_API}${cleaned}`;
 };
@@ -201,7 +202,11 @@ const ViewComplaints = () => {
   const [responseLoading, setResponseLoading] = useState(false);
   const [viewResponseLoading, setViewResponseLoading] = useState(false);
   const [currentResponse, setCurrentResponse] = useState<ResponseItem | null>(null);
-
+  const user = localStorage.getItem('currentUser');
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
+  const parsedUser = JSON.parse(user);
   const [responseForm, setResponseForm] = useState<ResponseFormValues>({
     complaints_id: 0,
     compliant_evaluation: true,
@@ -209,7 +214,7 @@ const ViewComplaints = () => {
     general_response: true,
     general_response_detail: "",
     compliant_evaluator_person_fullname: "",
-    issuer_id: 2,
+    issuer_id: parsedUser.id,
     response_date: new Date().toISOString(),
   });
 
@@ -252,14 +257,14 @@ const ViewComplaints = () => {
 
       showNotification(
         t("viewcompliantadmin.notification.complaintsLoaded") ||
-          "Complaints loaded successfully",
+        "Complaints loaded successfully",
         "success"
       );
     } catch (error) {
       console.error("Failed to fetch complaints:", error);
       showNotification(
         t("viewcompliantadmin.notification.failedLoadComplaints") ||
-          "Failed to load complaints",
+        "Failed to load complaints",
         "error"
       );
     } finally {
@@ -277,7 +282,7 @@ const ViewComplaints = () => {
       console.error("Failed to fetch response:", error);
       showNotification(
         t("viewcompliantadmin.notification.failedLoadResponse") ||
-          "Failed to load response",
+        "Failed to load response",
         "error"
       );
     } finally {
@@ -290,7 +295,7 @@ const ViewComplaints = () => {
       await changeCompliantStatus(id, { status });
       showNotification(
         t("viewcompliantadmin.notification.statusUpdated") ||
-          "Status updated successfully",
+        "Status updated successfully",
         "success"
       );
       fetchComplaints();
@@ -298,7 +303,7 @@ const ViewComplaints = () => {
       console.error("Error updating status:", error);
       showNotification(
         t("viewcompliantadmin.notification.failedUpdateStatus") ||
-          "Failed to update status",
+        "Failed to update status",
         "error"
       );
     }
@@ -344,7 +349,7 @@ const ViewComplaints = () => {
       await deleteCompliant(id);
       showNotification(
         t("viewcompliantadmin.notification.complaintDeleted") ||
-          "Complaint deleted successfully",
+        "Complaint deleted successfully",
         "success"
       );
       fetchComplaints();
@@ -352,7 +357,7 @@ const ViewComplaints = () => {
       console.error("Error deleting complaint:", error);
       showNotification(
         t("viewcompliantadmin.notification.failedDeleteComplaint") ||
-          "Failed to delete complaint",
+        "Failed to delete complaint",
         "error"
       );
     } finally {
@@ -371,7 +376,7 @@ const ViewComplaints = () => {
 
       showNotification(
         t("viewcompliantadmin.notification.responseSubmitted") ||
-          "Response submitted successfully",
+        "Response submitted successfully",
         "success"
       );
       closeResponseModal();
@@ -380,7 +385,7 @@ const ViewComplaints = () => {
       console.error("Error submitting response:", error);
       showNotification(
         t("viewcompliantadmin.notification.failedSubmitResponse") ||
-          "Failed to submit response",
+        "Failed to submit response",
         "error"
       );
     } finally {
@@ -571,7 +576,7 @@ const ViewComplaints = () => {
               <IconMessage size={16} />
             </ActionIcon>
           )}
-      
+
         </Group>
       ),
     },
@@ -905,9 +910,9 @@ const ViewComplaints = () => {
               >
                 {selectedComplaint.disclaimerAccepted
                   ? t("viewcompliantadmin.modal.disclaimerAccepted") ||
-                    "Disclaimer Accepted"
+                  "Disclaimer Accepted"
                   : t("viewcompliantadmin.modal.disclaimerNotAccepted") ||
-                    "Disclaimer Not Accepted"}
+                  "Disclaimer Not Accepted"}
               </Badge>
             </Group>
           </Stack>
@@ -1120,7 +1125,7 @@ const ViewComplaints = () => {
                 {currentResponse.compliant_evaluation
                   ? t("viewcompliantadmin.viewResponseModal.valid") || "Valid"
                   : t("viewcompliantadmin.viewResponseModal.invalid") ||
-                    "Invalid"}
+                  "Invalid"}
               </Text>
             </Group>
 
@@ -1144,9 +1149,9 @@ const ViewComplaints = () => {
               <Text weight={500}>
                 {currentResponse.general_response
                   ? t("viewcompliantadmin.viewResponseModal.positive") ||
-                    "Positive"
+                  "Positive"
                   : t("viewcompliantadmin.viewResponseModal.negative") ||
-                    "Negative"}
+                  "Negative"}
               </Text>
             </Group>
 
